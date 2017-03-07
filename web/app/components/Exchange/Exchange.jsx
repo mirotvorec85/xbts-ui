@@ -27,6 +27,7 @@ import Highcharts from "highcharts/highstock";
 import ExchangeHeader from "./ExchangeHeader";
 import Translate from "react-translate-component";
 import { Apis } from "bitsharesjs-ws";
+import GatewayActions from "actions/GatewayActions";
 
 Highcharts.setOptions({
     global: {
@@ -133,6 +134,12 @@ class Exchange extends React.Component {
     _getLastMarketKey() {
         const chainID = Apis.instance().chain_id;
         return `lastMarket${chainID ? ("_" + chainID.substr(0, 8)) : ""}`;
+    }
+
+    componentWillMount() {
+        if (Apis.instance().chain_id.substr(0, 8)=== "4018d784") {
+            GatewayActions.fetchCoins.defer();
+        }
     }
 
     componentDidMount() {
@@ -937,8 +944,11 @@ class Exchange extends React.Component {
 
         let orderMultiplier = leftOrderBook ? 2 : 1;
 
+
         let buyForm = isFrozen ? null : (
             <BuySell
+                currentAccount={currentAccount}
+                backedCoin={this.props.backedCoins.find(a => a.symbol === base.get("symbol"))}
                 smallScreen={smallScreen}
                 isOpen={this.state.buySellOpen}
                 onToggleOpen={this._toggleOpenBuySell.bind(this)}
@@ -959,6 +969,7 @@ class Exchange extends React.Component {
                 setPrice={this._currentPriceClick.bind(this)}
                 totalChange={this._onInputSell.bind(this, "bid")}
                 balance={baseBalance}
+                balanceId={base.get("id")}
                 onSubmit={this._createLimitOrderConfirm.bind(this, quote, base, baseBalance, coreBalance, buyFeeAsset, "buy")}
                 balancePrecision={base.get("precision")}
                 quotePrecision={quote.get("precision")}
@@ -978,6 +989,8 @@ class Exchange extends React.Component {
 
         let sellForm = isFrozen ? null : (
             <BuySell
+                currentAccount={currentAccount}
+                backedCoin={this.props.backedCoins.find(a => a.symbol === quote.get("symbol"))}
                 smallScreen={smallScreen}
                 isOpen={this.state.buySellOpen}
                 onToggleOpen={this._toggleOpenBuySell.bind(this)}
@@ -998,6 +1011,7 @@ class Exchange extends React.Component {
                 setPrice={this._currentPriceClick.bind(this)}
                 totalChange={this._onInputReceive.bind(this, "ask")}
                 balance={quoteBalance}
+                balanceId={quote.get("id")}
                 onSubmit={this._createLimitOrderConfirm.bind(this, base, quote, quoteBalance, coreBalance, sellFeeAsset, "sell")}
                 balancePrecision={quote.get("precision")}
                 quotePrecision={quote.get("precision")}
