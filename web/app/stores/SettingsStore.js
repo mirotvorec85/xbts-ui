@@ -17,14 +17,14 @@ class SettingsStore {
         this.exportPublicMethods({init: this.init.bind(this), getSetting: this.getSetting.bind(this)});
         this.initDone = false;
         this.defaultSettings = Immutable.Map({
-            locale: "en",
+            locale: "ru",
             apiServer: settingsAPIs.DEFAULT_WS_NODE,
             faucet_address: settingsAPIs.DEFAULT_FAUCET,
             unit: CORE_ASSET,
             showSettles: false,
             showAssetPercent: false,
             walletLockTimeout: 60 * 10,
-            themes: "darkTheme",
+            themes: "lightTheme",
             disableChat: false
         });
 

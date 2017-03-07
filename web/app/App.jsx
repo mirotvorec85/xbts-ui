@@ -163,12 +163,13 @@ class App extends React.Component {
                         </div>
                         <div className="grid-block shrink" style={{overflow: "hidden"}}>
                             {isMobile ? null :
-                                <Chat
-                                    showChat={showChat}
-                                    disable={disableChat}
-                                    footerVisible={showFooter}
-                                    dockedChat={dockedChat}
-                                />}
+                                null}
+                                {/*<Chat*/}
+                                    {/*showChat={showChat}*/}
+                                    {/*disable={disableChat}*/}
+                                    {/*footerVisible={showFooter}*/}
+                                    {/*dockedChat={dockedChat}*/}
+                                {/*/>}*/}
 
                         </div>
                     </div>
