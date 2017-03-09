@@ -346,6 +346,7 @@ select {
 }
 
 select.bts-select {
+    border-radius: 5px;
     cursor:pointer;
     border: none;
     background: none;
@@ -389,6 +390,10 @@ select.bts-select {
   @include breakpoint(small only) {
       font-size: 1.125rem;
   }
+}
+
+input, textarea {
+    border-radius: 5px !important;
 }
 
 input[type=number] {
