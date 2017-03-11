@@ -6,7 +6,7 @@ import Translate from "react-translate-component";
 import MarketCard from "./MarketCard";
 import utils from "common/utils";
 import { Apis } from "bitsharesjs-ws";
-var logo = require("assets/logo-ico-blue.png");
+var logo = require("assets/logo-rudex.png");
 import LoadingIndicator from "../LoadingIndicator";
 
 class Dashboard extends React.Component {
@@ -15,6 +15,18 @@ class Dashboard extends React.Component {
         super();
         let marketsByChain = {
             "4018d784":[
+                ["BTS", "RUB"],
+                ["BTS", "OPEN.BTC"],
+                ["BTS", "USD"],
+                ["BTS", "GOLD"],
+                ["BTS", "SILVER"],
+                ["BTS", "OPEN.ETH"],
+                ["BTS", "OPEN.STEEM"],
+                ["BTS", "OPEN.DASH"],
+                ["BTS", "OPEN.SBD"],
+                ["BTS", "GOLOS"]
+            ],
+            "4018d784x":[
                 ["BTS", "CNY"],
                 ["CNY", "OPEN.BTC"],
                 ["CNY", "USD"],

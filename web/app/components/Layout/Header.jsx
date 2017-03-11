@@ -18,7 +18,7 @@ import TotalBalanceValue from "../Utility/TotalBalanceValue";
 import ReactTooltip from "react-tooltip";
 import { Apis } from "bitsharesjs-ws";
 
-var logo = require("assets/logo-ico-blue.png");
+var logo = require("assets/logo-rudex.png");
 
 class Header extends React.Component {
 
@@ -145,7 +145,7 @@ class Header extends React.Component {
 
         let dashboard = (
             <a
-                style={{paddingTop: 12, paddingBottom: 12}}
+                style={{paddingTop: 12, paddingBottom: 12, paddingLeft: 12, paddingRight: 12}}
                 className={cnames({active: active === "/" || active.indexOf("dashboard") !== -1})}
                 onClick={this._onNavigate.bind(this, "/dashboard")}
             >
