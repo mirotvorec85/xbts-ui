@@ -6,7 +6,7 @@ import Translate from "react-translate-component";
 import MarketCard from "./MarketCard";
 import utils from "common/utils";
 import { Apis } from "bitsharesjs-ws";
-var logo = require("assets/logo-rudex.png");
+var logo = require("assets/logo-ico-blue.png");
 import LoadingIndicator from "../LoadingIndicator";
 
 class Dashboard extends React.Component {
@@ -17,16 +17,15 @@ class Dashboard extends React.Component {
             "4018d784":[
                 ["BTS", "RUB"],
                 ["BTS", "OPEN.BTC"],
-                ["BTS", "USD"],
-                ["BTS", "GOLD"],
-                ["BTS", "SILVER"],
-                ["BTS", "OPEN.ETH"],
-                ["BTS", "OPEN.STEEM"],
                 ["BTS", "OPEN.DASH"],
-                ["BTS", "OPEN.SBD"],
-                ["BTS", "GOLOS"]
+                ["BTS", "OPEN.ETH"],
+                ["BTS", "USD"],
+                ["BTS", "CNY"],
+                ["BTS", "GOLD"],
+                ["BTS", "OPEN.STEEM"],
+                ["BTS", "OPEN.SBD"]
             ],
-            "4018d784x":[
+            "4018d784xback":[
                 ["BTS", "CNY"],
                 ["CNY", "OPEN.BTC"],
                 ["CNY", "USD"],
@@ -155,7 +154,7 @@ class Dashboard extends React.Component {
                     <div ref="container" className="grid-block vertical medium-horizontal"  style={{padding: "25px 10px 0 10px"}}>
                         <div className="grid-block vertical small-12 medium-5">
                             <div className="Dashboard__intro-text">
-                                <h4><img style={{position: "relative", top: -15, margin: 0}} src={logo}/><Translate content="account.intro_text_title" /></h4>
+                                <h4><Translate content="account.intro_text_title" /></h4>
 
                                 <Translate unsafe content="account.intro_text_1" component="p" />
                                 <Translate unsafe content="account.intro_text_2" component="p" />
