@@ -134,9 +134,9 @@ class Dashboard extends React.Component {
             isLowVolume = false;
             if (!isLowVolume) validMarkets++;
             let className = "";
-            if (validMarkets > 9) {
+            if (validMarkets > 15) {
                 className += ` show-for-${!accountCount ? "xlarge" : "large"}`;
-            } else if (validMarkets > 6) {
+            } else if (validMarkets > 12) {
                 className += ` show-for-${!accountCount ? "large" : "medium"}`;
             }
 
@@ -150,7 +150,7 @@ class Dashboard extends React.Component {
                     base={pair[1]}
                     invert={pair[2]}
                     isLowVolume={isLowVolume}
-                    hide={validMarkets > 16}
+                    hide={validMarkets > 21}
                 />
             );
         }).filter(a => !!a);
