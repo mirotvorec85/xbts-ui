@@ -20,6 +20,7 @@ class Dashboard extends React.Component {
                 ["BTS", "OPEN.DASH"],
                 ["BTS", "OPEN.ETH"],
                 ["BTS", "USD"],
+                ["BTS", "EUR"],
                 ["BTS", "CNY"],
                 ["BTS", "GOLD"],
                 ["BTS", "OPEN.STEEM"],
@@ -129,6 +130,8 @@ class Dashboard extends React.Component {
         let markets = featuredMarkets
         .map(pair => {
             let isLowVolume = this.props.lowVolumeMarkets.get(pair[1] + "_" + pair[0]) || this.props.lowVolumeMarkets.get(pair[0] + "_" + pair[1]);
+            // HACK: Show all defined markets
+            isLowVolume = false;
             if (!isLowVolume) validMarkets++;
             let className = "";
             if (validMarkets > 9) {
