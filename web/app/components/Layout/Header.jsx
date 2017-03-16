@@ -103,12 +103,17 @@ class Header extends React.Component {
     _accountClickHandler(account_name, e) {
         e.preventDefault();
         ZfApi.publish("account_drop_down", "close");
+        if (this.context.location.pathname.indexOf("/account/") !== -1) {
+            let currentPath = this.context.location.pathname.split("/");
+            currentPath[2] = account_name;
+            this.context.router.push(currentPath.join("/"));
+        }
         if (account_name !== this.props.currentAccount) {
             AccountActions.setCurrentAccount.defer(account_name);
             notify.addNotification({
                 message: counterpart.translate("header.account_notify", {account: account_name}),
                 level: "success",
-                autoDismiss: 5
+                autoDismiss: 3
             });
         }
         // this.onClickUser(account_name, e);
@@ -124,7 +129,6 @@ class Header extends React.Component {
     render() {
         let {active} = this.state;
         let {currentAccount, starredAccounts} = this.props;
-        let settings = counterpart.translate("header.settings");
         let locked_tip = counterpart.translate("header.locked_tip");
         let unlocked_tip = counterpart.translate("header.unlocked_tip");
 
@@ -144,11 +148,12 @@ class Header extends React.Component {
             });
         }
 
+
         let myAccounts = AccountStore.getMyAccounts();
 
-        let walletBalance = myAccounts.length ? (
+        let walletBalance = myAccounts.length && this.props.currentAccount ? (
                             <div className="grp-menu-item header-balance">
-                                <a><TotalBalanceValue.AccountWrapper label="exchange.balance" accounts={myAccounts} inHeader={true}/></a>
+                                <a><TotalBalanceValue.AccountWrapper label="exchange.balance" accounts={[this.props.currentAccount]} inHeader={true}/></a>
                             </div>) : null;
 
         let dashboard = (
@@ -162,7 +167,7 @@ class Header extends React.Component {
         );
 
         let createAccountLink = myAccountCount === 0 ? (
-            <ActionSheet.Button title="">
+            <ActionSheet.Button title="" setActiveState={() => {}}>
                 <a className="button create-account" onClick={this._onNavigate.bind(this, "/create-account")} style={{padding: "1rem", border: "none"}} >
                     <Icon className="icon-14px" name="user"/> <Translate content="header.create_account" />
                 </a>
@@ -185,7 +190,6 @@ class Header extends React.Component {
         let accountsDropDown = null, account_display_name, accountsList;
 
         if (currentAccount) {
-
             account_display_name = currentAccount.length > 20 ? `${currentAccount.slice(0, 20)}..` : currentAccount;
             if (tradingAccounts.indexOf(currentAccount) < 0) {
                 tradingAccounts.push(currentAccount);
@@ -205,32 +209,12 @@ class Header extends React.Component {
                 });
             }
         }
-        // let optionsEntries = [
-        //     {to: "/help", text: "header.help"},
-        //     {to: "/explorer", text: "header.explorer"}
-        // ];
-        //
-        // let options = optionsEntries.map((entry, index) => {
-        //     return <li className={"dropdown-options" + (index === optionsEntries.length - 1 ? " dropdown-divider" : "")} key={entry.to}>
-        //         <Translate content={entry.text} component="a" onClick={this._onNavigate.bind(this, entry.to)}/>
-        //     </li>;
-        // });
-
-        // let lockOptions = (this.props.current_wallet && myAccountCount) ? (
-        //     <li className="dropdown-options">
-        //         <Translate
-        //             content={ this.props.locked ? "header.unlock" : "header.lock"}
-        //             component="a"
-        //             onClick={this._toggleLock.bind(this)}
-        //         />
-        //     </li>) : null;
-
 
         accountsDropDown = createAccountLink ?
         createAccountLink :
         tradingAccounts.length === 1 ?
-        (<ActionSheet.Button title="">
-            <a onClick={this._accountClickHandler.bind(this, account_display_name)} style={{padding: "1rem", border: "none"}} className="button">
+        (<ActionSheet.Button title="" setActiveState={() => {}}>
+            <a onClick={this._accountClickHandler.bind(this, account_display_name)} style={{cursor: "default", padding: "1rem", border: "none"}} className="button">
                 <Icon className="icon-14px" name="user"/> {account_display_name}
             </a>
         </ActionSheet.Button>) :
@@ -249,6 +233,33 @@ class Header extends React.Component {
             </ActionSheet.Content> : null}
         </ActionSheet>);
 
+        let settingsDropdown = <ActionSheet>
+            <ActionSheet.Button title="">
+                <a style={{padding: "1rem", border: "none"}} className="button">
+                    <Icon className="icon-14px" name="cog"/>
+                </a>
+            </ActionSheet.Button>
+            <ActionSheet.Content>
+                <ul className="no-first-element-top-border">
+                    <li>
+                        <a href onClick={this._onNavigate.bind(this, "/settings")}>
+                            <span><Translate content="header.settings" /></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href onClick={this._onNavigate.bind(this, "/explorer")}>
+                            <span><Translate content="header.explorer" /></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href onClick={this._onNavigate.bind(this, "/help")}>
+                            <span><Translate content="header.help" /></span>
+                        </a>
+                    </li>
+                </ul>
+            </ActionSheet.Content>
+        </ActionSheet>;
+
         const enableDepositWithdraw = Apis.instance().chain_id.substr(0, 8) === "4018d784";
 
         return (
@@ -258,7 +269,7 @@ class Header extends React.Component {
                         <li><a href onClick={this._triggerMenu}><Icon className="icon-32px" name="menu"/></a></li>
                     </ul>
                 </div>
-                {__ELECTRON__ ? <div className="grid-block show-for-medium shrink">
+                {__ELECTRON__ ? <div className="grid-block show-for-medium shrink electron-navigation">
                     <ul className="menu-bar">
                         <li>
                             <div style={{marginLeft: "1rem", height: "3rem"}}>
@@ -284,14 +295,19 @@ class Header extends React.Component {
                 </div>
                 <div className="grid-block show-for-medium shrink">
                     <div className="grp-menu-items-group header-right-menu">
-                        {!myAccountCount ? null : walletBalance}
+
+                        {!myAccountCount || !walletBalance ? null : walletBalance}
+
+                        {myAccountCount !== 0 ? null :<div className="grp-menu-item overflow-visible" >
+                            {settingsDropdown}
+                        </div>}
 
                         <div className="grp-menu-item overflow-visible account-drop-down">
                             {accountsDropDown}
                         </div>
-                        <div className="grp-menu-item" >
-                            <Link className={cnames({active: active.indexOf("settings") !== -1})} style={{padding: "1rem"}} to="/settings" data-tip={settings} data-place="bottom"><Icon className="icon-14px" name="cog"/></Link>
-                        </div>
+                        {!myAccountCount ? null :<div className="grp-menu-item overflow-visible" >
+                            {settingsDropdown}
+                        </div>}
                         {lock_unlock}
                     </div>
                 </div>

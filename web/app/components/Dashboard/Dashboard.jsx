@@ -43,6 +43,8 @@ class Dashboard extends React.Component {
                 ["KAPITAL", "OPEN.BTC", false],
                 ["BTS", "SILVER"],
                 ["OPEN.BTC", "OPEN.DGD", false],
+                ["USD", "OPEN.STEEM"],
+                ["USD", "OPEN.ETH"],
                 ["BTS", "BTWTY"],
                 ["BTS", "OPEN.ETH"],
                 ["BTS", "ICOO"],
@@ -81,7 +83,7 @@ class Dashboard extends React.Component {
     componentDidMount() {
         this._setDimensions();
 
-        window.addEventListener("resize", this._setDimensions, false);
+        window.addEventListener("resize", this._setDimensions, {capture: false, passive: true});
     }
 
     shouldComponentUpdate(nextProps, nextState) {
@@ -98,7 +100,7 @@ class Dashboard extends React.Component {
     }
 
     componentWillUnmount() {
-        window.removeEventListener("resize", this._setDimensions, false);
+        window.removeEventListener("resize", this._setDimensions);
     }
 
     _setDimensions() {
@@ -146,6 +148,7 @@ class Dashboard extends React.Component {
             return (
                 <MarketCard
                     key={pair[0] + "_" + pair[1]}
+                    marketId={pair[1] + "_" + pair[0]}
                     new={newAssets.indexOf(pair[1]) !== -1}
                     className={className}
                     quote={pair[0]}
@@ -189,7 +192,9 @@ class Dashboard extends React.Component {
         return (
             <div ref="wrapper" className="grid-block page-layout vertical">
                 <div ref="container" className="grid-container" style={{padding: "25px 10px 0 10px"}}>
-                    <Translate content="exchange.featured" component="h4" />
+                    <div className="block-content-header" style={{marginBottom: 15}}>
+                    <Translate content="exchange.featured"/>
+                    </div>
                     <div className="grid-block small-up-1 medium-up-3 large-up-4 no-overflow fm-outer-container">
                         {markets}
                     </div>
