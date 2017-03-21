@@ -65,9 +65,9 @@ class SettingsStore {
                 {translate: "no"}
             ],
             themes: [
-                "darkTheme",
-                "lightTheme",
-                "olDarkTheme"
+                //"darkTheme",
+                //"olDarkTheme",
+                "lightTheme"
             ]
             // confirmMarketOrder: [
             //     {translate: "confirm_yes"},
@@ -159,7 +159,7 @@ class SettingsStore {
 
             let bases = {
                 markets_4018d784: [ // BTS MAIN NET
-                    "BTS"
+                    "BTS", "USD", "OPEN.BTC"
                 ],
                 markets_4018d784_back: [ // BTS MAIN NET
                     "USD", "OPEN.BTC", "CNY", "BTS", "BTC"
