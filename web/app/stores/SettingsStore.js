@@ -141,9 +141,9 @@ class SettingsStore {
             // Default markets setup
             let topMarkets = {
                 markets_4018d784: [ // BTS MAIN NET
-                    "BTS", "RUB", "OPEN.BTC", "OPEN.DASH", "OPEN.ETH",
-                    "USD", "EUR", "CNY", "GOLD", "SILVER",
-                    "OPEN.STEEM", "OPEN.SBD", "GOLOS"
+                    "BTS", "RUB", "USD", "EUR", "CNY", "GOLD", "SILVER",
+                    "OPEN.BTC", "OPEN.DASH", "OPEN.ETH",
+                    "OPEN.STEEM", "OPEN.SBD", "OPEN.USDT", "GOLOS"
                 ],
                 markets_4018d784_back: [ // BTS MAIN NET
                     "OPEN.MKR", "BTS", "OPEN.ETH", "ICOO", "BTC", "OPEN.LISK", "BKT",
