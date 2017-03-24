@@ -765,7 +765,7 @@
     "password_text": "Change your password.",
     "backup_text": "Create backups here.",
     "restore_text": "Restore from a backup or import keys.",
-    "access_text": "Choose which full node you want to connect to.<br/><br/>The faucet is used to pay the registration fee for new users.",
+    "access_text": "Choose which full node you want to connect to.",
     "view_keys": "View keys",
     "add_api": "Add API",
     "remove_api": "Remove API",
