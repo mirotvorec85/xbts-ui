@@ -25,7 +25,8 @@ class SettingsStore {
             showAssetPercent: false,
             walletLockTimeout: 60 * 10,
             themes: "lightTheme",
-            disableChat: false
+            disableChat: false,
+            passwordLogin: false
         });
 
         // If you want a default value to be translated, add the translation to settings in locale-xx.js
@@ -68,6 +69,11 @@ class SettingsStore {
                 //"darkTheme",
                 //"olDarkTheme",
                 "lightTheme"
+
+            ],
+            passwordLogin: [
+                {translate: "yes"},
+                {translate: "no"}
             ]
             // confirmMarketOrder: [
             //     {translate: "confirm_yes"},

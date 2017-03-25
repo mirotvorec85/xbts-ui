@@ -388,6 +388,12 @@
       }
   }
 
+  div.input-wrapper {
+      > div.input-right-symbol {
+          color: $secondary-text-color;
+      }
+  }
+
   .dropdown-wrapper {
       > div:first-of-type {
           color: $secondary-text-color;
@@ -1188,6 +1194,34 @@
         color: $secondary-text-color;
         &.success {
             color: $success-color;
+        }
+    }
+
+    .login-selector {
+        > div.box {
+            background-color: $panel-bg-color;
+            &:hover {
+                background-color: darken($panel-bg-color, 2%);
+            }
+            a {
+                color: $primary-text-color;
+            }
+        }
+    }
+
+    table.table > tbody > tr.in-use {
+        > td:nth-child(2) {
+            font-weight: bold;
+        }
+    }
+
+    .SimpleDepositBridge__info-row {
+        > div {
+            > div.float-right {
+                &.above-limit {
+                    color: $error-text-color;
+                }
+            }
         }
     }
 }
