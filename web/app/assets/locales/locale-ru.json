@@ -242,15 +242,15 @@
       "brain":"Расположение brainkey",
       "from":"Импортирован из аккаунта",
       "sign_owner":"Подписать как владелец",
-      "password_model": "Account model",
-      "password_model_1": "If you want to be able to login from anywhere using only your password, you can use this page to add new keys to your permissions. If you also want to remove the original keys, you can do so in the active/owner permissions tabs.",
-      "password_model_2": "Add password generated keys",
-      "new_active": "New active key",
-      "new_owner": "New owner key",
-      "new_memo": "New memo key",
-      "memo_warning": "WARNING: If you replace the memo key you will be unable to read old memos when logging in with your password, and unless you import the new memo private key into your old wallet that wallet will be unable to decode new memos",
-      "use_text": "Use",
-      "remove_text": "Remove"
+      "password_model": "Модель аккаунта",
+      "password_model_1": "Если Вы хотите иметь возможность входа в систему из любого места, используя только Ваш пароль, Вы можете использовать эту страницу для добавления новых ключей для Вашего аккаунта. Если Вы также хотите удалить исходные ключи, Вы можете сделать это на вкладках прав доступа.",
+      "password_model_2": "Добавить ключи сгенерированный паролем",
+      "new_active": "Новый действующий ключ",
+      "new_owner": "Новый ключ владельца",
+      "new_memo": "Новый ключ для примечаний",
+      "memo_warning": "ПРЕДУПРЕЖДЕНИЕ. Если Вы замените ключ для примечаний, Вы не сможете прочитать старые примечания при входе в систему с Вашим паролем и, если Вы не импортируете новый ключ в свой старый кошелек, этот кошелек не сможет декодировать новые примечания",
+      "use_text": "Использовать",
+      "remove_text": "Удалить"
     },
     "votes":{
       "proxy_current":"Ваш текущий прокси ",
@@ -737,7 +737,7 @@
     }
   },
   "settings":{
-    "passwordLogin": "Login using the account model",
+    "passwordLogin": "Логин используя модель аккаунта",
     "inverseMarket":"Предпочтительная ориентация рынка",
     "unit":"Предпочтительные единицы счета",
     "confirmMarketOrder":"Запрашивать подтверждение рыночных ордеров",
