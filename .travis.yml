@@ -1,18 +1,23 @@
 language: node_js
+
 matrix:
   include:
     - os: linux
-      sudo: required
       dist: trusty
+      sudo: required
       env: BUILD_WEB=1 BUILD_DESKTOP=1
+
     - os: osx
       osx_image: xcode8.3
       env: BUILD_WEB=0 BUILD_DESKTOP=1
+
 node_js:
   - "6"
+
 install:
   - pushd web && npm install && popd
   - pushd electron && npm install && popd
+
 script:
   - if [[ "$BUILD_WEB" == "1" ]]; then pushd web && npm run build && popd; fi
   - if [[ "$BUILD_DESKTOP" == "1" ]]; then pushd web && npm run electron && popd && pushd electron && npm run release && popd; fi
