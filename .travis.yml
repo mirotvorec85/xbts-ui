@@ -1,15 +1,13 @@
 language: node_js
-env:
-  - BUILD_WEB=1
-  - BUILD_DESKTOP=1
 matrix:
   include:
     - os: linux
       sudo: required
       dist: trusty
+      env: BUILD_WEB=1 BUILD_DESKTOP=1
     - os: osx
       osx_image: xcode8.3
-      env: BUILD_WEB=0
+      env: BUILD_WEB=0 BUILD_DESKTOP=1
 node_js:
   - "6"
 install:
