@@ -1,0 +1,19 @@
+environment:
+  nodejs_version: "6"
+
+# Install scripts. (runs after repo cloning)
+install:
+  # Get the latest stable version of Node.js or io.js
+  - ps: Install-Product node $env:nodejs_version
+  # install modules
+  - cd web
+  - npm install
+  - cd ../electron
+  - npm install
+  - cd ..
+
+# Don't actually build.
+build:
+  - cd web
+  - npm run build-win32
+
