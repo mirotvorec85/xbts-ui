@@ -28,5 +28,6 @@ deploy:
   artifact: electron\releases\*.exe
   draft: true
   prerelease: false
+  force_update: true
   on:
     appveyor_repo_tag: true
