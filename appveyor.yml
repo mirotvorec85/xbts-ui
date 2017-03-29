@@ -13,6 +13,7 @@ install:
   - npm run build-win32
   - cd ../electron
   - npm install
+  - set PATH=%PATH%;"C:\Program Files (x86)\NSIS"
   - npm run release
   - cd ..
 
