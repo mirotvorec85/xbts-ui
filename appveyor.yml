@@ -21,8 +21,8 @@ install:
 build: off
 
 artifacts:
-  - path: 'electron\releases\*.exe
-  - name: RuDEX_light
+  - path: 'electron\releases\*.exe'
+    name: RuDEX_light
 
 deploy:
   description: 'New version'
