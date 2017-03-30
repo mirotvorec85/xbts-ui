@@ -1,8 +1,4 @@
-language: node_js
-
 matrix:
-  exclude:
-    - dist: precise
   include:
     - os: linux
       dist: trusty
@@ -12,6 +8,8 @@ matrix:
     - os: osx
       osx_image: xcode8.3
       env: BUILD_WEB=0 BUILD_DESKTOP=1
+
+language: node_js
 
 node_js:
   - "6"
@@ -23,3 +21,14 @@ install:
 script:
   - if [[ "$BUILD_WEB" == "1" ]]; then pushd web && npm run build && popd; fi
   - if [[ "$BUILD_DESKTOP" == "1" ]]; then pushd web && npm run electron && popd && pushd electron && npm run release && popd; fi
+
+deploy:
+  provider: releases
+  api_key:
+    secure: 57847771b8bda5bbff252151263a0023578dd0ed
+  file_glob: true
+  file: "electron/releases/*.dmg"
+  overwrite: true
+  skip_cleanup: true
+  on:
+    tags: true
