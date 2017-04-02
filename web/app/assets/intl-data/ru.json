@@ -358,7 +358,7 @@
     "symbols": {
       "latn": {
         "decimal": ".",
-        "group": " ",
+        "group": "",
         "nan": "не число",
         "plusSign": "+",
         "minusSign": "-",
