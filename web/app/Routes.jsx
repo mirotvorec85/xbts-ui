@@ -216,6 +216,9 @@ const routes = (
                 </Route>
             </Route>
         </Route>
+        <Route path="*" getComponent={(location, cb) => {
+            System.import("components/Dashboard/DashboardContainer").then(loadRoute(cb)).catch(errorLoading);
+        }}/>
     </Route>
 );
 

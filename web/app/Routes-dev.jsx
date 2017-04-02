@@ -129,6 +129,7 @@ const routes = (
                 </Route>
             </Route>
         </Route>
+        <Route path="*" component={DashboardContainer}/>
     </Route>
 );
 
