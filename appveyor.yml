@@ -30,7 +30,7 @@ deploy:
   auth_token:
     secure: mLCHor236wVtT7cy9UHVDRF20w7PYI+y/6Ynefoezvwp3h2fMspOR4OWynSvMJXf
   artifact: RuDEX_light
-  draft: true
+  draft: false
   prerelease: false
   force_update: true
   on:
