@@ -826,6 +826,12 @@ class Exchange extends React.Component {
         return {isFrozen: false};
     }
 
+    _toggleMiniChart() {
+        SettingsActions.changeViewSetting({
+            miniDepthChart: !this.props.miniDepthChart
+        });
+    }
+
     render() {
         let { currentAccount, marketLimitOrders, marketCallOrders, marketData, activeMarketHistory,
             invertedCalls, starredMarkets, quoteAsset, baseAsset, lowestCallPrice,
@@ -1178,6 +1184,7 @@ class Exchange extends React.Component {
                                     )}
                                     headerStyle={{paddingTop: 0}}
                                     history={activeMarketHistory}
+                                    currentAccount={currentAccount}
                                     myHistory={currentAccount.get("history")}
                                     base={base}
                                     quote={quote}
@@ -1260,11 +1267,20 @@ class Exchange extends React.Component {
                                         {name: "change", index: 5}
                                     ]
                                 }
+                                findColumns={
+                                    [
+                                        {name: "market", index: 1},
+                                        {name: "issuer", index: 2},
+                                        {name: "vol", index: 3},
+                                        {name: "add", index: 4}
+                                    ]
+                                }
                                 current={`${quoteSymbol}_${baseSymbol}`}
                             />
                         </div>
-                        <div style={{padding: "0 0 40px 0"}} className="grid-block no-margin vertical shrink">
-                            <DepthHighChart
+                        <div style={{padding: !this.props.miniDepthChart ? 0 : "0 0 40px 0"}} className="grid-block no-margin vertical shrink">
+                            <div onClick={this._toggleMiniChart.bind(this)} className="exchange-content-header clickable" style={{textAlign: "left", paddingRight: 10}}>{this.props.miniDepthChart ? <span>&#9660;</span> : <span>&#9650;</span>}</div>
+                            {this.props.miniDepthChart ? <DepthHighChart
                                     marketReady={marketReady}
                                     orders={marketLimitOrders}
                                     showCallLimit={showCallLimit}
@@ -1288,7 +1304,7 @@ class Exchange extends React.Component {
                                     hasPrediction={hasPrediction}
                                     noText={true}
                                     theme={this.props.settings.get("themes")}
-                                />
+                                /> : null}
                         </div>
                     </div>
 
