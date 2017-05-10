@@ -169,13 +169,21 @@ class Header extends React.Component {
                                 <a><TotalBalanceValue.AccountWrapper label="exchange.balance" accounts={[this.props.currentAccount]} inHeader={true}/></a>
                             </div>) : null;
 
-        let dashboard = (
+        let logoLink = (
             <a
                 style={{paddingTop: 12, paddingBottom: 12, paddingLeft: 12, paddingRight: 12}}
-                className={cnames({active: active === "/" || active.indexOf("dashboard") !== -1})}
-                onClick={this._onNavigate.bind(this, "/dashboard")}
+                className={cnames({active: false})}
+                href="https://rudex.org"
             >
                 <img style={{margin: 0, height: 40}} src={logo} />
+            </a>
+        );
+
+        let dashboard = (
+            <a
+                className={cnames({active: active === "/" || active.indexOf("dashboard") !== -1})}
+                onClick={this._onNavigate.bind(this, "/dashboard")}
+            ><Translate component="span" content="header.dashboard" />
             </a>
         );
 
@@ -261,6 +269,11 @@ class Header extends React.Component {
                         </a>
                     </li>
                     <li>
+                        <a href onClick={this._onNavigate.bind(this, "/settings")}>
+                            <span><Translate content="header.settings" /></span>
+                        </a>
+                    </li>
+                    <li>
                         <a href onClick={this._onNavigate.bind(this, "/explorer")}>
                             <span><Translate content="header.explorer" /></span>
                         </a>
@@ -322,6 +335,8 @@ class Header extends React.Component {
                 </div> : null}
                 <div className="grid-block show-for-medium">
                     <ul className="menu-bar">
+
+                        <li>{logoLink}</li>
                         <li>{dashboard}</li>
                         {!currentAccount ? null : <li><Link to={`/account/${currentAccount}/overview`} className={cnames({active: active.indexOf("account/") !== -1})}><Translate content="header.account" /></Link></li>}
                         {currentAccount || myAccounts.length ? <li><a className={cnames({active: active.indexOf("transfer") !== -1})} onClick={this._onNavigate.bind(this, "/transfer")}><Translate component="span" content="header.payments" /></a></li> : null}
