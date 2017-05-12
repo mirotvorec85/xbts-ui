@@ -269,11 +269,6 @@ class Header extends React.Component {
                         </a>
                     </li>
                     <li>
-                        <a href onClick={this._onNavigate.bind(this, "/settings")}>
-                            <span><Translate content="header.settings" /></span>
-                        </a>
-                    </li>
-                    <li>
                         <a href onClick={this._onNavigate.bind(this, "/explorer")}>
                             <span><Translate content="header.explorer" /></span>
                         </a>
