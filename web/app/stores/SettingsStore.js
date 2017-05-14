@@ -152,7 +152,10 @@ class SettingsStore {
                 markets_4018d784: [ // BTS MAIN NET
                     "BTS", "RUBLE", "USD", "EUR", "CNY", "GOLD", "SILVER",
                     "OPEN.BTC", "OPEN.DASH", "OPEN.ETH",
-                    "OPEN.STEEM", "OPEN.SBD", "GOLOS"
+                    "OPEN.STEEM", "OPEN.SBD", "GOLOS",
+                    "OBITS", "ICOO", "BLOCKPAY", "BTSR",
+                    "OPEN.DGD", "OPEN.DOGE", "OPEN.LTC", "OPEN.GRC",
+                    "OPEN.MAID", "OPEN.LISK", "OPEN.WAVES", "OPEN.ARDR"
                 ],
                 markets_39f5e2ed: [ // TESTNET
                     "PEG.FAKEUSD", "BTWTY"
