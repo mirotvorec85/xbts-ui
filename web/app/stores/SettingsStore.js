@@ -64,6 +64,7 @@ class SettingsStore {
             apiServer: [],
             unit: [
                 CORE_ASSET,
+                "RUBLE",
                 "USD",
                 "CNY",
                 "BTC",

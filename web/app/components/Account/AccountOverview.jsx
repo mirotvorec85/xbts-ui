@@ -42,6 +42,7 @@ class AccountOverview extends React.Component {
             bridgeAsset: null,
             alwaysShowAssets: [
                 "BTS",
+                "RUBLE",
                 "USD",
                 "CNY",
                 "OPEN.BTC",
