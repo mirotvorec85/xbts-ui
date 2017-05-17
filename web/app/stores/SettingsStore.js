@@ -156,7 +156,8 @@ class SettingsStore {
                     "OPEN.STEEM", "OPEN.SBD", "GOLOS",
                     "OBITS", "ICOO", "BLOCKPAY", "BTSR",
                     "OPEN.DGD", "OPEN.DOGE", "OPEN.LTC", "OPEN.GRC",
-                    "OPEN.MAID", "OPEN.LISK", "OPEN.WAVES", "OPEN.ARDR"
+                    "OPEN.MAID", "OPEN.LISK", "OPEN.WAVES", "OPEN.ARDR",
+                    "FUNC"
                 ],
                 markets_39f5e2ed: [ // TESTNET
                     "PEG.FAKEUSD", "BTWTY"
