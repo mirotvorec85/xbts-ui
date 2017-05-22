@@ -37,7 +37,7 @@ class SettingsStore {
             locale: "ru",
             apiServer: settingsAPIs.DEFAULT_WS_NODE,
             faucet_address: settingsAPIs.DEFAULT_FAUCET,
-            unit: CORE_ASSET,
+            unit: "RUBLE",
             showSettles: false,
             showAssetPercent: false,
             walletLockTimeout: 60 * 10,
