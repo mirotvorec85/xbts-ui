@@ -152,7 +152,7 @@ class AccountDepositWithdraw extends React.Component {
                             <div className="service-selector">
                                 <ul className="button-group segmented no-margin">
                                     <li onClick={this.toggleBTService.bind(this, "bridge")} className={btService === "bridge" ? "is-active" : ""}><a><Translate content="gateway.bridge" /></a></li>
-                                    <li onClick={this.toggleBTService.bind(this, "gateway")} className={btService === "gateway" ? "is-active" : ""}><a><Translate content="gateway.gateway" /></a></li>
+                                    {/* <li onClick={this.toggleBTService.bind(this, "gateway")} className={btService === "gateway" ? "is-active" : ""}><a><Translate content="gateway.gateway" /></a></li> */}
                                 </ul>
                             </div>
 
