@@ -3,7 +3,12 @@ image: Visual Studio 2015
 environment:
   nodejs_version: "6"
 
-# Install scripts. (runs after repo cloning)
+branches:
+  only:
+    - rudex
+    - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+  
+  # Install scripts. (runs after repo cloning)
 install:
   # Get the latest stable version of Node.js or io.js
   - ps: Install-Product node $env:nodejs_version
