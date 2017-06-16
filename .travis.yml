@@ -5,6 +5,11 @@ language: node_js
 node_js:
   - "6"
 
+branches:
+  only:
+    - rudex
+    - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+
 matrix:
   include:
     - os: osx
