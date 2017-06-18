@@ -17,6 +17,7 @@ import SettingsActions from "actions/SettingsActions";
 import { Apis } from "bitsharesjs-ws";
 import { settingsAPIs } from "api/apiConfig";
 import BitKapital from "../DepositWithdraw/BitKapital";
+import RuDEX from "../DepositWithdraw/RuDEX";
 import GatewayStore from "stores/GatewayStore";
 import GatewayActions from "actions/GatewayActions";
 import AccountImage from "../Account/AccountImage";
@@ -225,6 +226,11 @@ class AccountDepositWithdraw extends React.Component {
         serList.push({
             name: "BitKapital",
             template: (<BitKapital viewSettings={this.props.viewSettings} account={account}/>)
+        });
+
+        serList.push({
+            name: "RuDEX",
+            template: (<RuDEX viewSettings={this.props.viewSettings} account={account}/>)
         });
 
         return serList;
