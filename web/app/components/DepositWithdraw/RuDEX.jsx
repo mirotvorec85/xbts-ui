@@ -26,7 +26,7 @@ class RuDEX extends React.Component {
             "user": account,
             "code": code
         };
-        let redeem_code_promise = fetch('http://127.0.0.1:3000/codes/redeem',
+        let redeem_code_promise = fetch('https://demogate.rudex.org/codes/redeem',
             {
                 method: 'POST',
                 headers: new Headers({
