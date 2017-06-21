@@ -28,7 +28,7 @@ class Dashboard extends React.Component {
                 ["BTS", "SILVER"],
                 ["BTS", "OPEN.STEEM"],
                 ["BTS", "OPEN.SBD"],
-                ["BTS", "GOLOS"]
+                ["BTS", "OPEN.GOLOS"]
             ],
             "39f5e2ed": [
                 ["TEST", "PEG.FAKEUSD"],
