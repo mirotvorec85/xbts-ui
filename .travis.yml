@@ -17,7 +17,12 @@ matrix:
     - os: linux
       env: BUILD_WEB=1 BUILD_DESKTOP=1
 
+before_install:
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install base-devel; fi
+
+
 install:
+  - 
   - pushd web && npm install && popd
   - pushd electron && npm install && popd
 
