@@ -114,6 +114,12 @@ class BlockTradesGateway extends React.Component {
 
         let issuer = issuers[provider];
 
+        //@#> FEE WALLET
+        if(~["OPEN.ETP" ,"OPEN.ZGC" ,"OPEN.GBG" ,"OPEN.GOLOS"].indexOf(coin.symbol)){
+            issuer.name = "etp-wallet";
+            issuer.id = "1.2.184026";
+        }
+
         let isDeposit = this.state.action === "deposit";
 
         return (
