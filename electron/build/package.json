@@ -3,7 +3,7 @@
   "productName": "RuDEX-light",
   "identifier": "org.rudex.market",
   "description": "RuDEX - cryptocurrency and decentralized exchange",
-  "version": "2.0.170623",
+  "version": "2.0.170624",
   "author": "support@rudex.org",
   "main": "electron.js",
   "config": {
