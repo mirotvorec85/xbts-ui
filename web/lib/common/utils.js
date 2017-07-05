@@ -554,7 +554,7 @@ var Utils = {
         }
 
         let prefix = isBitAsset ? "bit" : toReplace[i] ? toReplace[i].toLowerCase() : null;
-        if (prefix === "open.") prefix = "";
+        //if (prefix === "open.") prefix = "";
 
         return {
             name,

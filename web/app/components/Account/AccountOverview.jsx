@@ -265,6 +265,8 @@ class AccountOverview extends React.Component {
                 if (!!this.props.bridgeCoins.get(asset)) {
                     isAvailable = true;
                 }
+                if (asset === "RUBLE")
+                    isAvailable = true;
                 let keep = true;
                 balances.forEach(a => {
                     if (a.key === asset) keep = false;

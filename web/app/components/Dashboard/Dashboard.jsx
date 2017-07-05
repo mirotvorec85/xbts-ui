@@ -28,7 +28,15 @@ class Dashboard extends React.Component {
                 ["BTS", "SILVER"],
                 ["BTS", "OPEN.STEEM"],
                 ["BTS", "OPEN.SBD"],
-                ["BTS", "OPEN.GOLOS"]
+                ["BTS", "OPEN.GOLOS"],
+                ["BTS", "OPEN.GBG"],
+                ["BTS", "OPEN.LTC"],
+                ["BTS", "BLOCKPAY"],
+                ["BTS", "OPEN.GRC"],
+                ["BTS", "ICOO"],
+                ["BTS", "OBITS"],
+                ["BTS", "PPY"],
+                ["BTS", "HERO"],
             ],
             "39f5e2ed": [
                 ["TEST", "PEG.FAKEUSD"],

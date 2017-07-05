@@ -157,7 +157,8 @@ class SettingsStore {
                     "OBITS", "ICOO", "BLOCKPAY", "BTSR",
                     "OPEN.DGD", "OPEN.DOGE", "OPEN.LTC", "OPEN.GRC",
                     "OPEN.MAID", "OPEN.LISK", "OPEN.WAVES", "OPEN.ARDR",
-                    "FUNC", "HERO"
+                    "FUNC", "HERO", "OPEN.GOLOS", "OPEN.GBG", "OPEN.LTC",
+                    "BLOCKPAY", "OPEN.GRC", "ICOO", "OBITS", "PPY", "HERO"
                 ],
                 markets_39f5e2ed: [ // TESTNET
                     "PEG.FAKEUSD", "BTWTY"
@@ -166,7 +167,7 @@ class SettingsStore {
 
             let bases = {
                 markets_4018d784: [ // BTS MAIN NET
-                    "BTS", "RUBLE", "OPEN.BTC", "USD"
+                    "BTS", "RUBLE", "OPEN.BTC", "USD", "CNY"
                 ],
                 markets_39f5e2ed: [ // TESTNET
                     "TEST"
