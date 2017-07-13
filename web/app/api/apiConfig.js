@@ -8,6 +8,11 @@ export const blockTradesAPIs = {
     ESTIMATE_OUTPUT: "/estimate-output-amount"
 };
 
+export const rudexAPIs = {
+    BASE: "https://gateway.rudex.org/api/v0",
+    COINS_LIST: "/coins"
+};
+
 export const settingsAPIs = {
     DEFAULT_WS_NODE: "wss://fake.automatic-selection.com",
     WS_NODE_LIST: [

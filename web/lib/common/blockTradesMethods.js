@@ -6,7 +6,7 @@ export function fetchCoins(url = (blockTradesAPIs.BASE_OL + blockTradesAPIs.COIN
     return fetch(url).then(reply => reply.json().then(result => {
         return result;
     })).catch(err => {
-        console.log("error fetching blocktrades list of coins", err, url);
+        console.log("error fetching blocktblockTradesMethods.jsrades list of coins", err, url);
     });
 }
 

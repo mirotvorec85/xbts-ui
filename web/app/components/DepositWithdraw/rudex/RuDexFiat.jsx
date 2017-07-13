@@ -1,5 +1,5 @@
 import React from "react";
-import BindToChainState from "../Utility/BindToChainState";
+import BindToChainState from "../../Utility/BindToChainState";
 import Translate from "react-translate-component";
 import cnames from "classnames";
 

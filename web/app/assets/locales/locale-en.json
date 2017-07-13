@@ -1217,6 +1217,7 @@
     "intermediate": "Intermediate account",
     "asset_to_withdraw": "Asset to withdraw:",
     "support_block": "For support, please contact OpenLedger at:",
+    "rudex_support_block": "For support, please contact RuDEX at:",
     "valid_address": "Please enter a valid %(coin_type)s address",
     "withdraw_coin": "Withdraw %(coin)s (%(symbol)s)",
 	  "convert_coin": "Convert to %(coin)s (%(symbol)s)",
