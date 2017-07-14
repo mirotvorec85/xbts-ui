@@ -6,29 +6,23 @@ let inProgress = {};
 
 class GatewayActions {
 
-    fetchCoins({backer = "OPEN", url = undefined} = {}) {
-        if (!inProgress["fetchCoins_" + backer]) {
-            inProgress["fetchCoins_" + backer] = true;
-            return (dispatch) => {
-                Promise.all([
-                    fetchCoins(url),
-                    fetchBridgeCoins(blockTradesAPIs.BASE_OL),
-                    getActiveWallets(url)
-                ]).then(result => {
-                    delete inProgress["fetchCoins_" + backer];
-                    let [coins, tradingPairs, wallets] = result;
-                    dispatch({
-                        coins: coins,
-                        backedCoins: getBackedCoins({allCoins: coins, tradingPairs: tradingPairs, backer: backer}).filter(a => {
-                            return wallets.indexOf(a.walletType) !== -1;
-                        }),
-                        backer
-                    });
+    fetchCoins({ backer, url } = {}) {
+        return (dispatch) => {
+            Promise.all([
+                fetchCoins(url),
+                getActiveWallets(blockTradesAPIs.BASE_OL + blockTradesAPIs.ACTIVE_WALLETS)
+            ]).then(result => {
+                let [coins, wallets] = result;
+                // coins = test;
+                dispatch({
+                    coins: coins,
+                    backedCoins: getBackedCoins({ allCoins: coins, backer: backer }).filter(a => {
+                        return wallets.indexOf(a.walletType) !== -1;
+                    }),
+                    backer
                 });
-            };
-        } else {
-            return {};
-        }
+            });
+        };
     }
 
     fetchBridgeCoins(url = undefined) {
@@ -37,8 +31,8 @@ class GatewayActions {
             return (dispatch) => {
                 Promise.all([
                     fetchCoins(url),
-                    fetchBridgeCoins(blockTradesAPIs.BASE),
-                    getActiveWallets(url)
+                    fetchBridgeCoins(url),
+                    getActiveWallets(blockTradesAPIs.BASE + blockTradesAPIs.ACTIVE_WALLETS)
                 ]).then(result => {
                     delete inProgress["fetchBridgeCoins"];
                     let [coins, bridgeCoins, wallets] = result;
