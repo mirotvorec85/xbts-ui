@@ -10,7 +10,8 @@ export const blockTradesAPIs = {
 
 export const rudexAPIs = {
     BASE: "https://gateway.rudex.org/api/v0",
-    COINS_LIST: "/coins"
+    COINS_LIST: "/coins",
+    NEW_DEPOSIT_ADDRESS: "/new-deposit-address"
 };
 
 export const settingsAPIs = {
