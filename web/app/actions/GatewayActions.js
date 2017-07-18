@@ -1,6 +1,6 @@
 import alt from "alt-instance";
 import { fetchCoins, fetchBridgeCoins, getBackedCoins, getActiveWallets } from "common/blockTradesMethods";
-import {blockTradesAPIs} from "api/apiConfig";
+import { blockTradesAPIs } from "api/apiConfig";
 
 let inProgress = {};
 
@@ -13,7 +13,6 @@ class GatewayActions {
                 getActiveWallets(blockTradesAPIs.BASE_OL + blockTradesAPIs.ACTIVE_WALLETS)
             ]).then(result => {
                 let [coins, wallets] = result;
-                // coins = test;
                 dispatch({
                     coins: coins,
                     backedCoins: getBackedCoins({ allCoins: coins, backer: backer }).filter(a => {
