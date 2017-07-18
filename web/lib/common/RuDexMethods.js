@@ -19,7 +19,7 @@ export function requestDepositAddress({inputCoinType, outputCoinType, outputAddr
 
     let body_string = JSON.stringify(body);
 
-    fetch( url + "/simple-api/initiate-trade", {
+    fetch( url + rudexAPIs.NEW_DEPOSIT_ADDRESS, {
         method:"post",
         headers: new Headers( { "Accept": "application/json", "Content-Type":"application/json" } ),
         body: body_string
