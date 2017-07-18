@@ -15,7 +15,7 @@ import AccountStore from "stores/AccountStore";
 import SettingsStore from "stores/SettingsStore";
 import SettingsActions from "actions/SettingsActions";
 import {Apis} from "bitsharesjs-ws";
-import {settingsAPIs} from "api/apiConfig";
+import { settingsAPIs, blockTradesAPIs, rudexAPIs } from "api/apiConfig";
 import BitKapital from "../DepositWithdraw/BitKapital";
 import RuDexGateway from "../DepositWithdraw/rudex/RuDexGateway";
 import RuDexFiat from "../DepositWithdraw/rudex/RuDexFiat";
@@ -380,9 +380,9 @@ class DepositStoreWrapper extends React.Component {
 
     componentWillMount() {
         if (Apis.instance().chain_id.substr(0, 8) === "4018d784") { // Only fetch this when on BTS main net
-            GatewayActions.fetchCoins.defer(); // Openledger
-            GatewayActions.fetchCoins.defer({backer: "RUDEX"}); // RuDEX
-            GatewayActions.fetchCoins.defer({backer: "TRADE"}); // Blocktrades
+            GatewayActions.fetchCoins.defer({backer: "RUDEX", url:rudexAPIs.BASE+rudexAPIs.COINS_LIST}); // RuDEX
+            GatewayActions.fetchCoins.defer({backer: "OPEN", url:blockTradesAPIs.BASE_OL+blockTradesAPIs.COINS_LIST}); // Openledger
+            GatewayActions.fetchCoins.defer({backer: "TRADE", url:blockTradesAPIs.BASE+blockTradesAPIs.COINS_LIST}); // Blocktrades
         }
     }
 
