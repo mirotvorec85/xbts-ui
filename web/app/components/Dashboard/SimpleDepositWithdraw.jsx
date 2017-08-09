@@ -321,7 +321,6 @@ class DepositWithdrawContent extends React.Component {
             }
         }
 
-        console.log(this.props.sender.get("name"));
         return (
             <div className={!addressValue ? "no-overflow" : ""}>
                 <p><Translate unsafe content="gateway.add_funds" account={this.props.sender.get("name")} /></p>
