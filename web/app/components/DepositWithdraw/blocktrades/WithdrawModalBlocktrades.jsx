@@ -8,7 +8,7 @@ import BalanceComponent from "components/Utility/BalanceComponent";
 import counterpart from "counterpart";
 import AmountSelector from "components/Utility/AmountSelector";
 import AccountActions from "actions/AccountActions";
-import Modal from "react-foundation-apps/src/modal";
+import BaseModal from "../../Modal/BaseModal";
 import ZfApi from "react-foundation-apps/src/utils/foundation-api";
 import { validateAddress, WithdrawAddresses } from "common/blockTradesMethods";
 import AccountStore from "stores/AccountStore";
@@ -332,25 +332,22 @@ class WithdrawModalBlocktrades extends React.Component {
         {
             if (!this.state.withdraw_address_is_valid) {
 
-                invalid_address_message = <div className="has-error" style={{paddingTop: 10}}><Translate content="gateway.valid_address" coin_type={this.props.output_coin_type} /></div>;
-                confirmation =
-                    <Modal id={withdrawModalId} overlay={true}>
+            invalid_address_message = <div className="has-error" style={{paddingTop: 10}}><Translate content="gateway.valid_address" coin_type={this.props.output_coin_type} /></div>;
+		    confirmation =
+			    <BaseModal id={withdrawModalId} overlay={true}>
+                    <br/>
+					<label><Translate content="modal.confirmation.title"/></label>
+		 		    <br/>
+				    <div className="content-block">
+                        <input type="submit" className="button"
+                        onClick={this.onSubmitConfirmation.bind(this)}
+                        value={counterpart.translate("modal.confirmation.accept")} />
                         <Trigger close={withdrawModalId}>
                             <a href="#" className="close-button">&times;</a>
                         </Trigger>
-                        <br/>
-                        <label><Translate content="modal.confirmation.title"/></label>
-                        <br/>
-                        <div className="content-block">
-                            <input type="submit" className="button"
-                                   onClick={this.onSubmitConfirmation.bind(this)}
-                                   value={counterpart.translate("modal.confirmation.accept")} />
-                            <Trigger close={withdrawModalId}>
-                                <a href className="secondary button"><Translate content="modal.confirmation.cancel" /></a>
-                            </Trigger>
-                        </div>
-                    </Modal>;
-            }
+                    </div>
+		        </BaseModal>;
+		    }
             // if (this.state.withdraw_address_is_valid)
             //   invalid_address_message = <Icon name="checkmark-circle" className="success" />;
             // else
