@@ -97,8 +97,6 @@ class RuDexGateway extends React.Component {
 
         let supportEmail = "support@rudex.org";
 
-        console.log("X:", coin);
-
         return (
             <div style={this.props.style}>
                 <div className="grid-block no-margin vertical medium-horizontal no-padding">
