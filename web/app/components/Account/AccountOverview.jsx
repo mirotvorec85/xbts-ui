@@ -176,9 +176,9 @@ class AccountOverview extends React.Component {
             const hasOnOrder = !!orders[asset_type];
             // FIXME: temporary disabled deposit/withdraw from account screen
             //  because wrong form used here
-            const canDepositWithdraw = !!this.props.backedCoins.get("OPEN", []).find(a => a.symbol === asset.get("symbol"));
+            const canDepositWithdraw = false;//!!this.props.backedCoins.get("OPEN", []).find(a => a.symbol === asset.get("symbol"));
             const canWithdraw = canDepositWithdraw && (hasBalance && balanceObject.get("balance") != 0);
-            const canBuy = !!this.props.bridgeCoins.get(symbol);
+            const canBuy = false;//!!this.props.bridgeCoins.get(symbol);
 
             let onOrders = hasOnOrder ? <FormattedAsset amount={orders[asset_type]} asset={asset_type} /> : null;
 
@@ -280,7 +280,7 @@ class AccountOverview extends React.Component {
                     const includeAsset = !hiddenAssets.includes(asset.get("id"));
 
                     const canDepositWithdraw = !!this.props.backedCoins.get("OPEN", []).find(a => a.symbol === asset.get("symbol"));
-                    const canBuy = !!this.props.bridgeCoins.get(asset.get("symbol"));
+                    const canBuy = false;//!!this.props.bridgeCoins.get(asset.get("symbol"));
 
                     const notCore = asset.get("id") !== "1.3.0";
                     let {market} = assetUtils.parseDescription(asset.getIn(["options", "description"]));
