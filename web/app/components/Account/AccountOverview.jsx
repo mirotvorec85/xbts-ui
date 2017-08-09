@@ -176,7 +176,7 @@ class AccountOverview extends React.Component {
             const hasOnOrder = !!orders[asset_type];
             // FIXME: temporary disabled deposit/withdraw from account screen
             //  because wrong form used here
-            const canDepositWithdraw = false;//!!this.props.backedCoins.get("OPEN", []).find(a => a.symbol === asset.get("symbol"));
+            const canDepositWithdraw = !!this.props.backedCoins.get("OPEN", []).find(a => a.symbol === asset.get("symbol"));
             const canWithdraw = canDepositWithdraw && (hasBalance && balanceObject.get("balance") != 0);
             const canBuy = !!this.props.bridgeCoins.get(symbol);
 

@@ -34,7 +34,7 @@ class DepositWithdrawContent extends React.Component {
         coreAsset: "1.3.0",
         globalObject: "2.0.0",
         issuer: "openledger-wallet"
-    }
+    };
 
     constructor(props) {
         super();
@@ -153,11 +153,12 @@ class DepositWithdrawContent extends React.Component {
 
     _updateAmount(amount) {
         let fee = this._getFee();
+        let gateFee = parseFloat(this.props.gateFee);
         let feeToSubtract = this.state.to_withdraw.asset_id !== fee.asset ? 0 : fee.amount;
         let fee_precision = this.state.to_withdraw.precision;
         this.state.to_withdraw.setAmount({sats: amount});
 
-        let total_minus_fee = this.state.to_withdraw.getAmount({real: true}) - (feeToSubtract/Math.pow(10,fee_precision))*1.09;
+        let total_minus_fee = this.state.to_withdraw.getAmount({real: true}) - gateFee - (feeToSubtract/Math.pow(10,fee_precision))*1.095; //@#>
 
         this.setState({
             withdrawValue: total_minus_fee<0?0:total_minus_fee,
@@ -299,7 +300,8 @@ class DepositWithdrawContent extends React.Component {
 
     _renderDeposit() {
         const {receive_address} = this.state;
-        const {replacedName} = utils.replaceName(this.props.asset.get("symbol"), !!this.props.asset.get("bitasset"));
+        const {name: replacedName} = utils.replaceName(this.props.asset.get("symbol"), !!this.props.asset.get("bitasset"));
+
         let assetName = replacedName;
         const hasMemo = receive_address && "memo" in receive_address && receive_address.memo;
         const addressValue = receive_address && receive_address.address || "";
@@ -319,6 +321,7 @@ class DepositWithdrawContent extends React.Component {
             }
         }
 
+        console.log(this.props.sender.get("name"));
         return (
             <div className={!addressValue ? "no-overflow" : ""}>
                 <p><Translate unsafe content="gateway.add_funds" account={this.props.sender.get("name")} /></p>
@@ -366,7 +369,7 @@ class DepositWithdrawContent extends React.Component {
     }
 
     _renderCurrentBalance() {
-        const {replacedName} = utils.replaceName(this.props.asset.get("symbol"), !!this.props.asset.get("bitasset"));
+        const {name: replacedName} = utils.replaceName(this.props.asset.get("symbol"), !!this.props.asset.get("bitasset"));
         let assetName = replacedName;
         const isDeposit = this.props.action === "deposit";
 

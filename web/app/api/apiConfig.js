@@ -1,6 +1,6 @@
 export const blockTradesAPIs = {
     BASE: "https://api.blocktrades.us/v2",
-    BASE_OL: "https://openledger.info/coins/api/v0/ol/support",
+    BASE_OL: "https://ol-api1.openledger.info/api/v0/ol/support",
     COINS_LIST: "/coins",
     ACTIVE_WALLETS: "/active-wallets",
     TRADING_PAIRS: "/trading-pairs",
@@ -33,5 +33,6 @@ export const settingsAPIs = {
         {url: "wss://node.testnet.bitshares.eu", location: "Public Testnet Server (Frankfurt, Germany)"}
     ],
     DEFAULT_FAUCET: "https://faucet.rudex.org",
+    OPENLEDGER_FACET_REGISTR: "https://openledger.info/v/",
     RPC_URL: "https://openledger.info/api/"
 };
