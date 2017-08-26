@@ -13,6 +13,7 @@ import AssetName from "components/Utility/AssetName";
 import LinkToAccountById from "components/Blockchain/LinkToAccountById";
 import {requestDepositAddress} from "common/RuDexMethods";
 import { rudexAPIs } from "api/apiConfig";
+import utils from "common/utils";
 
 class RuDexGatewayDepositRequest extends React.Component {
     static propTypes = {
@@ -29,7 +30,9 @@ class RuDexGatewayDepositRequest extends React.Component {
         deprecated_in_favor_of: ChainTypes.ChainAsset,
         deprecated_message: React.PropTypes.string,
         action: React.PropTypes.string,
-        supports_output_memos: React.PropTypes.bool.isRequired
+        supports_output_memos: React.PropTypes.bool.isRequired,
+        min_amount: React.PropTypes.number,
+        asset_precision: React.PropTypes.number
     };
 
     constructor(props) {
@@ -228,6 +231,9 @@ class RuDexGatewayDepositRequest extends React.Component {
                     <div className="small-12 medium-7">
                         <Translate component="h4" content="gateway.deposit_inst" />
                         <label className="left-label"><Translate content="gateway.deposit_to" asset={this.props.deposit_asset} />:</label>
+                        <label className="left-label"><b><Translate content="gateway.rudex_min_amount"
+                                                                 minAmount={utils.format_number(this.props.min_amount / utils.get_asset_precision(this.props.asset_precision), this.props.asset_precision, false)}
+                                                                 symbol={this.props.deposit_asset_name}/></b></label>
                         <div style={{padding: "10px 0", fontSize: "1.1rem"}}>
                             <table className="table">
                                 <tbody>
@@ -310,6 +316,8 @@ class RuDexGatewayDepositRequest extends React.Component {
                                 output_supports_memos={this.props.supports_output_memos}
                                 memo_prefix={withdraw_memo_prefix}
                                 modal_id={withdraw_modal_id}
+                                min_amount={this.props.min_amount}
+                                asset_precision={this.props.asset_precision}
                                 balance={this.props.account.get("balances").toJS()[this.props.receive_asset.get("id")]} />
                         </div>
                     </Modal>

@@ -1222,6 +1222,7 @@
     "asset_to_withdraw":"Актив для вывода:",
     "support_block":"Для получения поддержки, пожалуйста, свяжитесь с OpenLedger по адресу:",
     "rudex_support_block":"Для получения поддержки, пожалуйста, свяжитесь с RuDEX по адресу:",
+    "rudex_min_amount": "Минимальная сумма: %(minAmount)s %(symbol)s",
     "valid_address":"Пожалуйста, введите действительный %(coin_type)s адрес",
     "withdraw_coin":"Вывести %(coin)s (%(symbol)s)",
     "convert_coin":"Конвертировать в %(coin)s (%(symbol)s)",

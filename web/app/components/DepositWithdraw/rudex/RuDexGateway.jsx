@@ -142,6 +142,8 @@ class RuDexGateway extends React.Component {
                                 receive_asset={coin.symbol}
                                 receive_coin_type={coin.symbol.toLowerCase()}
                                 supports_output_memos={coin.memoSupport}
+                                min_amount={coin.minAmount}
+                                asset_precision={coin.precision}
                                 action={this.state.action}
                             />
                             <label className="left-label">Support</label>

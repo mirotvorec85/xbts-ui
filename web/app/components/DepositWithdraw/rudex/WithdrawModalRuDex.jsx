@@ -25,6 +25,8 @@ class WithdrawModalRuDex extends React.Component {
         output_wallet_type: React.PropTypes.string,
         output_supports_memos: React.PropTypes.bool.isRequired,
         amount_to_withdraw: React.PropTypes.string,
+        min_amount: React.PropTypes.number,
+        asset_precision: React.PropTypes.number,
         balance: ChainTypes.ChainObject
     };
 
@@ -127,12 +129,13 @@ class WithdrawModalRuDex extends React.Component {
                 let precision = utils.get_asset_precision(asset.get("precision"));
                 let amount = String.prototype.replace.call(this.state.withdraw_amount, /,/g, "");
 
+                console.log('Memo:', this.props.output_wallet_type + ":" + this.state.withdraw_address + (this.state.memo ? ":" + new Buffer(this.state.memo, "utf-8") : ""));
                 AccountActions.transfer(
                     this.props.account.get("id"),
                     this.props.issuer.get("id"),
                     parseInt(amount * precision, 10),
                     asset.get("id"),
-                    this.props.output_coin_type + ":" + this.state.withdraw_address + (this.state.memo ? ":" + new Buffer(this.state.memo, "utf-8") : "")
+                    this.props.output_wallet_type + ":" + this.state.withdraw_address + (this.state.memo ? ":" + new Buffer(this.state.memo, "utf-8") : "")
                 );
 
                 this.setState({
@@ -175,7 +178,7 @@ class WithdrawModalRuDex extends React.Component {
             this.props.issuer.get("id"),
             parseInt(amount * precision, 10),
             asset.get("id"),
-    	    this.props.output_coin_type + ":" + this.state.withdraw_address + (this.state.memo ? ":" + new Buffer(this.state.memo, "utf-8") : "")
+    	    this.props.output_wallet_type + ":" + this.state.withdraw_address + (this.state.memo ? ":" + new Buffer(this.state.memo, "utf-8") : "")
         );
     }
 
@@ -297,6 +300,7 @@ class WithdrawModalRuDex extends React.Component {
                         display_balance={balance}
                     />
                     {this.state.empty_withdraw_value ? <p className="has-error no-margin" style={{paddingTop: 10}}><Translate content="transfer.errors.valid" /></p>:null}
+                    <p className="no-margin" style={{paddingTop: 10}}><b><Translate content="gateway.rudex_min_amount" minAmount={utils.format_number(this.props.min_amount / utils.get_asset_precision(this.props.asset_precision), this.props.asset_precision, false)} symbol={this.props.output_coin_symbol}/></b></p>
 
                 </div>
                 <div className="content-block">
