@@ -233,7 +233,7 @@ class RuDexGatewayDepositRequest extends React.Component {
                         <label className="left-label"><Translate content="gateway.deposit_to" asset={this.props.deposit_asset} />:</label>
                         <label className="left-label"><b><Translate content="gateway.rudex_min_amount"
                                                                  minAmount={utils.format_number(this.props.min_amount / utils.get_asset_precision(this.props.asset_precision), this.props.asset_precision, false)}
-                                                                 symbol={this.props.deposit_asset_name}/></b></label>
+                                                                 symbol={this.props.deposit_coin_type}/></b></label>
                         <div style={{padding: "10px 0", fontSize: "1.1rem"}}>
                             <table className="table">
                                 <tbody>

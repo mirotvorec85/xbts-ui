@@ -543,7 +543,7 @@ var Utils = {
     },
 
     replaceName(name, isBitAsset = false) {
-        let toReplace = ["TRADE.", "OPEN.", "METAEX."];
+        let toReplace = ["TRADE.", "OPEN.", "METAEX.", "RUDEX."];
         let suffix = "";
         let i;
         for (i = 0; i < toReplace.length; i++) {

@@ -121,6 +121,31 @@ class AccountDepositWithdraw extends React.Component {
         let {olService, btService, rudexService} = this.state;
 
         serList.push({
+            name: "RuDEX",
+            template: (
+                <div className="content-block">
+                    <div className="service-selector">
+                        <ul className="button-group segmented no-margin">
+                            <li onClick={this.toggleRuDexService.bind(this, "gateway")}
+                                className={rudexService === "gateway" ? "is-active" : ""}><a><Translate
+                                content="gateway.gateway"/></a></li>
+                            <li onClick={this.toggleRuDexService.bind(this, "fiat")}
+                                className={rudexService === "fiat" ? "is-active" : ""}><a>Fiat</a></li>
+                        </ul>
+                    </div>
+
+                    {rudexService === "gateway" && rudexGatewayCoins.length ?
+                        <RuDexGateway account={account} coins={rudexGatewayCoins}/> : null}
+
+                    {rudexService === "fiat" ?
+                        <div>
+                            <RuDexFiat viewSettings={this.props.viewSettings} account={account}/>
+                        </div> : null}
+                </div>
+            )
+        });
+
+        serList.push({
             name: "Openledger (OPEN.X)",
             template: (
                 <div className="content-block">
@@ -258,31 +283,6 @@ class AccountDepositWithdraw extends React.Component {
         serList.push({
             name: "BitKapital",
             template: (<BitKapital viewSettings={this.props.viewSettings} account={account}/>)
-        });
-
-        serList.push({
-            name: "RuDEX",
-            template: (
-                <div className="content-block">
-                    <div className="service-selector">
-                        <ul className="button-group segmented no-margin">
-                            <li onClick={this.toggleRuDexService.bind(this, "gateway")}
-                                className={rudexService === "gateway" ? "is-active" : ""}><a><Translate
-                                content="gateway.gateway"/></a></li>
-                            <li onClick={this.toggleRuDexService.bind(this, "fiat")}
-                                className={rudexService === "fiat" ? "is-active" : ""}><a>Fiat</a></li>
-                        </ul>
-                    </div>
-
-                    {rudexService === "gateway" && rudexGatewayCoins.length ?
-                        <RuDexGateway account={account} coins={rudexGatewayCoins}/> : null}
-
-                    {rudexService === "fiat" ?
-                        <div>
-                            <RuDexFiat viewSettings={this.props.viewSettings} account={account}/>
-                        </div> : null}
-                </div>
-            )
         });
 
         return serList;
