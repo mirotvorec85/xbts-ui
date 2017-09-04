@@ -19,8 +19,8 @@ class Dashboard extends React.Component {
             "4018d784":[
                 ["BTS", "RUBLE"],
                 ["BTS", "PPY"],
-                ["BTS", "RUDEX.GOLOS"],
-                ["BTS", "RUDEX.GBG"],
+                ["RUBLE", "RUDEX.GOLOS"],
+                ["RUBLE", "RUDEX.GBG"],
                 ["BTS", "USD"],
                 ["BTS", "EUR"],
                 ["BTS", "CNY"],
