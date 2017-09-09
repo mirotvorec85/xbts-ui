@@ -9,23 +9,24 @@ export const blockTradesAPIs = {
 };
 
 export const rudexAPIs = {
-    BASE: "https://gateway.rudex.org/api/v0_1",
+    //BASE: "https://gateway.rudex.org/api/v0_1",
+    BASE: "http://localhost:3000/api/v0_1",
     COINS_LIST: "/coins",
     NEW_DEPOSIT_ADDRESS: "/new-deposit-address"
 };
 
 export const settingsAPIs = {
-    DEFAULT_WS_NODE: "wss://fake.automatic-selection.com",
+    DEFAULT_WS_NODE: "wss://node.market.rudex.org",
     WS_NODE_LIST: [
+        {url: "wss://node.market.rudex.org", location: "RuDEX, Germany"},
         {url: "wss://fake.automatic-selection.com", location: {translate: "settings.api_closest"}},
         {url: "ws://127.0.0.1:8090", location: "Locally hosted"},
-        {url: "wss://node.market.rudex.org", location: "RuDEX (Germany)"},
         {url: "wss://bitshares.openledger.info/ws", location: "Nuremberg, Germany"},
         {url: "wss://eu.openledger.info/ws", location: "Berlin, Germany"},
         {url: "wss://bit.btsabc.org/ws", location: "Hong Kong"},
         {url: "wss://bts.transwiser.com/ws", location: "Hangzhou, China"},
         {url: "wss://bitshares.dacplay.org/ws", location:  "Hangzhou, China"},
-        {url: "wss://bitshares.wancloud.io/ws", location:  "China"},
+        {url: "wss://bitshares-api.wancloud.io/ws", location:  "China"},
         {url: "wss://openledger.hk/ws", location: "Hong Kong"},
         {url: "wss://secure.freedomledger.com/ws", location: "Toronto, Canada"},
         {url: "wss://dexnode.net/ws", location: "Dallas, USA"},

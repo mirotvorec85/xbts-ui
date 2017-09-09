@@ -1,44 +1,52 @@
 import alt from "alt-instance";
-import {fetchCoins, fetchBridgeCoins, getBackedCoins, getActiveWallets} from "common/blockTradesMethods";
-import {fetchCoinList} from "common/RuDexMethods";
+import { fetchCoins, fetchCoinsSimple, fetchBridgeCoins, getBackedCoins, getActiveWallets } from "common/blockTradesMethods";
 import {blockTradesAPIs} from "api/apiConfig";
 
 let inProgress = {};
 
 class GatewayActions {
+    fetchCoinsSimple({backer = "RUDEX", url = undefined} = {}) {
 
-    fetchCoins({backer, url} = {}) {
-        if (backer === "RUDEX")
+        if (!inProgress["fetchCoinsSimple_" + backer]) {
+            inProgress["fetchCoinsSimple_" + backer] = true;
             return (dispatch) => {
-                Promise.all([
-                    fetchCoinList(url)
-                ]).then(result => {
-                    delete inProgress["fetchCoins_" + backer];
-                    let [coins] = result;
+                fetchCoinsSimple(url)
+                    .then(coins => {
+                    delete inProgress["fetchCoinsSimple_" + backer];
+
                     dispatch({
                         coins: coins,
-                        backedCoins: coins,
                         backer
                     });
                 });
             };
-        else
+        } else {
+            return {};
+        }
+    }
+
+    fetchCoins({backer = "OPEN", url = undefined} = {}) {
+        if (!inProgress["fetchCoins_" + backer]) {
+            inProgress["fetchCoins_" + backer] = true;
             return (dispatch) => {
-                Promise.all([
-                    fetchCoins(url),
-                    getActiveWallets(blockTradesAPIs.BASE_OL + blockTradesAPIs.ACTIVE_WALLETS)
+                Promise.all([fetchCoins(url),
+                    fetchBridgeCoins(blockTradesAPIs.BASE_OL),
+                    getActiveWallets(url)
                 ]).then(result => {
-                    let [coins, wallets] = result;
-                    // coins = test;
+                    delete inProgress["fetchCoins_" + backer];
+                    let [coins, tradingPairs, wallets] = result;
                     dispatch({
                         coins: coins,
-                        backedCoins: getBackedCoins({allCoins: coins, backer: backer}).filter(a => {
+                        backedCoins: getBackedCoins({allCoins: coins, tradingPairs: tradingPairs, backer: backer}).filter(a => {
                             return wallets.indexOf(a.walletType) !== -1;
                         }),
                         backer
                     });
                 });
             };
+        } else {
+            return {};
+        }
     }
 
     fetchBridgeCoins(url = undefined) {
@@ -47,8 +55,8 @@ class GatewayActions {
             return (dispatch) => {
                 Promise.all([
                     fetchCoins(url),
-                    fetchBridgeCoins(url),
-                    getActiveWallets(blockTradesAPIs.BASE + blockTradesAPIs.ACTIVE_WALLETS)
+                    fetchBridgeCoins(blockTradesAPIs.BASE),
+                    getActiveWallets(url)
                 ]).then(result => {
                     delete inProgress["fetchBridgeCoins"];
                     let [coins, bridgeCoins, wallets] = result;
