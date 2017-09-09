@@ -65,7 +65,6 @@ class RuDexGateway extends React.Component {
 
     render() {
         let {coins, account} = this.props;
-        console.log("X:", coins);
         let {activeCoin, action} = this.state;
 
         if (!coins.length) {

@@ -85,11 +85,11 @@ class AccountDepositWithdraw extends React.Component {
 
     toggleRuDEXService(service) {
         this.setState({
-            olService: service
+            rudexService: service
         });
 
         SettingsActions.changeViewSetting({
-            olService: service
+            rudexService: service
         });
     }
 
