@@ -46,4 +46,5 @@ require("file-loader?name=asset-symbols/[name].png!./oct.png");
 require("file-loader?name=asset-symbols/[name].png!./ltc.png");
 require("file-loader?name=asset-symbols/[name].png!./ppy.png");
 require("file-loader?name=asset-symbols/[name].png!./gbg.png");
+require("file-loader?name=asset-symbols/[name].png!./smoke.png");
 
