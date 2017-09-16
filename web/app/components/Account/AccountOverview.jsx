@@ -136,7 +136,7 @@ class AccountOverview extends React.Component {
             symbol = asset.get("symbol");
             if (symbol.indexOf("OPEN.") !== -1 && !market) market = "USD";
 
-            if (["PPY", "RUDEX.GOLOS", "RUDEX.GBG"].indexOf(symbol) != -1) market = "RUBLE";
+            if (["RUDEX.GOLOS", "RUDEX.GBG"].indexOf(symbol) != -1) market = "RUBLE";
 
             let preferredMarket = market ? market : core_asset ? core_asset.get("symbol") : "BTS";
 
