@@ -29,6 +29,7 @@ import Translate from "react-translate-component";
 import { Apis } from "bitsharesjs-ws";
 import GatewayActions from "actions/GatewayActions";
 import { checkFeeStatusAsync } from "common/trxHelper";
+import ChatBro from "../Chat/ChatBro"
 
 Highcharts.setOptions({
     global: {
@@ -833,6 +834,11 @@ class Exchange extends React.Component {
             miniDepthChart: !this.props.miniDepthChart
         });
     }
+    _toggleChat() {
+        SettingsActions.changeViewSetting({
+            viewChat: !this.props.viewChat
+        });
+    }
 
     render() {
         let { currentAccount, marketLimitOrders, marketCallOrders, marketData, activeMarketHistory,
@@ -1287,6 +1293,15 @@ class Exchange extends React.Component {
                                 current={`${quoteSymbol}_${baseSymbol}`}
                             />
                         </div>
+
+
+                        <div style={{padding: !this.props.viewChat ? 0 : "0 0 0 0"}} className="grid-block no-margin vertical shrink">
+                            <div onClick={this._toggleChat.bind(this)} className="exchange-content-header clickable" style={{textAlign: "left", paddingRight: 10}}>{this.props.viewChat ? <span>&#9660;</span> : <span>&#9650;</span>} <Translate content="exchange.trollbox"/></div>
+                            {this.props.viewChat ? <ChatBro
+                                height={"300px"}
+                            /> : null}
+                        </div>
+
                         <div style={{padding: !this.props.miniDepthChart ? 0 : "0 0 40px 0"}} className="grid-block no-margin vertical shrink">
                             <div onClick={this._toggleMiniChart.bind(this)} className="exchange-content-header clickable" style={{textAlign: "left", paddingRight: 10}}>{this.props.miniDepthChart ? <span>&#9660;</span> : <span>&#9650;</span>}</div>
                             {this.props.miniDepthChart ? <DepthHighChart
