@@ -169,8 +169,6 @@ class SettingsStore {
                     "OPEN.BTC",
                     "OPEN.DASH",
                     "OPEN.ETH",
-                    "OPEN.STEEM",
-                    "OPEN.SBD",
                     "OPEN.DGD",
                     "OPEN.DOGE",
                     "OPEN.LTC",
