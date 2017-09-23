@@ -75,7 +75,6 @@ class Footer extends React.Component {
                             { now - bt > 5 ? <TimeAgo ref="footer_head_timeago" time={block_time} /> : <span data-tip="Synchronized" data-place="left"><Icon name="checkmark-circle" />&nbsp;</span> }
                         </div>) :
                         <div className="grid-block shrink"><Translate content="footer.loading" /></div>}
-                    {<div className="grid-block shrink">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>}
                 </div>
             </div>
         );
