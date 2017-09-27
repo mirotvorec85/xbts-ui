@@ -48,3 +48,7 @@ require("file-loader?name=asset-symbols/[name].png!./ppy.png");
 require("file-loader?name=asset-symbols/[name].png!./gbg.png");
 require("file-loader?name=asset-symbols/[name].png!./muse.png");
 require("file-loader?name=asset-symbols/[name].png!./smoke.png");
+require("file-loader?name=asset-symbols/[name].png!./muse.png");
+require("file-loader?name=asset-symbols/[name].png!./ppy.png");
+require("file-loader?name=asset-symbols/[name].png!./stealth.png");
+require("file-loader?name=asset-symbols/[name].png!./kexcoin.png");
