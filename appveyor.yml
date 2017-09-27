@@ -1,42 +1,44 @@
-image: Visual Studio 2015
-
+version: 1.0.{build}
 environment:
-  nodejs_version: "6"
-
+  nodejs_version: "7"
 branches:
   only:
     - rudex
     - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
-  
-  # Install scripts. (runs after repo cloning)
 install:
   # Get the latest stable version of Node.js or io.js
   - ps: Install-Product node $env:nodejs_version
   # install modules
-  - cd web
   - npm install
-  - npm run build-win32
-  - cd ../electron
-  - npm install
-  - set PATH=%PATH%;"C:\Program Files (x86)\NSIS"
-  - npm run release
-  - cd ..
-
-# Don't actually build.
 build: off
-
+platform:
+  - x64
+cache:
+  - node_modules
+before_package:
+  echo Before package
+after_test:
+  - 7z a build\html5_history_dist_%APPVEYOR_REPO_TAG_NAME%.zip %APPVEYOR_BUILD_FOLDER%\build\dist -r
+  - 7z a build\hash_history_dist_%APPVEYOR_REPO_TAG_NAME%.zip %APPVEYOR_BUILD_FOLDER%\build\hash-history -r
+test_script:
+  - npm run package
+  - npm run build
+  - npm run build-hash
 artifacts:
-  - path: 'electron\releases\*.exe'
-    name: RuDEX_light
-
+  - path: build\binaries\*.exe
+    name: WindowsApp
+  - path: build\html5_history_dist_*.zip
+    name: html5_history_dist
+  - path: build\hash_history_dist_*.zip
+    name: hash_history_dist
 deploy:
-  description: 'New version'
   provider: GitHub
+  release: $(APPVEYOR_REPO_TAG_NAME)
+  description: "Automated release from Travis CI with added files from AppVeyor build"
   auth_token:
-    secure: mLCHor236wVtT7cy9UHVDRF20w7PYI+y/6Ynefoezvwp3h2fMspOR4OWynSvMJXf
-  artifact: RuDEX_light
+    secure: 6Ynefoezvwp3h2fMspOR4OWynSvMJXf
+  artifact: WindowsApp, html5_history_dist, hash_history_dist
   draft: true
-  prerelease: false
   force_update: true
   on:
     appveyor_repo_tag: true

@@ -1,42 +1,49 @@
-sudo: required
-dist: trusty
-
 language: node_js
-node_js:
-  - "6"
-
+node_js: 7
 branches:
   only:
     - rudex
     - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
-
 matrix:
   include:
-    - os: osx
-      env: BUILD_WEB=0 BUILD_DESKTOP=1
     - os: linux
-      env: BUILD_WEB=1 BUILD_DESKTOP=1
-
-before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get update; sudo apt-get install -y fakeroot; fi
-
-
-install:
-  - 
-  - pushd web && npm install && popd
-  - pushd electron && npm install && popd
-
-script:
-  - if [[ "$BUILD_WEB" == "1" ]]; then pushd web && npm run build && popd; fi
-  - if [[ "$BUILD_DESKTOP" == "1" ]]; then pushd web && npm run electron && popd && pushd electron && npm run release && popd; fi
-
+      dist: trusty
+    - os: osx
+      osx_image: xcode8.3
+env:
+  global:
+  - GITHUB_REPO: blckchnd/rudex-ui
+  - WALLET_REPO: blckchnd/staging.rudex.org
+  - CXX=g++-4.8
+  - secure: g+Q6hF5/zJnFlk1KrI0VABR+0efzGQqtIj3XlmqTLLWCyopxNQoBOsUsK5wBqLYA3LGMTtAsOLhhItx1CSF7/Ij/uDEOluXrxLYASziIzYF4cJ5YRALZ2k/mgrUw2dSSMZ7iL4DIDH/8UTiw0Ld1mrbHn+W/Dkgkct7egDJmn93N4tI1gKJ+AArSUNIFLKzEbPnjVHX9n64KIlNs8tuwfaXOzy8WdIWxsbwzRWmrcrBOG52o3MgtClaSO8pD13Cz1F3ES4clxH7s104EF5LttTmqz3bpM3CtRAjQ6rwX8E/x5K6L8GCpeeYM5cCPbttap1olD1f4GP+nSzqP/L1OKIuzCwK4qknlbfNlDG4WhsXDzTTmu1goQKuUU8w9K0aGTgI1NPJaxFrijZ/ofSOSHz3RH8xd6XLsFTyJllnY7/Y6oyul9RNd29yLcJVCko9tM1LoUhvEH45yWCTc4R5Ow+E4+IYTm0RniGQtgW+gPYquveALFPHzGkAwcShcYNDWpCyMQq3QWFu8GWK3PWp0GtLe02Rryjy08tasQR0DRRmFUESMSZPikyTM75M+bKrIFlsf9Q3H2uDc8Z4qcG5vrYFVdB6qeekwdkae4C1yC872AHvDvu+CnB1VZ7qvuDJkFBn3FrxzKgZ9rVWvVb7X6y+a95Wey32KzSqKvU+E4ec=
+cache:
+  directories:
+    - "node_modules"
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc-4.8
+    - g++-4.8
+    - icnsutils
+    - graphicsmagick
+    - xz-utils
+before_install: "./install.sh"
+script: "./build.sh"
+#after_success: "./deploy.sh"
 deploy:
   provider: releases
+  tag_name: $TRAVIS_TAG
+  name: $TRAVIS_TAG
+  body: Automated release from Travis CI with added files from AppVeyor build
   api_key:
     secure: "n+dpQi+eVJRGEEyAySYXOzIjS6ObFvGCGGdY2EhZhIMIB2U2FWIdzzhNBP4xLo2SnFgk9shLvIHHBQ5H5vyHaAICtbwQM5KLAHOXIEYzZ6q3G4/RJiSsNe7X/ZfQZ/cXZVIjOKXM2ZLQtMcV5uLZB3pwW5H2zBAYbPYjLtlIpbe4CI+RuPjVRYHks3Xf0RJifXINFwm4t9DMgV9AH0LD/N635IE1dA9eF4nr2naxSrpOVYgj1LETvZ21A9/cBAzfynB2gbva/ElWLKk07iiuWABSnyjo1dWDhCzcrQkuBGf+L5IkMcmZncN5zpscgzJQzTMYN9RYhvERqvKgc18O9QLaNcG06TlmulHwIGpbA3KNASShhckMq8WvWPQ0cPdLSIvHoql354Lz3CvCCwCdkf3+zGBgz3uA+U8p7seufSDseEFJ2On5kOO8ZsQyG0JBTVzjyQfh0EbNaxo40ZiZZTONP+C+TIS7owpVTS/2Ask7nNW7bWw9aQ61h82ub7IeCXoH2ouRRMDmikxMbRm254sEqnpCyaKO9XwApVFjgJn4mP8s7URxyVcLnMvfVmjkBJCSwmka0y1Z00oC2W4/FP3WsbIOelIQ+8Ew1M4YOoFC402H/XiQyW47Dm58UxzSZavRJMnUx5uCphxoKUUdkD+lMwB2K/4AaQFQM3GnJ9U="
   file_glob: true
   file: "electron/releases/*.{dmg,deb}"
   overwrite: true
   skip_cleanup: true
+  draft: true
   on:
+    repo: blckchnd/rudex-ui
     tags: true
