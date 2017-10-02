@@ -182,7 +182,8 @@ class SettingsStore {
                     "BTSR",
                     "FUNC",
                     "YOYOW",
-                    "SMOKE"
+                    "SMOKE",
+                    "OPEN.EOS"
                 ],
                 markets_39f5e2ed: [ // TESTNET
                     "PEG.FAKEUSD", "BTWTY"
