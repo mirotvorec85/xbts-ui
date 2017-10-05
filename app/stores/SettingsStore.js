@@ -83,8 +83,8 @@ class SettingsStore {
                 {translate: "no"}
             ],
             themes: [
-                //"darkTheme",
-                //"olDarkTheme",
+                "darkTheme",
+                "olDarkTheme",
                 "lightTheme"
 
             ],
