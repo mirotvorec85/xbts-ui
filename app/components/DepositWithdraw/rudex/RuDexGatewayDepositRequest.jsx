@@ -3,7 +3,7 @@ import Translate from "react-translate-component";
 import {ChainStore} from "bitsharesjs/es";
 import ChainTypes from "components/Utility/ChainTypes";
 import BindToChainState from "components/Utility/BindToChainState";
-import WithdrawModalRuDex from "./WithdrawModalRuDex";
+import RuDexWithdrawModal from "./RuDexWithdrawModal";
 import Modal from "react-foundation-apps/src/modal";
 import Trigger from "react-foundation-apps/src/trigger";
 import ZfApi from "react-foundation-apps/src/utils/foundation-api";
@@ -69,9 +69,9 @@ class RuDexGatewayDepositRequest extends React.Component {
     componentWillMount() {
         let account_name = this.props.account.get("name");
         let receive_address = this.deposit_address_cache.getCachedInputAddress(this.props.gateway, account_name, this.props.deposit_coin_type, this.props.receive_coin_type);
-        if (!receive_address) {
-            requestDepositAddress(this._getDepositObject());
-        }
+        // if (!receive_address) {
+        //     requestDepositAddress(this._getDepositObject());
+        // }
     }
 
     componentWillUnmount() {
@@ -147,10 +147,10 @@ class RuDexGatewayDepositRequest extends React.Component {
             receive_address = this.deposit_address_cache.getCachedInputAddress(this.props.gateway, account_name, this.props.deposit_coin_type, this.props.receive_coin_type);
         }
 
-        if( !receive_address ) {
-            requestDepositAddress(this._getDepositObject());
-            return emptyRow;
-        }
+        // if( !receive_address ) {
+        //     requestDepositAddress(this._getDepositObject());
+        //     return emptyRow;
+        // }
 
         let withdraw_modal_id = this.getWithdrawModalId();
         let deposit_address_fragment = null;
@@ -231,7 +231,7 @@ class RuDexGatewayDepositRequest extends React.Component {
                     <div className="small-12 medium-7">
                         <Translate component="h4" content="gateway.deposit_inst" />
                         <label className="left-label"><Translate content="gateway.deposit_to" asset={this.props.deposit_asset} />:</label>
-                        <label className="left-label"><b><Translate content="gateway.rudex_min_amount"
+                        <label className="left-label"><b><Translate content="gateway.rudex.min_amount"
                                                                  minAmount={utils.format_number(this.props.min_amount / utils.get_asset_precision(this.props.asset_precision), this.props.asset_precision, false)}
                                                                  symbol={this.props.deposit_coin_type}/></b></label>
                         <div style={{padding: "10px 0", fontSize: "1.1rem"}}>
@@ -305,7 +305,7 @@ class RuDexGatewayDepositRequest extends React.Component {
                         </Trigger>
                         <br/>
                         <div className="grid-block vertical">
-                            <WithdrawModalRuDex
+                            <RuDexWithdrawModal
                                 account={this.props.account.get("name")}
                                 issuer={this.props.issuer_account.get("name")}
                                 asset={this.props.receive_asset.get("symbol")}

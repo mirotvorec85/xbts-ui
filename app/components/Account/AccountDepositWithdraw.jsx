@@ -72,6 +72,16 @@ class AccountDepositWithdraw extends React.Component {
         });
     }
 
+    toggleRuDEXService(service) {
+        this.setState({
+            rudexService: service
+        });
+
+        SettingsActions.changeViewSetting({
+            rudexService: service
+        });
+    }
+
     toggleBTService(service) {
         this.setState({
             btService: service
@@ -268,13 +278,13 @@ class AccountDepositWithdraw extends React.Component {
         let rudexGatewayCoins = this.props.rudexBackedCoins.map(coin => {
             return coin;
         })
-            .sort((a, b) => {
-                if (a.symbol < b.symbol)
-                    return -1;
-                if (a.symbol > b.symbol)
-                    return 1;
-                return 0;
-            });
+        .sort((a, b) => {
+            if (a.symbol < b.symbol)
+                return -1;
+            if (a.symbol > b.symbol)
+                return 1;
+            return 0;
+        });
 
         let services = this.renderServices(blockTradesGatewayCoins, openLedgerGatewayCoins, rudexGatewayCoins);
 
@@ -336,8 +346,8 @@ class DepositStoreWrapper extends React.Component {
 
     componentWillMount() {
         if (Apis.instance().chain_id.substr(0, 8) === "4018d784") { // Only fetch this when on BTS main net
-            GatewayActions.fetchCoinsSimple.defer({backer: "RUDEX", url:rudexAPIs.BASE+rudexAPIs.COINS_LIST}); // RuDEX
             GatewayActions.fetchCoins.defer(); // Openledger
+            GatewayActions.fetchCoinsSimple.defer({backer: "RUDEX", url:rudexAPIs.BASE+rudexAPIs.COINS_LIST}); // RuDEX
             GatewayActions.fetchCoins.defer({backer: "TRADE"}); // Blocktrades
         }
     }
@@ -356,8 +366,8 @@ export default connect(DepositStoreWrapper, {
             account: AccountStore.getState().currentAccount,
             viewSettings: SettingsStore.getState().viewSettings,
             openLedgerBackedCoins: GatewayStore.getState().backedCoins.get("OPEN", []),
-            blockTradesBackedCoins: GatewayStore.getState().backedCoins.get("TRADE", []),
             rudexBackedCoins: GatewayStore.getState().backedCoinsSimple.get("RUDEX", []),
+            blockTradesBackedCoins: GatewayStore.getState().backedCoins.get("TRADE", [])
         };
     }
 });

@@ -21,21 +21,21 @@ class GatewayStore {
         });
     }
 
-    onFetchCoinsSimple({backer, coins} = {}) {
-
-        if (backer && coins) {
-            this.backedCoinsSimple = this.backedCoinsSimple.set(backer, coins);
-
-            ss.set("backedCoinsSimple", this.coins.toJS());
-        }
-    }
-
     onFetchCoins({backer, coins, backedCoins} = {}) {
         if (backer && coins) {
             this.coins = this.coins.set(backer, coins);
             this.backedCoins = this.backedCoins.set(backer, backedCoins);
 
             ss.set("backedCoins", this.backedCoins.toJS());
+        }
+    }
+
+    onFetchCoinsSimple({backer, coins} = {}) {
+
+        if (backer && coins) {
+            this.backedCoinsSimple = this.backedCoinsSimple.set(backer, coins);
+
+            ss.set("backedCoinsSimple", this.coins.toJS());
         }
     }
 

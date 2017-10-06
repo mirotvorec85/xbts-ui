@@ -147,7 +147,7 @@ class RuDexGateway extends React.Component {
                                 action={this.state.action}
                             />
                             <label className="left-label">Support</label>
-                            <div><Translate content="gateway.rudex_support_block" /><br /><br /><a href={"mailto:" + supportEmail}>{supportEmail}</a></div>
+                            <div><Translate content="gateway.rudex.support_block" /><br /><br /><a href={"mailto:" + supportEmail}>{supportEmail}</a></div>
                         </div>
 
                         {coin && coin.symbol ?
