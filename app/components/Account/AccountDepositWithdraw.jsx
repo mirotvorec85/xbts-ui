@@ -152,7 +152,6 @@ class AccountDepositWithdraw extends React.Component {
                 </div>
             )
         });
-
         serList.push({
             name: "Openledger (OPEN.X)",
             template: (
@@ -366,7 +365,7 @@ export default connect(DepositStoreWrapper, {
             account: AccountStore.getState().currentAccount,
             viewSettings: SettingsStore.getState().viewSettings,
             openLedgerBackedCoins: GatewayStore.getState().backedCoins.get("OPEN", []),
-            rudexBackedCoins: GatewayStore.getState().backedCoinsSimple.get("RUDEX", []),
+            rudexBackedCoins: GatewayStore.getState().backedCoins.get("RUDEX", []),
             blockTradesBackedCoins: GatewayStore.getState().backedCoins.get("TRADE", [])
         };
     }

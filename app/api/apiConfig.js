@@ -35,6 +35,6 @@ export const settingsAPIs = {
         {url: "wss://node.testnet.bitshares.eu", location: "Public Testnet Server (Frankfurt, Germany)"}
     ],
     DEFAULT_FAUCET: "https://faucet.rudex.org",
-    OPENLEDGER_FACET_REGISTR: "https://openledger.info/v/",
+    TESTNET_FAUCET: "https://faucet.testnet.bitshares.eu",
     RPC_URL: "https://openledger.info/api/"
 };
