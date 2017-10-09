@@ -1318,7 +1318,7 @@ class Exchange extends React.Component {
 
 
                         <div style={{padding: !this.props.viewChat ? 0 : "0 0 0 0"}} className="grid-block no-margin vertical shrink">
-                            <div onClick={this._toggleChat.bind(this)} className="exchange-content-header clickable" style={{textAlign: "left", paddingRight: 10}}>{this.props.viewChat ? <span>&#9660;</span> : <span>&#9650;</span>} <Translate content="exchange.trollbox"/> <a href="https://t.me/rudextrollbox" className="exchange-content-header-link" target="_blank">(https://t.me/rudextrollbox)</a></div>
+                            <div onClick={this._toggleChat.bind(this)} className="exchange-content-header clickable" style={{textAlign: "left", paddingRight: 10}}>{this.props.viewChat ? <span>&#9660;</span> : <span>&#9650;</span>} <Translate content="exchange.trollbox"/></div>
                             {this.props.viewChat ? <ChatBro
                                 height={"300px"}
                             /> : null}

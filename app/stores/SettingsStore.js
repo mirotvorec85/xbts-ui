@@ -32,8 +32,46 @@ class SettingsStore {
         });
 
         this.initDone = false;
+
+        let supportedLocales = [
+            "en",
+            "cn",
+            "fr",
+            "ko",
+            "de",
+            "es",
+            "it",
+            "tr",
+            "ru"
+        ];
+
+        let fallbackLocales = {
+            "uk": "ru",
+            "be": "ru",
+            "uz": "ru",
+            "kz": "ru"
+        };
+
+        let defaultLocale = "en";
+        let userLanguage = navigator.language || navigator.userLanguage;
+
+        for (let i = 0; i < supportedLocales.length; i++) {
+            if (userLanguage.startsWith(supportedLocales[i])) {
+                defaultLocale = supportedLocales[i];
+                break;
+            }
+        }
+
+        let fallbackKeys = Object.keys(fallbackLocales);
+        for (let i = 0; i < fallbackKeys.length; i++) {
+            if (userLanguage.startsWith(fallbackKeys[i])) {
+                defaultLocale = fallbackLocales[fallbackKeys[i]];
+                break;
+            }
+        }
+
         this.defaultSettings = Immutable.Map({
-            locale: "ru",
+            locale: defaultLocale,
             apiServer: settingsAPIs.DEFAULT_WS_NODE,
             faucet_address: settingsAPIs.DEFAULT_FAUCET,
             unit: "RUBLE",
@@ -50,17 +88,7 @@ class SettingsStore {
         let apiServer = settingsAPIs.WS_NODE_LIST;
 
         let defaults = {
-            locale: [
-                "en",
-                "cn",
-                "fr",
-                "ko",
-                "de",
-                "es",
-                "it",
-                "tr",
-                "ru"
-            ],
+            locale: supportedLocales,
             apiServer: [],
             unit: [
                 CORE_ASSET,

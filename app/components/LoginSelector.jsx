@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router";
 import Translate from "react-translate-component";
 import { isIncognito } from "feature_detect";
-var logo = require("assets/logo-rudex-big.png");
+var logo = require("assets/logo-rudex-bi.png");
 import SettingsActions from "actions/SettingsActions";
 import WalletUnlockActions from "actions/WalletUnlockActions";
 
