@@ -1,0 +1,82 @@
+@import "theme-template";
+
+// variables
+
+$light-text-color: #fff;
+$dark-text-color: #444;
+$primary-text-color: #dadbdd;
+$secondary-text-color: darken($primary-text-color, 20%);
+$link-text-color: #4382cd;
+$error-text-color: #e44e2c;
+
+$bg-color: #202432;
+$panel-bg-color: #353742;
+$light-panel-bg-color: #323d4f;
+$super-light-panel-bg-color: lighten($light-panel-bg-color, 8%);
+$button-bg-color: #4a58e2;
+$secondary-button-bg-color: #416179;
+$input-background: lighten($bg-color, 8%);
+
+$alert-color: $error-text-color;
+$info-color: #4b66ec;
+$success-color: #18bc69;
+$warning-color: #f59344;
+$fee-color: $secondary-text-color;
+
+// Exchange colors
+$bid-color: #21d19f;
+$ask-color: #ed636a;
+$call-color: #dddf2f;
+$positive-color: #8db845;
+$negative-color: #ce373f;
+$row-accent-color: #3b3941;
+$header-color: #403f44;
+
+// Chat colors
+$chat-text-color: #191A1F;
+
+// Account table view colors
+$account-header: #1c2034;
+$account-cells: #1f3758;
+$account-green: #59c21f;
+$account-primarytext: white;
+$account-dimmed: #5d5d5e;
+$account-border: #2f2e2e;
+$account-background: black;
+
+.rudexDarkTheme {
+  @include theme(
+                  $primary-text-color,
+                  $bg-color,
+                  $dark-text-color,
+                  $link-text-color,
+                  $light-text-color,
+                  $secondary-text-color,
+                  $success-color,
+                  $info-color,
+                  $warning-color,
+                  $alert-color,
+                  $super-light-panel-bg-color,
+                  $panel-bg-color,
+                  $button-bg-color,
+                  $secondary-button-bg-color,
+                  $fee-color,
+                  $bid-color,
+                  $ask-color,
+                  $call-color,
+                  $light-panel-bg-color,
+                  $positive-color,
+                  $negative-color,
+                  $row-accent-color,
+                  $header-color,
+                  $chat-text-color,
+                  $input-background,
+                  $account-header,
+                  $account-cells,
+                  $account-green,
+                  $account-primarytext,
+                  $account-dimmed,
+                  $account-border,
+                  $account-background
+  );
+}
