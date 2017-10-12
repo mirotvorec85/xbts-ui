@@ -112,10 +112,10 @@ class SettingsStore {
                 {translate: "no"}
             ],
             themes: [
+                "lightTheme",
+                "rudexDarkTheme",
                 "darkTheme",
-                "olDarkTheme",
-                "lightTheme"
-
+                "olDarkTheme"
             ],
             passwordLogin: [
                 {translate: "yes"},
