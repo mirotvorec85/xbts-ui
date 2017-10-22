@@ -1,10 +1,11 @@
 {
-  "name": "BitShares2-light",
-  "version": "2.0.171015",
+  "name": "RuDEX-light",
+  "version": "2.0.171022",
   "description": "Advanced wallet interface for the BitShares financial blockchain.",
-  "homepage": "https://github.com/bitshares/bitshares-ui",
-  "author": "Sigve Kvalsvik <kvalsvik.crypto@gmail.com>",
+  "homepage": "https://github.com/blckchnd/rudex-ui",
+  "author": "RuDEX Team <support@rudex.org>",
   "contributors": [
+    "Sigve Kvalsvik <kvalsvik.crypto@gmail.com>",
     "James Calfee",
     "Dan Larimer",
     "Valentine Zavgorodnev <valentine.zavgorodnev@gmail.com>"
@@ -17,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/bitshares/bitshares-ui"
+    "url": "git://github.com/blckchnd/rudex--ui"
   },
   "main": "build/electron/index.js",
   "scripts": {
@@ -74,8 +75,8 @@
   },
   "browsersList": "electron 1.7",
   "build": {
-    "productName": "BitShares",
-    "appId": "org.bitshares.graphene",
+    "productName": "RuDEX",
+    "appId": "org.rudex.market",
     "files": [
       "build/electron",
       "!node_modules"
