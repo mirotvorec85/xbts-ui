@@ -79,7 +79,6 @@ class SettingsStore {
             showAssetPercent: false,
             walletLockTimeout: 60 * 10,
             themes: "lightTheme",
-            disableChat: false,
             passwordLogin: true
         });
 
@@ -104,10 +103,6 @@ class SettingsStore {
                 {translate: "no"}
             ],
             showAssetPercent: [
-                {translate: "yes"},
-                {translate: "no"}
-            ],
-            disableChat: [
                 {translate: "yes"},
                 {translate: "no"}
             ],
