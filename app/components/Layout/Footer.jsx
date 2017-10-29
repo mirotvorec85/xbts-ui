@@ -99,10 +99,15 @@ class Footer extends React.Component {
                             <Translate content="footer.title"  />
                             <span className="version">{version}</span>
                         </span>
-
-                        {state.newVersion && <Translate content="footer.update_available" style={{color: "#FCAB53", position: "absolute", top: "8px", left: "36px"}}/>}
                         </div>
+
+                        <div className="grid-block">
+                            <a className="support_btn" onClick={(e)=>{e.preventDefault;window.open("https://rudex.freshdesk.com","_blank")}}><Translate content="footer.support"/></a>
+                        </div>
+
+                        {state.newVersion && <Translate content="footer.update_available" style={{color: "#FCAB53", position: "absolute", top: "8px", left: "0px"}}/>}
                     </div>
+
                     {synced ? null : <div className="grid-block shrink txtlabel cancel"><Translate content="footer.nosync" />&nbsp; &nbsp;</div>}
                     {!connected ? <div className="grid-block shrink txtlabel error"><Translate content="footer.connection" />&nbsp; &nbsp;</div> : null}
                     {this.props.backup_recommended ?

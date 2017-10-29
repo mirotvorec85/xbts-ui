@@ -877,7 +877,7 @@
     "high_latency":"Высокое значение задержки"
   },
   "footer":{
-    "title":"BitShares",
+    "title":"RuDEX",
     "block":"Текущий блок",
     "loading":"Загрузка...",
     "backup":"Необходима резервная копия",

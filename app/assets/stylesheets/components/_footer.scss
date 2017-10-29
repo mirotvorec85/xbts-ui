@@ -29,7 +29,7 @@
     padding-left: 1.75rem;
     padding-right: 1.75rem;
     a {
-        text-decoration: underline;
+        text-decoration: none;
     }
 
     .logo {
@@ -41,6 +41,16 @@
         .version {
             font-size: 75%;
             vertical-align: baseline;
+        }
+    }
+
+    .support_btn {
+        background-color: #83c11f;
+        color: white;
+        padding: 0 1rem 1rem 1rem;
+        text-transform: uppercase;
+        &:hover{
+            color: white;
         }
     }
 

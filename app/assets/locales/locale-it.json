@@ -840,7 +840,6 @@
     "connection_error": "Impossibile connettersi con il nodo API node %(url)s; ripiegando su nodi funzionanti noti"
   },
   "footer": {
-    "title": "BitShares",
     "block": "Head block",
     "loading": "Caricamento...",
     "backup": "È necessario un backup",

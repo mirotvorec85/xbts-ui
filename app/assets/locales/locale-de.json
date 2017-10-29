@@ -680,7 +680,6 @@
     "connection_error": "Unable to connect to API node %(url)s, falling back to known working nodes"
   },
   "footer": {
-    "title": "BitShares",
     "block": "Spitzenblock",
     "loading": "Lade..."
   },

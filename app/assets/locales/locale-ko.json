@@ -561,7 +561,6 @@
     "connection_error": "Unable to connect to API node %(url)s, falling back to known working nodes"
   },
   "footer": {
-    "title": "비트쉐어 2.0",
     "block": "최근 블록",
     "loading": "가져오는 중..."
   },

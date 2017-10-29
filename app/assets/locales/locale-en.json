@@ -889,7 +889,7 @@
     "high_latency": "High latency"
   },
   "footer": {
-    "title": "BitShares",
+    "title": "RuDEX",
     "block": "Head block",
     "loading": "Loading...",
     "backup": "A Backup is Required",
@@ -899,7 +899,8 @@
     "update_available": "UPDATE AVAILABLE",
     "synced": "Synced",
     "unsynced": "Out of sync",
-    "disconnected": "Disconnected"
+    "disconnected": "Disconnected",
+    "support": "Support"
   },
   "exchange": {
     "chart_options": {
