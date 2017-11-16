@@ -14,7 +14,12 @@ let ss = new ls(STORAGE_KEY);
 
 class SettingsStore {
     constructor() {
-        this.exportPublicMethods({init: this.init.bind(this), getSetting: this.getSetting.bind(this)});
+        this.exportPublicMethods({
+            init: this.init.bind(this),
+            getSetting: this.getSetting.bind(this),
+            getLastBudgetObject: this.getLastBudgetObject.bind(this),
+            setLastBudgetObject: this.setLastBudgetObject.bind(this)
+        });
 
         this.bindListeners({
             onChangeSetting: SettingsActions.changeSetting,
@@ -35,7 +40,7 @@ class SettingsStore {
 
         let supportedLocales = [
             "en",
-            "cn",
+            "zh",
             "fr",
             "ko",
             "de",
@@ -125,6 +130,11 @@ class SettingsStore {
         this.settings = Immutable.Map(merge(this.defaultSettings.toJS(), ss.get("settings_v3")));
 
         let savedDefaults = ss.get("defaults_v1", {});
+        /* Fix for old clients after changing cn to zh */
+        if (savedDefaults && savedDefaults.locale) {
+            let cnIdx = savedDefaults.locale.findIndex(a => a === "cn");
+            if (cnIdx !== -1) savedDefaults.locale[cnIdx] = "zh";
+        }
         this.defaults = merge({}, defaults, savedDefaults);
 
         (savedDefaults.apiServer || []).forEach(api => {
@@ -391,6 +401,14 @@ class SettingsStore {
     onUpdateLatencies(latencies) {
         ss.set("apiLatencies", latencies);
         this.apiLatencies = latencies;
+    }
+
+    getLastBudgetObject() {
+        return ss.get(this._getChainKey("lastBudgetObject"), "2.13.1");
+    }
+
+    setLastBudgetObject(value) {
+        ss.set(this._getChainKey("lastBudgetObject"), value);
     }
 }
 

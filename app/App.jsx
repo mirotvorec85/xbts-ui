@@ -59,7 +59,11 @@ class App extends React.Component {
         let synced = true;
         let dynGlobalObject = ChainStore.getObject("2.1.0");
         if (dynGlobalObject) {
-            let block_time = dynGlobalObject.get("time") + "+00:00";
+            let block_time = dynGlobalObject.get("time");
+            if (!/Z$/.test(block_time)) {
+                block_time += "Z";
+            }
+
             let bt = (new Date(block_time).getTime() + ChainStore.getEstimatedChainTimeOffset()) / 1000;
             let now = new Date().getTime() / 1000;
             synced = Math.abs(now - bt) < 5;
@@ -137,7 +141,7 @@ class App extends React.Component {
                 theme: settings.get("themes")
             });
         }
-        
+
 
     }
 
@@ -216,7 +220,7 @@ class RootIntl extends React.Component {
     render() {
         return (
             <IntlProvider
-                locale={this.props.locale.replace(/cn/, "zh")}
+                locale={this.props.locale}
                 formats={intlData.formats}
                 initialNow={Date.now()}
             >
