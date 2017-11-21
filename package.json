@@ -1,6 +1,6 @@
 {
   "name": "RuDEX-light",
-  "version": "2.0.171102",
+  "version": "2.0.171121",
   "description": "Advanced wallet interface for the BitShares financial blockchain.",
   "homepage": "https://github.com/blckchnd/rudex-ui",
   "author": "RuDEX Team <support@rudex.org>",
@@ -32,7 +32,7 @@
     "build": "cross-env NODE_ENV=production webpack --env.prod",
     "build-hash": "cross-env NODE_ENV=production webpack --env.prod --env.hash --env.baseUrl=''",
     "build-hash-nougly": "cross-env NODE_ENV=production webpack --env.prod --env.hash --env.noUgly --env.baseUrl=''",
-    "build-github": "cross-env NODE_ENV=production webpack --env.prod --env.hash --env.baseUrl='/wallet/'",
+    "build-github": "cross-env NODE_ENV=production webpack --env.prod --env.hash env.deprecated --env.baseUrl='/wallet/'",
     "build-stage": "cross-env NODE_ENV=production webpack --env.prod --env.hash --env.baseUrl='/stage/'",
     "build-electron": "cross-env NODE_ENV=production webpack --env.prod --env.electron --env.hash",
     "build-electron-nougly": "cross-env NODE_ENV=production webpack --env.prod --env.electron --env.noUgly --env.hash --progress --display-error-details --colors",
