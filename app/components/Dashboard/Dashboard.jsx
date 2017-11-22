@@ -37,6 +37,10 @@ class Dashboard extends React.Component {
                 ["BTS", "OPEN.DASH"],
                 ["BTS", "OPEN.ETH"],
                 ["BTS", "OPEN.LTC"],
+                ["BTS", "OPEN.EOS"],
+                ["BTS", "OPEN.GRC"],
+                ["BTS", "BTWTY"],
+                ["BTS", "ZEPH"],
             ],
             "39f5e2ed": [
                 ["TEST", "PEG.FAKEUSD"],
@@ -151,7 +155,7 @@ class Dashboard extends React.Component {
                     base={pair[1]}
                     invert={pair[2]}
                     isLowVolume={isLowVolume}
-                    hide={validMarkets > 21}
+                    hide={validMarkets > 24}
                 />
             );
         }).filter(a => !!a);
