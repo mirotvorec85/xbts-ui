@@ -19,7 +19,7 @@ class ChatBro extends React.Component {
             case 'ru':
                 chatUrl = "https://chat.rudex.org/ru/";
                 break
-            case 'cn':
+            case 'zh':
                 chatUrl = "https://chat.rudex.org/cn/";
                 break;
             case 'en':
