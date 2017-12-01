@@ -316,8 +316,8 @@ class RuDexGatewayDepositRequest extends React.Component {
                             <p className="txtlabel warning"><Translate content="gateway.rudex.under_construction"/></p>
                         </div> :
                         <div>
+                            <Translate component="h4" content="gateway.withdraw_inst"/>
                             <div className="small-12 medium-7">
-                                <Translate component="h4" content="gateway.withdraw_inst"/>
                                 <label className="left-label"><Translate content="gateway.withdraw_to"
                                                                          asset={this.props.deposit_asset}/>:</label>
                                 <div className="button-group" style={{paddingTop: 20}}>
