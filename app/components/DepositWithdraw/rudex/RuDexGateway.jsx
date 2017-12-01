@@ -75,7 +75,7 @@ class RuDexGateway extends React.Component {
             if (!a || !a.symbol) {
                 return false;
             } else {
-                return action === "deposit" ? a.depositAllowed : a.withdrawalAllowed;
+                return true;
             }
         });
 
@@ -94,8 +94,9 @@ class RuDexGateway extends React.Component {
 
         let isDeposit = this.state.action === "deposit";
 
-
         let supportUrl = "https://rudex.freshdesk.com";
+
+        let isEnabled = coin.depositAllowed && coin.withdrawalAllowed;
 
         return (
             <div style={this.props.style}>
@@ -145,6 +146,7 @@ class RuDexGateway extends React.Component {
                                 min_amount={coin.minAmount}
                                 asset_precision={coin.precision}
                                 action={this.state.action}
+                                enabled={isEnabled}
                             />
                             <label className="left-label">Support</label>
                             <div><Translate content="gateway.rudex.support_block" /><br /><br /><a href={supportUrl}>{supportUrl}</a></div>

@@ -12,12 +12,12 @@ import RuDexDepositAddressCache from "common/RuDexDepositAddressCache";
 import AssetName from "components/Utility/AssetName";
 import LinkToAccountById from "components/Utility/LinkToAccountById";
 import {requestDepositAddress} from "common/RuDexMethods";
-import { rudexAPIs } from "api/apiConfig";
+import {rudexAPIs} from "api/apiConfig";
 import utils from "common/utils";
 
 class RuDexGatewayDepositRequest extends React.Component {
     static propTypes = {
-        gateway:           React.PropTypes.string,
+        gateway: React.PropTypes.string,
         deposit_coin_type: React.PropTypes.string,
         deposit_asset_name: React.PropTypes.string,
         deposit_account: React.PropTypes.string,
@@ -52,7 +52,7 @@ class RuDexGatewayDepositRequest extends React.Component {
         try {
             e.clipboardData.setData("text/plain", this.state.clipboardText);
             e.preventDefault();
-        } catch(err) {
+        } catch (err) {
             console.error(err);
         }
     }
@@ -78,16 +78,16 @@ class RuDexGatewayDepositRequest extends React.Component {
         document.removeEventListener("copy", this._copy);
     }
 
-    addDepositAddress( receive_address ) {
+    addDepositAddress(receive_address) {
         let account_name = this.props.account.get("name");
         this.deposit_address_cache.cacheInputAddress(this.props.gateway, account_name, this.props.deposit_coin_type, this.props.receive_coin_type, receive_address.address, receive_address.memo);
-        this.setState( {receive_address} );
+        this.setState({receive_address});
     }
 
     getWithdrawModalId() {
         // console.log( "this.props.issuer: ", this.props.issuer_account.toJS() )
         // console.log( "this.receive_asset.issuer: ", this.props.receive_asset.toJS() )
-        return "withdraw_asset_"+this.props.issuer_account.get("name") + "_"+this.props.receive_asset.get("symbol");
+        return "withdraw_asset_" + this.props.issuer_account.get("name") + "_" + this.props.receive_asset.get("symbol");
     }
 
     onWithdraw() {
@@ -99,29 +99,26 @@ class RuDexGatewayDepositRequest extends React.Component {
             this.setState({clipboardText}, () => {
                 document.execCommand("copy");
             });
-        } catch(err) {
+        } catch (err) {
             console.error(err);
         }
     }
 
     render() {
 
-        let emptyRow = <div style={{display:"none", minHeight: 150}}></div>;
-        if( !this.props.account || !this.props.issuer_account || !this.props.receive_asset )
+        let emptyRow = <div style={{display: "none", minHeight: 150}}></div>;
+        if (!this.props.account || !this.props.issuer_account || !this.props.receive_asset)
             return emptyRow;
 
         let account_balances_object = this.props.account.get("balances");
 
         let balance = "0 " + this.props.receive_asset.get("symbol");
-        if (this.props.deprecated_in_favor_of)
-        {
+        if (this.props.deprecated_in_favor_of) {
             let has_nonzero_balance = false;
             let balance_object_id = account_balances_object.get(this.props.receive_asset.get("id"));
-            if (balance_object_id)
-            {
+            if (balance_object_id) {
                 let balance_object = ChainStore.getObject(balance_object_id);
-                if (balance_object)
-                {
+                if (balance_object) {
                     let balance = balance_object.get("balance");
                     if (balance != 0)
                         has_nonzero_balance = true;
@@ -142,7 +139,7 @@ class RuDexGatewayDepositRequest extends React.Component {
         // }
 
         let receive_address = this.state.receive_address;
-        if( !receive_address )  {
+        if (!receive_address) {
             let account_name = this.props.account.get("name");
             receive_address = this.deposit_address_cache.getCachedInputAddress(this.props.gateway, account_name, this.props.deposit_coin_type, this.props.receive_coin_type);
         }
@@ -163,26 +160,22 @@ class RuDexGatewayDepositRequest extends React.Component {
         // {
         let clipboardText = "";
         let memoText;
-        if (this.props.deposit_account)
-        {
+        if (this.props.deposit_account) {
             deposit_address_fragment = (<span>{this.props.deposit_account}</span>);
             clipboardText = this.props.deposit_account;
             memoText = "dex:" + this.props.account.get("name");
             deposit_memo = <span>{memoText}</span>;
             var withdraw_memo_prefix = this.props.deposit_coin_type + ":";
         }
-        else
-        {
-            if (receive_address.memo)
-            {
+        else {
+            if (receive_address.memo) {
                 // This is a client that uses a deposit memo (like ethereum), we need to display both the address and the memo they need to send
                 memoText = receive_address.memo;
                 clipboardText = receive_address.address;
                 deposit_address_fragment = (<span>{receive_address.address}</span>);
                 deposit_memo = <span>{receive_address.memo}</span>;
             }
-            else
-            {
+            else {
                 // This is a client that uses unique deposit addresses to select the output
                 clipboardText = receive_address.address;
                 deposit_address_fragment = (<span>{receive_address.address}</span>);
@@ -194,28 +187,35 @@ class RuDexGatewayDepositRequest extends React.Component {
             return (
                 <div className="rudex__gateway grid-block no-padding no-margin">
                     <div className="small-12 medium-5">
-                        <Translate component="h4" content="gateway.deposit_summary" />
+                        <Translate component="h4" content="gateway.deposit_summary"/>
                         <div className="small-12 medium-10">
                             <table className="table">
                                 <tbody>
                                 <tr>
-                                    <Translate component="td" content="gateway.asset_to_deposit" />
-                                    <td style={{fontWeight: "bold", color: "#4A90E2", textAlign: "right"}}>{this.props.deposit_asset}</td>
+                                    <Translate component="td" content="gateway.asset_to_deposit"/>
+                                    <td style={{
+                                        fontWeight: "bold",
+                                        color: "#4A90E2",
+                                        textAlign: "right"
+                                    }}>{this.props.deposit_asset}</td>
                                 </tr>
                                 <tr>
-                                    <Translate component="td" content="gateway.asset_to_receive" />
-                                    <td style={{fontWeight: "bold", color: "#4A90E2", textAlign: "right"}}><AssetName name={this.props.receive_asset.get("symbol")} replace={false} /></td>
+                                    <Translate component="td" content="gateway.asset_to_receive"/>
+                                    <td style={{fontWeight: "bold", color: "#4A90E2", textAlign: "right"}}><AssetName
+                                        name={this.props.receive_asset.get("symbol")} replace={false}/></td>
                                 </tr>
                                 <tr>
-                                    <Translate component="td" content="gateway.intermediate" />
-                                    <td style={{fontWeight: "bold", color: "#4A90E2", textAlign: "right"}}><LinkToAccountById account={this.props.issuer_account.get("id")} /></td>
+                                    <Translate component="td" content="gateway.intermediate"/>
+                                    <td style={{fontWeight: "bold", color: "#4A90E2", textAlign: "right"}}>
+                                        <LinkToAccountById account={this.props.issuer_account.get("id")}/></td>
                                 </tr>
                                 <tr>
-                                    <Translate component="td" content="gateway.your_account" />
-                                    <td style={{fontWeight: "bold", color: "#4A90E2", textAlign: "right"}}><LinkToAccountById account={this.props.account.get("id")} /></td>
+                                    <Translate component="td" content="gateway.your_account"/>
+                                    <td style={{fontWeight: "bold", color: "#4A90E2", textAlign: "right"}}>
+                                        <LinkToAccountById account={this.props.account.get("id")}/></td>
                                 </tr>
                                 <tr>
-                                    <td><Translate content="gateway.balance" />:</td>
+                                    <td><Translate content="gateway.balance"/>:</td>
                                     <td style={{fontWeight: "bold", color: "#4A90E2", textAlign: "right"}}>
                                         <AccountBalance
                                             account={this.props.account.get("name")}
@@ -229,29 +229,41 @@ class RuDexGatewayDepositRequest extends React.Component {
                         </div>
                     </div>
                     <div className="small-12 medium-7">
-                        <Translate component="h4" content="gateway.deposit_inst" />
-                        <label className="left-label"><Translate content="gateway.deposit_to" asset={this.props.deposit_asset} />:</label>
-                        <label className="left-label"><b><Translate content="gateway.rudex.min_amount"
-                                                                 minAmount={utils.format_number(this.props.min_amount / utils.get_asset_precision(this.props.asset_precision), this.props.asset_precision, false)}
-                                                                 symbol={this.props.deposit_coin_type}/></b></label>
-                        <div style={{padding: "10px 0", fontSize: "1.1rem"}}>
-                            <table className="table">
-                                <tbody>
-                                <tr>
-                                    <td>ADDRESS: <b>{deposit_address_fragment}</b></td>
-                                </tr>
-                                {deposit_memo ? (
-                                    <tr>
-                                        <td>MEMO: <b>{deposit_memo}</b></td>
-                                    </tr>) : null}
-                                </tbody>
-                            </table>
-                            <div className="button-group" style={{paddingTop: 10}}>
-                                {deposit_address_fragment ? <div className="button" onClick={this.toClipboard.bind(this, clipboardText)}>Copy address</div> : null}
-                                {memoText ? <div className="button" onClick={this.toClipboard.bind(this, memoText)}>Copy memo</div> : null}
-                                {/*<button className={"button"} onClick={requestDepositAddress.bind(null, this._getDepositObject())}><Translate content="gateway.generate_new" /></button>*/}
+                        {!this.props.enabled ?
+                            <div>
+                                <Translate component="h4" content="gateway.deposit_inst"/>
+                                <p className="txtlabel warning"><Translate content="gateway.rudex.under_construction"/></p>
                             </div>
-                        </div>
+                            : <div>
+                                <Translate component="h4" content="gateway.deposit_inst"/>
+                                <label className="left-label"><Translate content="gateway.deposit_to"
+                                                                         asset={this.props.deposit_asset}/>:</label>
+                                <label className="left-label"><b><Translate content="gateway.rudex.min_amount"
+                                                                            minAmount={utils.format_number(this.props.min_amount / utils.get_asset_precision(this.props.asset_precision), this.props.asset_precision, false)}
+                                                                            symbol={this.props.deposit_coin_type}/></b></label>
+                                <div style={{padding: "10px 0", fontSize: "1.1rem"}}>
+                                    <table className="table">
+                                        <tbody>
+                                        <tr>
+                                            <td>ADDRESS: <b>{deposit_address_fragment}</b></td>
+                                        </tr>
+                                        {deposit_memo ? (
+                                            <tr>
+                                                <td>MEMO: <b>{deposit_memo}</b></td>
+                                            </tr>) : null}
+                                        </tbody>
+                                    </table>
+                                    <div className="button-group" style={{paddingTop: 10}}>
+                                        {deposit_address_fragment ? <div className="button"
+                                                                         onClick={this.toClipboard.bind(this, clipboardText)}>
+                                            Copy address</div> : null}
+                                        {memoText ?
+                                            <div className="button" onClick={this.toClipboard.bind(this, memoText)}>Copy
+                                                memo</div> : null}
+                                        {/*<button className={"button"} onClick={requestDepositAddress.bind(null, this._getDepositObject())}><Translate content="gateway.generate_new" /></button>*/}
+                                    </div>
+                                </div>
+                            </div>}
                     </div>
                 </div>
             );
@@ -259,24 +271,30 @@ class RuDexGatewayDepositRequest extends React.Component {
             return (
                 <div className="rudex__gateway grid-block no-padding no-margin">
                     <div className="small-12 medium-5">
-                        <Translate component="h4" content="gateway.withdraw_summary" />
+                        <Translate component="h4" content="gateway.withdraw_summary"/>
                         <div className="small-12 medium-10">
                             <table className="table">
                                 <tbody>
                                 <tr>
-                                    <Translate component="td" content="gateway.asset_to_withdraw" />
-                                    <td style={{fontWeight: "bold", color: "#4A90E2", textAlign: "right"}}><AssetName name={this.props.receive_asset.get("symbol")} replace={false} /></td>
+                                    <Translate component="td" content="gateway.asset_to_withdraw"/>
+                                    <td style={{fontWeight: "bold", color: "#4A90E2", textAlign: "right"}}><AssetName
+                                        name={this.props.receive_asset.get("symbol")} replace={false}/></td>
                                 </tr>
                                 <tr>
-                                    <Translate component="td" content="gateway.asset_to_receive" />
-                                    <td style={{fontWeight: "bold", color: "#4A90E2", textAlign: "right"}}>{this.props.deposit_asset}</td>
+                                    <Translate component="td" content="gateway.asset_to_receive"/>
+                                    <td style={{
+                                        fontWeight: "bold",
+                                        color: "#4A90E2",
+                                        textAlign: "right"
+                                    }}>{this.props.deposit_asset}</td>
                                 </tr>
                                 <tr>
-                                    <Translate component="td" content="gateway.intermediate" />
-                                    <td style={{fontWeight: "bold", color: "#4A90E2", textAlign: "right"}}><LinkToAccountById account={this.props.issuer_account.get("id")} /></td>
+                                    <Translate component="td" content="gateway.intermediate"/>
+                                    <td style={{fontWeight: "bold", color: "#4A90E2", textAlign: "right"}}>
+                                        <LinkToAccountById account={this.props.issuer_account.get("id")}/></td>
                                 </tr>
                                 <tr>
-                                    <td><Translate content="gateway.balance" />:</td>
+                                    <td><Translate content="gateway.balance"/>:</td>
                                     <td style={{fontWeight: "bold", color: "#4A90E2", textAlign: "right"}}>
                                         <AccountBalance
                                             account={this.props.account.get("name")}
@@ -292,39 +310,49 @@ class RuDexGatewayDepositRequest extends React.Component {
                         {/*<p>When you withdraw {this.props.receive_asset.get("symbol")}, you will receive {this.props.deposit_asset} at a 1:1 ratio (minus fees).</p>*/}
 
                     </div>
-                    <div className="small-12 medium-7">
-                        <Translate component="h4" content="gateway.withdraw_inst" />
-                        <label className="left-label"><Translate content="gateway.withdraw_to" asset={this.props.deposit_asset} />:</label>
-                        <div className="button-group" style={{paddingTop: 20}}>
-                            <button className="button success" style={{fontSize: "1.3rem"}} onClick={this.onWithdraw.bind(this)}><Translate content="gateway.withdraw_now" /> </button>
-                        </div>
-                    </div>
-                    <Modal id={withdraw_modal_id} overlay={true}>
-                        <Trigger close={withdraw_modal_id}>
-                            <a href="#" className="close-button">&times;</a>
-                        </Trigger>
-                        <br/>
-                        <div className="grid-block vertical">
-                            <RuDexWithdrawModal
-                                account={this.props.account.get("name")}
-                                issuer={this.props.issuer_account.get("name")}
-                                asset={this.props.receive_asset.get("symbol")}
-                                output_coin_name={this.props.deposit_asset_name}
-                                output_coin_symbol={this.props.deposit_asset}
-                                output_coin_type={this.props.deposit_coin_type}
-                                output_wallet_type={this.props.deposit_wallet_type}
-                                output_supports_memos={this.props.supports_output_memos}
-                                memo_prefix={withdraw_memo_prefix}
-                                modal_id={withdraw_modal_id}
-                                min_amount={this.props.min_amount}
-                                asset_precision={this.props.asset_precision}
-                                balance={this.props.account.get("balances").toJS()[this.props.receive_asset.get("id")]} />
-                        </div>
-                    </Modal>
+                    {!this.props.enabled ?
+                        <div>
+                            <Translate component="h4" content="gateway.withdraw_inst"/>
+                            <p className="txtlabel warning"><Translate content="gateway.rudex.under_construction"/></p>
+                        </div> :
+                        <div>
+                            <div className="small-12 medium-7">
+                                <Translate component="h4" content="gateway.withdraw_inst"/>
+                                <label className="left-label"><Translate content="gateway.withdraw_to"
+                                                                         asset={this.props.deposit_asset}/>:</label>
+                                <div className="button-group" style={{paddingTop: 20}}>
+                                    <button className="button success" style={{fontSize: "1.3rem"}}
+                                            onClick={this.onWithdraw.bind(this)}><Translate
+                                        content="gateway.withdraw_now"/></button>
+                                </div>
+                            </div>
+                            <Modal id={withdraw_modal_id} overlay={true}>
+                                <Trigger close={withdraw_modal_id}>
+                                    <a href="#" className="close-button">&times;</a>
+                                </Trigger>
+                                <br/>
+                                <div className="grid-block vertical">
+                                    <RuDexWithdrawModal
+                                        account={this.props.account.get("name")}
+                                        issuer={this.props.issuer_account.get("name")}
+                                        asset={this.props.receive_asset.get("symbol")}
+                                        output_coin_name={this.props.deposit_asset_name}
+                                        output_coin_symbol={this.props.deposit_asset}
+                                        output_coin_type={this.props.deposit_coin_type}
+                                        output_wallet_type={this.props.deposit_wallet_type}
+                                        output_supports_memos={this.props.supports_output_memos}
+                                        memo_prefix={withdraw_memo_prefix}
+                                        modal_id={withdraw_modal_id}
+                                        min_amount={this.props.min_amount}
+                                        asset_precision={this.props.asset_precision}
+                                        balance={this.props.account.get("balances").toJS()[this.props.receive_asset.get("id")]}/>
+                                </div>
+                            </Modal></div>}
                 </div>
             );
         }
     }
-};
+}
+;
 
-export default BindToChainState(RuDexGatewayDepositRequest, {keep_updating:true});
+export default BindToChainState(RuDexGatewayDepositRequest, {keep_updating: true});
