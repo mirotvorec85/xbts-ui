@@ -210,22 +210,13 @@ class Header extends React.Component {
                                 />
                             </div>) : null;
 
-        let logoLink = (
-            <a
-                style={{paddingTop: 12, paddingBottom: 12, paddingLeft: 12, paddingRight: 12}}
-                className={cnames({active: false})}
-                href="https://rudex.org"
-            >
-                <img style={{margin: 0, height: 40}} src={logo} />
-            </a>
-        );
-
         let dashboard = (
             <a
                 style={{padding: "12px 1.75rem"}}
                 className={cnames({active: active === "/" || (active.indexOf("dashboard") !== -1 && active.indexOf("account") === -1)})}
                 onClick={this._onNavigate.bind(this, "/dashboard")}
-            ><Translate component="span" content="header.dashboard" />
+            >
+                <img style={{margin: 0, height: 40}} src={logo} />
             </a>
         );
 
@@ -298,7 +289,6 @@ class Header extends React.Component {
                 <div className="grid-block">
                     <ul className="menu-bar">
 
-                        <li>{logoLink}</li>
                         <li>{dashboard}</li>
                         {!currentAccount ? null :
                         <li>
