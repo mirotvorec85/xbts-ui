@@ -94,7 +94,7 @@ class SettingsStore {
 
         let defaults = {
             locale: supportedLocales,
-            apiServer: [],
+            apiServer: apiServer,
             unit: [
                 CORE_ASSET,
                 "RUBLE",
@@ -135,6 +135,13 @@ class SettingsStore {
         if (savedDefaults && savedDefaults.locale) {
             let cnIdx = savedDefaults.locale.findIndex(a => a === "cn");
             if (cnIdx !== -1) savedDefaults.locale[cnIdx] = "zh";
+        }
+        if (savedDefaults.apiServer) {
+            savedDefaults.apiServer = savedDefaults.apiServer.filter(a => {
+                return !defaults.apiServer.find(b => {
+                    return b.url === a.url;
+                });
+            });
         }
         this.defaults = merge({}, defaults, savedDefaults);
 
@@ -380,10 +387,8 @@ class SettingsStore {
     }
 
     onRemoveWS(index) {
-        if (index !== 0) { // Prevent removing the default apiServer
-            this.defaults.apiServer.splice(index, 1);
-            ss.set("defaults_v1", this.defaults);
-        }
+        this.defaults.apiServer.splice(index, 1);
+        ss.set("defaults_v1", this.defaults);
     }
 
     onClearSettings(resolve) {
