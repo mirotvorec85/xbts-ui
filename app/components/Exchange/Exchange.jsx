@@ -317,10 +317,9 @@ class Exchange extends React.Component {
         return this.state.feeStatus[asset.get("id")] && this.state.feeStatus[asset.get("id")].fee;
     }
 
-    _verifyFee(fee, sellAmount, sellBalance, coreBalance) {
+    _verifyFee(fee, sell, sellBalance, coreBalance) {
         let coreFee = this._getFee();
 
-        let sellSum = fee.getAmount() + sellAmount;
         if (fee.asset_id === "1.3.0") {
             if (coreFee.getAmount() <= coreBalance) {
                 return "1.3.0";
@@ -328,12 +327,13 @@ class Exchange extends React.Component {
                 return null;
             }
         } else {
+            let sellSum = (sell.asset_id === fee.asset_id) ? (fee.getAmount() + sell.getAmount()) : sell.getAmount();
             if (sellSum <= sellBalance) { // Sufficient balance in asset to pay fee
                 return fee.asset_id;
             } else if (coreFee.getAmount() <= coreBalance && fee.asset_id !== "1.3.0") { // Sufficient balance in core asset to pay fee
                 return "1.3.0";
             } else {
-                return null; // Unable to pay fee in either asset
+                return null; // Unable to pay fee
             }
         }
     }
@@ -349,8 +349,7 @@ class Exchange extends React.Component {
         });
 
         let fee = this._getFee(feeAsset);
-
-        let feeID = this._verifyFee(fee, current.for_sale.getAmount(), sellBalance.getAmount(), coreBalance.getAmount());
+        let feeID = this._verifyFee(fee,current.for_sale, sellBalance.getAmount(), coreBalance.getAmount());
         if (!feeID) {
             return notify.addNotification({
                 message: "Insufficient funds to pay fees",
@@ -481,7 +480,7 @@ class Exchange extends React.Component {
             amount: coreBalance ? parseInt(ChainStore.getObject(coreBalance).toJS().balance, 10) : 0
         });
         let fee = this._getFee(feeAsset);
-        let feeID = this._verifyFee(fee, current.for_sale.getAmount(), sellBalance.getAmount(), coreBalance.getAmount());
+        let feeID = this._verifyFee(fee, current.for_sale, sellBalance.getAmount(), coreBalance.getAmount());
 
         if (feeID) {
             this._createLimitOrder(type, feeID);
@@ -498,7 +497,7 @@ class Exchange extends React.Component {
             amount: coreBalance ? parseInt(ChainStore.getObject(coreBalance).toJS().balance, 10) : 0
         });
         let fee = this._getFee(feeAsset);
-        let feeID = this._verifyFee(fee, current.for_sale.getAmount(), sellBalance.getAmount(), coreBalance.getAmount());
+        let feeID = this._verifyFee(fee, current.for_sale, sellBalance.getAmount(), coreBalance.getAmount());
 
         if (feeID) {
             this._createLimitOrder(type, feeID);
@@ -816,7 +815,6 @@ class Exchange extends React.Component {
         let current = this.state[type];
         // const isBid = type === "bid";
         current.for_sale.setAmount({real: parseFloat(e.target.value) || 0});
-
         if (current.price.isValid()) {
             this._setReceive(current, isBid);
         } else {

@@ -196,6 +196,6 @@ class ExchangeSubscriber extends React.Component {
     }
 }
 
-ExchangeSubscriber = BindToChainState(ExchangeSubscriber, {keep_updating: true});
+ExchangeSubscriber = BindToChainState(ExchangeSubscriber, {keep_updating: true, show_loader: true});
 
 export default ExchangeContainer;
