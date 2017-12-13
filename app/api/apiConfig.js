@@ -51,4 +51,4 @@ export const  gdexAPIs = {
     GET_USER_INFO: "/gateway/user/getUserInfo",
     USER_AGREEMENT: "/gateway/user/isAgree",
     WITHDRAW_RULE: "/gateway/withdraw/rule"
-};
+}

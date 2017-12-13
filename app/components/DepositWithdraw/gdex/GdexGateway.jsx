@@ -258,8 +258,14 @@ class GdexGateway extends React.Component {
         let {account} = this.props;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         let {coins, activeCoin, action , isAvailable, user_info, isAgree, agreeChecked,agreeNotice} = this.state;
         let issuer = {name: "holder", id: "1.2.29", mail: "support@gdex.io", qq:"602573197", telgram:"https://t.me/GDEXer"};
+=======
+        let {coins, activeCoinInfo, action , isAvailable, user_info, isAgree, agreeChecked,
+            agreeNotice, intermediate, memo_rule} = this.state;
+	let issuer = {mail: "support@gdex.io", qq:"602573197", telgram:"https://t.me/GDEXer"};
+>>>>>>> be7f37f0... 1. add with rule;2. add gdex asset; 3.
 =======
         let {coins, activeCoinInfo, action , isAvailable, user_info, isAgree, agreeChecked,
             agreeNotice, intermediate, memo_rule} = this.state;
