@@ -273,7 +273,11 @@ class AccountDepositWithdraw extends React.Component {
             return <option key={index} value={index}>{services_obj.name}</option>;
         });
 
+<<<<<<< HEAD
         const serviceNames = ["RUDEX", "OPEN", "TRADE", "BITKAPITAL"];
+=======
+        const serviceNames = ["GDEX", "OPEN", "RUDEX", "TRADE", "BITKAPITAL"];
+>>>>>>> be7f37f0... 1. add with rule;2. add gdex asset; 3.
         const currentServiceName = serviceNames[activeService];
         const currentServiceDown = servicesDown.get(currentServiceName);
 

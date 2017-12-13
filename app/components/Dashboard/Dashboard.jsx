@@ -17,6 +17,35 @@ class Dashboard extends React.Component {
         super();
         let marketsByChain = {
             "4018d784":[
+<<<<<<< HEAD
+=======
+                ["USD", "BTS"],
+                ["USD", "OPEN.BTC"],
+                ["USD", "OPEN.USDT"],
+                ["USD", "OPEN.ETH"],
+                ["USD", "OPEN.DASH"],
+                ["USD", "GOLD"],
+                ["USD", "HERO"],
+                ["USD", "GDEX.BTC"],
+                ["CNY", "BTS"],
+                ["CNY", "OPEN.BTC"],
+                ["CNY", "USD"],
+                ["CNY", "OPEN.ETH"],
+                ["CNY", "YOYOW"],
+                ["CNY", "OCT"],
+		["CNY", "GDEX.BTC"],
+                ["OPEN.BTC", "BTS"],
+                ["OPEN.BTC", "OPEN.ETH"],
+                ["OPEN.BTC", "OPEN.DASH"],
+                ["OPEN.BTC", "BLOCKPAY"],
+                ["OPEN.BTC", "OPEN.DGD"],
+                ["OPEN.BTC", "OPEN.STEEM"],
+                ["BTS", "OPEN.ETH"],
+                ["BTS", "OPEN.EOS"],
+                ["BTS", "PPY"],
+                ["BTS", "OPEN.STEEM"],
+                ["BTS", "OBITS"],
+>>>>>>> be7f37f0... 1. add with rule;2. add gdex asset; 3.
                 ["BTS", "RUBLE"],
                 ["BTS", "PPY"],
                 ["RUBLE", "RUDEX.GOLOS"],
@@ -32,6 +61,7 @@ class Dashboard extends React.Component {
                 ["BTS", "HERO"],
                 ["BTS", "OBITS"],
                 ["BTS", "SMOKE"],
+<<<<<<< HEAD
                 ["BTS", "YOYOW"],
                 ["BTS", "OPEN.BTC"],
                 ["BTS", "OPEN.DASH"],
@@ -41,6 +71,19 @@ class Dashboard extends React.Component {
                 ["BTS", "OPEN.GRC"],
                 ["BTS", "BTWTY"],
                 ["BTS", "ZEPH"],
+=======
+		["BTS", "GDEX.BTC"],
+                ["KAPITAL", "OPEN.BTC"],
+                ["USD", "OPEN.STEEM"],
+                ["USD", "OPEN.MAID"],
+                ["OPEN.USDT", "OPEN.BTC"],
+                ["OPEN.BTC", "OPEN.MAID"],
+                ["BTS", "OPEN.MAID"],
+                ["BTS", "OPEN.HEAT"],
+                ["BTS", "OPEN.INCENT"],
+                ["HEMPSWEET", "OPEN.BTC"],
+                ["KAPITAL", "BTS"]
+>>>>>>> be7f37f0... 1. add with rule;2. add gdex asset; 3.
             ],
             "39f5e2ed": [
                 ["TEST", "PEG.FAKEUSD"],
