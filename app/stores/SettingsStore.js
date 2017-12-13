@@ -235,6 +235,9 @@ class SettingsStore {
                     "YOYOW", "HERO", "RUBLE", "SMOKE", "STEALTH", "BRIDGE.BCO",
                     "BRIDGE.BTC", "KEXCOIN", "PPY", "OPEN.EOS", "OPEN.OMG", "CVCOIN",
                     "BRIDGE.ZNY", "BRIDGE.MONA", "BRIDGE.BCO", "OPEN.LTC", "GDEX.BTC"
+<<<<<<< HEAD
+>>>>>>> be7f37f0... 1. add with rule;2. add gdex asset; 3.
+=======
 >>>>>>> be7f37f0... 1. add with rule;2. add gdex asset; 3.
                 ],
                 markets_39f5e2ed: [ // TESTNET

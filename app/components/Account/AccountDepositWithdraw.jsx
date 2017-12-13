@@ -274,7 +274,11 @@ class AccountDepositWithdraw extends React.Component {
         });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         const serviceNames = ["RUDEX", "OPEN", "TRADE", "BITKAPITAL"];
+=======
+        const serviceNames = ["GDEX", "OPEN", "RUDEX", "TRADE", "BITKAPITAL"];
+>>>>>>> be7f37f0... 1. add with rule;2. add gdex asset; 3.
 =======
         const serviceNames = ["GDEX", "OPEN", "RUDEX", "TRADE", "BITKAPITAL"];
 >>>>>>> be7f37f0... 1. add with rule;2. add gdex asset; 3.

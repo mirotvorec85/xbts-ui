@@ -62,6 +62,7 @@ class Dashboard extends React.Component {
                 ["BTS", "OBITS"],
                 ["BTS", "SMOKE"],
 <<<<<<< HEAD
+<<<<<<< HEAD
                 ["BTS", "YOYOW"],
                 ["BTS", "OPEN.BTC"],
                 ["BTS", "OPEN.DASH"],
@@ -72,6 +73,8 @@ class Dashboard extends React.Component {
                 ["BTS", "BTWTY"],
                 ["BTS", "ZEPH"],
 =======
+=======
+>>>>>>> be7f37f0... 1. add with rule;2. add gdex asset; 3.
 		["BTS", "GDEX.BTC"],
                 ["KAPITAL", "OPEN.BTC"],
                 ["USD", "OPEN.STEEM"],
