@@ -116,7 +116,7 @@ class SettingsStore {
                 "lightTheme",
                 "rudexDarkTheme",
                 "darkTheme",
-                "olDarkTheme"
+                "midnightTheme"
             ],
             passwordLogin: [
                 {translate: "cloud_login"},
@@ -129,12 +129,18 @@ class SettingsStore {
         };
 
         this.settings = Immutable.Map(merge(this.defaultSettings.toJS(), ss.get("settings_v3")));
-
+        if (this.settings.get("themes") === "olDarkTheme") {
+            this.settings = this.settings.set("themes", "midnightTheme");
+        }
         let savedDefaults = ss.get("defaults_v1", {});
         /* Fix for old clients after changing cn to zh */
         if (savedDefaults && savedDefaults.locale) {
             let cnIdx = savedDefaults.locale.findIndex(a => a === "cn");
             if (cnIdx !== -1) savedDefaults.locale[cnIdx] = "zh";
+        }
+        if (savedDefaults && savedDefaults.themes) {
+            let olIdx = savedDefaults.themes.findIndex(a => a === "olDarkTheme");
+            if (olIdx !== -1) savedDefaults.themes[olIdx] = "midnightTheme";
         }
         if (savedDefaults.apiServer) {
             savedDefaults.apiServer = savedDefaults.apiServer.filter(a => {
