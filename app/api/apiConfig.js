@@ -30,7 +30,6 @@ export const settingsAPIs = {
         {url: "wss://bitshares.dacplay.org/ws", location:  "Hangzhou, China"},
         {url: "wss://bitshares-api.wancloud.io/ws", location:  "China"},
         {url: "wss://openledger.hk/ws", location: "Hong Kong"},
-        {url: "wss://us-ny.bitshares.apasia.tech/ws", location: "New York, USA"},
         {url: "wss://bitshares.crypto.fans/ws", location: "Munich, Germany"},
         {url: "wss://node.testnet.bitshares.eu", location: "Public Testnet Server (Frankfurt, Germany)"},
         {url: "wss://ws.gdex.top", location: "China"},
@@ -54,5 +53,6 @@ export const  gdexAPIs = {
     WITHDRAW_RECORD_LIST: "/gateway/withdraw/recordList",
     WITHDRAW_RECORD_DETAIL: "/gateway/withdraw/recordDetail",
     GET_USER_INFO: "/gateway/user/getUserInfo",
-    USER_AGREEMENT: "/gateway/user/isAgree"
+    USER_AGREEMENT: "/gateway/user/isAgree",
+    WITHDRAW_RULE: "/gateway/withdraw/rule"
 }

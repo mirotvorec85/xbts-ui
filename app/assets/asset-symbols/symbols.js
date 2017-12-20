@@ -36,6 +36,7 @@ require("file-loader?name=asset-symbols/[name].png!./incnt.png");
 require("file-loader?name=asset-symbols/[name].png!./nxc.png");
 require("file-loader?name=asset-symbols/[name].png!./btwty.png");
 require("file-loader?name=asset-symbols/[name].png!./open.btc.png");
+require("file-loader?name=asset-symbols/[name].png!./gdex.btc.png");
 require("file-loader?name=asset-symbols/[name].png!./hempsweet.png");
 require("file-loader?name=asset-symbols/[name].png!./sbd.png");
 require("file-loader?name=asset-symbols/[name].png!./golos.png");
