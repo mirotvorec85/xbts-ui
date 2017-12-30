@@ -188,7 +188,6 @@ class SettingsStore {
             // Default markets setup
             let topMarkets = {
                 markets_4018d784: [ // BTS MAIN NET
-<<<<<<< HEAD
                     "BTS",
                     "RUBLE",
                     "USD",
@@ -225,23 +224,10 @@ class SettingsStore {
                     "OPEN.EOS",
                     "BTWTY",
                     "ZEPH",
-                    "ESCROW.RUBLE"
-=======
-                    "OPEN.MKR", "BTS", "OPEN.ETH", "ICOO", "BTC", "OPEN.LISK", "BKT",
-                    "OPEN.STEEM", "OPEN.GAME", "OCT", "USD", "CNY", "BTSR", "OBITS",
-                    "OPEN.DGD", "EUR", "GOLD", "SILVER", "IOU.CNY", "OPEN.DASH",
-                    "OPEN.USDT", "OPEN.EURT", "OPEN.BTC", "CADASTRAL", "BLOCKPAY", "BTWTY",
-                    "OPEN.INCNT", "KAPITAL", "OPEN.MAID", "OPEN.SBD", "OPEN.GRC",
-                    "YOYOW", "HERO", "RUBLE", "SMOKE", "STEALTH", "BRIDGE.BCO",
-                    "BRIDGE.BTC", "KEXCOIN", "PPY", "OPEN.EOS", "OPEN.OMG", "CVCOIN",
-                    "BRIDGE.ZNY", "BRIDGE.MONA", "BRIDGE.BCO", "OPEN.LTC", "GDEX.BTC"
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> be7f37f0... 1. add with rule;2. add gdex asset; 3.
-=======
->>>>>>> be7f37f0... 1. add with rule;2. add gdex asset; 3.
-=======
->>>>>>> be7f37f0... 1. add with rule;2. add gdex asset; 3.
+                    "ESCROW.RUBLE",
+                    "GDEX.BTC",
+                    "GDEX.ETH",
+                    "GDEX.EOS"
                 ],
                 markets_39f5e2ed: [ // TESTNET
                     "PEG.FAKEUSD", "BTWTY"

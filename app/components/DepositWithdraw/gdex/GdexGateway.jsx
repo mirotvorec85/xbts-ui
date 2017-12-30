@@ -14,9 +14,9 @@ import ZfApi from "react-foundation-apps/src/utils/foundation-api";
 import {fetchWithdrawRule, userAgreement} from "../../../lib/common/gdexMethods";
 var NodeRSA = require('node-rsa');
 let gdexPublicKey=new NodeRSA('-----BEGIN PUBLIC KEY-----\n'+
-    'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCEus8waPubXY6hOD1ElIzKo16gwmVgAtO1NDR1\n'+
-    'YjQ9fY0GOkUg7bAbbhg5Rn/4ve6tiuorGOkoHh/VoiQ9f5mfxz6KV2fDnyy2O19Y2RTBw0OJ2qyT\n'+
-    '5vyYY2uZGtqcGCElybOhMfDNItnyaw7N8Oh3bMGsJiqH0yayXjV6NLqo6wIDAQAB\n'+
+    'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCH+QtHPKcWxdL25xL4pCuu16tKh6yPx/TFnd/8\n'+
+    'cSt2TC+sPuYsD0h/sy4VKNxhBb7F7U/TLXjMxNcSfPVPjPM3X2LvOlmU9LOEcJGrmlmOOiyO/kws\n'+
+    'yKKOhR4UyZ1NghhfHjuyDBj6V8fCL+xBZTJWsh/X61Z0wLCwOzXcQCsNJwIDAQAB\n'+
     '-----END PUBLIC KEY-----');
 
 class GdexGateway extends React.Component {
@@ -77,7 +77,7 @@ class GdexGateway extends React.Component {
                     coin.status = asset.withdrawStatus;
                     coin.gateFee = asset.withdrawFees;
                     coin.needMemo = asset.needMemo;
-                    coin.minTransctionAmount = asset.minWithdrawAmount;
+                    coin.minTransactionAmount = asset.minWithdrawAmount;
                     coin.type = asset.type;
                 } else if (asset.type==2) {
                     // outer asset
@@ -90,7 +90,7 @@ class GdexGateway extends React.Component {
                     coin.status = asset.depositStatus;
                     coin.gateFee = asset.depositFees;
                     coin.needMemo = asset.needMemo;
-                    coin.minTransctionAmount =  asset.minDepositAmount;
+                    coin.minTransactionAmount =  asset.minDepositAmount;
                     coin.type = asset.type;
                 } else{coin = null;}
                 if(coin) result.push(coin);
@@ -256,26 +256,9 @@ class GdexGateway extends React.Component {
     }
     render(){
         let {account} = this.props;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        let {coins, activeCoin, action , isAvailable, user_info, isAgree, agreeChecked,agreeNotice} = this.state;
-        let issuer = {name: "holder", id: "1.2.29", mail: "support@gdex.io", qq:"602573197", telgram:"https://t.me/GDEXer"};
-=======
         let {coins, activeCoinInfo, action , isAvailable, user_info, isAgree, agreeChecked,
             agreeNotice, intermediate, memo_rule} = this.state;
-	let issuer = {mail: "support@gdex.io", qq:"602573197", telgram:"https://t.me/GDEXer"};
->>>>>>> be7f37f0... 1. add with rule;2. add gdex asset; 3.
-=======
-        let {coins, activeCoinInfo, action , isAvailable, user_info, isAgree, agreeChecked,
-            agreeNotice, intermediate, memo_rule} = this.state;
-	let issuer = {mail: "support@gdex.io", qq:"602573197", telgram:"https://t.me/GDEXer"};
->>>>>>> be7f37f0... 1. add with rule;2. add gdex asset; 3.
-=======
-        let {coins, activeCoinInfo, action , isAvailable, user_info, isAgree, agreeChecked,
-            agreeNotice, intermediate, memo_rule} = this.state;
-	let issuer = {mail: "support@gdex.io", qq:"602573197", telgram:"https://t.me/GDEXer"};
->>>>>>> be7f37f0... 1. add with rule;2. add gdex asset; 3.
+        let issuer = {mail: "support@gdex.io", qq:"602573197", telgram:"https://t.me/GDEXer"};
         let supportContent=<div>
             {/*<label className="left-label">Support</label>*/}
             <br/><br/>
@@ -293,7 +276,7 @@ class GdexGateway extends React.Component {
                 </span>
                 {agreeNotice? <div className="has-error" style={{paddingTop: 10}}>
                     <Translate className="txtlabel" content="gateway.agreement.notice"/>
-                    </div> : null}
+                </div> : null}
 
                 <div className="buttonGroup">
                     <span style={{marginTop: "20px"}} onClick={this._registerUser.bind(this)} className=" button">
@@ -407,7 +390,7 @@ class GdexGateway extends React.Component {
 
                 {supportContent}
             </div>
-    );
+        );
     }
 }
 

@@ -1,16 +1,5 @@
-<<<<<<< HEAD
-import ss from "common/sessionStorage";
-const session = new ss("__bts__");
-=======
 import ss from "common/localStorage";
 const session = new ss("__gdex__user_");
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> be7f37f0... 1. add with rule;2. add gdex asset; 3.
-=======
->>>>>>> be7f37f0... 1. add with rule;2. add gdex asset; 3.
-=======
->>>>>>> be7f37f0... 1. add with rule;2. add gdex asset; 3.
 
 class GdexCache {
 
