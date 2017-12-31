@@ -236,7 +236,11 @@ class SettingsStore {
                     "SMOKE",
                     "OPEN.EOS",
                     "BTWTY",
-                    "ZEPH"
+                    "ZEPH",
+                    "ESCROW.RUBLE",
+                    "GDEX.BTC",
+                    "GDEX.ETH",
+                    "GDEX.EOS"
                 ],
                 markets_39f5e2ed: [ // TESTNET
                     "PEG.FAKEUSD", "BTWTY"

@@ -25,7 +25,9 @@ class Dashboard extends React.Component {
                 ["RUBLE", "RUDEX.GBG"],
                 ["BTS", "RUDEX.STEEM"],
                 ["BTS", "RUDEX.SBD"],
-                ["BTS", "RUDEX.MUSE"],
+                ["BTS", "ZEPH"],
+                ["BTS", "RUDEX.DCT"],
+                ["BTS", "RUDEX.KRM"],
                 ["BTS", "USD"],
                 ["BTS", "EUR"],
                 ["BTS", "CNY"],
@@ -41,8 +43,10 @@ class Dashboard extends React.Component {
                 ["BTS", "OPEN.LTC"],
                 ["BTS", "OPEN.EOS"],
                 ["BTS", "OPEN.GRC"],
+                ["CNY", "GDEX.BTC"],
+                ["CNY", "GDEX.ETH"],
                 ["BTS", "BTWTY"],
-                ["BTS", "ZEPH"],
+                ["BTS", "RUDEX.MUSE"],
             ],
             "39f5e2ed": [
                 ["TEST", "PEG.FAKEUSD"],
@@ -157,7 +161,7 @@ class Dashboard extends React.Component {
                     base={pair[1]}
                     invert={pair[2]}
                     isLowVolume={isLowVolume}
-                    hide={validMarkets > 24}
+                    hide={validMarkets > 29}
                 />
             );
         }).filter(a => !!a);

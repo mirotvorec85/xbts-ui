@@ -183,7 +183,7 @@ class GdexGatewayInfo extends React.Component {
                         <p style={{color:"red"}}><Translate content="gateway.deposit_warning" asset={coin.outerSymbol} /></p>
 
                         <div style={{padding: "10px 0", fontSize: "1.1rem", fontWeight: "bold"}}>
-                                {deposit_address_fragment}
+                            {deposit_address_fragment}
                             <div className="small-12 medium-5" style={{paddingTop: "10px"}}>
                                 {receive_address ?<QRCode size={120} value={receive_address.address} />: null}
                             </div>

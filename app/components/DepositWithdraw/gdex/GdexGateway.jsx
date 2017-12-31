@@ -258,7 +258,7 @@ class GdexGateway extends React.Component {
         let {account} = this.props;
         let {coins, activeCoinInfo, action , isAvailable, user_info, isAgree, agreeChecked,
             agreeNotice, intermediate, memo_rule} = this.state;
-	let issuer = {mail: "support@gdex.io", qq:"602573197", telgram:"https://t.me/GDEXer"};
+        let issuer = {mail: "support@gdex.io", qq:"602573197", telgram:"https://t.me/GDEXer"};
         let supportContent=<div>
             {/*<label className="left-label">Support</label>*/}
             <br/><br/>
@@ -276,7 +276,7 @@ class GdexGateway extends React.Component {
                 </span>
                 {agreeNotice? <div className="has-error" style={{paddingTop: 10}}>
                     <Translate className="txtlabel" content="gateway.agreement.notice"/>
-                    </div> : null}
+                </div> : null}
 
                 <div className="buttonGroup">
                     <span style={{marginTop: "20px"}} onClick={this._registerUser.bind(this)} className=" button">
@@ -390,7 +390,7 @@ class GdexGateway extends React.Component {
 
                 {supportContent}
             </div>
-    );
+        );
     }
 }
 
