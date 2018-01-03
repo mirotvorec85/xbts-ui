@@ -329,7 +329,7 @@ class Header extends React.Component {
             }
         }
 
-        let caret = this.state.dropdownActive ? <span>&#9660;</span> : <span>&#9650;</span>;
+        let hamburger = this.state.dropdownActive ? <Icon className="icon-14px" name="hamburger-x" /> : <Icon className="icon-14px" name="hamburger" />;
 
         return (
             <div className="header menu-group primary">
@@ -425,7 +425,7 @@ class Header extends React.Component {
                                             }}>
                                                 <span>{currentAccount}</span>
                                                 {walletBalance}
-                                                <span className="caret">{caret}</span>
+                                                <div className="hamburger">{hamburger}</div>
                                             </div>
 
                                         </div>
