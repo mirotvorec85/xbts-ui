@@ -1339,10 +1339,11 @@
   },
   "gateway": {
     "deposit_notice_delay": "(new address can be generated once per 5 minutes)",
-     "copy_memo": "Copy memo",
+    "copy_memo": "Copy memo",
     "please_generate_address": "Please, get new address ",
     "generate_new": "Get new address",
     "copy_address": "Copy address",
+    "use_copy_button": "PLEASE USE COPY BUTTON TO MAKE COPY OF ADDRESS OR MEMO ON THIS PAGE",
     "fee": "Gateway fee",
     "title": "Deposit & Withdraw",
     "assets": {
