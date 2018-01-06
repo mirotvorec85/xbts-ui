@@ -19,6 +19,7 @@ export const settingsAPIs = {
     DEFAULT_WS_NODE: "wss://api.bts.blckchnd.com",
     WS_NODE_LIST: [
         {url: "wss://node.market.rudex.org", location: "RuDEX, Germany"},
+        {url: "wss://ws.gdex.io", location: "GDEX"},
         {url: "wss://fake.automatic-selection.com", location: {translate: "settings.api_closest"}},
         {url: "ws://127.0.0.1:8090", location: "Locally hosted"},
         {url: "wss://bitshares.openledger.info/ws", location: "Nuremberg, Germany"},
