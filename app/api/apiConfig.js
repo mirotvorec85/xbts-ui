@@ -19,7 +19,6 @@ export const settingsAPIs = {
     DEFAULT_WS_NODE: "wss://api.bts.blckchnd.com",
     WS_NODE_LIST: [
         {url: "wss://node.market.rudex.org", location: "RuDEX, Germany"},
-        {url: "wss://ws.gdex.io", location: "GDEX"},
         {url: "wss://fake.automatic-selection.com", location: {translate: "settings.api_closest"}},
         {url: "ws://127.0.0.1:8090", location: "Locally hosted"},
         {url: "wss://bitshares.openledger.info/ws", location: "Nuremberg, Germany"},
@@ -33,6 +32,7 @@ export const settingsAPIs = {
         {url: "wss://openledger.hk/ws", location: "Hong Kong"},
         {url: "wss://bitshares.crypto.fans/ws", location: "Munich, Germany"},
         {url: "wss://node.testnet.bitshares.eu", location: "Public Testnet Server (Frankfurt, Germany)"},
+        {url: "wss://ws.gdex.io", location: "GDEX"},
         {url: "wss://ws.gdex.top", location: "China"},
         {url: "wss://dex.rnglab.org", location: "Netherlands"},
         {url: "wss://dexnode.net/ws", location: "Dallas, USA"},
