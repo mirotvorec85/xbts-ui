@@ -32,6 +32,7 @@ export const settingsAPIs = {
         {url: "wss://openledger.hk/ws", location: "Hong Kong"},
         {url: "wss://bitshares.crypto.fans/ws", location: "Munich, Germany"},
         {url: "wss://node.testnet.bitshares.eu", location: "Public Testnet Server (Frankfurt, Germany)"},
+        {url: "wss://ws.gdex.io", location: "GDEX"},
         {url: "wss://ws.gdex.top", location: "China"},
         {url: "wss://dex.rnglab.org", location: "Netherlands"},
         {url: "wss://dexnode.net/ws", location: "Dallas, USA"},
