@@ -495,6 +495,12 @@ class Header extends React.Component {
                                             <div className="table-cell"><Translate content="news.news"/></div>
                                         </li>
 
+                                        <li
+                                            onClick={(e)=>{e.preventDefault;window.open("https://rudex.freshdesk.com","_blank")}}>
+                                            <div className="table-cell"><Icon size="2x" name="support"/></div>
+                                            <div className="table-cell"><Translate content="header.support"/></div>
+                                        </li>
+
                                         <li className={cnames({active: active.indexOf("/help/introduction/bitshares") !== -1}, "divider")}
                                             onClick={this._onNavigate.bind(this, "/help/introduction/bitshares")}>
                                             <div className="table-cell"><Icon size="2x" name="question-circle"/></div>

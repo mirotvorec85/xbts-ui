@@ -49,6 +49,7 @@
     "unlock_short": "Login",
     "lock_short": "Log out",
     "help": "Help",
+    "support": "Support",
     "locked_tip": "<br/>Click to login.<br/><br/>Closing the browser window will also log you out.",
     "unlocked_tip": "<br/>Click to log out.<br/><br/>Closing the browser window will also log you out.",
     "account_notify": "The active account is now %(account)s",
