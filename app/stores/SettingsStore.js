@@ -227,6 +227,8 @@ class SettingsStore {
                     "OPEN.WAVES",
                     "OPEN.ARDR",
                     "OPEN.GRC",
+                    "OPEN.DCT",
+                    "OPEN.KRM",
                     "OBITS",
                     "ICOO",
                     "BLOCKPAY",
@@ -240,7 +242,8 @@ class SettingsStore {
                     "ESCROW.RUBLE",
                     "GDEX.BTC",
                     "GDEX.ETH",
-                    "GDEX.EOS"
+                    "GDEX.EOS",
+                    "GDEX.BTO"
                 ],
                 markets_39f5e2ed: [ // TESTNET
                     "PEG.FAKEUSD", "BTWTY"
