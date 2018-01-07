@@ -18,7 +18,7 @@ export const rudexAPIs = {
 export const settingsAPIs = {
     DEFAULT_WS_NODE: "wss://api.bts.blckchnd.com",
     WS_NODE_LIST: [
-        {url: "wss://node.market.rudex.org", location: "RuDEX, Germany"},
+        {url: "wss://api.bts.blckchnd.com", location: "RuDEX (Germany)"},
         {url: "wss://fake.automatic-selection.com", location: {translate: "settings.api_closest"}},
         {url: "ws://127.0.0.1:8090", location: "Locally hosted"},
         {url: "wss://bitshares.openledger.info/ws", location: "Nuremberg, Germany"},
@@ -37,8 +37,7 @@ export const settingsAPIs = {
         {url: "wss://dexnode.net/ws", location: "Dallas, USA"},
         {url: "wss://kc-us-dex.xeldal.com/ws", location: "Kansas City, USA"},
         {url: "wss://la.dexnode.net/ws", location: "Los Angeles, USA"},
-        {url: "wss://btsza.co.za:8091/ws", location: "Cape Town, South Africa"},
-        {url: "wss://api.bts.blckchnd.com", location: "Germany"},
+        {url: "wss://btsza.co.za:8091/ws", location: "Cape Town, South Africa"}
     ],
     DEFAULT_FAUCET: "https://faucet.rudex.org",
     TESTNET_FAUCET: "https://faucet.testnet.bitshares.eu",
