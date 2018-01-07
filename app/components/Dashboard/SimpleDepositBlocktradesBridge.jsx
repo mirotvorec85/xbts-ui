@@ -437,7 +437,7 @@ class SimpleDepositBlocktradesBridge extends React.Component {
             return null;
         }
         
-        let logo = require("assets/logo-ico-blue.png");
+        let logo = require("assets/logo-rudex-big.png");
 
         return (
             <div className="SimpleTrade__modal">

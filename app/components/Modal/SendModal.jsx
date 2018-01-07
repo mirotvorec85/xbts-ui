@@ -420,7 +420,7 @@ export default class SendModal extends React.Component {
         let accountsList = Immutable.Set();
         accountsList = accountsList.add(from_account);
 
-        const logo = require("assets/logo-ico-blue.png");
+        const logo = require("assets/logo-rudex-big.png");
         let tabIndex = 1;
 
         let greenAccounts = AccountStore.getState().linkedAccounts.toArray();

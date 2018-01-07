@@ -24,8 +24,8 @@ class DepositModalContent extends DecimalChecker {
             fetchingAddress: false,
             backingAsset: null,
             gatewayStatus: {
-                OPEN: { id: "OPEN", name: "OPENLEDGER", enabled: false, selected: false, support_url: "https://wallet.bitshares.org/#/help/gateways/openledger" },
-                RUDEX: { id: "RUDEX", name: "RUDEX", enabled: false, selected: false, support_url: "https://wallet.bitshares.org/#/help/gateways/rudex" }
+                OPEN: { id: "OPEN", name: "OPENLEDGER", enabled: false, selected: false, support_url: "/#/help/gateways/openledger" },
+                RUDEX: { id: "RUDEX", name: "RUDEX", enabled: false, selected: false, support_url: "/#/help/gateways/rudex" }
             }
         };
 
@@ -213,7 +213,7 @@ class DepositModalContent extends DecimalChecker {
                 </p>
             </div>;
 
-        const logo = require("assets/logo-ico-blue.png");
+        const logo = require("assets/logo-rudex-big.png");
 
         return (
             <div className="DepositModal">
