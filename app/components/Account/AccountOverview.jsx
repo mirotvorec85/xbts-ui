@@ -254,7 +254,8 @@ class AccountOverview extends React.Component {
                 <Link to={`/market/${asset.get("symbol")}_${preferredMarket}`}><Icon name="trade" className="icon-14px" /></Link> :
                 notCorePrefUnit ? <Link to={`/market/${asset.get("symbol")}_${preferredUnit}`}><Icon name="trade" className="icon-14px" /></Link> :
                 emptyCell;
-            transferLink = <a onClick={this.triggerSend.bind(this, asset.get("id"))}><Icon name="transfer" className="icon-14px" /></a>;
+            // transferLink = <a onClick={this.triggerSend.bind(this, asset.get("id"))}><Icon name="transfer" className="icon-14px" /></a>;
+            transferLink = <a onClick={this._onNavigate.bind(this, `/transfer?asset=${asset.get("id")}`)}><Icon name="transfer" className="icon-14px" /></a>;
 
             let {isBitAsset, borrowModal, borrowLink} = renderBorrow(asset, this.props.account);
 
