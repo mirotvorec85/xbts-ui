@@ -354,7 +354,7 @@ var Utils = {
     },
 
     replaceName(name, isBitAsset = false) {
-        let toReplace = ["TRADE.", "OPEN.", "METAEX.", "BRIDGE.", "RUDEX.", "ESCROW.", "GDEX."];
+        let toReplace = ["TRADE.", "OPEN.", "METAEX.", "BRIDGE.", "RUDEX.", "ESCROW.", "GDEX.", "WIN."];
         let suffix = "";
         let i;
         for (i = 0; i < toReplace.length; i++) {

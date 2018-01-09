@@ -22,6 +22,7 @@ import GatewayStore from "stores/GatewayStore";
 import GatewayActions from "actions/GatewayActions";
 import AccountImage from "../Account/AccountImage";
 import GdexGateway from "../DepositWithdraw/gdex/GdexGateway";
+import WinexGateway from "../DepositWithdraw/winex/WinexGateway";
 
 class AccountDepositWithdraw extends React.Component {
 
@@ -238,6 +239,20 @@ class AccountDepositWithdraw extends React.Component {
                 </div>
             )
         });
+
+        serList.push({
+            name: "Winex",
+            template: (
+                <div>
+
+                    <WinexGateway
+                        account={account}
+                        provider="Winex"/>
+                </div>
+            )
+        });
+
+
         return serList;
     }
 
@@ -273,7 +288,7 @@ class AccountDepositWithdraw extends React.Component {
             return <option key={index} value={index}>{services_obj.name}</option>;
         });
 
-        const serviceNames = ["RUDEX", "OPEN", "GDEX", "TRADE", "BITKAPITAL"];
+        const serviceNames = ["RUDEX", "OPEN", "GDEX", "Winex", "TRADE", "BITKAPITAL"];
         const currentServiceName = serviceNames[activeService];
         const currentServiceDown = servicesDown.get(currentServiceName);
 
