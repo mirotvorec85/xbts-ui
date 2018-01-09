@@ -381,8 +381,15 @@ class Header extends React.Component {
                         <li className="column-hide-small">{tradeLink}</li>
 
 
+                        {/*{!!createAccountLink ? null : <li className="column-hide-small">*/}
+                        {/*<a style={{flexFlow: "row"}} onClick={this._showSend.bind(this)}>*/}
+                        {/*<Icon size="1_5x" style={{position: "relative", top: 0, left: -8}} name="transfer"/>*/}
+                        {/*<span><Translate content="header.payments" /></span>*/}
+                        {/*</a>*/}
+                        {/*</li>}*/}
+
                         {!!createAccountLink ? null : <li className="column-hide-small">
-                        <a style={{flexFlow: "row"}} onClick={this._showSend.bind(this)}>
+                        <a style={{flexFlow: "row"}} onClick={this._onNavigate.bind(this, "/transfer")}>
                         <Icon size="1_5x" style={{position: "relative", top: 0, left: -8}} name="transfer"/>
                         <span><Translate content="header.payments" /></span>
                         </a>
@@ -458,9 +465,14 @@ class Header extends React.Component {
                                             <div className="table-cell"><Translate content="header.explorer"/></div>
                                         </li>
 
+                                        <li className={cnames({disabled: !isMyAccount})} onClick={this._showSend.bind(this)}>
+                                            <div className="table-cell"><Icon size="2x" name="transfer" /></div>
+                                            <div className="table-cell"><Translate content="header.payments_beta" /></div>
+                                        </li>
+
                                         <li className={cnames({active: active.indexOf("/transfer") !== -1}, {disabled: !isMyAccount})} onClick={!isMyAccount ? () => {} : this._onNavigate.bind(this, "/transfer")}>
                                             <div className="table-cell"><Icon size="2x" name="transfer" /></div>
-                                            <div className="table-cell"><Translate content="header.payments_legacy" /></div>
+                                            <div className="table-cell"><Translate content="header.payments" /></div>
                                         </li>
                                         
                                         <li className={cnames({active: active.indexOf("/deposit-withdraw") !== -1}, {disabled: !enableDepositWithdraw})}
