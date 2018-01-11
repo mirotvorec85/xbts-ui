@@ -16,17 +16,8 @@ class ChatBro extends React.Component {
 
         let chatUrl = null;
         switch (currentLocale) {
-            case 'ru':
-                chatUrl = "https://chat.rudex.org/ru/";
-                break;
-            case 'zh':
-                chatUrl = "https://chat.rudex.org/cn/";
-                break;
-            case 'en':
-                chatUrl = "https://chat.rudex.org/en/";
-                break;
             default:
-                chatUrl = "https://chat.rudex.org/en/";
+                chatUrl = `https://chat.rudex.org/${currentLocale}/`;
                 break;
         }
 

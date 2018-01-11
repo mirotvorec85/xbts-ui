@@ -389,10 +389,12 @@ class Header extends React.Component {
                         {/*</li>}*/}
 
                         {!!createAccountLink ? null : <li className="column-hide-small">
-                        <a style={{flexFlow: "row"}} onClick={this._onNavigate.bind(this, "/transfer")}>
-                        <Icon size="1_5x" style={{position: "relative", top: 0, left: -8}} name="transfer"/>
-                        <span><Translate content="header.payments" /></span>
-                        </a>
+                            <Link style={{flexFlow: "row"}} to={"/transfer"}
+                                  className={cnames({active: active.indexOf("/transfer") !== -1})}>
+
+                            <Icon size="1_5x" style={{position: "relative", top: 0, left: -8}} name="transfer"/>
+                            <span><Translate content="header.payments" /></span>
+                        </Link>
                         </li>}
 
                         {!!createAccountLink ? <li>
