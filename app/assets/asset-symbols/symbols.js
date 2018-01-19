@@ -55,3 +55,4 @@ require("file-loader?name=asset-symbols/[name].png!./stealth.png");
 require("file-loader?name=asset-symbols/[name].png!./kexcoin.png");
 require("file-loader?name=asset-symbols/[name].png!./zeph.png");
 require("file-loader?name=asset-symbols/[name].png!./krm.png");
+require("file-loader?name=asset-symbols/[name].png!./escrow.ruble.png");

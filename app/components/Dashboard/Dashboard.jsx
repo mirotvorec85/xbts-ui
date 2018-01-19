@@ -20,6 +20,7 @@ class Dashboard extends React.Component {
         let marketsByChain = {
             "4018d784":[
                 ["BTS", "RUBLE"],
+                ["BTS", "ESCROW.RUBLE"],
                 ["BTS", "PPY"],
                 ["RUBLE", "RUDEX.GOLOS"],
                 ["RUBLE", "RUDEX.GBG"],
