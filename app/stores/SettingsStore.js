@@ -217,26 +217,9 @@ class SettingsStore {
                     "RUDEX.KRM",
                     "RUDEX.DCT",
                     "PPY",
-                    "OPEN.BTC",
-                    "OPEN.DASH",
-                    "OPEN.ETH",
-                    "OPEN.DGD",
-                    "OPEN.DOGE",
-                    "OPEN.LTC",
-                    "OPEN.GRC",
-                    "OPEN.MAID",
-                    "OPEN.LISK",
-                    "OPEN.WAVES",
-                    "OPEN.ARDR",
-                    "OPEN.GRC",
                     "OBITS",
-                    "ICOO",
-                    "BLOCKPAY",
-                    "BTSR",
-                    "FUNC",
                     "YOYOW",
                     "SMOKE",
-                    "OPEN.EOS",
                     "BTWTY",
                     "ZEPH",
                     "ESCROW.RUBLE",
@@ -252,7 +235,7 @@ class SettingsStore {
 
             let bases = {
                 markets_4018d784: [ // BTS MAIN NET
-                    "BTS", "RUBLE", "OPEN.BTC", "USD", "CNY"
+                    "BTS", "RUBLE", "GDEX.BTC", "USD", "CNY"
                 ],
                 markets_39f5e2ed: [ // TESTNET
                     "TEST"

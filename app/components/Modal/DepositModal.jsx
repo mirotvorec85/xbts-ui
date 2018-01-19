@@ -91,7 +91,7 @@ class DepositModalContent extends DecimalChecker {
 
         for (let g in gatewayStatus) {
             this.props.backedCoins.get(g.toUpperCase(), []).find(c => {
-                if(g == "OPEN" && selectedAsset == c.backingCoinType && c.depositAllowed && c.isAvailable) { gatewayStatus.OPEN.enabled = true; }
+                //if(g == "OPEN" && selectedAsset == c.backingCoinType && c.depositAllowed && c.isAvailable) { gatewayStatus.OPEN.enabled = true; }
                 if(g == "RUDEX" && selectedAsset == c.backingCoin && c.depositAllowed) { gatewayStatus.RUDEX.enabled = true; }
             });
         }

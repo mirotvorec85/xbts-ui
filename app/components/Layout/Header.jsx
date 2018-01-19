@@ -485,10 +485,10 @@ class Header extends React.Component {
                                             </div>
                                         </li>
 
-                                        <li className={cnames("divider", {active: active.indexOf("/deposit-withdraw") !== -1}, {disabled: !enableDepositWithdraw})} onClick={!enableDepositWithdraw ? () => {} : this._showDeposit.bind(this)}>
-                                            <div className="table-cell"><Icon size="2x" name="deposit" /></div>
-                                            <div className="table-cell"><Translate content="modal.deposit.submit_beta" /></div>
-                                        </li>
+                                        {/*<li className={cnames("divider", {active: active.indexOf("/deposit-withdraw") !== -1}, {disabled: !enableDepositWithdraw})} onClick={!enableDepositWithdraw ? () => {} : this._showDeposit.bind(this)}>*/}
+                                            {/*<div className="table-cell"><Icon size="2x" name="deposit" /></div>*/}
+                                            {/*<div className="table-cell"><Translate content="modal.deposit.submit_beta" /></div>*/}
+                                        {/*</li>*/}
 
                                         <li className={cnames({active: active.indexOf("/settings") !== -1}, "divider")}
                                             onClick={this._onNavigate.bind(this, "/settings")}>

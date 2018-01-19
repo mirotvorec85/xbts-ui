@@ -42,7 +42,8 @@ class AccountDepositWithdraw extends React.Component {
             rudexService: props.viewSettings.get("rudexService", "gateway"),
             btService: props.viewSettings.get("btService", "bridge"),
             metaService: props.viewSettings.get("metaService", "bridge"),
-            activeService: props.viewSettings.get("activeService", 0)
+            activeService: props.viewSettings.get("activeService", 0),
+            olTakeRisk: false
         };
     }
 
@@ -57,7 +58,8 @@ class AccountDepositWithdraw extends React.Component {
             nextState.rudexService !== this.state.rudexService ||
             nextState.btService !== this.state.btService ||
             nextState.metaService !== this.state.metaService ||
-            nextState.activeService !== this.state.activeService
+            nextState.activeService !== this.state.activeService ||
+            nextState.olTakeRisk !== this.state.olTakeRisk
         );
     }
 
@@ -126,11 +128,17 @@ class AccountDepositWithdraw extends React.Component {
         });
     }
 
+    onOLTakeRisk() {
+        this.setState({
+            olTakeRisk: !this.state.olTakeRisk
+        });
+    }
+
     renderServices(openLedgerGatewayCoins, rudexGatewayCoins) {
         //let services = ["Openledger (OPEN.X)", "BlockTrades (TRADE.X)", "Transwiser", "BitKapital"];
         let serList = [];
         let { account } = this.props;
-        let { olService, btService, rudexService } = this.state;
+        let { olService, btService, rudexService, olTakeRisk } = this.state;
 
         serList.push({
             name: "RuDEX (RUDEX.X)",
@@ -156,40 +164,13 @@ class AccountDepositWithdraw extends React.Component {
                 </div>
             )
         });
+
         serList.push({
-            name: "Openledger (OPEN.X)",
+            name: "GDEX",
             template: (
-                <div className="content-block">
-                        {/* <div className="float-right">
-                            <a href="https://www.ccedk.com/" target="__blank" rel="noopener noreferrer"><Translate content="gateway.website" /></a>
-                        </div> */}
-                        <div className="service-selector">
-                            <ul className="button-group segmented no-margin">
-                                <li onClick={this.toggleOLService.bind(this, "gateway")} className={olService === "gateway" ? "is-active" : ""}><a><Translate content="gateway.gateway" /></a></li>
-                                <li onClick={this.toggleOLService.bind(this, "fiat")} className={olService === "fiat" ? "is-active" : ""}><a>Fiat</a></li>
-                            </ul>
-                        </div>
-
-                        {olService === "gateway" && openLedgerGatewayCoins.length ?
-                        <BlockTradesGateway
-                            account={account}
-                            coins={openLedgerGatewayCoins}
-                            provider="openledger"
-                        /> : null}
-
-                        {olService === "fiat" ?
-                        <div>
-                            <div style={{paddingBottom: 15}}><Translate component="h5" content="gateway.fiat_text" unsafe /></div>
-
-                            <OpenLedgerFiatDepositWithdrawal
-                                rpc_url={settingsAPIs.RPC_URL}
-                                account={account}
-                                issuer_account="openledger-fiat" />
-                            <OpenLedgerFiatTransactionHistory
-                                rpc_url={settingsAPIs.RPC_URL}
-                                account={account} />
-                        </div> : null}
-                    </div>
+                <div>
+                    <GdexGateway account={account} provider={"gdex"}/>
+                </div>
             )
         });
 
@@ -232,15 +213,6 @@ class AccountDepositWithdraw extends React.Component {
         });
 
         serList.push({
-            name: "GDEX",
-            template: (
-                <div>
-                    <GdexGateway account={account} provider={"gdex"}/>
-                </div>
-            )
-        });
-
-        serList.push({
             name: "Winex",
             template: (
                 <div>
@@ -248,6 +220,60 @@ class AccountDepositWithdraw extends React.Component {
                     <WinexGateway
                         account={account}
                         provider="Winex"/>
+                </div>
+            )
+        });
+
+        serList.push({
+            name: "Openledger (OPEN.X)",
+            template: (
+                <div className="content-block">
+                    {/* <div className="float-right">
+                     <a href="https://www.ccedk.com/" target="__blank" rel="noopener noreferrer"><Translate content="gateway.website" /></a>
+                     </div> */}
+                    <div className="service-selector">
+                        <ul className="button-group segmented no-margin">
+                            <li onClick={this.toggleOLService.bind(this, "gateway")} className={olService === "gateway" ? "is-active" : ""}><a><Translate content="gateway.gateway" /></a></li>
+                            <li onClick={this.toggleOLService.bind(this, "fiat")} className={olService === "fiat" ? "is-active" : ""}><a>Fiat</a></li>
+                        </ul>
+                    </div>
+
+                    {olService === "gateway" && openLedgerGatewayCoins.length ?
+                        <div>
+
+
+                            <p>
+                            <Translate style={{color: "red", marginBottom: "1em", display: "block"}} component="h4" content="gateway.rudex.openledger_close" />
+                                <a href="https://blog.openledger.info/2017/12/18/openledger-official-web-sites-get-updates-by-the-first" target="_blank">https://blog.openledger.info/2017/12/18/openledger-official-web-sites-get-updates-by-the-first</a>
+                            </p>
+
+                            <p>
+                                <h5><input type="checkbox" defaultChecked={this.state.olTakeRisk} onChange={this.onOLTakeRisk.bind(this)}/> - <Translate content="gateway.rudex.take_the_risk" /></h5>
+                            </p>
+
+
+                            <hr/>
+                            { olTakeRisk ?
+                            <BlockTradesGateway
+                                account={account}
+                                coins={openLedgerGatewayCoins}
+                                provider="openledger"
+                            /> : null }
+                        </div>: null}
+
+                    {olService === "fiat" ?
+                        <div>
+                            <div style={{paddingBottom: 15}}><Translate component="h5" content="gateway.fiat_text" unsafe /></div>
+
+                            <OpenLedgerFiatDepositWithdrawal
+                                rpc_url={settingsAPIs.RPC_URL}
+                                account={account}
+                                issuer_account="openledger-fiat" />
+                            <OpenLedgerFiatTransactionHistory
+                                rpc_url={settingsAPIs.RPC_URL}
+                                account={account} />
+                        </div> : null}
+
                 </div>
             )
         });
