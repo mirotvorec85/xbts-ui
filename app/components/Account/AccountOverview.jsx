@@ -272,8 +272,9 @@ class AccountOverview extends React.Component {
             const thisAssetName = asset.get("symbol").split(".");
             const canDeposit =
                 (
-                    (thisAssetName[0] == "OPEN" || thisAssetName[0] == "RUDEX") && 
-                    !!this.props.backedCoins.get("OPEN", []).find(a => a.backingCoinType === thisAssetName[1]) ||
+                    thisAssetName[0] == "RUDEX" &&
+                    //(thisAssetName[0] == "OPEN" || thisAssetName[0] == "RUDEX") &&
+                    //!!this.props.backedCoins.get("OPEN", []).find(a => a.backingCoinType === thisAssetName[1]) ||
                     !!this.props.backedCoins.get("RUDEX", []).find(a => a.backingCoin === thisAssetName[1])
                 ) || asset.get("symbol") == "BTS";
 
@@ -387,7 +388,7 @@ class AccountOverview extends React.Component {
 
                     const thisAssetName = asset.get("symbol").split(".");
                     const canDeposit =
-                        !!this.props.backedCoins.get("OPEN", []).find(a => a.backingCoinType === thisAssetName[1]) ||
+                        //!!this.props.backedCoins.get("OPEN", []).find(a => a.backingCoinType === thisAssetName[1]) ||
                         !!this.props.backedCoins.get("RUDEX", []).find(a => a.backingCoin === thisAssetName[1]) ||
                         asset.get("symbol") == "BTS";
 
