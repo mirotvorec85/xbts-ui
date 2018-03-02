@@ -43,7 +43,7 @@ class AccountDepositWithdraw extends React.Component {
             btService: props.viewSettings.get("btService", "bridge"),
             metaService: props.viewSettings.get("metaService", "bridge"),
             activeService: props.viewSettings.get("activeService", 0),
-            olTakeRisk: false
+            olNotice1Informed: false
         };
     }
 
@@ -59,7 +59,7 @@ class AccountDepositWithdraw extends React.Component {
             nextState.btService !== this.state.btService ||
             nextState.metaService !== this.state.metaService ||
             nextState.activeService !== this.state.activeService ||
-            nextState.olTakeRisk !== this.state.olTakeRisk
+            nextState.olNotice1Informed !== this.state.olNotice1Informed
         );
     }
 
@@ -128,9 +128,9 @@ class AccountDepositWithdraw extends React.Component {
         });
     }
 
-    onOLTakeRisk() {
+    onolNotice1Informed() {
         this.setState({
-            olTakeRisk: !this.state.olTakeRisk
+            olNotice1Informed: !this.state.olNotice1Informed
         });
     }
 
@@ -138,7 +138,7 @@ class AccountDepositWithdraw extends React.Component {
         //let services = ["Openledger (OPEN.X)", "BlockTrades (TRADE.X)", "Transwiser", "BitKapital"];
         let serList = [];
         let { account } = this.props;
-        let { olService, btService, rudexService, olTakeRisk } = this.state;
+        let { olService, btService, rudexService, olNotice1Informed } = this.state;
 
         serList.push({
             name: "RuDEX (RUDEX.X)",
@@ -243,17 +243,17 @@ class AccountDepositWithdraw extends React.Component {
 
 
                             <p>
-                            <Translate style={{color: "red", marginBottom: "1em", display: "block"}} component="h4" content="gateway.rudex.openledger_close" />
+                            <Translate style={{color: "darkred", marginBottom: "1em", display: "block"}} component="h5" content="gateway.rudex.openledger_notice1" />
                                 <a href="https://blog.openledger.info/2017/12/18/openledger-official-web-sites-get-updates-by-the-first" target="_blank">https://blog.openledger.info/2017/12/18/openledger-official-web-sites-get-updates-by-the-first</a>
                             </p>
 
                             <p>
-                                <h5><input type="checkbox" defaultChecked={this.state.olTakeRisk} onChange={this.onOLTakeRisk.bind(this)}/> - <Translate content="gateway.rudex.take_the_risk" /></h5>
+                                <h5><input type="checkbox" defaultChecked={this.state.olNotice1Informed} onChange={this.onolNotice1Informed.bind(this)}/> - <Translate content="gateway.rudex.openledger_notice1_informed" /></h5>
                             </p>
 
 
                             <hr/>
-                            { olTakeRisk ?
+                            { olNotice1Informed ?
                             <BlockTradesGateway
                                 account={account}
                                 coins={openLedgerGatewayCoins}
