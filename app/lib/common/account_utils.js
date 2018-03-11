@@ -30,7 +30,9 @@ let scamAccountsOL = [
 ];
 
 let scamAccountsOther = [
-    "coinbase"
+    "coinbase",
+    "coinlink-karma",
+    "coinlink-krm"
 ];
 
 
