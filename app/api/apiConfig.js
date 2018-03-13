@@ -30,6 +30,7 @@ export const settingsAPIs = {
     WS_NODE_LIST: [
         {url: "wss://fake.automatic-selection.com", location: {translate: "settings.api_closest"}},
         {url: "wss://api.bts.blckchnd.com", location: "RuDEX (Falkenstein, Germany)"},
+        {url: "wss://api-ru.bts.blckchnd.com", location: "RuDEX (Moscow, Russia)"},
         {url: "ws://127.0.0.1:8090", location: "Locally hosted"},
         {url: "wss://bitshares.openledger.info/ws", location: "Nuremberg, Germany"},
         {url: "wss://eu.openledger.info/ws", location: "Berlin, Germany"},
