@@ -216,6 +216,7 @@ class SettingsStore {
                     "RUDEX.SBD",
                     "RUDEX.KRM",
                     "RUDEX.DCT",
+                    "RUDEX.TT",
                     "PPY",
                     "OBITS",
                     "YOYOW",
