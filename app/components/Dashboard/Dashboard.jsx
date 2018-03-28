@@ -30,6 +30,7 @@ class Dashboard extends React.Component {
                 ["BTS", "RUDEX.DCT"],
                 ["BTS", "RUDEX.KRM"],
                 ["BTS", "RUDEX.TT"],
+                ["BTS", "RUDEX.SCR"],
                 ["BTS", "USD"],
                 ["BTS", "EUR"],
                 ["BTS", "CNY"],
