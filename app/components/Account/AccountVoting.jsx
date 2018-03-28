@@ -92,7 +92,7 @@ class AccountVoting extends React.Component {
         let votes = options.get("votes");
         let vote_ids = votes.toArray();
         let vids = Immutable.Set( vote_ids );
-        // ChainStore.getObjectsByVoteIds(vote_ids);
+        ChainStore.getObjectsByVoteIds(vote_ids);
 
         let proxyPromise = null, proxy_vids = Immutable.Set([]);
         const hasProxy = proxy_account_id !== "1.2.5";
@@ -100,11 +100,12 @@ class AccountVoting extends React.Component {
             let proxy_votes = proxyOptions.get("votes");
             let proxy_vote_ids = proxy_votes.toArray();
             proxy_vids = Immutable.Set( proxy_vote_ids );
-            proxyPromise = FetchChainObjects(ChainStore.getObjectByVoteID, proxy_vote_ids, 5000);
+            ChainStore.getObjectsByVoteIds(proxy_vote_ids);
+            proxyPromise = FetchChainObjects(ChainStore.getObjectByVoteID, proxy_vote_ids, 10000);
         }
 
         Promise.all([
-            FetchChainObjects(ChainStore.getObjectByVoteID, vote_ids, 5000),
+            FetchChainObjects(ChainStore.getObjectByVoteID, vote_ids, 10000),
             proxyPromise
         ]).then(res => {
             const [vote_objs, proxy_vote_objs] = res;
@@ -171,7 +172,7 @@ class AccountVoting extends React.Component {
         } else {
             lastIdx = parseInt(vote_ids[vote_ids.length - 1].split(".")[2], 10);
         }
-        FetchChainObjects(ChainStore.getObject, vote_ids, 5000, {}).then(vote_objs => {
+        FetchChainObjects(ChainStore.getObject, vote_ids, 10000, {}).then(vote_objs => {
             this.state[`all_${type}`] = current.concat(Immutable.List(vote_objs.filter(a => !!a).map(a => a.get(isWitness ? "witness_account" : "committee_member_account"))));
             if (!!vote_objs[vote_objs.length - 1]) { // there are more valid vote objs, fetch more
                 vote_ids = [];
