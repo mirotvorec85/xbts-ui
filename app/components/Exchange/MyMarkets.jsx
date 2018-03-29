@@ -285,7 +285,7 @@ class MyMarkets extends React.Component {
     shouldComponentUpdate(nextProps, nextState) {
         /* Trigger a lookup when switching tabs to find-market */
         if (this.state.activeTab !== "find-market" && nextState.activeTab === "find-market" && !nextProps.searchAssets.size) {
-            this._lookupAssets("OPEN.", true);
+            this._lookupAssets("RUDEX.", true);
         }
 
         return (
@@ -326,7 +326,7 @@ class MyMarkets extends React.Component {
         this._setMinWidth();
 
         if (this.state.activeTab === "find-market") {
-            this._lookupAssets("OPEN.", true);
+            this._lookupAssets("RUDEX.", true);
         }
     }
 
@@ -495,7 +495,7 @@ class MyMarkets extends React.Component {
         ];
 
         /* By default, show the OPEN.X assets */
-        if (!lookupQuote) lookupQuote = "OPEN.";
+        if (!lookupQuote) lookupQuote = "RUDEX.";
 
         /* In the find-market tab, only use market tab 0 */
         if (!myMarketTab) activeMarketTab = 0;

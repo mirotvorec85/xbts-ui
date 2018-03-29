@@ -87,7 +87,7 @@ class ExchangeContainer extends React.Component {
                             return MarketsStore.getState().marketReady;
                         },
                         backedCoins: () => {
-                            return GatewayStore.getState().backedCoins.get("OPEN", []);
+                            return GatewayStore.getState().backedCoins.get("RUDEX", []);
                         },
                         bridgeCoins: () => {
                             return GatewayStore.getState().bridgeCoins;
