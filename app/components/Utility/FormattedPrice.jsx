@@ -1,4 +1,5 @@
 import React from "react";
+import {IntlProvider} from "react-intl";
 import {FormattedNumber} from "react-intl";
 import utils from "common/utils";
 import AssetWrapper from "./AssetWrapper";
@@ -167,11 +168,14 @@ class FormattedPrice extends React.Component {
                 : price.base.precision;
             decimals = Math.min(8, decimals);
             formatted_value = (
-                <FormattedNumber
-                    value={value}
-                    minimumFractionDigits={Math.max(2, decimals)}
-                    maximumFractionDigits={Math.max(2, decimals)}
-                />
+                <IntlProvider locale="en">
+                    <FormattedNumber
+                        format="asset"
+                        value={value}
+                        minimumFractionDigits={Math.max(2, decimals)}
+                        maximumFractionDigits={Math.max(2, decimals)}
+                    />
+                </IntlProvider>
             );
 
             if (pulsate) {
