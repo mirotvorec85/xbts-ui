@@ -126,79 +126,6 @@ class AccountDepositWithdraw extends React.Component {
         let {olService, btService, rudexService} = this.state;
 
         serList.push({
-            name: "Openledger (OPEN.X)",
-            template: (
-                <div className="content-block">
-                    {/* <div className="float-right">
-                            <a href="https://www.ccedk.com/" target="__blank" rel="noopener noreferrer"><Translate content="gateway.website" /></a>
-                        </div> */}
-                    <div
-                        className="service-selector"
-                        style={{marginBottom: "2rem"}}
-                    >
-                        <ul className="button-group segmented no-margin">
-                            <li
-                                onClick={this.toggleOLService.bind(
-                                    this,
-                                    "gateway"
-                                )}
-                                className={
-                                    olService === "gateway" ? "is-active" : ""
-                                }
-                            >
-                                <a>
-                                    <Translate content="gateway.gateway" />
-                                </a>
-                            </li>
-                            <li
-                                onClick={this.toggleOLService.bind(
-                                    this,
-                                    "fiat"
-                                )}
-                                className={
-                                    olService === "fiat" ? "is-active" : ""
-                                }
-                            >
-                                <Translate component="a" content="gateway.fiat" />
-                            </li>
-                        </ul>
-                    </div>
-
-                    {olService === "gateway" &&
-                    openLedgerGatewayCoins.length ? (
-                        <BlockTradesGateway
-                            account={account}
-                            coins={openLedgerGatewayCoins}
-                            provider="openledger"
-                        />
-                    ) : null}
-
-                    {olService === "fiat" ? (
-                        <div>
-                            <div style={{paddingBottom: 15}}>
-                                <Translate
-                                    component="h5"
-                                    content="gateway.fiat_text"
-                                    unsafe
-                                />
-                            </div>
-
-                            <OpenLedgerFiatDepositWithdrawal
-                                rpc_url={settingsAPIs.RPC_URL}
-                                account={account}
-                                issuer_account="openledger-fiat"
-                            />
-                            <OpenLedgerFiatTransactionHistory
-                                rpc_url={settingsAPIs.RPC_URL}
-                                account={account}
-                            />
-                        </div>
-                    ) : null}
-                </div>
-            )
-        });
-
-        serList.push({
             name: "RuDEX (RUDEX.X)",
             template: (
                 <div className="content-block">
@@ -246,6 +173,82 @@ class AccountDepositWithdraw extends React.Component {
                     {rudexService === "fiat" ? (
                         <div>
                             <Translate content="gateway.rudex.coming_soon" />
+                        </div>
+                    ) : null}
+                </div>
+            )
+        });
+
+        serList.push({
+            name: "Openledger (OPEN.X)",
+            template: (
+                <div className="content-block">
+                    {/* <div className="float-right">
+                            <a href="https://www.ccedk.com/" target="__blank" rel="noopener noreferrer"><Translate content="gateway.website" /></a>
+                        </div> */}
+                    <div
+                        className="service-selector"
+                        style={{marginBottom: "2rem"}}
+                    >
+                        <ul className="button-group segmented no-margin">
+                            <li
+                                onClick={this.toggleOLService.bind(
+                                    this,
+                                    "gateway"
+                                )}
+                                className={
+                                    olService === "gateway" ? "is-active" : ""
+                                }
+                            >
+                                <a>
+                                    <Translate content="gateway.gateway" />
+                                </a>
+                            </li>
+                            <li
+                                onClick={this.toggleOLService.bind(
+                                    this,
+                                    "fiat"
+                                )}
+                                className={
+                                    olService === "fiat" ? "is-active" : ""
+                                }
+                            >
+                                <Translate
+                                    component="a"
+                                    content="gateway.fiat"
+                                />
+                            </li>
+                        </ul>
+                    </div>
+
+                    {olService === "gateway" &&
+                    openLedgerGatewayCoins.length ? (
+                        <BlockTradesGateway
+                            account={account}
+                            coins={openLedgerGatewayCoins}
+                            provider="openledger"
+                        />
+                    ) : null}
+
+                    {olService === "fiat" ? (
+                        <div>
+                            <div style={{paddingBottom: 15}}>
+                                <Translate
+                                    component="h5"
+                                    content="gateway.fiat_text"
+                                    unsafe
+                                />
+                            </div>
+
+                            <OpenLedgerFiatDepositWithdrawal
+                                rpc_url={settingsAPIs.RPC_URL}
+                                account={account}
+                                issuer_account="openledger-fiat"
+                            />
+                            <OpenLedgerFiatTransactionHistory
+                                rpc_url={settingsAPIs.RPC_URL}
+                                account={account}
+                            />
                         </div>
                     ) : null}
                 </div>
@@ -371,10 +374,10 @@ class AccountDepositWithdraw extends React.Component {
         });
 
         const serviceNames = [
+            "RUDEX",
             "Winex",
             "GDEX",
             "OPEN",
-            "RUDEX",
             "TRADE",
             "BITKAPITAL"
         ];
