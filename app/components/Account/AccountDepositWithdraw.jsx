@@ -40,7 +40,8 @@ class AccountDepositWithdraw extends React.Component {
             rudexService: props.viewSettings.get("rudexService", "gateway"),
             btService: props.viewSettings.get("btService", "bridge"),
             metaService: props.viewSettings.get("metaService", "bridge"),
-            activeService: props.viewSettings.get("activeService", 0)
+            activeService: props.viewSettings.get("activeService", 0),
+            olNotice1Informed: false
         };
     }
 
@@ -60,7 +61,8 @@ class AccountDepositWithdraw extends React.Component {
             nextState.rudexService !== this.state.rudexService ||
             nextState.btService !== this.state.btService ||
             nextState.metaService !== this.state.metaService ||
-            nextState.activeService !== this.state.activeService
+            nextState.activeService !== this.state.activeService ||
+            nextState.olNotice1Informed !== this.state.olNotice1Informed
         );
     }
 
@@ -98,6 +100,12 @@ class AccountDepositWithdraw extends React.Component {
         });
     }
 
+    onolNotice1Informed() {
+        this.setState({
+            olNotice1Informed: !this.state.olNotice1Informed
+        });
+    }
+
     toggleMetaService(service) {
         this.setState({
             metaService: service
@@ -123,7 +131,12 @@ class AccountDepositWithdraw extends React.Component {
         //let services = ["Openledger (OPEN.X)", "BlockTrades (TRADE.X)", "Transwiser", "BitKapital"];
         let serList = [];
         let {account} = this.props;
-        let {olService, btService, rudexService} = this.state;
+        let {
+            olService,
+            btService,
+            rudexService,
+            olNotice1Informed
+        } = this.state;
 
         serList.push({
             name: "RuDEX (RUDEX.X)",
@@ -223,11 +236,50 @@ class AccountDepositWithdraw extends React.Component {
 
                     {olService === "gateway" &&
                     openLedgerGatewayCoins.length ? (
-                        <BlockTradesGateway
-                            account={account}
-                            coins={openLedgerGatewayCoins}
-                            provider="openledger"
-                        />
+                        <div>
+                            <p>
+                                <Translate
+                                    style={{
+                                        color: "darkred",
+                                        marginBottom: "1em",
+                                        display: "block"
+                                    }}
+                                    component="h5"
+                                    content="gateway.rudex.openledger_notice1"
+                                />
+                                <a
+                                    href="https://blog.openledger.info/2017/12/18/openledger-official-web-sites-get-updates-by-the-first"
+                                    target="_blank"
+                                >
+                                    https://blog.openledger.info/2017/12/18/openledger-official-web-sites-get-updates-by-the-first
+                                </a>
+                            </p>
+
+                            <p>
+                                <h5>
+                                    <input
+                                        type="checkbox"
+                                        defaultChecked={
+                                            this.state.olNotice1Informed
+                                        }
+                                        onChange={this.onolNotice1Informed.bind(
+                                            this
+                                        )}
+                                    />{" "}
+                                    -{" "}
+                                    <Translate content="gateway.rudex.openledger_notice1_informed" />
+                                </h5>
+                            </p>
+
+                            <hr />
+                            {olNotice1Informed ? (
+                                <BlockTradesGateway
+                                    account={account}
+                                    coins={openLedgerGatewayCoins}
+                                    provider="openledger"
+                                />
+                            ) : null}
+                        </div>
                     ) : null}
 
                     {olService === "fiat" ? (

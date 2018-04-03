@@ -1717,7 +1717,11 @@
             "min_amount": "Минимальная сумма: %(minAmount)s %(symbol)s",
             "min_amount_error": "Пожалуйста введите число >= минимума",
             "coming_soon": "Скоро",
-            "under_construction": "Технические работы"
+            "under_construction": "Технические работы",
+            "openledger_notice1":
+                "Ознакомьтесь с официальной позицией OpenLedger по использованию их шлюзов:",
+            "openledger_notice1_informed":
+                "Я ознакомился с позицией OpenLedger."
         },
         "unavailable":
             "Шлюз для данного актива в настоящее время не работает, пожалуйста, повторите попытку позже",

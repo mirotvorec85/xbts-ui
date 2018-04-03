@@ -1760,7 +1760,11 @@
             "min_amount": "Minimum amount: %(minAmount)s %(symbol)s",
             "min_amount_error": "Please enter number >= minimum",
             "coming_soon": "Coming soon",
-            "under_construction": "Under Construction"
+            "under_construction": "Under Construction",
+            "openledger_notice1":
+                "Read the official position of OpenLedger on the use of their gateways:",
+            "openledger_notice1_informed":
+                "I have read and am informed about OpenLedgers position."
         },
         "unavailable":
             "The gateway service for this asset is currently down, please try again later",
