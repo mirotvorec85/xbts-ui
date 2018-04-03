@@ -64,7 +64,9 @@ let icons = [
     "news",
     "hamburger",
     "hamburger-x",
-    "link"
+    "link",
+    "deposit-withdraw",
+    "support"
 ];
 
 let icons_map = {};

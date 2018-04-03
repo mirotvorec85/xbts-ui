@@ -22,7 +22,7 @@ import TotalBalanceValue from "../Utility/TotalBalanceValue";
 import ReactTooltip from "react-tooltip";
 import {Apis} from "bitsharesjs-ws";
 import notify from "actions/NotificationActions";
-// import IntlActions from "actions/IntlActions";
+import IntlActions from "actions/IntlActions";
 import AccountImage from "../Account/AccountImage";
 import {ChainStore} from "bitsharesjs/es";
 import WithdrawModal from "../Modal/WithdrawModalNew";
@@ -30,9 +30,15 @@ import {List} from "immutable";
 
 var logo = require("assets/logo-rudex.png");
 
-// const FlagImage = ({flag, width = 20, height = 20}) => {
-//     return <img height={height} width={width} src={`${__BASE_URL__}language-dropdown/${flag.toUpperCase()}.png`} />;
-// };
+const FlagImage = ({flag, width = 20, height = 20}) => {
+    return (
+        <img
+            height={height}
+            width={width}
+            src={`${__BASE_URL__}language-dropdown/${flag.toUpperCase()}.png`}
+        />
+    );
+};
 
 const SUBMENUS = {
     SETTINGS: "SETTINGS"
@@ -321,6 +327,48 @@ class Header extends React.Component {
         const enableDepositWithdraw =
             Apis.instance().chain_id.substr(0, 8) === "4018d784";
 
+        const flagDropdown = (
+            <ActionSheet>
+                <ActionSheet.Button title="">
+                    <a
+                        style={{padding: "1rem", border: "none"}}
+                        className="header-container"
+                    >
+                        <FlagImage flag={this.props.currentLocale} />
+                    </a>
+                </ActionSheet.Button>
+                <ActionSheet.Content>
+                    <ul className="no-first-element-top-border">
+                        {this.props.locales.map(locale => {
+                            return (
+                                <li key={locale}>
+                                    <a
+                                        href
+                                        onClick={e => {
+                                            e.preventDefault();
+                                            IntlActions.switchLocale(locale);
+                                        }}
+                                    >
+                                        <div className="table-cell">
+                                            <FlagImage flag={locale} />
+                                        </div>
+                                        <div
+                                            className="table-cell"
+                                            style={{paddingLeft: 10}}
+                                        >
+                                            <Translate
+                                                content={"languages." + locale}
+                                            />
+                                        </div>
+                                    </a>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </ActionSheet.Content>
+            </ActionSheet>
+        );
+
         if (starredAccounts.size) {
             for (let i = tradingAccounts.length - 1; i >= 0; i--) {
                 if (!starredAccounts.has(tradingAccounts[i])) {
@@ -351,6 +399,17 @@ class Header extends React.Component {
                     />
                 </div>
             ) : null;
+
+        let logoLink = (
+            <a
+                style={{padding: "12px 1.75rem"}}
+                className={cnames({active: false})}
+                href="https://rudex.org"
+                target="_blank"
+            >
+                <img style={{margin: 0, height: 40}} src={logo} />
+            </a>
+        );
 
         let dashboard = (
             <a
@@ -461,22 +520,22 @@ class Header extends React.Component {
 
         /* Dynamic Menu Item */
         let dynamicMenuItem;
-        if (active.indexOf("transfer") !== -1) {
-            dynamicMenuItem = (
-                <a style={{flexFlow: "row"}} className={cnames({active: true})}>
-                    <Icon
-                        size="1_5x"
-                        style={{position: "relative", top: 0, left: -8}}
-                        name="transfer"
-                    />
-                    <Translate
-                        className="column-hide-small"
-                        component="span"
-                        content="header.payments"
-                    />
-                </a>
-            );
-        }
+        // if (active.indexOf("transfer") !== -1) {
+        //     dynamicMenuItem = (
+        //         <a style={{flexFlow: "row"}} className={cnames({active: true})}>
+        //             <Icon
+        //                 size="1_5x"
+        //                 style={{position: "relative", top: 0, left: -8}}
+        //                 name="transfer"
+        //             />
+        //             <Translate
+        //                 className="column-hide-small"
+        //                 component="span"
+        //                 content="header.payments"
+        //             />
+        //         </a>
+        //     );
+        // }
         if (active.indexOf("settings") !== -1) {
             dynamicMenuItem = (
                 <a
@@ -515,6 +574,27 @@ class Header extends React.Component {
                         className="column-hide-small"
                         component="span"
                         content="header.deposit-withdraw"
+                    />
+                </a>
+            );
+        }
+        if (active.indexOf("explorer") !== -1) {
+            dynamicMenuItem = (
+                <a
+                    style={{flexFlow: "row"}}
+                    className={cnames({
+                        active: active.indexOf("explorer") !== -1
+                    })}
+                >
+                    <Icon
+                        size="1_5x"
+                        style={{position: "relative", top: 0, left: -8}}
+                        name="server"
+                    />
+                    <Translate
+                        className="column-hide-small"
+                        component="span"
+                        content="header.explorer"
                     />
                 </a>
             );
@@ -903,7 +983,31 @@ class Header extends React.Component {
                         ) : null}
 
                         <ul className="menu-bar">
-                            <li>{dashboard}</li>
+                            <li>{logoLink}</li>
+                            <li>
+                                <Link
+                                    style={{flexFlow: "row"}}
+                                    to={"/dashboard"}
+                                    className={cnames({
+                                        active:
+                                            active.indexOf("/dashboard") !== -1
+                                    })}
+                                >
+                                    <Icon
+                                        size="1_5x"
+                                        style={{
+                                            position: "relative",
+                                            top: -2,
+                                            left: -8
+                                        }}
+                                        name="dashboard"
+                                    />
+                                    <Translate
+                                        className="column-hide-small"
+                                        content="header.dashboard"
+                                    />
+                                </Link>
+                            </li>
                             {!currentAccount || !!createAccountLink ? null : (
                                 <li>
                                     <Link
@@ -941,11 +1045,11 @@ class Header extends React.Component {
                                                 top: -2,
                                                 left: -8
                                             }}
-                                            name="dashboard"
+                                            name="user"
                                         />
                                         <Translate
                                             className="column-hide-small"
-                                            content="header.dashboard"
+                                            content="header.account"
                                         />
                                     </Link>
                                 </li>
@@ -983,45 +1087,71 @@ class Header extends React.Component {
                                     />
                                 </a>
                             </li>
-                            <li>
-                                <a
-                                    style={{flexFlow: "row"}}
-                                    className={cnames(
-                                        active.indexOf("explorer") !== -1
-                                            ? null
-                                            : "column-hide-xs",
-                                        {
-                                            active:
-                                                active.indexOf("explorer") !==
-                                                -1
-                                        }
-                                    )}
-                                    onClick={this._onNavigate.bind(
-                                        this,
-                                        "/explorer/blocks"
-                                    )}
-                                >
-                                    <Icon
-                                        size="2x"
-                                        style={{
-                                            position: "relative",
-                                            top: 0,
-                                            left: -8
-                                        }}
-                                        name="server"
-                                    />
-                                    <Translate
-                                        className="column-hide-small"
-                                        component="span"
-                                        content="header.explorer"
-                                    />
-                                </a>
-                            </li>
+                            {/*<li>*/}
+                            {/*<a*/}
+                            {/*style={{flexFlow: "row"}}*/}
+                            {/*className={cnames(*/}
+                            {/*active.indexOf("explorer") !== -1*/}
+                            {/*? null*/}
+                            {/*: "column-hide-xs",*/}
+                            {/*{*/}
+                            {/*active:*/}
+                            {/*active.indexOf("explorer") !==*/}
+                            {/*-1*/}
+                            {/*}*/}
+                            {/*)}*/}
+                            {/*onClick={this._onNavigate.bind(*/}
+                            {/*this,*/}
+                            {/*"/explorer/blocks"*/}
+                            {/*)}*/}
+                            {/*>*/}
+                            {/*<Icon*/}
+                            {/*size="2x"*/}
+                            {/*style={{*/}
+                            {/*position: "relative",*/}
+                            {/*top: 0,*/}
+                            {/*left: -8*/}
+                            {/*}}*/}
+                            {/*name="server"*/}
+                            {/*/>*/}
+                            {/*<Translate*/}
+                            {/*className="column-hide-small"*/}
+                            {/*component="span"*/}
+                            {/*content="header.explorer"*/}
+                            {/*/>*/}
+                            {/*</a>*/}
+                            {/*</li>*/}
+                            {/*{!!createAccountLink ? null : (*/}
+                            {/*<li className="column-hide-small">*/}
+                            {/*<a*/}
+                            {/*style={{flexFlow: "row"}}*/}
+                            {/*onClick={this._showSend.bind(this)}*/}
+                            {/*>*/}
+                            {/*<Icon*/}
+                            {/*size="1_5x"*/}
+                            {/*style={{*/}
+                            {/*position: "relative",*/}
+                            {/*top: 0,*/}
+                            {/*left: -8*/}
+                            {/*}}*/}
+                            {/*name="transfer"*/}
+                            {/*/>*/}
+                            {/*<span>*/}
+                            {/*<Translate content="header.payments" />*/}
+                            {/*</span>*/}
+                            {/*</a>*/}
+                            {/*</li>*/}
+                            {/*)}*/}
                             {!!createAccountLink ? null : (
                                 <li className="column-hide-small">
-                                    <a
+                                    <Link
                                         style={{flexFlow: "row"}}
-                                        onClick={this._showSend.bind(this)}
+                                        to={"/transfer"}
+                                        className={cnames({
+                                            active:
+                                                active.indexOf("/transfer") !==
+                                                -1
+                                        })}
                                     >
                                         <Icon
                                             size="1_5x"
@@ -1035,9 +1165,10 @@ class Header extends React.Component {
                                         <span>
                                             <Translate content="header.payments" />
                                         </span>
-                                    </a>
+                                    </Link>
                                 </li>
                             )}
+
                             {/* Dynamic Menu Item */}
                             <li>{dynamicMenuItem}</li>
                         </ul>
@@ -1108,6 +1239,8 @@ class Header extends React.Component {
                         </span>
                     )}
                 </div>
+                {flagDropdown}
+
                 <div className="app-menu">
                     <div
                         onClick={this._toggleDropdownMenu}
@@ -1276,21 +1409,35 @@ class Header extends React.Component {
 
                                 <li
                                     className={cnames({
-                                        active:
-                                            active.indexOf("/transfer") !== -1
+                                        disabled: !isMyAccount
                                     })}
-                                    onClick={this._onNavigate.bind(
-                                        this,
-                                        "/transfer"
-                                    )}
+                                    onClick={this._showSend.bind(this)}
                                 >
                                     <div className="table-cell">
                                         <Icon size="2x" name="transfer" />
                                     </div>
                                     <div className="table-cell">
-                                        <Translate content="header.payments_legacy" />
+                                        <Translate content="header.payments_beta" />
                                     </div>
                                 </li>
+
+                                {/*<li*/}
+                                {/*className={cnames({*/}
+                                {/*active:*/}
+                                {/*active.indexOf("/transfer") !== -1*/}
+                                {/*})}*/}
+                                {/*onClick={this._onNavigate.bind(*/}
+                                {/*this,*/}
+                                {/*"/transfer"*/}
+                                {/*)}*/}
+                                {/*>*/}
+                                {/*<div className="table-cell">*/}
+                                {/*<Icon size="2x" name="transfer" />*/}
+                                {/*</div>*/}
+                                {/*<div className="table-cell">*/}
+                                {/*<Translate content="header.payments" />*/}
+                                {/*</div>*/}
+                                {/*</li>*/}
 
                                 <li
                                     className={cnames(
@@ -1312,10 +1459,13 @@ class Header extends React.Component {
                                     }
                                 >
                                     <div className="table-cell">
-                                        <Icon size="2x" name="deposit" />
+                                        <Icon
+                                            size="2x"
+                                            name="deposit-withdraw"
+                                        />
                                     </div>
                                     <div className="table-cell">
-                                        <Translate content="gateway.deposit" />
+                                        <Translate content="account.deposit_withdraw" />
                                     </div>
                                 </li>
 
@@ -1340,33 +1490,6 @@ class Header extends React.Component {
                                     </div>
                                     <div className="table-cell">
                                         <Translate content="modal.deposit.submit_beta" />
-                                    </div>
-                                </li>
-
-                                <li
-                                    className={cnames(
-                                        {
-                                            active:
-                                                active.indexOf(
-                                                    "/deposit-withdraw"
-                                                ) !== -1
-                                        },
-                                        {disabled: !enableDepositWithdraw}
-                                    )}
-                                    onClick={
-                                        !enableDepositWithdraw
-                                            ? () => {}
-                                            : this._onNavigate.bind(
-                                                  this,
-                                                  "/deposit-withdraw"
-                                              )
-                                    }
-                                >
-                                    <div className="table-cell">
-                                        <Icon size="2x" name="withdraw" />
-                                    </div>
-                                    <div className="table-cell">
-                                        <Translate content="modal.withdraw.submit" />
                                     </div>
                                 </li>
 
@@ -1439,6 +1562,41 @@ class Header extends React.Component {
                                     </div>
                                     <div className="table-cell">
                                         <Translate content="header.settings" />{" "}
+                                    </div>
+                                </li>
+
+                                <li
+                                    className={cnames({
+                                        active:
+                                            active.indexOf("/explorer") !== -1
+                                    })}
+                                    onClick={this._onNavigate.bind(
+                                        this,
+                                        "/explorer/blocks"
+                                    )}
+                                >
+                                    <div className="table-cell">
+                                        <Icon size="2x" name="server" />
+                                    </div>
+                                    <div className="table-cell">
+                                        <Translate content="header.explorer" />
+                                    </div>
+                                </li>
+
+                                <li
+                                    onClick={e => {
+                                        e.preventDefault;
+                                        window.open(
+                                            "https://rudex.freshdesk.com",
+                                            "_blank"
+                                        );
+                                    }}
+                                >
+                                    <div className="table-cell">
+                                        <Icon size="2x" name="support" />
+                                    </div>
+                                    <div className="table-cell">
+                                        <Translate content="header.support" />
                                     </div>
                                 </li>
 
