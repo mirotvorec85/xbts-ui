@@ -94,7 +94,8 @@ class WalletActions {
             } else {
                 // using faucet
 
-                let faucetAddress = SettingsStore.getSetting("faucet_address");
+                //let faucetAddress = SettingsStore.getSetting("faucet_address");
+                let faucetAddress = "https://faucet.rudex.org";
                 if (
                     window &&
                     window.location &&

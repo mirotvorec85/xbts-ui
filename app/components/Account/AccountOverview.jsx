@@ -343,6 +343,8 @@ class AccountOverview extends React.Component {
             );
             symbol = asset.get("symbol");
             if (symbol.indexOf("OPEN.") !== -1 && !market) market = "USD";
+            if (["RUDEX.GOLOS", "RUDEX.GBG"].indexOf(symbol) !== -1)
+                market = "RUBLE";
             let preferredMarket = market ? market : preferredUnit;
 
             if (notCore && preferredMarket === symbol)
@@ -608,6 +610,7 @@ class AccountOverview extends React.Component {
                     if (!!this.props.bridgeCoins.get(asset)) {
                         isAvailable = true;
                     }
+                    if (asset === "RUBLE") isAvailable = true;
                     let keep = true;
                     balances.forEach(a => {
                         if (a.key === asset) keep = false;

@@ -101,7 +101,6 @@ class Settings extends React.Component {
             "backup",
             "restore",
             "access",
-            "faucet_address",
             "reset"
         ];
 

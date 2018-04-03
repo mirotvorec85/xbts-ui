@@ -78,7 +78,7 @@ export const settingsAPIs = {
             location: "TESTNET - BitShares Infrastructure Program"
         }
     ],
-    DEFAULT_FAUCET: "https://faucet.bitshares.eu/onboarding", // 2017-12-infrastructure worker proposal
+    DEFAULT_FAUCET: "https://faucet.rudex.org",
     TESTNET_FAUCET: "https://faucet.testnet.bitshares.eu",
     RPC_URL: "https://openledger.info/api/"
 };
