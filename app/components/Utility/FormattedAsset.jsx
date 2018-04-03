@@ -1,4 +1,5 @@
 import React from "react";
+import {IntlProvider} from "react-intl";
 import {FormattedNumber} from "react-intl";
 import utils from "common/utils";
 import assetUtils from "common/asset_utils";
@@ -134,11 +135,14 @@ class FormattedAsset extends React.Component {
         if (!hide_amount) {
             let value = this.props.exact_amount ? amount : amount / precision;
             formattedValue = (
-                <FormattedNumber
-                    value={value}
-                    minimumFractionDigits={Math.max(decimals, 0)}
-                    maximumFractionDigits={Math.max(decimals, 0)}
-                />
+                <IntlProvider locale="en">
+                    <FormattedNumber
+                        format="asset"
+                        value={value}
+                        minimumFractionDigits={Math.max(decimals, 0)}
+                        maximumFractionDigits={Math.max(decimals, 0)}
+                    />
+                </IntlProvider>
             );
 
             if (pulsate) {
