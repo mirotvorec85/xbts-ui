@@ -1196,6 +1196,7 @@
             "price_title": "Price indicators",
             "volume_title": "Volume indicators"
         },
+        "trollbox": "Trollbox",
         "market": "Market",
         "feed_price": "Feed Price",
         "price_history": "Price Chart",
