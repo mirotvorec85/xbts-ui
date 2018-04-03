@@ -17,7 +17,7 @@
         "ja": "日本語"
     },
     "header": {
-        "title": "BitKapital",
+        "title": "RuDEX",
         "account": "Hesap",
         "dashboard": "Ana Sayfa",
         "explorer": "İncele",
@@ -129,9 +129,9 @@
     "cancel": "İptal",
     "account": {
         "search": "Search for an account",
-        "intro_text_title": "Bitshares'e Hoş Geldiniz",
+        "intro_text_title": "RuDEX'e Hoş Geldiniz",
         "intro_text_1":
-            "<b>Bitshares Merkezsiz Kriptopara Borsası</b> (BMKB) kripto para al-sat deneyiminizi kökten değiştirecek, yeni nesil bir borsa platformudur.",
+            "<b>RuDEX Merkezsiz Kriptopara Borsası</b> (BMKB) kripto para al-sat deneyiminizi kökten değiştirecek, yeni nesil bir borsa platformudur.",
         "intro_text_2":
             "<b>Bitshares</b>'de al-sat işlemleri herhangi bir aracı olmaksızın, doğrudan kullanıcıların kendi arasında gerçekleşir.",
         "intro_text_3":
@@ -957,7 +957,7 @@
             "Unable to connect to API node %(url)s, falling back to known working nodes"
     },
     "footer": {
-        "title": "Bitshares",
+        "title": "RuDEX",
         "block": "İşlenen son blok",
         "loading": "Yükleniyor...",
         "backup": "Cüzdanınızı yedekleyin",
