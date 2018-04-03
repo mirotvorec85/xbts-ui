@@ -29,6 +29,7 @@ import GatewayActions from "actions/GatewayActions";
 import {checkFeeStatusAsync} from "common/trxHelper";
 import LoadingIndicator from "../LoadingIndicator";
 import moment from "moment";
+import ChatBro from "../Chat/ChatBro";
 
 Highcharts.setOptions({
     global: {
@@ -1179,6 +1180,12 @@ class Exchange extends React.Component {
         return {isFrozen: false};
     }
 
+    _toggleChat() {
+        SettingsActions.changeViewSetting({
+            viewChat: !this.props.viewChat
+        });
+    }
+
     _toggleMiniChart() {
         SettingsActions.changeViewSetting({
             miniDepthChart: !this.props.miniDepthChart
@@ -1905,6 +1912,31 @@ class Exchange extends React.Component {
                                 current={`${quoteSymbol}_${baseSymbol}`}
                             />
                         </div>
+
+                        <div
+                            style={{
+                                padding: !this.props.viewChat ? 0 : "0 0 0 0"
+                            }}
+                            className="grid-block no-margin vertical shrink"
+                        >
+                            <div
+                                onClick={this._toggleChat.bind(this)}
+                                className="exchange-content-header clickable"
+                                style={{textAlign: "left", paddingRight: 10}}
+                            >
+                                {this.props.viewChat ? (
+                                    <span>&#9660;</span>
+                                ) : (
+                                    <span>&#9650;</span>
+                                )}
+                                <Translate content="exchange.trollbox" />
+                            </div>
+
+                            {this.props.viewChat ? (
+                                <ChatBro height={"300px"} />
+                            ) : null}
+                        </div>
+
                         <div
                             style={{
                                 padding: !this.props.miniDepthChart

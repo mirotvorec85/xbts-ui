@@ -1185,6 +1185,7 @@
             "price_title": "Индикаторы цены",
             "volume_title": "Индикаторы объема"
         },
+        "trollbox": "Trollbox",
         "market": "Рынок",
         "price_history": "График цен",
         "order_depth": "Глубина Рынка",

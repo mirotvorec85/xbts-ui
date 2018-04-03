@@ -107,6 +107,12 @@ class ExchangeContainer extends React.Component {
                             "miniDepthChart",
                             true
                         );
+                    },
+                    viewChat: () => {
+                        return SettingsStore.getState().viewSettings.get(
+                            "viewChat",
+                            true
+                        );
                     }
                 }}
             >
