@@ -640,7 +640,7 @@
         }
         > tbody > tr > td {
             border-bottom-color: $dark-text-color;
-            font-size: 0.875rem;
+            font-size: 0.8rem;
         }
         &.table-hover > tbody > tr:hover > td,
         .table-hover > tbody > tr:hover > th {
@@ -1979,15 +1979,21 @@
     .api-status {
         .low {
             color: $bid-color;
-            > svg > path { fill: $bid-color; }
+            > svg > path {
+                fill: $bid-color;
+            }
         }
         .medium {
             color: $call-color;
-            > svg > path { fill: $call-color; }
+            > svg > path {
+                fill: $call-color;
+            }
         }
         .high {
             color: $ask-color;
-            > svg > path { fill: $ask-color; }
+            > svg > path {
+                fill: $ask-color;
+            }
         }
     }
 
