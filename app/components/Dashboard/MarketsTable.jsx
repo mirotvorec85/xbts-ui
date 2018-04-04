@@ -169,7 +169,7 @@ class MarketRow extends React.Component {
                             ref={imgName.toLowerCase()}
                             className="column-hide-small"
                             onError={this._onError.bind(this, imgName)}
-                            style={{maxWidth: 20, marginRight: 10}}
+                            style={{maxWidth: 30, marginRight: 10}}
                             src={`${__BASE_URL__}asset-symbols/${imgName.toLowerCase()}.png`}
                         />
                         <AssetName dataPlace="top" name={quote.get("symbol")} />{" "}
