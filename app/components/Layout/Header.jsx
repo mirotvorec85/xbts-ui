@@ -28,7 +28,7 @@ import {ChainStore} from "bitsharesjs/es";
 import WithdrawModal from "../Modal/WithdrawModalNew";
 import {List} from "immutable";
 
-var logo = require("assets/logo-rudex.png");
+var logo = require("assets/logo-rudex-big.png");
 
 const FlagImage = ({flag, width = 20, height = 20}) => {
     return (
