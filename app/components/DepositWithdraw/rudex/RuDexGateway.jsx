@@ -16,25 +16,39 @@ class RuDexGateway extends React.Component {
     constructor(props) {
         super();
 
+        let action = props.viewSettings.get("rudexAction", "deposit");
         this.state = {
-            activeCoin: this._getActiveCoin(props, {action: "deposit"}),
-            action: props.viewSettings.get(`rudexAction`, "deposit")
+            activeCoin: this._getActiveCoin(props, {action: action}),
+            action: action
         };
     }
 
+    _findCoinByName(props, name) {
+        for (let i = 0; i < props.coins.length; i++) {
+            let coin = props.coins[i];
+            if (coin.backingCoin.toUpperCase() === name) return coin;
+        }
+        return null;
+    }
+
+    _findCoinBySymbol(props, name) {
+        for (let i = 0; i < props.coins.length; i++) {
+            let coin = props.coins[i];
+            if (coin.symbol.toUpperCase() === name) return coin;
+        }
+        return null;
+    }
+
     _getActiveCoin(props, state) {
-        let cachedCoin = props.viewSettings.get(
-            `activeCoin_rudex_${state.action}`,
-            null
-        );
-        let firstTimeCoin = null;
-        if (state.action == "deposit") {
-            firstTimeCoin = "PPY";
-        }
-        if (state.action == "withdraw") {
-            firstTimeCoin = "PPY";
-        }
+        let cachedCoin = props.viewSettings.get("activeCoin_rudex", null);
+        let firstTimeCoin = "PPY";
         let activeCoin = cachedCoin ? cachedCoin : firstTimeCoin;
+
+        if (state.action === "withdraw") {
+            activeCoin = this._findCoinByName(props, activeCoin).symbol;
+        }
+        console.log("getActiveCoin:", activeCoin, state);
+
         return activeCoin;
     }
 
@@ -52,7 +66,11 @@ class RuDexGateway extends React.Component {
         });
 
         let setting = {};
-        setting[`activeCoin_rudex_${this.state.action}`] = e.target.value;
+        let coinName = e.target.value;
+        if (this.state.action === "withdraw") {
+            coinName = this._findCoinBySymbol(this.props, coinName).backingCoin;
+        }
+        setting["activeCoin_rudex"] = coinName;
         SettingsActions.changeViewSetting(setting);
     }
 
