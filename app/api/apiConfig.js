@@ -11,7 +11,8 @@ export const blockTradesAPIs = {
 };
 
 export const rudexAPIs = {
-    BASE: "https://gateway.rudex.org/api/v0_1",
+    BASE_BACK: "https://gateway.rudex.org/api/v0_1",
+    BASE: "http://localhost:3000/api/v0_3",
     COINS_LIST: "/coins",
     NEW_DEPOSIT_ADDRESS: "/new-deposit-address"
 };
@@ -33,6 +34,8 @@ export const settingsAPIs = {
             url: "wss://fake.automatic-selection.com",
             location: {translate: "settings.api_closest"}
         },
+        {url: "wss://api.bts.blckchnd.com", location: "Falkenstein, Germany"},
+        {url: "wss://api-ru.bts.blckchnd.com", location: "Moscow, Russia"},
         {url: "ws://127.0.0.1:8090", location: "Locally hosted"},
         {
             url: "wss://bitshares.openledger.info/ws",
@@ -53,8 +56,6 @@ export const settingsAPIs = {
         {url: "wss://dexnode.net/ws", location: "Dallas, USA"},
         {url: "wss://kc-us-dex.xeldal.com/ws", location: "Kansas City, USA"},
         {url: "wss://btsza.co.za:8091/ws", location: "Cape Town, South Africa"},
-        {url: "wss://api.bts.blckchnd.com", location: "Falkenstein, Germany"},
-        {url: "wss://api-ru.bts.blckchnd.com", location: "Moscow, Russia"},
         {
             url: "wss://eu.nodes.bitshares.ws",
             location: "Central Europe - BitShares Infrastructure Program"
