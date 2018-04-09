@@ -15,6 +15,7 @@ export function fetchCoinList(url = rudexAPIs.BASE + rudexAPIs.COINS_LIST) {
 }
 
 export function requestDepositAddress({
+    walletType,
     inputCoinType,
     outputCoinType,
     outputAddress,
@@ -29,7 +30,7 @@ export function requestDepositAddress({
 
     let body_string = JSON.stringify(body);
 
-    fetch(url + rudexAPIs.NEW_DEPOSIT_ADDRESS, {
+    fetch(url + `/wallets/${walletType}/new-deposit-address`, {
         method: "post",
         headers: new Headers({
             Accept: "application/json",
