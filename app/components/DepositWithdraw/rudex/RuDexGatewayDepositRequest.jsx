@@ -42,6 +42,7 @@ class RuDexGatewayDepositRequest extends React.Component {
         this.deposit_address_cache = new RuDexDepositAddressCache();
 
         this.state = {
+            account_name: null,
             receive_address: null
         };
 
@@ -79,7 +80,8 @@ class RuDexGatewayDepositRequest extends React.Component {
 
     // componentWillMount() {
     //     let account_name = this.props.account.get("name");
-    //     let receive_address = this.deposit_address_cache.getCachedInputAddress(this.props.gateway, account_name, this.props.deposit_coin_type, this.props.receive_coin_type);
+    //
+    //     // let receive_address = this.deposit_address_cache.getCachedInputAddress(this.props.gateway, account_name, this.props.deposit_coin_type, this.props.receive_coin_type);
     // }
 
     componentWillUnmount() {
@@ -88,14 +90,15 @@ class RuDexGatewayDepositRequest extends React.Component {
 
     addDepositAddress(receive_address) {
         let account_name = this.props.account.get("name");
-        this.deposit_address_cache.cacheInputAddress(
-            this.props.gateway,
-            account_name,
-            this.props.deposit_coin_type,
-            this.props.receive_coin_type,
-            receive_address.address,
-            receive_address.memo
-        );
+        // this.deposit_address_cache.cacheInputAddress(
+        //     this.props.gateway,
+        //     account_name,
+        //     this.props.deposit_coin_type,
+        //     this.props.receive_coin_type,
+        //     receive_address.address,
+        //     receive_address.memo
+        // );
+        this.setState({account_name});
         this.setState({receive_address});
     }
 
@@ -151,15 +154,19 @@ class RuDexGatewayDepositRequest extends React.Component {
             if (!has_nonzero_balance) return emptyRow;
         }
 
-        let receive_address = this.state.receive_address;
+        let receive_address = null;
+        let prev_account_name = this.state.account_name;
+        if (prev_account_name === this.props.account.get("name"))
+            receive_address = this.state.receive_address;
+
         if (!receive_address) {
             let account_name = this.props.account.get("name");
-            receive_address = this.deposit_address_cache.getCachedInputAddress(
-                this.props.gateway,
-                account_name,
-                this.props.deposit_coin_type,
-                this.props.receive_coin_type
-            );
+            // receive_address = this.deposit_address_cache.getCachedInputAddress(
+            //     this.props.gateway,
+            //     account_name,
+            //     this.props.deposit_coin_type,
+            //     this.props.receive_coin_type
+            // );
         }
 
         if (!receive_address) {
