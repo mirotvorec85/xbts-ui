@@ -42,6 +42,7 @@ class FeaturedMarkets extends React.Component {
                 ["BTS", "RUBLE"],
                 ["RUBLE", "ESCROW.RUBLE"],
                 ["BTS", "PPY"],
+                ["RUBLE", "RUDEX.ETH"],
                 ["RUBLE", "RUDEX.GOLOS"],
                 ["RUBLE", "RUDEX.GBG"],
                 ["BTS", "RUDEX.STEEM"],
