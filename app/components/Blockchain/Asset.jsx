@@ -5,6 +5,7 @@ import LinkToAccountById from "../Utility/LinkToAccountById";
 import AssetWrapper from "../Utility/AssetWrapper";
 import FormattedAsset from "../Utility/FormattedAsset";
 import FormattedPrice from "../Utility/FormattedPrice";
+import AssetImage from "../Utility/AssetImage";
 import AssetName from "../Utility/AssetName";
 import TimeAgo from "../Utility/TimeAgo";
 import HelpContent from "../Utility/HelpContent";
@@ -286,13 +287,22 @@ class Asset extends React.Component {
                     issuer={issuerName}
                     hide_issuer="true"
                 />
-                {short_name ? <p>{short_name}</p> : null}
-                <Link
-                    className="button market-button"
-                    to={`/market/${asset.symbol}_${preferredMarket}`}
-                >
-                    <Translate content="exchange.market" />
-                </Link>
+                <h2>
+                    <AssetImage
+                        maxWidth={50}
+                        replaceNoneToBts={false}
+                        name={asset.symbol}
+                    />
+                    {short_name ? (
+                        <span style={{marginRight: 15}}>{short_name}</span>
+                    ) : null}
+                    <Link
+                        className="button market-button"
+                        to={`/market/${asset.symbol}_${preferredMarket}`}
+                    >
+                        <Translate content="exchange.market" />
+                    </Link>
+                </h2>
             </div>
         );
     }

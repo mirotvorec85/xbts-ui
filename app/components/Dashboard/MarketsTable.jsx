@@ -10,6 +10,7 @@ import SettingsActions from "actions/SettingsActions";
 import SettingsStore from "stores/SettingsStore";
 import ChainTypes from "../Utility/ChainTypes";
 import Icon from "../Icon/Icon";
+import AssetImage from "../Utility/AssetImage";
 import AssetName from "../Utility/AssetName";
 import BindToChainState from "../Utility/BindToChainState";
 import MarketsActions from "actions/MarketsActions";
@@ -30,9 +31,6 @@ class MarketRow extends React.Component {
         super();
 
         this.statsInterval = null;
-        this.state = {
-            imgError: false
-        };
     }
 
     _checkStats(newStats = {close: {}}, oldStats = {close: {}}) {
@@ -49,13 +47,12 @@ class MarketRow extends React.Component {
         );
     }
 
-    shouldComponentUpdate(np, ns) {
+    shouldComponentUpdate(np) {
         return (
             this._checkStats(np.marketStats, this.props.marketStats) ||
             np.base.get("id") !== this.props.base.get("id") ||
             np.quote.get("id") !== this.props.quote.get("id") ||
             np.visible !== this.props.visible ||
-            ns.imgError !== this.state.imgError ||
             np.starredMarkets.size !== this.props.starredMarkets
         );
     }
@@ -92,15 +89,6 @@ class MarketRow extends React.Component {
         clearInterval(this.statsInterval);
     }
 
-    _onError(imgName) {
-        if (!this.state.imgError) {
-            this.refs[imgName.toLowerCase()].src = "asset-symbols/bts.png";
-            this.setState({
-                imgError: true
-            });
-        }
-    }
-
     _toggleFavoriteMarket(quote, base) {
         let marketID = `${quote}_${base}`;
         if (!this.props.starredMarkets.has(marketID)) {
@@ -122,13 +110,6 @@ class MarketRow extends React.Component {
             handleFlip
         } = this.props;
 
-        function getImageName(asset) {
-            let symbol = asset.get("symbol");
-            if (symbol === "OPEN.BTC" || symbol === "GDEX.BTC") return symbol;
-            let imgName = asset.get("symbol").split(".");
-            return imgName.length === 2 ? imgName[1] : imgName[0];
-        }
-        let imgName = getImageName(quote);
         let changeClass = !marketStats
             ? ""
             : parseFloat(marketStats.change) > 0
@@ -164,14 +145,11 @@ class MarketRow extends React.Component {
                             "symbol"
                         )}_${this.props.base.get("symbol")}`}
                     >
-                        <img
-                            ref={imgName.toLowerCase()}
-                            className="column-hide-small"
-                            onError={this._onError.bind(this, imgName)}
-                            style={{maxWidth: 20, marginRight: 10}}
-                            src={`${__BASE_URL__}asset-symbols/${imgName.toLowerCase()}.png`}
-                        />
-                        <AssetName dataPlace="top" name={quote.get("symbol")} />{" "}
+                        <AssetImage name={quote.get("symbol")} />
+                        <AssetName
+                            dataPlace="top"
+                            name={quote.get("symbol")}
+                        />{" "}
                         :{" "}
                         <AssetName dataPlace="top" name={base.get("symbol")} />
                     </Link>
