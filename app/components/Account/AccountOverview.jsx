@@ -7,6 +7,7 @@ import SettleModal from "../Modal/SettleModal";
 import {BalanceValueComponent} from "../Utility/EquivalentValueComponent";
 import {Market24HourChangeComponent} from "../Utility/MarketChangeComponent";
 import AssetName from "../Utility/AssetName";
+import AssetImage from "../Utility/AssetImage";
 import MarginPositions from "./MarginPositions";
 import {RecentTransactions} from "./RecentTransactions";
 import Proposals from "components/Account/Proposals";
@@ -412,6 +413,11 @@ class AccountOverview extends React.Component {
             balances.push(
                 <tr key={asset.get("symbol")} style={{maxWidth: "100rem"}}>
                     <td style={{textAlign: "left"}}>
+                        <AssetImage
+                            replaceNoneToBts={false}
+                            maxWidth={20}
+                            name={asset.get("id")}
+                        />
                         <LinkToAssetById asset={asset.get("id")} />
                     </td>
                     <td style={{textAlign: "right"}}>
