@@ -1082,6 +1082,7 @@
         "darkTheme": "Dark",
         "lightTheme": "Light",
         "midnightTheme": "Midnight",
+        "rudexDarkTheme": "RuDEX dark",
         "olDarkTheme": "Openledger dark",
         "reset": "Reset settings",
         "browser_notifications": "Browser Notifications",

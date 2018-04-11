@@ -20,7 +20,10 @@ class Page404 extends React.Component {
             logo = dark;
         }
 
-        if (this.props.theme === "midnightTheme") {
+        if (
+            this.props.theme === "midnightTheme" ||
+            this.props.theme === "rudexDarkTheme"
+        ) {
             logo = midnight;
         }
 

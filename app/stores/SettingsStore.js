@@ -111,7 +111,12 @@ class SettingsStore {
             unit: [CORE_ASSET, "RUBLE", "USD", "CNY", "BTC", "EUR", "GBP"],
             showSettles: [{translate: "yes"}, {translate: "no"}],
             showAssetPercent: [{translate: "yes"}, {translate: "no"}],
-            themes: ["darkTheme", "lightTheme", "midnightTheme"],
+            themes: [
+                "darkTheme",
+                "lightTheme",
+                "midnightTheme",
+                "rudexDarkTheme"
+            ],
             passwordLogin: [
                 {translate: "cloud_login"},
                 {translate: "local_wallet"}
