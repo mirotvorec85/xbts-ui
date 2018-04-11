@@ -278,15 +278,6 @@ class Asset extends React.Component {
 
         return (
             <div style={{overflow: "visible"}}>
-                <HelpContent
-                    path={"assets/" + asset.symbol}
-                    alt_path="assets/Asset"
-                    section="summary"
-                    symbol={(prefix || "") + name}
-                    description={desc}
-                    issuer={issuerName}
-                    hide_issuer="true"
-                />
                 <h2>
                     <AssetImage
                         maxWidth={50}
@@ -303,6 +294,15 @@ class Asset extends React.Component {
                         <Translate content="exchange.market" />
                     </Link>
                 </h2>
+                <HelpContent
+                    path={"assets/" + asset.symbol}
+                    alt_path="assets/Asset"
+                    section="summary"
+                    symbol={(prefix || "") + name}
+                    description={desc}
+                    issuer={issuerName}
+                    hide_issuer="true"
+                />
             </div>
         );
     }
