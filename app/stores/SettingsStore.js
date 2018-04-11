@@ -214,7 +214,7 @@ class SettingsStore {
                     "CNY",
                     "GOLD",
                     "SILVER",
-                    "HERO",
+                    "RUDEX.ETH",
                     "RUDEX.GOLOS",
                     "RUDEX.GBG",
                     "RUDEX.MUSE",
@@ -225,6 +225,7 @@ class SettingsStore {
                     "RUDEX.TT",
                     "RUDEX.SCR",
                     "PPY",
+                    "HERO",
                     "OBITS",
                     "YOYOW",
                     "SMOKE",
@@ -232,9 +233,7 @@ class SettingsStore {
                     "ZEPH",
                     "ESCROW.RUBLE",
                     "GDEX.BTC",
-                    "GDEX.ETH",
-                    "GDEX.EOS",
-                    "GDEX.BTO"
+                    "GDEX.EOS"
                 ],
                 markets_39f5e2ed: [
                     // TESTNET

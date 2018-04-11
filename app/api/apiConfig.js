@@ -11,10 +11,8 @@ export const blockTradesAPIs = {
 };
 
 export const rudexAPIs = {
-    BASE_BACK: "https://gateway.rudex.org/api/v0_1",
-    BASE: "http://localhost:3000/api/v0_3",
-    COINS_LIST: "/coins",
-    NEW_DEPOSIT_ADDRESS: "/new-deposit-address"
+    BASE: "https://gateway.rudex.org/api/v0_3",
+    COINS_LIST: "/coins"
 };
 
 export const widechainAPIs = {
