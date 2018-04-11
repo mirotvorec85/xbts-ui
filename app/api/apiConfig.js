@@ -32,9 +32,9 @@ export const settingsAPIs = {
             url: "wss://fake.automatic-selection.com",
             location: {translate: "settings.api_closest"}
         },
+        {url: "ws://127.0.0.1:8090", location: "Locally hosted"},
         {url: "wss://api.bts.blckchnd.com", location: "Falkenstein, Germany"},
         {url: "wss://api-ru.bts.blckchnd.com", location: "Moscow, Russia"},
-        {url: "ws://127.0.0.1:8090", location: "Locally hosted"},
         {
             url: "wss://bitshares.openledger.info/ws",
             location: "Nuremberg, Germany"
@@ -69,8 +69,9 @@ export const settingsAPIs = {
         {url: "wss://ws.winex.pro", location: "Singapore"},
         {url: "wss://api.bts.mobi/ws", location: "VA, USA"},
         {
-            url: "wss://api.btsxchng.com", 
-            location: "Global (Asia Pacific (Singapore) / US East (N. Virginia) / EU (London))"
+            url: "wss://api.btsxchng.com",
+            location:
+                "Global (Asia Pacific (Singapore) / US East (N. Virginia) / EU (London))"
         },
         {url: "wss://api.bts.network", location: "East Coast, USA"},
         // Testnet
