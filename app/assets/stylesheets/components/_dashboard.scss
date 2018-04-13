@@ -16,6 +16,63 @@
     cursor: pointer;
 }
 
+div.fm-outer-container {
+    border-left: 1px solid $border-color;
+    border-top: 1px solid $border-color;
+    margin-bottom: 20px;
+}
+
+@include breakpoint(large) {
+    div.fm-container {
+        > div:first-child() {
+            padding-right: 15px;
+        }
+
+        > div:last-child() {
+            padding-right: 15px;
+        }
+    }
+}
+
+div.fm-container {
+    border: 1px solid $border-color;
+    border-top: none;
+    border-left: none;
+    padding: 1rem 0.5rem;
+    min-width: 13rem;
+    &:hover {
+        background-color: #d8d8d8;
+        cursor: pointer;
+    }
+
+    .fm-title,
+    .fm-volume,
+    .fm-change {
+        font-size: 0.85rem;
+    }
+
+    .fm-name {
+        font-weight: bold;
+        padding-bottom: 10px;
+    }
+
+    .fm-volume,
+    .fm-change {
+        text-transform: lowercase;
+        font-variant: small-caps;
+        padding-top: 6px;
+    }
+}
+
+.Dashboard__intro-text {
+    padding: 20px;
+
+    > p:nth-of-type(2) {
+        padding-bottom: 1.25rem;
+        border-bottom: 1px solid $border-color;
+    }
+}
+
 .SimpleTrade__help-text {
     font-style: italic;
     padding-top: 5px;

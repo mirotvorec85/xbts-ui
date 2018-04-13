@@ -1663,6 +1663,11 @@
         border-top: 1px solid lighten($bg-color, 4%);
     }
 
+    div.fm-container:hover {
+        background-color: darken($light-panel-bg-color, 5%);
+        cursor: pointer;
+    }
+
     // Settings
     .settings-menu {
         > ul {

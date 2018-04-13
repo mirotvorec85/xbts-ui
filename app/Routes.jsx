@@ -33,7 +33,7 @@ const routes = (
         <Route
             path="/dashboard"
             getComponent={(location, cb) => {
-                System.import("components/Dashboard/DashboardPage")
+                System.import("components/Dashboard/DashboardContainer")
                     .then(loadRoute(cb))
                     .catch(errorLoading);
             }}
