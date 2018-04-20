@@ -1,6 +1,10 @@
-BitShares-UI
+RuDEX (BitShares-UI)
 ============
 [中文版](README_zh.md)
+
+[![Slack](http://slack.bitshares.org/badge.svg)](http://slack.bitshares.org/)
+[![Build Status](https://travis-ci.org/blckchnd/rudex-ui.svg?branch=rudex)](https://travis-ci.org/blckchnd/rudex-ui)
+[![Build status](https://ci.appveyor.com/api/projects/status/f08u82b21rqbkqxg/branch/rudex?svg=true)](https://ci.appveyor.com/project/RuslanSalikhov/rudex-ui/branch/rudex)
 
 This is a light wallet that connects to a BitShares API provided by the *witness_node* executable.
 
@@ -9,7 +13,7 @@ It *stores all keys locally* in the browser, *never exposing your keys to anyone
 
 ## Getting started
 
-BitShares-UI depends node Node.js, and version 6+ is required.
+RuDEX-UI depends node Node.js, and version 6+ is required.
 
 On Ubuntu and OSX, the easiest way to install Node is to use the [Node Version Manager](https://github.com/creationix/nvm).
 
@@ -17,15 +21,15 @@ To install NVM for Linux/OSX, simply copy paste the following in a terminal:
 
 ```
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash
-nvm install v6
-nvm use v6
+nvm install v9
+nvm use v9
 ```
 
 Once you have Node installed, you can clone the repo:
 
 ```
-git clone https://github.com/bitshares/bitshares-ui.git
-cd bitshares-ui
+git clone https://github.com/blckchnd/rudex-ui.git
+cd rudex-ui
 ```
 
 Before launching the GUI you will need to install the npm packages:
@@ -48,7 +52,7 @@ Once the compilation is done the GUI will be available in your browser at: `loca
 
 
 ## Testnet
-By default bitshares-ui connects to the live BitShares network, but it's very easy to switch it to the testnet run by Xeroc. To do so, open the UI in a browser, go to Settings, then under Access, select the *Public Testnet Server* in the dropdown menu. You should also change the faucet if you need to create an account, the testnet faucet address is https://testnet.bitshares.eu.
+By default rudex-ui connects to the live BitShares network, but it's very easy to switch it to the testnet run by Xeroc. To do so, open the UI in a browser, go to Settings, then under Access, select the *Public Testnet Server* in the dropdown menu. You should also change the faucet if you need to create an account, the testnet faucet address is https://testnet.bitshares.eu.
 
 The UI will reload and connect to the testnet, where you can use the faucet to create an account and receive an initial sum of test BTS.
 
