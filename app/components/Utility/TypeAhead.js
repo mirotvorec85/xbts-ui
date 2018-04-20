@@ -13,8 +13,9 @@ export default class TypeAhead extends React.Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.value && nextProps.value != this.state.value) {
-            this.setState({value: nextProps.value});
+        const value = nextProps.defaultValue || "";
+        if (value != this.state.value) {
+            this.setState({value: nextProps.defaultValue});
         }
     }
 

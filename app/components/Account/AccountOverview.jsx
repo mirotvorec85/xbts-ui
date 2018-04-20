@@ -364,8 +364,18 @@ class AccountOverview extends React.Component {
             ) : (
                 emptyCell
             );
+            // transferLink = (
+            //     <a onClick={this.triggerSend.bind(this, asset.get("id"))}>
+            //         <Icon name="transfer" className="icon-14px" />
+            //     </a>
+            // );
             transferLink = (
-                <a onClick={this.triggerSend.bind(this, asset.get("id"))}>
+                <a
+                    onClick={this._onNavigate.bind(
+                        this,
+                        `/transfer?asset=${asset.get("id")}`
+                    )}
+                >
                     <Icon name="transfer" className="icon-14px" />
                 </a>
             );

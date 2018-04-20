@@ -297,7 +297,7 @@ class Transfer extends React.Component {
     }
 
     resetForm() {
-        this.setState({memo: "", to_name: "", amount: ""});
+        this.setState({memo: "", to_name: "", to_account: null, amount: ""});
     }
 
     onSubmit(e) {
