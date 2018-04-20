@@ -35,7 +35,7 @@ deploy:
   release: $(APPVEYOR_REPO_TAG_NAME)
   description: "Automated release from Travis CI with added files from AppVeyor build"
   auth_token:
-    secure: uS05GMpB0YT6PxlANXE0RK4+QMcgVIzza/sq8FooNp6Qt0cLcxrtbf8FwslpRg5I
+    secure: mLCHor236wVtT7cy9UHVDRF20w7PYI+y/6Ynefoezvwp3h2fMspOR4OWynSvMJXf
   artifact: WindowsApp, html5_history_dist, hash_history_dist, release-checksums-windows
   draft: true
   force_update: true
