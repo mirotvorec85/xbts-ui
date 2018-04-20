@@ -393,14 +393,16 @@ class AccountOverview extends React.Component {
                 asset.get("symbol"),
                 this.props.backedCoins
             );
-            const canDeposit =
-                (backedCoin && backedCoin.depositAllowed) ||
-                asset.get("symbol") == "BTS";
+            // const canDeposit =
+            //     (backedCoin && backedCoin.depositAllowed) ||
+            //     asset.get("symbol") == "BTS";
+            const canDeposit = false; // disable till stable version
 
-            const canWithdraw =
-                backedCoin &&
-                backedCoin.withdrawalAllowed &&
-                (hasBalance && balanceObject.get("balance") != 0);
+            // const canWithdraw =
+            //     backedCoin &&
+            //     backedCoin.withdrawalAllowed &&
+            //     (hasBalance && balanceObject.get("balance") != 0);
+            const canWithdraw = false; // disable till stable version
             const canBuy = !!this.props.bridgeCoins.get(symbol);
 
             const assetAmount = balanceObject.get("balance");
@@ -415,7 +417,7 @@ class AccountOverview extends React.Component {
                     <td style={{textAlign: "left"}}>
                         <AssetImage
                             replaceNoneToBts={false}
-                            maxWidth={20}
+                            maxWidth={30}
                             name={asset.get("id")}
                         />
                         <LinkToAssetById asset={asset.get("id")} />

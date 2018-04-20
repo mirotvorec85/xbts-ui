@@ -1,8 +1,8 @@
 import React from "react";
 import counterpart from "counterpart";
-import {api} from "steem";
+import {api} from "steem-js-api";
 import Translate from "react-translate-component";
-
+console.log("api:", api);
 import LoadingIndicator from "./LoadingIndicator";
 
 const query = {tag: "blockchained", limit: 20};
@@ -152,10 +152,14 @@ class News extends React.Component {
     componentDidMount() {
         this.updateDimensions();
         window.addEventListener("resize", this.updateDimensions);
-        api.getDiscussionsByBlog(query, (err, discussions) => {
-            if (err) this.setState({isLoading: false, isWrong: true});
-            this.orderDiscussions(discussions);
-        });
+        api
+            .getDiscussionsByBlog(query)
+            .then(discussions => {
+                this.orderDiscussions(discussions);
+            })
+            .catch(() => {
+                this.setState({isLoading: false, isWrong: true});
+            });
     }
 
     componentWillUnmount() {
@@ -170,11 +174,11 @@ class News extends React.Component {
                 <div className="grid-block vertical">
                     <div className="account-tabs">
                         <div className="tab-content">
-                            <div className="hide-selector">
-                                <div className="inline-block">
-                                    <Translate content="news.news" />
-                                </div>
-                            </div>
+                            {/*<div className="hide-selector">*/}
+                            {/*<div className="inline-block">*/}
+                            {/*<Translate content="news.news" />*/}
+                            {/*</div>*/}
+                            {/*</div>*/}
                             <div className="grid-block vertical">
                                 {isWrong && <SomethingWentWrong />}
                                 {isLoading ? <LoadingIndicator /> : null}
