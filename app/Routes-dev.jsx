@@ -81,7 +81,7 @@ class Auth extends React.Component {
 
 const routes = (
     <Route path="/" component={App} onEnter={willTransitionTo}>
-        <IndexRoute component={DashboardPage} />
+        <IndexRoute component={DashboardContainer} />
         <Route path="/auth/:data" component={Auth} />
         <Route path="/dashboard" component={DashboardContainer} />
         <Route path="explorer" component={Explorer} />

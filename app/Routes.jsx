@@ -38,6 +38,15 @@ const routes = (
         <Route path="/auth/:data" component={Auth} />
 
         <Route
+            path="/dashboard"
+            getComponent={(location, cb) => {
+                System.import("components/Dashboard/DashboardContainer")
+                    .then(loadRoute(cb))
+                    .catch(errorLoading);
+            }}
+        />
+
+        <Route
             path="explorer"
             getComponent={(location, cb) => {
                 System.import("components/Explorer/Explorer")
