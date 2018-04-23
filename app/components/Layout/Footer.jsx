@@ -39,7 +39,7 @@ class Footer extends React.Component {
     componentDidMount() {
         this.checkNewVersionAvailable.call(this);
 
-        this.downloadLink = "https://bitshares.org/download";
+        this.downloadLink = "https://github.com/blckchnd/rudex-ui/releases";
     }
 
     shouldComponentUpdate(nextProps, nextState) {
@@ -56,7 +56,7 @@ class Footer extends React.Component {
     checkNewVersionAvailable() {
         if (__ELECTRON__) {
             fetch(
-                "https://api.github.com/repos/bitshares/bitshares-ui/releases/latest"
+                "https://api.github.com/repos/blckchnd/rudex-ui/releases/latest"
             )
                 .then(res => {
                     return res.json();

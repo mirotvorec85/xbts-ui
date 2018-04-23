@@ -178,7 +178,7 @@ class AccountMembership extends React.Component {
                                                         </h4>
                                                         <Translate content="account.member.referral_text" />:
                                                         <h5
-                                                        >{`https://wallet.bitshares.org/?r=${
+                                                        >{`https://market.rudex.org/?r=${
                                                             account.name
                                                         }`}</h5>
                                                     </div>
