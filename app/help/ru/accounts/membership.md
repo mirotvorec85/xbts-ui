@@ -1,12 +1,12 @@
-# Memberships
+# Подписки
 
-Accounts in BitShares are separated into three groups. We decided to give users the option to upgrade their accounts into a VIP-like status if they desire and profit from reduced fees and additional features.
+Аккаунты в BitShares разделены на три группы. Мы решили дать пользователям возможность по желанию обновлять свои аккаунты до подобного VIP статуса, чтобы получать выгоду от сниженных комиссий и дополнительных функций.
 
-## Non-Members
+## Не имеющие подписки
 
-A *regular* account is a *non-member*.
+*Обычный* аккаунт *не имеет членства*.
 
-## Lifetime Members
+## Пожизненная подписка
 
 Lifetime Members get a percentage cashback on every transaction fee they pay and income from referrals. A Lifetime membership is associated with a certain one-time fee defined in this [schedule](/explorer/fees).
 
