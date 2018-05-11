@@ -1,14 +1,15 @@
-# 市场锚定资产
+# Market Pegged Assets
 
-一种加密数字货币，拥有类似比特币的属性和优点，同时能保持价格与对应的全球接受的货币同步(比如美元)。具有很强的便利性和实用性，对管制免疫。BitShares的市场锚定资产(MPA)可以实现这样的目的。市场锚定资产是一种新型的可自由交易的数字资产，通过差价合约(CFD)机制，它的价值能够追踪传统的对应资产的价值。
+A crypto-currency, with the properties and advantages of Bitcoin, that is capable of maintaining price parity with a globally adopted currency (e.g. U.S. dollar), has high utility for convenient and censorship resistant commerce. This can be achieved by BitShares' market pegged assets (MPA), a new type of freely traded digital asset whose value is meant to track the value of a conventional underlying asset by means of contracts for difference (CFD).
 
-*SmartCoin* (市场锚定资产的另一种叫法)是一种数字货币，它的价值*总是*有100%或更多价值的比特股核心货币(BTS)来支撑。这些BTS在差价合约(CFD)中，作为抵押物存在，并在任何时间可被赎回。
+A *SmartCoin* (synonym for MPA) is a crypto-currency that *always* has 100% or more of its value backed by the BitShares core currency (BTS), to which they can be converted at any time, as *collateral* in a CFD.
 
-市场锚定资产与众不同的一个特点在于，尽管它使用了有抵押的价差合约，它却能免于对手盘风险。这是由网络本身(软件协议)通过确保抵押充足，并在特定情况下进行强制清算的机制来实现的。
+What makes MPAs unique is that they are free from counterparty risk even though they resemble a CFD backed by collateral. This is achievable by letting the network itself (implemented as a software protocol) be responsible for securing the collateral and performing settlements as will be described in more detail below.
 
-以下是部分已经可用的市场锚定资产
-* BitUSD (比特美元)
-* BitCNY (比特人民币)
-* BitEUR (比特欧元)
-* BitGOLD (比特黄金)
+This is a subset of the available market pegged assets:
+
+* BitUSD
+* BitCNY
+* BitEUR
+* BitGOLD
 * ...
