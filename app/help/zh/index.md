@@ -1,32 +1,37 @@
-# Graphene 石墨烯
+# Graphene Help
 
-BitShares(比特股) 2.0 是一个金融智能合约平台，该平台基于[Cryptonomex](http://cryptonomex.com)公司研发的[Graphene(石墨烯)](https://github.com/cryptonomex/graphene)技术开发。Graphene(石墨烯)是一个开发工具包，同时也是实时区块链的技术实现。
+BitShares 2.0 is a Financial Smart Contracts platform that is based on the [Graphene](https://github.com/cryptonomex/graphene) technology built by [Cryptonomex](http://cryptonomex.com). You can see Graphene as a toolkit or technology for real-time blockchains.
 
-本帮助文档旨在提供用户一个系统概述，并解释系统中的一些基本概念。
+This help section gives a brief overview and describes the most basic concepts of this application.
 
-## 简介
- * [BitShares(比特股)](introduction/bitshares.md)
- * [钱包](introduction/wallets.md)
- * [备份](introduction/backups.md)
- * [区块链](introduction/blockchain.md)
- * [见证人](introduction/witness.md)
- * [预算项目](introduction/workers.md)
- * [理事会](introduction/committee.md)
+## Introduction
 
-## 账户
- * [介绍](accounts/general.md)
- * [权限](accounts/permissions.md)
- * [会员级别](accounts/membership.md)
+- [BitShares](introduction/bitshares.md)
+- [Wallet](introduction/wallets.md)
+- [Backups](introduction/backups.md)
+- [Blockchain](introduction/blockchain.md)
+- [Witnesses](introduction/witness.md)
+- [Workers](introduction/workers.md)
+- [Committe Members](introduction/committee.md)
 
-## 资产
- * [市场锚定资产](assets/mpa.md) (BitUSD, BitEUR, BitGOLD, Bit\*,...)
- * [用户发行资产](assets/uia.md)
- * [私有比特资产](assets/privbitassets.md)
+## Accounts
 
-## 去中心化交易所
- * [介绍](dex/introduction.md)
- * [交易](dex/trading.md)
- * [卖空比特资产](dex/shorting.md)
+- [Introduction](accounts/general.md)
+- [Permissions](accounts/permissions.md)
+- [Memberships](accounts/membership.md)
 
-----------
-[词汇表](glossary.md)
+## Assets
+
+- [Market Pegged Assets](assets/mpa.md) (BitUSD, BitEUR, BitGOLD, Bit\*,...)
+- [User Issued Assets](assets/uia.md)
+- [Privatized BitAssets](assets/privbitassets.md)
+
+## Decentralized Exchange
+
+- [Introduction](dex/introduction.md)
+- [Trading](dex/trading.md)
+- [Short Selling BitAssets](dex/shorting.md)
+
+* * *
+
+[Glossary](glossary.md)
