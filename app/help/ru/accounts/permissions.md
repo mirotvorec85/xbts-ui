@@ -1,4 +1,4 @@
-# Permissions
+# Разрешения
 
 In BitShares, each account is separated into
 
