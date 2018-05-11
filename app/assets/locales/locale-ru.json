@@ -1064,7 +1064,7 @@
             "title": "Выбор рынка",
             "sub_title": "Найти актив для замены",
             "search_mode": "Режим",
-            "search_for_asset": "Search for asset",
+            "search_for_asset": "Поиск актива",
             "find_by_asset": "Фильтр по активу",
             "filter_by_issuer": "Фильтр по эмитенту",
             "results": "Результаты (%(total_assets)s)",
@@ -1179,7 +1179,7 @@
         "starred_markets": "Избранные рынки",
         "top_markets": "Лучшие рынки",
         "featured_markets": "Популярные рынки",
-        "table_empty": "No market matched"
+        "table_empty": "Соответствующего рынка не найдено"
     },
     "fees": {
         "title": "Прейскурант Комиссионных Сборов"
@@ -1224,12 +1224,12 @@
         "import_backup": "Импортировать резервную копию BitShares 2.0 (.bin файл)",
         "import_backup_choose": "Пожалуйста, выберите Вашу резервную копию в окне ниже. Это абсолютно безопасно, так как файл копии никуда не загружается и никогда не покинет Ваш браузер.",
         "restore_backup": "Восстановить из резервной копии",
-        "ask_to_select_wallet": "Please select a key file",
+        "ask_to_select_wallet": "Пожалуйста, выберите файл резервной копии ключей",
         "dont_ask_for_backup": "Don't ask me to back up again",
         "different_file_type": "Have a different file type?",
         "restore_it_here": "Restore it here",
         "backup_login": "Backup & login",
-        "select_wallet": "Select key file",
+        "select_wallet": "Выбрать файл резервной копии ключей",
         "using": "Using:",
         "use_different": "Use different file",
         "backup_warning": "It appears that your private key files are not backed up. For security reasons we recommend users do not log in without backing up their private keys.",
@@ -1348,7 +1348,7 @@
         "password_model": "Модель аккаунта",
         "key_file": "Файл-ключ",
         "key_file_bin": "Файл-ключ (.bin)",
-        "restore_key_file": "Restore key file..",
+        "restore_key_file": "Восстановить файл резервной копии ключей",
         "wallet_model_1": "Модель кошелька хранит кошелек в Вашем браузере. Он зашифрован выбранным Вами паролем и позволяет создать его резервную копию, используя либо brainkey, либо зашифрованный бинарный файл, содержащий все приватные ключи.",
         "wallet_model_2": "Модель кошелька обеспечивает высшую степень безопасности, но ограничивает Вас использованием вашего текущего браузера и компьютера. Чтобы перенести кошелек на другой браузер или компьютер, Вам нужно будет воспользоваться резервной копией или brainkey.",
         "wallet_model_3": "<li>Несколько аккаунтов</li><li>Требуется резервное копирование файлов кошелька</li><li>Высокая безопасность</li>",
