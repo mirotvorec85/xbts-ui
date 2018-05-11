@@ -1,59 +1,39 @@
-# BitAktif Kısa Satışı
+# Short Selling BitAssets
 
-BTS'le temasınızı arttırmak ve USD,EUR,GOLD gibi BitAktiflere likidite sağlamak için 
-bu BitAktifleri ağdan *ödünç* alabilir ve *kısa satabilirsiniz*. Prosedürü burada kısaca 
-anlatacağız.
+In order to increase your exposure to BTS and offer liquidity to BitAssets, such as USD, EUR, GOLD, etc., you can go *borrow* this bitAsset from the network and *sell it short*. We will here briefly describe the procedure.
 
-## Ödünç Alma
+## Borrowing
 
-BitShares ağının herhangi bir miktarda BitVarlığı piyasaya sürmesi ve yeterli teminat 
-karşılığında katılımcılara borç vermesi mümkündür. 
+The BitShares network is capable of issuing any amount of any BitAsset and lend it out to participants given enough collateral.
 
- * *uzlaşma fiyatı* : 1 BTS in dış borsalarda alıp-satılırkenki fiyatı.
- * *idame teminat oranı* (MCR) :  zorunlu minimum teminat oranı 
- * *maksimum kısa sıkıştırma oranı* (MSQR) : Tanıklar tarafından kısaların kısa sıkıştırmalara karşı nereye kadar korunacaklarını belirleyen oran.
- * *kısa sıkıştırmadan korunma* (SQP) : Marjin pozisyonuna ödettirilebilecek en yüksek  
- * *çağrı fiyatı* (cp):   Kısa/ödünç pozisyonlarının marjin çağrıldığı fiyat.  
+- *settlement price*: The price for 1 BTS as it is traded on external exchanges.
+- *maintenance collateral ratio* (MCR): A ratio defined by the witnesses as minimum required collateral ratio
+- *maximum short squeeze ratio* (MSQR): A ratio defined by the witnesses as to how far shorts are protected against short squeezes
+- *short squeeze protection* (SQP): Defines the most that a margin position will ever be forced to pay to cover 
+- *call price* (CP): The price at which short/borrow positions are margin called
 
-### Marjin Çağrısı ( Teminat Tamamlama Çağrısı)
+### Margin Call
 
-BitShares ağı , ödünç aldığı bitVarlığın karşılığında yeterince teminatı bulunmayan 
-pozisyonları teminatı tamamlamaları için çağırabilir. Marjin çağrısı , en yüksek alış fiyat 
-teklifinin *çağrı fiyatından* az , ve *SQP* dan büyük olduğu herhangi bir anda 
-meydana gelebilir.
-Marjin pozisyonu, teminatı satın almaya verilen en yüksek teklifin çağrı 
-fiyatından(x/BTS) daha düşük olduğu anda teminatı zorla sattırılır.
+The BitShares network is capable of margin calling those positions that do not have enough collateral to back their borrowed bitAssets. A margin call will occur any time the highest bid is less than the *call price* and greater than *SQP*. The margin position will be forced to sell its collateral anytime the highest offer to buy the collateral is less than the call price (x/BTS).
 
-    SQP =  uzlaşma fiyatı / MSQR
-    çağrı fiyatı = BORÇ / TEMİNAT * MCR
+    SQP = settlement price / MSQR
+    call price = DEBT / COLLATERAL * MCR
+    
 
-Marjin çağrısı teminatı alır , ödünç alınmış bitaktif hisselerinin SQP ya kadarki kısmını
-piyasa fiyatından satın alır ve pozisyonu kapar. Teminattan geri kalan BTS müşteriye 
-iade edilir.
+The margin call will take the collateral, buy shares of borrowed bitAsset at market rates up to the SQP and close the position. The remaining BTS of the collateral are returned to the customer.
 
-### Hesap görme
+### Settlement
 
-Her bitaktif sahibi istediği zaman *adil bir fiyattan* hesap görmeyi talep edebilir.
-Hesap görme işlemi, ödünç/kısa pozisyonlarını en düşük teminat oranıyla kapar ve 
-hesap görmek üzere teminatı satar.
+Holders of any bitAsset can request a settlement at a *fair price* at any time. The settlement closes the borrow/short positions with lowest collateral ratio and sells the collateral for the settlement.
 
-## Satış
+## Selling
 
-BitAktif ödünç alındıktan sonra alakalı piyasalardan herhangi birinde herhangi
-bir fiyattan satılabilir . Bu aşamayla ,  kısa-satış tamamlanmış olur ve o bitaktif da kısa 
-olursunuz.
+After borrowing bitAssets, they can be sold free at any of the corresponding markets at any price a buyer is willing to pay. With this step, the short-selling is now complete and you are short that particular bitAsset.
 
-## Teminat Oranını Güncellemek
+## Updating Collateral Ratio
 
-Ödünç/kısa pozisyonu tutan kişi , herhangi bir zamanda , piyasa 
-davranışını esnek bir biçimde ayarlamak için teminat oranını değiştirebilir. Eğer 
-teminat oranı arttırılırsa , ilave miktarda BTS teminat olarak kilit altına alınır, teminat 
-oranının düşürülmesi ise tekabül eden miktarda BitVarlığın ağa geri ödenmesini 
-gerektirir.
+At any time, the holder of a borrow/short position can modify the collateral ratio in order to flexibly adjust to market behavior. If the collateral ratio is increase, an additional amount of BTS is locked as collateral, while reducing the collateral ratio will require an amount of the corresponding BitAsset to be payed back to the network.
 
-## Kapamak
+## Covering
 
-Ödünç/kısa pozisyonunu kapamak için , ilk önce kişinin , BitShares ağına teslim 
-etmek üzere o Bitvarlığın ödünç alınan miktarda elinde bulunması gerekir. Ondan 
-sonra , BitAktifler arz stoğundan düşer ve teminat serbest bırakılıp sahibine geri 
-verilir.
+To close a borrow/short position, one must hold the borrowed amount of that particular bitAsset to hand it over to the BitShares network. After that, the BitAssets are reduced from the corresponding supply and the collateral is released and given back to its owner.
