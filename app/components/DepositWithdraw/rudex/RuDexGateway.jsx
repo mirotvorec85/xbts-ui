@@ -111,7 +111,7 @@ class RuDexGateway extends React.Component {
                         : coin.symbol;
                 return (
                     <option value={option} key={coin.symbol}>
-                        {option}
+                        {option.replace("RUDEX.", "")}
                     </option>
                 );
             })
