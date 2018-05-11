@@ -1,29 +1,29 @@
-# 会员级别
+# Memberships
 
-BitShares 系统中，用户账户分为3个种类。我们运行用户升级账户到类似VIP的会员级别，享受费率折扣以及其他专属特性。
+Accounts in BitShares are separated into three groups. We decided to give users the option to upgrade their accounts into a VIP-like status if they desire and profit from reduced fees and additional features.
 
-## 非会员(普通账户)
+## Non-Members
 
-一个*非会员账户*，也就是一个*普通账户*
+A *regular* account is a *non-member*.
 
-## 终身会员
+## Lifetime Members
 
-终身会员账户可以从自己支付的各种手续费中获得一定比例的返现奖励，并有资格加入引荐计划，通过引荐或注册用户获得引荐奖励。升级到终身会员要求支付一笔一次性的升级费用，具体金额由理事会成员通过投票设定和调整。
+Lifetime Members get a percentage cashback on every transaction fee they pay and income from referrals. A Lifetime membership is associated with a certain one-time fee defined in this [schedule](/explorer/fees).
 
-## 年度会员
+## Annual Members
 
-如果你暂时不想成为终身会员，那么你还可以选择升级到年度会员，也可获得一定比例的手续费返现。升级到年度会员，每年需要花费较少数量的会员费用。
+If a lifetime membership is too much you can still get the same cashback for the next year by becoming an annual subscriber for a smaller one-time fee which lasts for only one year.
 
-### 手续费分配
+### Fee Division
 
-每次你推荐的用户支付手续费时，该手续费将分配给多个不同账户。网络、推荐人都将获得一部分分成。
+Every time an account you referred pays a transaction fee, that fee is divided among several different accounts. The network takes a cut, and the Lifetime Member who referred the account gets a cut.
 
-注册人是账户注册时代其支付注册费的账户。注册人账户可自行决定剩余的手续费如何在它自己及它的市场合作方之间分配。
+The registrar is the account that paid the transaction fee to register the account with the network. The registrar gets to decide how to divide the remaining fee between themselves and their own affiliate.
 
-#### 待结费用
-手续费每个维护周期在网络、推荐人和注册人之间结算一次。尚未结算的手续费称为*待结费用*。
-                 
-#### 待解冻金额
+### Pending Fees
 
-大部分获取手续费的利益账户可立即使用资金，但金额超过一定数量的费用(比如支付升级终身会员的手续费、注册高级账户名的手续费等)则需要暂时冻结，并在一段时间内线性解冻释放。
-                 
+Fees paid are only divided among the network, referrers, and registrars once every maintenance interval.
+
+### Vesting Fees
+
+Most fees are made available immediately, but fees over the vesting threshold (such as those paid to upgrade your membership or register a premium account name) must vest for some period of time as defined by the committee.
