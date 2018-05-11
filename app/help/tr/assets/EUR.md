@@ -1,7 +1,9 @@
 [# summary]
-### Aktif {symbol}
 
-{description}  
-Piyasaya süren {issuer}
+### Asset {symbol}
 
-Euro (işaret: €; sembol: EUR) Avrupa bölgesindeki katılımcı ülkelerin  resmi para birimidir.
+{description}
+
+Issued by: {issuer}
+
+The Euro (sign: €; symbol: EUR) is the official currency of participating countries in the Europ zone.
