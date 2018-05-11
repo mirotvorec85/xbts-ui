@@ -1,50 +1,23 @@
-# Giriş
+# Decentralized Exchange
 
-Merkezsiz borsa (kısaca *DEX*) , BitShares ekosisteminde 
-alıp-satılan dijital mamüllerin doğrudan takas edilebilmelerini sağlar.
+The decentralized exchange (further denoted simply as *the DEX*) allows for direct exchange of digital goods traded in the BitShares ecosystem.
 
-Merkezsiz bir borsanın , bariz geleneksel borsalardan bir takım avantajları vardır. 
-Bunlardan kısaca bahsetmek istiyoruz. BitShares DEX'de hepsi mevcut olmasina 
-rağmen o özellikleri tamamen ya da kısmen layığı ile kullanabilmek okuyucuya ve 
-müşteriye kalmıştır.
+A decentralized exchange has a very particular set of advantages over traditional centralized exchanges and we would like to address some of them briefly below. Although the BitShares DEX comes with all of them, it is up to the reader and customer to leverage those features in full or only partially.
 
-* **Güçler Ayrılığı** : 
-  IOU 'lari piyasaya sürme  ve sipariş defterlerine işleme görevinden aynı 
-  kimsenin sorumlu olmasını gerektirecek bir sebep yoktur. BitShares'de işlem 
-  emirlerin eşleştirilmesi işi protokol tarafından yürütülür, protokolün 
-  işlemlere konu olan aktiflerle ilgili bilgisi yoktur, sadece işlem görür.
-* **Genel Birleşik Emir/Sipariş Defteri** :
-  BitShares evrensel olduğu için , internet erişimi olan herkes  DEX'i alım-satım için 
-  kullanabilir. Bu, dünyanın likiditesini , merkezsiz/dağıtık alım-satım için tek bir emir 
-  defterine getirir.
-* **Neredeyse Herşeyi Alıp-Satabilirsiniz** :
-  BitShares DEX varlığın muhteviyatını bilmez , dolayısı ile **her türlü**  eşleşme ticareti 
-  yapılabilir. GÜMÜŞ:ALTIN gibi bazı eşleşmeler  az likidite sağlarken FOREX ticareti 
-  için USD:EUR gibi eşleşmeler çok büyük hacimli işlem görür.
-* **Limit Yok** :
-  BitShares protokolünün sizin ticaret deneyiminizi sınırlaması mümkün değildir.
-* **Merkezsiz** :
-  DEX (merkezsiz borsa) tüm dünyaya dağıtıktır. Bölece tek kırılma noktası 
-  olmadığı gibi bu BitShares borsasının ticaret için 7/24 açık olduğu anlamına 
-  gelir, çünkü her zaman dünyada bir yerde vakit mutlaka gündüzdür. 
-* **Güvenli** :
-  Fonlarınız ve ticari işlemleriniz endüstriyel seviyedeki eliptik-eğri kriptografisiyle tamamen güvence altındadır. 
-   Kimse siz izin vermedikçe fonlarınıza erişemez.
-  Güvenliği daha da güçlendirmek amacıyla müşterilerimize emanet-escrow ve çoklu-
-  imza planları düzenlemelerine imkan tanıyoruz.
-* **Hızlı** :
-  Diğer merkezsiz ağların tersine BitShares DEX gerçek-zamanlı ticarete
-   imkan tanır , sadece ışık hızı ve gezegenin büyüklüğü 
-  ile sınırlıdır.
-* **Kanıtlanabilir Emir Eşleştirme Algoritması** :
-  BitShares DEX i nadir kılan şeylerden biri de ispatlanabilir emir eşleştirme 
-  algoritmasıdır.  Verilen bir takım işlem-emri  için her zaman bu emirlerin 
-  kanıtlanabilir şekilde eşleştirilmiş olduğunu teyit edebilirsiniz.
-* **Teminata Bağlanmış** :
-  BitShares'in en büyük özelliklerinden biri de bitUSD, bitEUR, bitCNY gibi 
-  *akıllıparalar*dır. Kolaylık olsun diye bu varlıklar cüzdan içerisinde USD,EUR,CNY 
-  diye kısaltılmışlardır. Bu dijital kuponlar dayandıkları fiziksel varlıkla aynı değeri 
-  temsil ederler. Yani bu cüzdandaki 1 USD nin değeri 1 dolardır ve o şekilde 
-  ödenebilir. Bu kuponların hepsinin karşılığı olarak teminat olarak kitli tutulan ve anlık 
-  fiyatında hesap görümü için mevcut olabilen, **BitShares'in şirket hisseleri (BTS)** 
-   vardır.
+* **Separation of Powers**: There is no reason why the same entity needs to be responsible for issuing IOUs and for processing the order book. In BitShares, order matching is performed by the protocol, which is unaware of implications concerning the involved assets.
+
+* **Global Unified Order Book**: Since BitShares is global, anybody with an internet access can use the DEX for trading. This brings the world's liquidity to a single order book for decentralized trading.
+
+* **Trade Almost Anything**: The BitShares DEX is asset agnostic. Hence you can trade at **any** pair. While some pairs may end up with low liquidity, such as SILVER:GOLD, other pairs such as USD:EUR for FOREX trading will see huge volume.
+
+* **No Limits**: The BitShares protocol is unable to limit your trading experience.
+
+* **Decentralized**: The DEX is decentralized across the globe. This not only means that there is no single point of failure, but it also implies that the BitShares exchange is open for trading 24/7 because it's always daytime somewhere.
+
+* **Secure**: Your funds and trades are secured with industry-grade elliptic curve cryptography. No one will be able to access your funds unless you let them. To further strengthen the security, we allow our customers to setup escrow and multi-signature schemes.
+
+* **Fast**: In contrast to other decentralized networks, the BitShares DEX allows for real-time trading and is only limited by the speed of light and the size of the planet.
+
+* **Provable Order Matching Algorithm**: What makes the BitShares DEX unique is the provable order matching algorithm. Given a set of orders, you will always be able to provably verify that these orders have been matched properly.
+
+* **Collateralized Smartcoins**: One of the biggest features of BitShares are its *smartcoins* such as bitUSD, bitEUR, bitCNY, and others. For the sake of convenience, these assets are denotes simply as USD, EUR, CNY, etc. in the wallet. These digital tokens represent the same value as their underlaying physical asset. Hence 1 USD in this wallet is worth $1 and can be redeemed as such. Any of these tokens is backed by BitShares' company shares (BTS) being locked up as collateral and being available for settlement at its current price.
