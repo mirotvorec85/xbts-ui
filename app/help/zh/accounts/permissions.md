@@ -1,88 +1,86 @@
-# 权限
+# Permissions
 
-在BitShares (比特股)中，每一个账户的权限可分为
+In BitShares, each account is separated into
 
-* **活跃权限**: 控制资金
-* **账户权限**: 控制账户
+* **Active Permission**: control over its funds and
+* **Owner Permission**: control over the account.
 
-两者都可以通过钱包账户页面中`权限`标签进行设定。设定授权的*职权实体* (详见下文)以及分配相应的权重。只有高于门槛阀值权重的职权实体才能签署有效的交易。
+Both can be defined in the `Permissions` tab of your account using so called *authorities* (see below) together with a so called *threshold* that has to be exceeded in order for a transaction to be valid.
 
-## 授权账户
+## Authorities
 
-在比特股系统中，一个职权实体通过一个或多个实体进行操作授权，比如转账或者交易。
+In BitShares an *authority* consists of one or many entities that authorize an action, such as transfers or trades.
 
-一个职权实体由一个或多个账户名加权重组合构成。
+An authority consists of one or several pairs of an account name with a *weight*.
 
-参与签名的一个或多个实体的权重之和必须大于门槛阀值才能进行签署有效的交易动作。
+In order to obtain a valid transaction, the sum of the weights from signing the parties has to exceed the threshold as defined in the permissions.
 
-# 示例
+# Examples
 
-现在让我们讨论几个例子来更好的理解这些术语以及使用场景。假设我们创建了一个新的账户，他的活跃权限如下文所述。请注意，同样的模式也适用于账户权限。
+Let's discuss some examples to shed some light on the used terminology and the use-cases. We assume that a new account is created with it's active permissions set as described below. Note that the same scheme also works for the owner permissions!
 
-## (扁平结构) 多重签名
+## (Flat) Multi-Signature
 
-一个扁平结构的多重签名由`M`方实体参与，其中`N`个实体必须进行签名以使交易有效。现在，在比特股系统中，我们使用*权重*和*门槛阀值*来代替`M`和`N`。我们可以实现相同的功能，但是更加灵活。
+A flat multi-signature scheme is composed of `M` entities of which `N` entities must sign in order for the transaction to be valid. Now, in BitShares, we have *weights* and a *threshold* instead of `M` and `N`. Still we can achieve the very same thing with even more flexibility as we will see now.
 
-假设Alice，Bob，Charlie和Dennis管理一个共同基金。我们希望只要有2个人同意，我们就能构建一个有效的交易。也就是**2-of-4** (N-of-M)模式，这个结构如下：
+Let's assume, Alice, Bob, Charlie and Dennis have common funds. We want to be able to construct a valid transaction if only two of those agree. Hence a **2-of-4** (N-of-M) scheme can look as follows:
 
-| 账户名      | 权重    | 
-| ---------- | ------ | 
-| Alice      | 33%    | 
-| Bob        | 33%    | 
-| Charlie    | 33%    | 
-| Dennis     | 33%    | 
-| ---------- | ------ | 
-| 门槛阀值: | 51%    | 
+| Account       | Weight   |
+| ------------- | -------- |
+| Alice         | 33%      |
+| Bob           | 33%      |
+| Charlie       | 33%      |
+| Dennis        | 33%      |
+| \---\---\---- | \---\--- |
+| Threshold:    | 51%      |
 
-这4个成员每人都有33%的权重，但是门槛阀值设定在50%。这样，至少需要2名成员同意才能获得多余门槛阀值的权重以签署有效交易。
+All four participants have a weight of 33% but the threshold is set to 51%. Hence only two out of the four need to agree to validate the transaction.
 
-同理，要构建 3-of-4 结构，我们可以降低每个成员的权重值到 17%，或者增加门槛阀值到 99%。
+Alternatively, to construct a 3-of-4 scheme, we can either decrease the weights to 17 or increase the threshold to 99%.
 
-## (扁平结构) 灵活的多重签名
+## (Flat) Flexible Multi-Signature
 
-通过门槛阀值和权重，现在我们管理资金时拥有了更多的灵活性，更准确的说，我们拥有了更多的*控制权*。比如，我们可以分配不同的权重到不同的成员。假设Alice希望通过多重签名机制来提高资金安全性防范偷窃，但又不想给与她的朋友们过多的控制权，那么，我们可以设定这样的职权实体分布：
+With the threshold and weights, we now have more flexibility over our funds, or more precisely, we have more *control*. For instance, we can have separate weights for different people. Let's assume Alice wants to secure here funds against theft by a multi-signature scheme but she does not want to hand over too much control to her friends. Hence, we create an authority similar to:
 
-| 账户名    | 权重 | 
-| ---------- | ------ | 
-| Alice      | 49%    |
-| Bob        | 25%    |
-| Charlie    | 25%    |
-| Dennis     | 10%    |
-| ---------- | ------ | 
-| 门槛阀值: | 51%    |
+| Account       | Weight   |
+| ------------- | -------- |
+| Alice         | 49%      |
+| Bob           | 25%      |
+| Charlie       | 25%      |
+| Dennis        | 10%      |
+| \---\---\---- | \---\--- |
+| Threshold:    | 51%      |
 
-这样，Alice只需要任何一个朋友协助就能使用资金，或者其他3个朋友必须全部同意才能使用资金。
+Now the funds can either be accessed by Alice and a single friend or by all three friends together.
 
-## 多层次灵活的多重签名
+## Multi-Hierarchical Flexible Multi-Signature
 
-我们再来看一下一种简单的企业常用的多层级组织架构。这个公司有一个首席财务官，有多个部门向其汇报，如Treasurer, Controller, Tax Manager, 
-Accounting等。公司的首席执行官也要求拥有支付权。我们可以这样设计职权实体结构：
+Let's take a look at a simple multi-hierarchical corporate account setup. We are looking at a company that has a Chief of Financial Officer (CFO) and a some departments working for him, such as the Treasurer, Controller, Tax Manager, Accounting, etc. The company also has a CEO that wants to have spending privileges. Hence we construct an authority for the funds according to:
 
-| 账户名          | 权重 | 
-| ------------   | ------ | 
-| CEO.COMPANY    | 51%    |
-| CFO.COMPANY    | 51%    |
-| ------------   | ------ | 
-| 门槛阀值:       | 51%    |
+| Account       | Weight   |
+| ------------- | -------- |
+| CEO.COMPANY   | 51%      |
+| CFO.COMPANY   | 51%      |
+| \---\---\---- | \---\--- |
+| Threshold:    | 51%      |
 
+whereas CEO.COMPANY and CFO.COMPANY have their own authorities. For instance, the CFO.COMPANY account could look like:
 
-而 CEO.COMPANY 和 CFO.COMPANY 则拥有各自的职权实体。比如 CFO.COMPANY 账户可设置如下：
+| CFO.COMPANY               | Weight   |
+| ------------------------- | -------- |
+| Chief.COMPANY             | 51%      |
+| Treasurer.COMPANY         | 33%      |
+| Controller.COMPANY        | 33%      |
+| Tax Manager.COMPANY       | 10%      |
+| Accounting.COMPANY        | 10%      |
+| \---\---\---\---\---\---- | \---\--- |
+| Threshold:                | 51%      |
 
-| CFO.COMPANY         | 权重 |
-| ------------------- | ------ |
-| Chief.COMPANY       | 51%    |
-| Treasurer.COMPANY   | 33%    |
-| Controller.COMPANY  | 33%    |
-| Tax Manager.COMPANY | 10%    |
-| Accounting.COMPANY  | 10%    |
-| ------------------- | ------ |
-| 门槛阀值:          | 51%    |
+This scheme allows:
 
-这个设计允许：
+* the CEO to spend funds
+* the Chief of Finance Officer to spend funds
+* Treasurer together with Controller to spend funds
+* Controller or Treasurer together with the Tax Manager and Accounting to spend funds.
 
-* 首席执行官使用资金
-* 首席财务官使用资金
-* Treasurer连同Controller一起可以使用资金
-* Controller或者Treasurer连同Tax Manager或者Accounting可以使用资金
-
-这样，通过设计构建灵活的职权实体，从而拥有任意层级的结构，将满足绝大多数企业使用场景。
+Hence, a try of arbitrary depth can be spanned in order to construct a flexible authority to reflect mostly any business use-case.
