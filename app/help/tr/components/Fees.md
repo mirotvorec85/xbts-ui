@@ -1,10 +1,5 @@
-# Ücretler
+# Fees
 
-BitShares ekosistemi içerisinde her işleme tahsis edilmiş *bireysel* bir ücret vardır. 
-Bu ücretler değişime tabidirler. Bununla birlikte, bunlar sadece hissedarların oylarıyla 
-belirlenirler, böylece BitShares'in esas varlığı olan BTS hissedarlarının her biri 
-ücretlerin ne olacağı konusunda söz sahibi olur. Eğer hissedarlar belli bir ücretin 
-düşürülmesi konusunda fikir birliği sağlarlarsa o ücret blok zinciri tarafından otomatik 
-olarak düşürülür. Blok zinciri parametrelerinin düzenlemesiyle ilgili teklifler kurul 
-üyeleri tarafından yapılırlar. Bu üyeler hissedarlar tarafından oy kullanılarak seçilirler 
-ve herhangi bir durumda, esneklik ve  reaksiyon kabiliyetini arttırırlar.
+In the BitShares ecosystem every operation is assigned an *individual* fee. These fees are subject to change. However, they are defined solely by shareholder approval, thus each and every shareholder of the BitShares core asset (BTS) has a say as to what the fees should be. If shareholders can be convinced to reduce a certain fee and consensus is reached, the fee will be reduced automatically by the blockchain. Changes of blockchain parameters are proposed by members of the committee. These members are voted by shareholders and improve the flexibility and reaction rate.
+
+\*: These operations require Lifetime membership!
