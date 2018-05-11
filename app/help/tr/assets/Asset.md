@@ -1,32 +1,29 @@
 [# summary]
-### Aktif {symbol}
 
-{description}  
-Piyasaya süren {issuer}
+### Asset {symbol}
 
+{description}
+
+Issued by: {issuer}
 
 [# annual]
 
-Eğer ömür-boyu üyelik fazla geliyorsa,  {price} miktarında bir ücret karşılığında bir  
-yıllığına abone olarak gelecek yıl için {feesCashback}% para iadesi alabilirsiniz.
-![GitHub Logo](/images/logo.png)
+If a lifetime membership is too much you can still get {feesCashback}% cashback for the next year by becoming an annual subscriber for just {price} per year. ![GitHub Logo](/images/logo.png)
 
 [# fee-division]
-#### Ücret Paylaşımı
-{account} adlı hesap her işlem ücreti ödediğinde, o ücret birçok farklı hesaplar arasında 
-paylaştırılır. Ağımız {networkFee}% pay alırken, {account} adlı hesabı  getiren Ömür-boyu Üye de  {lifetimeFee}% pay alır.
 
-{account} adlı hesabın kayıt işlem ücretini ödeyen hesabın adı _kayıtçı_dır. Kayıtçı geri kalan
-{referrerTotalFee}% miktarı kendileri ve _Bağlı Getirici_ arasında nasıl pay edileceğini kendi belirler.
+#### Fee Division
 
-{account} adlı hesabın kayıtçısı toplam ücretin {referrerFee}% kadarki kısmını _Bağlı Getirici_ yle paylaşmayı ve {registrarFee}% kadarki kısmını kendine bırakmayı tercih etti.
-                            
-                            
-#### Bekleyen Ücretler
-{account} adlı hesabın ödediği ücretler her bakım periodu ({maintenanceInterval} seconds) nda sadece ağ, getiriciler ve kayıtçılar arasında paylaştırılır.
-Bir sonraki bakım vakti  {nextMaintenanceTime}dır.
-                 
-#### Hacizdeki Ücretler
+Every time {account} pays a transaction fee, that fee is divided among several different accounts. The network takes a {networkFee}% cut, and the Lifetime Member who referred {account} gets a {lifetimeFee}% cut.
 
-Çoğu ücretler anında ödendiği halde {vestingThreshold} miktarını aşan bazı ücretler 
-(üyeliğinizi yükseltmek için yada paralı hesap adı kaydı yaptırmak için ödenen) toplam {vestingPeriod} gün hacizde tutulmak zorundadır. 
+The *registrar* is the account that paid the transaction fee to register {account} with the network. The registrar gets to decide how to divide the remaining {referrerTotalFee}% between themselves and their own *Affiliate Referrer* program.
+
+{account}'s registrar chose to share {referrerFee}% of the total fee with the *Affiliate Referrer* and keep {registrarFee}% of the total fee for themselves.
+
+#### Pending Fees
+
+Fees paid by {account} are only divided among the network, referrers, and registrars once every maintenance interval ({maintenanceInterval} seconds). The next maintenance time is {nextMaintenanceTime}.
+
+#### Vesting Fees
+
+Most fees are made available immediately, but fees over {vestingThreshold} (such as those paid to upgrade your membership or register a premium account name) must vest for a total of {vestingPeriod} days.
