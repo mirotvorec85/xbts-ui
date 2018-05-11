@@ -1,17 +1,20 @@
-# 备份
+# Backups
 
-我们建议你经常备份你的钱包，尽管在绝大多数情况下备份一次已经足够。需要注意的是，从备份中恢复钱包数据时，由于*备份是加密保存*的，你需要提供创建钱包时使用的密码进行解密才能恢复。所以，如果你丢失了钱包文件或者忘记了你的密码，你将无法访问钱包中的资金！
+## Local Wallet
 
-备份功能可以通过钱包管理界面进行操作(`设置->钱包`)。
+It is recommended to make regular backups of your Local Wallet even though in most cases a single backup may be sufficient. Please note that in order to recover from a backup you will also need to provide the passphrase (password) because **backups are encrypted**. Hence, if you either lose your wallet or your passphrase you will be unable to access any of your funds again!
 
-## 钱包导出
+You can create a backup from [Settings -> Backup](/settings).
 
-最便捷的备份方式是通过钱包管理界面提供的操作按钮进行钱包导出。请妥善保存你的备份文件，防止遗失、被盗或自然灾害。
+- Store this backup in at least two secure locations only accessible by you
+- The backup is encrypted with your passphrase/password so do not store your passwrod in the same location
 
-## 脑钱包密钥 (仅高级用户适用)
+## Advanced Users Only
 
-如果你从未手动导入过账户私钥进入过你的钱包，那么你还可以选择通过导出*脑钱包密钥*进行备份。脑钱包密钥是一长串由单词组成的字符串，通过它钱包软件可进行确定性重算恢复你的账户私钥。
+### Brainkey
 
-## 多层级职权实体 (仅高级用户适用)
+> If you never manually imported an account key into your wallet, you can alternatively backup your accounts and their funds by exporting the *brainkey*, a string of words from which your keys are derived deterministically.
 
-如果你使用了多层级职权实体功能（设置了账户权限/活跃权限），那么只是备份你自己的钱包是不够的。还需要相关的被授权的职权实体的密钥也被安全备份。请阅读关于多层级职权实体的更多内容。
+Remark: Hierarchical Authorities (advanced uses ONLY)
+
+> If you are using hierarchical authorities (account and/or active permissions), backing up your keys alone may not be sufficient to regain access to your funds! Please revise the documentations about hierarchical authorities.
