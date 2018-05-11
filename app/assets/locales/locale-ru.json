@@ -1630,7 +1630,7 @@
             "success": "успех",
             "fail": "не удалось"
         },
-        "asset_search_deposit": "Search for an asset to deposit",
+        "asset_search_deposit": "Поиск актива для депозита",
         "asset_search_withdraw": "Поиск актива для снятия"
     },
     "trx_error": {
@@ -1660,10 +1660,10 @@
         "header_transaction_history": "История транзакций",
         "show_transaction_history": "Показать историю транзакций",
         "withdraw_amount": "Сумма для вывода",
-        "withdraw_none": "No withdrawals",
+        "withdraw_none": "Не выводить средства",
         "deposit_amount": "Сумма депозита",
         "deposit_details": "Подробности",
-        "deposit_none": "No deposits"
+        "deposit_none": "Не размещать депозиты"
     },
     "winex": {
         "gateway": {
