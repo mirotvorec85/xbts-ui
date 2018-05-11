@@ -1,11 +1,13 @@
-## 桥接及网关服务
+## Bridge and gateway services
 
-桥接和网关服务帮助用户进行数字资产的充值和提现活动。但这两种服务模式有些不同。
+Both bridges and gateways allow you to deposit and withdraw coins, but there is a difference in the amount of trust you need to place in the service providers.
 
-### 桥接: 无需信任的模式
-桥接服务运行用户存入一定数量的BTS以外的数字货币(资产)，并获得相应的智能锚定货币(SmartCoin)。锚定货币没有对手方风险。所以这种模式下，用户面对的风险仅在于充值期间一小段时间的风险。这相对于比中心化的交易所的充值方式安全得多，因为中心化交易所总是面临各种黑客攻击或者其他管理漏洞而导致丢币的风险。
+### Bridges: trust-free model
 
-### 网关: 需要信任的模式
-网关模式下基本上就和传统的交易所运作模式相似，依赖于交易所的偿付能力。网关发行资产，一般以网关品牌作为前缀，比如OPEN，TRADE或是META。这些资产由用户存入网关的对真实应资产背书，比如BTC，ETH等。
+A bridge service provides a way to deposit an amount of a crypto-currency other than BitShares, and in turn receive a SmartCoin equivalent. SmartCoins have no counterparty risk, so the only risk you experience when using a bridge is during the short time it takes to complete the transfer. This is better than a centralized exchange such as Poloniex, where you are always at risk of the exchange being hacked, going bankrupt, or experiencing any number of other issues.
 
-OPEN.BTC理论上和你充值到一般中心化交易所，比如Poloniex的BTC一样，可以记作POLO.BTC。你都将依赖网关对你的数字资产进行兑付。
+### Gateways: trust-based model
+
+Gateways are basically equivalent to the standard exchange model where you depend on the solvency of the exchange to be able to redeem your coins. Generally gateways issue assets prefixed with their symbol, like OPEN, TRADE, or META. These assets are backed 100% by the real BTC or ETH or any other coin that people deposit with the gateways.
+
+An OPEN.BTC is thus in theory equivalent to the BTC you get on Poloniex, which could be prefixed POLO.BTC. In both cases you rely on the service provider, CCEDK for OPEN. assets and Poloniex for POLO. assets, to remain solvent in order to back the value of the assets they've issued. Because gateways only provide this one service which is normally only one part of running an exchange, one might even argue that they have an easier job of securing their holdings.
