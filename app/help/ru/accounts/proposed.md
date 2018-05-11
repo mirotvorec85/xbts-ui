@@ -1,3 +1,3 @@
-# Proposed Transactions
+# Предложенные транзакции
 
-This is an advanced feature of Bitshares accessible from the send feature. It allows for something known a multisig. Imagine you have a single account but require more than one person to authorize a transaction. This capability is built into bitshares, but requires advanced knowledge and there is a setup process. If you haven't previously setup multisig for your account, it's safe to say you do not need it.
+Это продвинутая функция Bitshares, доступная из функционала отправки. Она позволяет использовать так называемую мультиподпись. Представьте, что у вас есть всего один аккаунт, но для авторизации транзакции требуется более одного человека. Эта возможность встроена в Bitshares изначально, однако требует наличия определенных знаний и проведения процесса настройки. Если ранее вы не настраивали мультиподпись для своего аккаунта, то вероятнее всего, она вам не нужна.
