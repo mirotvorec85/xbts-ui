@@ -1,3 +1,3 @@
-活跃权限用来设定拥有花费本账户资金权限的账户名或公钥。
+Active permissions define the accounts that have permission to spend funds for this account.
 
-可方便的架设多重签名机制，参见 [权限](accounts/permissions) 了解更新信息。
+They can be used to easily setup a multi-signature scheme, see [permissions](accounts/permissions) for more details.
