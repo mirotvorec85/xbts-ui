@@ -1,11 +1,5 @@
-Özelleştirilmiş BitAktifler (Privatized BitAssets)
-====================
+# Privatized BitAssets
 
-Özelleştirilmiş BitAktifler  piyasa-sabitli-aktif çıkarmak isteyen fakat 
-fiyatların tanıklar tarafından duyurulmasını istemeyen müşterilere hitab eder. Onun 
-yerine, süren kimse *özelleştirilmiş* bitaktif yaratırken o aktif için özel olarak 
-fiyatlarını duyurmaya müsadesi olan bir takım yetkililer belirleyebilir. Süren kimse
-aktifle ilgili başka her türlü ücreti belirleyebilir ve kar elde edebilir.
+Privatized BitAssets serve those customers that would like to issue a market pegged asset but do not want the witnesses to publish the prices. Instead, when creating a *privatized* bitasset, the issuer can define a set of authorities that are allowed to publish the price for that particular asset. The issuer can further define all kinds of fees involving this asset and make a profit.
 
-Bu özellik gerçek-zamanlı fiyatlara erişimi olan ve teşhir ve hacim arttırmak  isteyen 
-borsalar ve kuruluşlar için ayrıca ilgi çekicidir.
+This feature is of particular interest for exchanges and institutes that have access to real-time prices and would like to increase exposure and volume.
