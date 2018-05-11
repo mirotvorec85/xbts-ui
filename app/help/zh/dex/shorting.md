@@ -1,38 +1,39 @@
-# 卖空比特资产
+# Short Selling BitAssets
 
-为了看多BTS，并且为比特资产，比如USD, EUR, GOLD等提供市场深度，你可以从网络*借入*比特资产，并且*卖出*。我们来介绍下相关步骤。
+In order to increase your exposure to BTS and offer liquidity to BitAssets, such as USD, EUR, GOLD, etc., you can go *borrow* this bitAsset from the network and *sell it short*. We will here briefly describe the procedure.
 
-## 借入
+## Borrowing
 
-BitShares网络能够发行比特资产，并借给用户，只要用户能够提供足够的抵押担保。
+The BitShares network is capable of issuing any amount of any BitAsset and lend it out to participants given enough collateral.
 
- * *喂价*: 在外部交易所中1BTS的交易价格
- * *维持保证金比率* (MCR): 由见证人维护并调节的起始抵押比率
- * *最大强制平仓比率* (MSQR): 由见证人维护并调节的最大强制平仓比率以保护空头围堵。
- * *强制平仓保护价* (SQP): 指定一个空头头寸被强制平仓支付最多时的价格
- * *强制平仓价* (CP): 将触发空头/贷款头寸强制平仓的价格
+- *settlement price*: The price for 1 BTS as it is traded on external exchanges.
+- *maintenance collateral ratio* (MCR): A ratio defined by the witnesses as minimum required collateral ratio
+- *maximum short squeeze ratio* (MSQR): A ratio defined by the witnesses as to how far shorts are protected against short squeezes
+- *short squeeze protection* (SQP): Defines the most that a margin position will ever be forced to pay to cover 
+- *call price* (CP): The price at which short/borrow positions are margin called
 
-### 强制平仓
+### Margin Call
 
-BitShares网络可以强制平仓那些抵押不足的空头仓位。任何时候，如果空头仓位抵押物的市场最高买价低于*强制平仓价(CP)*，且高于*强制平仓保护价(SQP)*时将触发强制平仓，空头仓位将被强制卖出抵押物。
+The BitShares network is capable of margin calling those positions that do not have enough collateral to back their borrowed bitAssets. A margin call will occur any time the highest bid is less than the *call price* and greater than *SQP*. The margin position will be forced to sell its collateral anytime the highest offer to buy the collateral is less than the call price (x/BTS).
 
-    SQP = 喂价 / MSQR
-    CP = 债务价值 / 抵押物价值 * MCR
+    SQP = settlement price / MSQR
+    call price = DEBT / COLLATERAL * MCR
+    
 
-强制平仓发生时，将用抵押物按市场价格（最高到SQP价格）买入之前接入的比特资产，进行平仓。剩余的抵押BTS将会归还用户。
+The margin call will take the collateral, buy shares of borrowed bitAsset at market rates up to the SQP and close the position. The remaining BTS of the collateral are returned to the customer.
 
-### 清算
+### Settlement
 
-比特资产的持有人可以随时要求按*公允价格*进行清算。清算发生时将关闭抵押率最低的空头/借贷头寸，卖出抵押物已完成清算。
+Holders of any bitAsset can request a settlement at a *fair price* at any time. The settlement closes the borrow/short positions with lowest collateral ratio and sells the collateral for the settlement.
 
-## 卖出
+## Selling
 
-借入比特资产后，用户可以随时在市场上以自己意愿的价格卖出。卖出后，用户即实现了卖空该比特资产的目的。
+After borrowing bitAssets, they can be sold free at any of the corresponding markets at any price a buyer is willing to pay. With this step, the short-selling is now complete and you are short that particular bitAsset.
 
-## 更新抵押率
+## Updating Collateral Ratio
 
-任何时间，持有空头/借贷头寸的用户可以修改抵押率来灵活地适应市场变化。如果调高抵押率，则额外的BTS将被锁定以增加抵押，而调低抵押率则要求用户返还网络相应差额数量的比特资产。
+At any time, the holder of a borrow/short position can modify the collateral ratio in order to flexibly adjust to market behavior. If the collateral ratio is increase, an additional amount of BTS is locked as collateral, while reducing the collateral ratio will require an amount of the corresponding BitAsset to be payed back to the network.
 
-## 平仓
+## Covering
 
-空头/借贷头寸平仓时，用户必须持有相应借入的比特资产，以返还网络。网络将相应数量的比特资产从流通供给中去除，并解锁抵押物返还用户账户。
+To close a borrow/short position, one must hold the borrowed amount of that particular bitAsset to hand it over to the BitShares network. After that, the BitAssets are reduced from the corresponding supply and the collateral is released and given back to its owner.
