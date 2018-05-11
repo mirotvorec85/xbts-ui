@@ -1,29 +1,29 @@
-[# резюме]
+[# summary]
 
-### Актив {symbol}
+### Asset {symbol}
 
 {description}
 
-Выпущен: {issuer}
+Issued by: {issuer}
 
-[# годовой]
+[# annual]
 
-Если пожизненное членство - это слишком много, Вы все равно можете получать {feesCashback}% кэшбэка за следующий год, став годовым подписчиком всего за {price} в год. ![GitHub лого](/images/logo.png)
+If a lifetime membership is too much you can still get {feesCashback}% cashback for the next year by becoming an annual subscriber for just {price} per year. ![GitHub Logo](/images/logo.png)
 
-[# разделение-комиссии]
+[# fee-division]
 
-#### Разделение Комиссии
+#### Fee Division
 
-Каждый раз, когда {account} платит комиссию за транзакцию, эта комиссия делится между разными аккаунтами. Сеть забирает долю в {networkFee}%, и Пожизненный Член, рефералом которого является {account}, получает долю в {lifetimeFee}%.
+Every time {account} pays a transaction fee, that fee is divided among several different accounts. The network takes a {networkFee}% cut, and the Lifetime Member who referred {account} gets a {lifetimeFee}% cut.
 
-*Регистратор* - это аккаунт, который заплатил комиссию за регистрацию {account} в сети. Регистратор должен решить, как разделить оставшиеся {referrerTotalFee}% между ним и его собственной *Аффилированной Партнерской* программой.
+The *registrar* is the account that paid the transaction fee to register {account} with the network. The registrar gets to decide how to divide the remaining {referrerTotalFee}% between themselves and their own *Affiliate Referrer* program.
 
-Регистратор {account} а решил отдать {referrerFee}% от суммы комиссии *Аффилированному Рефереру* и оставить {registrarFee}% от суммы комиссии себе.
+{account}'s registrar chose to share {referrerFee}% of the total fee with the *Affiliate Referrer* and keep {registrarFee}% of the total fee for themselves.
 
-#### Ожидаемые комиссии
+#### Pending Fees
 
-Комиссии, оплаченные {account}, разделяются только между сетью, реферерами и регистраторами один раз в каждый период обслуживания ({maintenanceInterval} секунд). Следующее время обслуживания {nextMaintenanceTime}.
+Fees paid by {account} are only divided among the network, referrers, and registrars once every maintenance interval ({maintenanceInterval} seconds). The next maintenance time is {nextMaintenanceTime}.
 
-#### Вестинговые комиссии
+#### Vesting Fees
 
-Большинство комиссий доступны немедленно, но комиссии за {vestingThreshold} (такие как комиссия за повышение уровня Вашего членства или регистрацию премиум-имени аккаунта) должны ожидать обработки {vestingPeriod} дней.
+Most fees are made available immediately, but fees over {vestingThreshold} (such as those paid to upgrade your membership or register a premium account name) must vest for a total of {vestingPeriod} days.
