@@ -98,10 +98,11 @@ class MarketCard extends React.Component {
 
         function getImageName(asset) {
             let symbol = asset.get("symbol");
-            if (symbol === "OPEN.BTC" || symbol === "GDEX.BTC") return symbol;
-            if (symbol.startsWith("ESCROW.")) return symbol;
-            let imgName = asset.get("symbol").split(".");
-            return imgName.length === 2 ? imgName[1] : imgName[0];
+            return symbol;
+            // if (symbol === "OPEN.BTC" || symbol === "GDEX.BTC") return symbol;
+            // if (symbol.startsWith("ESCROW.")) return symbol;
+            // let imgName = asset.get("symbol").split(".");
+            // return imgName.length === 2 ? imgName[1] : imgName[0];
         }
         let imgName = getImageName(base);
 

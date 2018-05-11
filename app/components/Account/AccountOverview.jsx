@@ -425,7 +425,7 @@ class AccountOverview extends React.Component {
                         <AssetImage
                             replaceNoneToBts={false}
                             maxWidth={30}
-                            name={asset.get("id")}
+                            name={asset.get("symbol")}
                         />
                         <LinkToAssetById asset={asset.get("id")} />
                     </td>

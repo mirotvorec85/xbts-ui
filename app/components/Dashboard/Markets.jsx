@@ -63,9 +63,12 @@ class FeaturedMarkets extends React.Component {
                 ["BTS", "SMOKE"],
                 ["BTS", "YOYOW"],
                 ["CNY", "GDEX.BTC"],
-                ["CNY", "GDEX.ETH"],
                 ["CNY", "GDEX.EOS"],
-                ["BTS", "BTWTY"]
+                ["BTS", "BTWTY"],
+                ["BTS", "RUDEX.ETH"],
+                ["BTS", "RUDEX.DGB"],
+                ["BTS", "ZEPH"],
+                ["BTS", "HERTZ"]
             ],
             "39f5e2ed": [["TEST", "PEG.FAKEUSD"], ["TEST", "BTWTY"]]
         };

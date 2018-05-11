@@ -24,6 +24,7 @@ class AssetImage extends React.Component {
         return (
             this.props.asset !== np.asset ||
             this.props.maxWidth !== np.maxWidth ||
+            this.props.whiteList !== np.whiteList ||
             this.state.imgError !== ns.imgError
         );
     }
@@ -46,10 +47,11 @@ class AssetImage extends React.Component {
 
         function getImageName(asset) {
             let symbol = asset.get("symbol");
-            if (symbol === "OPEN.BTC" || symbol === "GDEX.BTC") return symbol;
-            if (symbol.startsWith("ESCROW.")) return symbol;
-            let imgName = asset.get("symbol").split(".");
-            return imgName.length === 2 ? imgName[1] : imgName[0];
+            return symbol;
+            // if (symbol === "OPEN.BTC" || symbol === "GDEX.BTC") return symbol;
+            // if (symbol.startsWith("ESCROW.")) return symbol;
+            // let imgName = asset.get("symbol").split(".");
+            //return imgName.length === 2 ? imgName[1] : imgName[0];
         }
 
         const imgName = getImageName(asset);
@@ -59,7 +61,7 @@ class AssetImage extends React.Component {
                 ref={imgName.toLowerCase()}
                 className="column-hide-small"
                 onError={this._onError.bind(this, imgName)}
-                style={{maxWidth: this.props.maxWidth, marginRight: 10}}
+                style={{maxWidth: this.props.maxWidth, marginRight: 5}}
                 src={`${__BASE_URL__}asset-symbols/${imgName.toLowerCase()}.png`}
             />
         );

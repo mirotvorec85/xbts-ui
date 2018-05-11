@@ -449,6 +449,8 @@ var Utils = {
             ? "bit"
             : toReplace[i] ? toReplace[i].toLowerCase() : null;
 
+        if (toReplace[i] === "RUDEX.") prefix = "";
+
         return {
             name,
             prefix,

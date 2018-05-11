@@ -43,7 +43,9 @@ class Dashboard extends React.Component {
                 ["CNY", "GDEX.BTC"],
                 ["CNY", "GDEX.EOS"],
                 ["BTS", "BTWTY"],
-                ["BTS", "RUDEX.MUSE"]
+                ["BTS", "RUDEX.MUSE"],
+                ["BTS", "RUDEX.DGB"],
+                ["BTS", "HERTZ"]
             ],
             "39f5e2ed": [["TEST", "PEG.FAKEUSD"], ["TEST", "BTWTY"]]
         };

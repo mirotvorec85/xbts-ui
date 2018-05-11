@@ -2,6 +2,7 @@ import React from "react";
 import FormattedAsset from "../Utility/FormattedAsset";
 import AssetWrapper from "../Utility/AssetWrapper";
 import AccountName from "../Utility/AccountName";
+import AssetImage from "../Utility/AssetImage";
 import utils from "common/utils";
 import Icon from "../Icon/Icon";
 import MarketsActions from "actions/MarketsActions";
@@ -166,6 +167,11 @@ class MarketRow extends React.Component {
                                 onClick={this._onClick.bind(this, marketID)}
                                 key={column.index}
                             >
+                                <AssetImage
+                                    replaceNoneToBts={false}
+                                    maxWidth={20}
+                                    name={quote.get("symbol")}
+                                />
                                 {this.props.name}
                             </td>
                         );
