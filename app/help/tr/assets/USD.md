@@ -1,7 +1,9 @@
 [# summary]
-### Aktif {symbol}
 
-{description}  
-Piyasaya süren {issuer}
+### Asset {symbol}
 
-Amerikan Doları (işeret: $; sembol: USD $) ABD'nin resmi para birimidir.
+{description}
+
+Issued by: {issuer}
+
+The United States dollar (sign: $; symbol: USD) is the official currency of the United States of America.
