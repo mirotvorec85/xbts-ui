@@ -1,3 +1,3 @@
-Memo anahtarı, memoların size ulaştığı yerdir, memoları deşifre edebilmeniz için açık anahtara ait özel anahtarın yönetimine sahip olmanız gerekir.
+The memo key is where you receive memos, in order to decode the memos you need to control the private key for the public key.
 
-Bir açık/özel anahtar çifti kullanarak harcama yetkisi olmadan üçüncü şahıslara memolarınıza salt-okuma erişimi sağlayabilirsiniz.
+By using a public/private key pair without spending authority, you may give read-only access to your memos to third parties.
