@@ -1,18 +1,18 @@
-# Short Selling BitAssets
+# Короткая продажа BitAssets
 
-In order to increase your exposure to BTS and offer liquidity to BitAssets, such as USD, EUR, GOLD, etc., you can go *borrow* this bitAsset from the network and *sell it short*. We will here briefly describe the procedure.
+Для увеличения Вашего воздействия на BTS и увеличения ликвидности активов BitAssets, таких как USD, EUR, GOLD и др., Вы можете *занять* этот актив bitAsset у сети и *выставить шорт*. Здесь мы кратко опишем данную процедуру.
 
-## Borrowing
+## Заём
 
-The BitShares network is capable of issuing any amount of any BitAsset and lend it out to participants given enough collateral.
+Сеть BitShares способна создавать любое количество каждого актива BitAsset и занимать его субьектам экосистемы при условии предоставления достаточного залога.
 
-- *settlement price*: The price for 1 BTS as it is traded on external exchanges.
-- *maintenance collateral ratio* (MCR): A ratio defined by the witnesses as minimum required collateral ratio
-- *maximum short squeeze ratio* (MSQR): A ratio defined by the witnesses as to how far shorts are protected against short squeezes
-- *short squeeze protection* (SQP): Defines the most that a margin position will ever be forced to pay to cover 
-- *call price* (CP): The price at which short/borrow positions are margin called
+- *расчетная цена*: Цена за 1 BTS взятая с внешних бирж.
+- *уровень обеспечивающего залога* (MCR): Размер залога, определённый участниками рынка как минимальный
+- *максимальный размер сжатия шорта* (MSQR): Установленный участниками рынка размер вынужденной покупки актива медведями по высокому курсу из опасения еще большего его роста
+- *защита от сжатия шорта*(SQP): Определяет предельную величину принудительного покрытия позиции 
+- *черта марджин колла* (CP): Цена, при которой шорт будет принудительно закрыт
 
-### Margin Call
+### Марджин Колл
 
 The BitShares network is capable of margin calling those positions that do not have enough collateral to back their borrowed bitAssets. A margin call will occur any time the highest bid is less than the *call price* and greater than *SQP*. The margin position will be forced to sell its collateral anytime the highest offer to buy the collateral is less than the call price (x/BTS).
 
