@@ -1,1 +1,1 @@
-[理事会成员](introduction/committee) 可以提议修改区块链的动态参数，比如手续费，区块间隔时间以及其他很多参数。这是一个需要对BitShares系统如何运作有很深理解，需要有很强责任感的职位。
+[Committee members](introduction/committee) may propose changes to the dynamic parameters of the blockchain, such as fees, block time and many other things. It is a position of great responsibility that requires a good understanding of how BitShares works.
