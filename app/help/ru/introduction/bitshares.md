@@ -1,34 +1,33 @@
 # BitShares
 
-## Поддержка
+## Support
 
-> Если у Вас возникли проблемы со шлюзом от провайдера, пожалуйста, свяжитесь с ним напрямую. Смотрите список шлюзов в левом меню.
+> If you have an issue related to a Gateway provider, please be sure to contact them directly. See Gateways in the left menu.
 
-### Чат Bitshares
+### Bitshares Chat
 
-Вы можете общаться с другими членами сообщества Bitshares в реальном времени здесь:
+You can chat with other member of the Bitshares community in real time at:
 
 - [Telegram](https://t.me/BitSharesDEX)
-- [Telegram (ru)](https://t.me/BitSharesDEX_RU)
 - [Discord](https://discord.gg/GsjQfAJ)
 
-### Разработчики
+### Developers
 
-Если вы являетесь разработчиком программного обеспечения, то можете поучаствовать в баунти-программе здесь:
+If you are a software developer, you may contribute via a bounty system at:
 
 - [Github UI](https://github.com/bitshares/bitshares-ui)
 - [Github Core](https://github.com/bitshares/bitshares-core) 
 
-## Введение
+## Introduction
 
-Добро пожаловать на самую быструю в мире децентрализованную биржу (The DEX). BitShares создан для того, чтобы распространить инновационность технологии блокчейн во все индустрии, которые используют интернет для предоставления своих услуг. Банки ли это, или фондовые биржи, лотереи, голосование, музыка, аукционы и многие другие сферы, публичный цифровой регистр позволяет создавать децентрализованные автономные компании (т. н. DAC), которые предоставляют сервисы лучшего качества за меньшие деньги в сравнении с их более традиционными, централизованными коллегами. Появление таких децентрализованных компаний возвещает о появлении в организационной структуре новой парадигмы, в которой компании могут работать без управления человеком и под контролем не подверженного коррупции набора правил ведения бизнеса. Эти правила закодированы в публично проверяемом программном обеспечении с открытым исходным кодом, распространенном на компьютерах держателей долей компании, которые без особых усилий защищают компанию от произвольного захвата контроля.
+Welcome to the worlds fastest decentralized exchange (The DEX). BitShares looks to extend the innovation of the blockchain to all industries that rely upon the internet to provide their services. Whether its banking, stock exchanges, lotteries, voting, music, auctions or many others, a digital public ledger allows for the creation of distributed autonomous companies (or DACs) that provide better quality services at a fraction of the cost incurred by their more traditional, centralized counterparts. The advent of DACs ushers in a new paradigm in organizational structure in which companies can run without any human management and under the control of an incorruptible set of business rules. These rules are encoded in publicly auditable open source software distributed across the computers of the companies’ shareholders, who effortlessly secure the company from arbitrary control.
 
-BitShares делает для бизнеса то, что Биткойн сделал для денег, используя технологию распределенного консенсуса для создания компаний, которые по своей сути глобальны, прозрачны, надежны, эффективны и, что не менее важно, прибыльны.
+BitShares does for business what bitcoin did for money by utilizing distributed consensus technology to create companies that are inherently global, transparent, trustworthy, efficient and most importantly profitable.
 
-## Кошелек
+## Wallet
 
-Этот кошелек обеспечивает доступ к большинству функций сети BitShares, включая
+This wallet allows access most features of the BitShares network including
 
-- [BitAssets (БитАктивы)](/help/assets/mpa)
-- [Выпущенные пользователем активы](/help/assets/uia)
-- [Биржу – The DEX](/help/dex/introduction)
+- [BitAssets](/help/assets/mpa)
+- [User-Issued Assets](/help/assets/uia)
+- [The DEX](/help/dex/introduction)
