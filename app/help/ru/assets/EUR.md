@@ -1,9 +1,9 @@
-[# summary]
+[# резюме]
 
-### Asset {symbol}
+### Актив {symbol}
 
 {description}
 
-Issued by: {issuer}
+Выпущен: {issuer}
 
-The Euro (sign: €; symbol: EUR) is the official currency of participating countries in the Europ zone.
+Евро (знак: €; символ: EUR) является официальной валютой стран-участниц Еврозоны.
