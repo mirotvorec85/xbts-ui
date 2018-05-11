@@ -1,3 +1,5 @@
-# 手续费率
+# Fees
 
-在BitShares系统中，每一种操作都将花费*相应*手续费。手续费率可能发生变化。然而，手续费的调整需要获得股东的授权。所以每一位持有BitShares核心资产(BTS)的股东对费率的构成都有话语权。如果股东确信某种手续费的降低将带来好处，并且达成共识，那么该种手续费则由区块链自动进行调低。区块链参数的改变由理事会成员提出动议。这些成员由全体股东投票选举产生，以提高系统灵活性和响应率。
+In the BitShares ecosystem every operation is assigned an *individual* fee. These fees are subject to change. However, they are defined solely by shareholder approval, thus each and every shareholder of the BitShares core asset (BTS) has a say as to what the fees should be. If shareholders can be convinced to reduce a certain fee and consensus is reached, the fee will be reduced automatically by the blockchain. Changes of blockchain parameters are proposed by members of the committee. These members are voted by shareholders and improve the flexibility and reaction rate.
+
+\*: These operations require Lifetime membership!
