@@ -1,6 +1,6 @@
-[# connection-error] Мы не смогли установить соединение WebSocket с полной нодой.
+[# connection-error] We couldn't establish websocket connection to a full node.
 
-Возможные причины: TODO
+Possible reasons: TODO
 
-- причина #1
-- причина #2
+- reason #1
+- reason #2
