@@ -52,10 +52,15 @@ function checkFeeStatusAsync({
 } = {}) {
     let key =
         accountID +
+        "_" +
         feeID +
+        "_" +
         type +
+        "_" +
         JSON.stringify(options) +
+        "_" +
         JSON.stringify(data);
+
     if (asyncCache[key]) {
         if (asyncCache[key].result) {
             return Promise.resolve(asyncCache[key].result);
@@ -96,7 +101,11 @@ function checkFeeStatusAsync({
                         });
                     });
                     asyncCache[key] = {
-                        result: {fee, hasBalance, hasPoolBalance, hasValidCER}
+                        result: {
+                            fee: new Asset({amount: coreFee}),
+                            hasBalance,
+                            hasPoolBalance
+                        }
                     };
                     setTimeout(() => {
                         delete asyncCache[key];
