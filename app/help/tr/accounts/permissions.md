@@ -1,113 +1,86 @@
-# İzinler
+# Permissions
 
-BitShares'de , her hesap ikiye ayrılır 
+In BitShares, each account is separated into
 
-* **Etkin  İzin**: fonların yönetimi ve
-* **Sahip İzni**: hesap yönetimi.
+* **Active Permission**: control over its funds and
+* **Owner Permission**: control over the account.
 
-Her ikisi de hesabınızın `İzinler` sekmesinde *yetkiler* ve *alt-sınır*'ın birlikte 
-kullanılmasıyla belirlenebilir. İşlemin geçerli olması için *alt-sınır* ın geçilmesi 
-gerekmektedir.
+Both can be defined in the `Permissions` tab of your account using so called *authorities* (see below) together with a so called *threshold* that has to be exceeded in order for a transaction to be valid.
 
-## Yetkililer
+## Authorities
 
-BitShares'de bir *yetkili*,  transfer veya alım-satım gibi işlemlere yetki veren bir veya 
-daha çok sayıda kişiden oluşur.
+In BitShares an *authority* consists of one or many entities that authorize an action, such as transfers or trades.
 
-Bir yetki , bir yada daha fazla sayıda hesap adı ve *ağırlık* 
-çiftinden oluşur.
+An authority consists of one or several pairs of an account name with a *weight*.
 
-Geçerli bir işlem elde edebilmek için , imzalayan tarafların etki ağırlıklarının toplamı 
-izinlerde belirlenmiş olan alt-sınırı geçiyor olması gerekir.  
+In order to obtain a valid transaction, the sum of the weights from signing the parties has to exceed the threshold as defined in the permissions.
 
-# Örnekler
+# Examples
 
-Birkaç örneğe bakarak kullanılan terminolojiye ve kullanım senaryolarına ışık tutalım. 
-Aşağıda tanımlanmış etkin izinlerle yeni bir hesap oluşturulduğunu farz edelim. 
-Dikkatinizi çekeriz , aynı şema sahip izinleri için de 
-işe yarar. 
+Let's discuss some examples to shed some light on the used terminology and the use-cases. We assume that a new account is created with it's active permissions set as described below. Note that the same scheme also works for the owner permissions!
 
-## (Düz) Çok-İmzalı
+## (Flat) Multi-Signature
 
-Düz çok-imzalı bir şema, işlemin geçerli olabilmesi için aralarından 'N' sayıda kişinin 
-imzası gerekli  toplam 'M' sayıda kişiden oluşur. Şimdi biz, BitShares'de, 'M' 
-ve 'N' yerine *ağırlıklar* ve *alt-sınır*  kullanıyoruz. Şimdi göreceğimiz gibi tamamen 
-aynı sonuca çok daha esnek bir şekilde varacağız.  
+A flat multi-signature scheme is composed of `M` entities of which `N` entities must sign in order for the transaction to be valid. Now, in BitShares, we have *weights* and a *threshold* instead of `M` and `N`. Still we can achieve the very same thing with even more flexibility as we will see now.
 
-Gelin şöyle farz edelim , Alice, Bob, Charlie ve Dennis'in ortak fonları olsun . 
-Eğer yalnızca ikisi anlaşırlarsa geçerli olabilecek bir işlem oluşturmak istiyoruz .
-Dolayısıyla **4-ün-2-si** (M-in-N-i) şeması şöyle görünür : 
+Let's assume, Alice, Bob, Charlie and Dennis have common funds. We want to be able to construct a valid transaction if only two of those agree. Hence a **2-of-4** (N-of-M) scheme can look as follows:
 
-| Hesap | Ağırlık | 
-| ---------- | ------ | 
-| Alice      | 33%    | 
-| Bob        | 33%    | 
-| Charlie    | 33%    | 
-| Dennis     | 33%    | 
-| ---------- | ------ | 
-| Alt Sınır : | 51%    | 
+| Account       | Weight   |
+| ------------- | -------- |
+| Alice         | 33%      |
+| Bob           | 33%      |
+| Charlie       | 33%      |
+| Dennis        | 33%      |
+| \---\---\---- | \---\--- |
+| Threshold:    | 51%      |
 
-Katılımcıların her birinin 33% etki ağırlığı var fakat alt sınır 51%  olarak ayarlanmış.
-Dolayısıyla  işlemi geçerli kılmak için 4 kişiden sadece 2 sinin anlaşması yeterlidir.
+All four participants have a weight of 33% but the threshold is set to 51%. Hence only two out of the four need to agree to validate the transaction.
 
-Alternatif olarak, bir 4-ün-3'ü şeması oluşturmak için ya ağırlıkları 17% ye indirebiliriz 
-yada alt-sınırı 99%'a yükseltebiliriz. 
+Alternatively, to construct a 3-of-4 scheme, we can either decrease the weights to 17 or increase the threshold to 99%.
 
-## (Düz) Esnek Çok-İmzalı
+## (Flat) Flexible Multi-Signature
 
-Alt-sınır ve ağırlıklar sayesinde fonlarımızla şimdi daha esneğiz, yada daha doğrusu 
-daha fazla *hakimiyetimiz* var. Mesela , farklı kişiler için ayrı ağırlıklar belirleyebiliriz.
-Farzedelim ki Alice fonlarını çoklu-imza şeması kullanarak hırsızlığa karşı korumak 
-istiyor fakat aynı zamanda arkadaşlarına da gereğinden fazla hakimiyet teslim etmek 
-istemiyor. O zaman şuna benzer bir yetki oluşturuyoruz :
+With the threshold and weights, we now have more flexibility over our funds, or more precisely, we have more *control*. For instance, we can have separate weights for different people. Let's assume Alice wants to secure here funds against theft by a multi-signature scheme but she does not want to hand over too much control to her friends. Hence, we create an authority similar to:
 
-| Hesap | Ağırlık | 
-| ---------- | ------ | 
-| Alice      | 49%    |
-| Bob        | 25%    |
-| Charlie    | 25%    |
-| Dennis     | 10%    |
-| ---------- | ------ | 
-| Alt Sınır : | 51%    |
+| Account       | Weight   |
+| ------------- | -------- |
+| Alice         | 49%      |
+| Bob           | 25%      |
+| Charlie       | 25%      |
+| Dennis        | 10%      |
+| \---\---\---- | \---\--- |
+| Threshold:    | 51%      |
 
-Şimdi, fonlara Alice tek bir arkadaşıyla yada  tüm üç arkadaşıyla birlikte erişebilme 
-imkanına sahip olur.
+Now the funds can either be accessed by Alice and a single friend or by all three friends together.
 
-## Çok-Basamaklı Esnek Çoklu-İmza
+## Multi-Hierarchical Flexible Multi-Signature
 
-Gelin beraber basit bir çok-basamaklı anonim hesap kurulumuna göz atalım. Mali İşler 
-Müdürü (MİM) ve onun için altında çalışan Vezne, Denetçi, Vergi Müdürü, Muhasebe vb. gibi 
-departmanları olan bir şirkete bakıyor olalım.  Bir de harcama ayrıcalıklarına sahip
-olmayı  isteyen bir CEO'su olsun. 
-O zaman biz fonlar için şunlara göre bir yetki oluştururuz :
+Let's take a look at a simple multi-hierarchical corporate account setup. We are looking at a company that has a Chief of Financial Officer (CFO) and a some departments working for him, such as the Treasurer, Controller, Tax Manager, Accounting, etc. The company also has a CEO that wants to have spending privileges. Hence we construct an authority for the funds according to:
 
-| Hesap | Ağırlık | 
-| ---------- | ------ | 
-| CEO.ŞİRKET| 51%    |
-| MİM.ŞİRKET| 51%    |
-| ---------- | ------ | 
-| Alt Sınır : | 51%    |
+| Account       | Weight   |
+| ------------- | -------- |
+| CEO.COMPANY   | 51%      |
+| CFO.COMPANY   | 51%      |
+| \---\---\---- | \---\--- |
+| Threshold:    | 51%      |
 
-burada CEO.ŞİRKET ve MİM.ŞİRKET in kendilerine ait ayrı yetkileri var.  Mesela 
-MİM.ŞİRKET hesabı şöyle olabilir :
+whereas CEO.COMPANY and CFO.COMPANY have their own authorities. For instance, the CFO.COMPANY account could look like:
 
-| MİM.ŞİRKET         | Ağırlık |
-| ------------------- | ------ |
-| Müdür.ŞİRKET       | 51%    |
-| Vezne.ŞİRKET   | 33%    |
-| Denetçi.ŞİRKET  | 33%    |
-| Vergi Müdürü.ŞİRKET | 10%    |
-| Muhasebe.ŞİRKET  | 10%    |
-| ------------------- | ------ |
-| Alt-sınır :       | 51%    |
+| CFO.COMPANY               | Weight   |
+| ------------------------- | -------- |
+| Chief.COMPANY             | 51%      |
+| Treasurer.COMPANY         | 33%      |
+| Controller.COMPANY        | 33%      |
+| Tax Manager.COMPANY       | 10%      |
+| Accounting.COMPANY        | 10%      |
+| \---\---\---\---\---\---- | \---\--- |
+| Threshold:                | 51%      |
 
-Bu şema fonların harcanabilmesi için  kişilere şöyle izinler verir :
+This scheme allows:
 
-* CEO  tek başına
-* Mali İşler Müdürün tek başına 
-*  Vezne ve Denetçi birlikte
-* Denetçi veya Veznedar , Vergi Müdürü ve Muhasebeciyle birlikte 
-  harcama.
+* the CEO to spend funds
+* the Chief of Finance Officer to spend funds
+* Treasurer together with Controller to spend funds
+* Controller or Treasurer together with the Tax Manager and Accounting to spend funds.
 
-Dolayısıyla görüldüldüğü gibi yetkilendirmeleri gelişigüzel derinlikte yayarak her türlü 
-iş alanına uyacak esneklikte uygulamak mümkün.
+Hence, a try of arbitrary depth can be spanned in order to construct a flexible authority to reflect mostly any business use-case.
