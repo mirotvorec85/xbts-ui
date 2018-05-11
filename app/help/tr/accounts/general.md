@@ -1,9 +1,3 @@
-# Hesaplar
+# Accounts
 
-Şu ana kadar farkkettiğiniz gibi, bu blokzinciri teknolojisi bir hesap adı kaydetmenizi
-mecbur kılar. Bunun bir çok avantajı vardır : Gelişmiş ölçeklenebilirlik bir yana,
-biz bu şekilde , kimlik bilgilerini , işlemleri yetkilendiren imzalardan ayırmış oluyoruz.
-Uygulamada , *bir hesap adına sahip olmak*  *o hesaba ait fonları*  harcayabilmekten 
-bağımsızdır. Dahası her iki hak da (biz bunlara *izinler* diyoruz)  *ağırlıklar* ve 
-*eşikler* kullanılarak gelişigüzel karmaşık insan ilişkileri (biz bunlara "yetkiler" 
-diyoruz) arasında  paylaştırılabilirler.
+As you may have already noticed by now, this blockchain technology requires you to register an account name. This comes with many advantages: Besides improved scalability, we have separated the identity from the transaction authorizing signature. In practice, *owning an account name* is independent from being able to *spend its funds*. Furthermore, both rights (we call them *permissions*) can split among an arbitrary complex relation of people (we call them *authorities*) using *weights* and a required *thresholds*.
