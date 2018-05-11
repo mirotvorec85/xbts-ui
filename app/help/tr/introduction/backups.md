@@ -1,28 +1,20 @@
-# Yedeklemer
+# Backups
 
-Çoğu zaman tek bir yedekleme yeterli olsa bile cüzdanınızı düzenli bir şekilde 
-yedeklemeniz önerilir. Bir yedeklemeden geri kurtarma yapabilmek için şifre 
-cümlenize ihtiyacınız olduğunu unutmayın , çünkü **yedeklemeler kriptolanmıştır**. 
-Dolayısıyla , cüzdanınızı yada şifre cümlenizi kaybederseniz fonlarınıza tekrar 
-erişmeniz imkansız olur.
+## Local Wallet
 
-Yedeklere Cüzdan Yönetim Panelinden ulaşabilirsiniz . 
-(`Ayarlar ->Cüzdanlar`).
+It is recommended to make regular backups of your Local Wallet even though in most cases a single backup may be sufficient. Please note that in order to recover from a backup you will also need to provide the passphrase (password) because **backups are encrypted**. Hence, if you either lose your wallet or your passphrase you will be unable to access any of your funds again!
 
-## Cüzdan İhracı
+You can create a backup from [Settings -> Backup](/settings).
 
-Yeni bir yedekleme oluşturmanın en kolay yolu Cüzdan Yönetim Panelinde
-verilen bağlantıdan cüzdanı dışarı ihrac etmektir. Lütfen yedeklerinizi güvenli bir 
-kaybetmekten, hırsızlıklardan, ve doğal afetlerden koruyunuz. 
+- Store this backup in at least two secure locations only accessible by you
+- The backup is encrypted with your passphrase/password so do not store your passwrod in the same location
 
-## Beyin-anahtarı (YALNIZCA gelişmiş kullanıcılar )
+## Advanced Users Only
 
-Eğer cüzdanınızın içine hiç hesap anahtarı aktarmadıysanız , alternatif olarak
- hesaplarınızı ve fonlarınızı dışarı *beyin-anahtarı* ihrac ederek yedekleyebilirsiniz. 
-Beyin-anahtarı anahtarlarınızın deterministik yöntemle türetildiği bir kelimeler dizisidir.
+### Brainkey
 
-## Dikkat : Hiyerarşik Yetkililer (SADECE uzman kullanıcılar)
+> If you never manually imported an account key into your wallet, you can alternatively backup your accounts and their funds by exporting the *brainkey*, a string of words from which your keys are derived deterministically.
 
-Eğer hiyerarşik yetkiler kullanıyorsanız (hesap ve/yada etkin izinler),
-sadece anahtarları yedeklemeniz fonlarınıza tekrar erişmenize yeterli olmayabilir!
-Lütfen hiyerarşik yetkiler konusundaki dokümantasyonları tekrar gözden geçirin.
+Remark: Hierarchical Authorities (advanced uses ONLY)
+
+> If you are using hierarchical authorities (account and/or active permissions), backing up your keys alone may not be sufficient to regain access to your funds! Please revise the documentations about hierarchical authorities.
