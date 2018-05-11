@@ -1,6 +1,3 @@
-Bu ileti arzu ettiğiniz borç ve teminatı belirlemenizi sağlar.
+Update your {debt} margin position by adjusting the debt and collateral levels.
 
-Eğer {debt} borç azaltılırsa {borrower} hesabından düşürülecektir.
-Eğer {debt} borç artarsa  yeterli {collateral} teminat bulunması kaydıyla {borrower} hesabına yatırılacaktır.    
-
-Asgari idame teminatı muhafaza edildiği sürece teminat eklenebilir yada eksiltilebilir.
+Collateral and debt levels can be adjusted in any way you desire, as long as your collateral ratio stays above the maintenance collateral ratio of {mr}. [Read more.](dex/shorting)
