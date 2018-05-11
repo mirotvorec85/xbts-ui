@@ -1,11 +1,19 @@
-# 钱包软件
+# Wallet
 
-你或许已经注意到，本应用是一个基于web的应用软件，在浏览器中运行。通过与一个受信任的节点连接来获得整个生态系统的接入。
+As you may have noticed already, this application is a web application and runs in a browser. A connection is established to a trusted node in the network that serves as a gateway to the rest of the ecosystem.
 
-## 钱包安全性
+## Cloud Wallet
 
-你可以确信的是我们的服务器永远不会也不能访问你的资产。你的私钥不会离开你的本地浏览器。它们使用你的密码进行加密后保存在本地浏览器的数据库中。因此，你只需要确保你已经[备份](../introduction/backups.md)了钱包，就不用担心由于计算机失灵或者浏览器奔溃导致钱包数据丢失。
+If you registered with a username and password, you have a cloud wallet. Although nothing is technically stored in the cloud, we use the term Cloud Wallet because you can use these credentials (username and password) from any web browser at any time to gain access to your account. The cloud wallet only allows for a single account to be accessed at a time. This is generally the correct choice for new users. While it is possible to change the auto-generated password, we do not recommend doing so at this time. The team is working on a responsible way to manage the password change that requires no technical knowledge. We will make an announcement once it's released.
 
-## 钱包管理
+## Local Wallet
 
-钱包系统的用户界面允许你使用多个独立的钱包，每个钱包可能包含相互独立的账户和资金。你可以通过`设置->钱包`菜单进行创建、备份和切换钱包的操作。
+The local wallet creates a database within your browser. This means that access to your funds it tied to **that browser only**. If you attempt to access your local wallet from any other computer, or any other browser, it will fail unless you actively import your backup file from the original browser backup file. The process actually easy. See managing [backups](/help/introduction/backups).
+
+## Security
+
+Rest assured that our servers do not have access to your funds because none of your private keys ever leave your browser. Instead, they are encrypted with your passphrase and are stored in your local browser's database. As such, you should make sure to have a proper [Backup](/help/introduction/backups) in the event something happens to your computer or browser.
+
+## Management
+
+The user interface is capable of carrying and accessing several separated wallets each containing possible several accounts and corresponding funds. You can create, backup, and switch existing wallets in `Settings->Wallets`.
