@@ -1,33 +1,34 @@
-# 交易
+# Trading
 
-文本将介绍在BitShares DEX去中心化交易所系统中使用的一些术语，以及交易对的呈现方式。
+This page will give a very quick introduction on how to interpret the terms used by the DEX and how trading pairs are presented.
 
-## 交易对
+## Pairs
 
-在BitShares系统中，任何资产之间都可相互交易。我们选取任意2种资产，它们就形成了*市场交易对*。比如，我们可以使用美元USD与欧元EUR在USD:EUR交易对市场中进行交易。
+In BitShares, almost any asset can be traded with all other assets. Once we have picked two assets, we usually refer to a *market pair*. For instance, we can trade USD against EUR in the USD:EUR pair.
 
-为了与外汇交易习惯统一，交易对中的资产标准化为 *基础资产* 和 *报价资产*，表现形式如下：
+For sake of consistency, we will use the generalized terms *base* and *quote* such that pairs are represented as
 
-    *报价资产* : *基础资产*
+    *quote* : *base*
+    
 
-比如*基础资产*为USD和*报价资产*为EUR的交易对表现为EUR:USD。
+and for instance with *base* being USD and *quote* being EUR, denote the EUR:USD pair.
 
-## 买卖盘
+## Order Books
 
-买卖盘由*买盘*和*卖盘*构成。由于交易对并无固定的顺序，所以可以进行反转，下表展示了买盘和卖盘对应的资产买、卖操作：
+The order book consists of an *ask* and a *bid* side. Since trading pairs do not have a preferred orientation, and can be flipped, the following table shall give an overview of ask/bid and the corresponding buy/sell operations for each side:
 
-| 方向      | 卖         | 买        | 
-| -------- | --------- | --------- |
-| 买       | *报价资产*  | *基础资产* |
-| 卖       | *基础资产*  | *报价资产* |
-| -------- | --------- | --------- |
+| Side          | Sell      | Buy       |
+| ------------- | --------- | --------- |
+| Ask           | *quote*   | *base*    |
+| Bid           | *base*    | *quote*   |
+| \---\---\---- | \---\---- | \---\---- |
 
-显然在 USD:EUR 交易对的买方即为 EUR:USD 交易对的卖方。价格在系统内部自动转换，在交易对反转时也能正确转换。
+Obviously, what is on the bid side of the USD:EUR pair will be on the ask side on the EUR:USD pair. Of course prices are internally represented as fractions, and thus results in both pairs being identical.
 
-## 交易
+## Trading
 
-下单时，需要填写*买单*或*卖单*表单（对应希望的*买入*或*卖出*）。你需要填写打算买入或卖出的*价格*和*数量*。订单总额将自动计算。下单时可能需要支付额外的手续费。
+To place a trading order, it is required to fill the form on either the *ask* or the *bid* side (respectively, *buy* or *sell* side). You will need to define a *price* and an *amount* to sell/buy. The cost for this order will be calculated automatically. Note that there will be an additional fee required to actually place the order.
 
-一旦订单被撮合（比如你的订单被其他人接受），你的账户将存入相应的资产。
+Once the order is filled (i.e. someone sold/bought your offer), your account will be credited by the corresponding asset.
 
-未撮合订单可随时取消。
+Unfilled orders can be canceled at any time.
