@@ -1,7 +1,9 @@
 [# summary]
-### 资产 {symbol}
 
-{description}  
-发行人 {issuer}
+### Asset {symbol}
 
-美元 (标识: $; 符号: USD) 是美利坚合众国的官方货币。
+{description}
+
+Issued by: {issuer}
+
+The United States dollar (sign: $; symbol: USD) is the official currency of the United States of America.
