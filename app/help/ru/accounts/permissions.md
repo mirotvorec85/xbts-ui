@@ -78,9 +78,9 @@
 
 Эта схема позволяет:
 
-* the CEO to spend funds
-* the Chief of Finance Officer to spend funds
-* Treasurer together with Controller to spend funds
-* Controller or Treasurer together with the Tax Manager and Accounting to spend funds.
+* СEO расходовать средства
+* Финансовому Директору расходовать средства
+* Казначею совместно с Контролером расходовать средства
+* Контролеру или Казначею совместно с Налоговым менеджером и Бухгалтером расходовать средства.
 
-Hence, a try of arbitrary depth can be spanned in order to construct a flexible authority to reflect mostly any business use-case.
+Значит, попытка установить произвольную глубину может быть растянута, дабы установить гибкий авторитет, чтобы отобразить почти любой случай использования для бизнеса.
