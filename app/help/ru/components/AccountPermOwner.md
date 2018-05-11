@@ -1,3 +1,3 @@
-Owner permissions define who has control over the account. Owners may overwrite all keys and change any account settings.
+Разрешения владельца определяют, кто контролирует аккаунт. Владельцы могут поменять все ключи и настройки аккаунта.
 
-See [permissions](accounts/permissions) for more details.
+Для получения подробной информации смотрите раздел [разрешения](accounts/permissions).
