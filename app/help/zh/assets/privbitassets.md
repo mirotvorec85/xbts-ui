@@ -1,6 +1,5 @@
-私有比特资产
-====================
+# Privatized BitAssets
 
-通过私有比特资产，某些用户可以发行市场锚地资产，然后并不依赖见证人发布的喂价信息。相反的，在创建*私有比特资产*时，发行人设定一组授权账号来发布喂价信息。发行人可以设置与该资产相关的各种费率参数。
+Privatized BitAssets serve those customers that would like to issue a market pegged asset but do not want the witnesses to publish the prices. Instead, when creating a *privatized* bitasset, the issuer can define a set of authorities that are allowed to publish the price for that particular asset. The issuer can further define all kinds of fees involving this asset and make a profit.
 
-这个特性主要适用于一些中心化交易所和机构，它们往往能够获得实时的价格信息，并以此来增加交易量。
+This feature is of particular interest for exchanges and institutes that have access to real-time prices and would like to increase exposure and volume.
