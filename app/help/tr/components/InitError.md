@@ -1,6 +1,6 @@
-[# connection-error]
-Ful noda websocket bağlantısı kuramadık.
+[# connection-error] We couldn't establish websocket connection to a full node.
 
-Olası sebepler: TODO
-- sebep #1
-- sebep #2
+Possible reasons: TODO
+
+- reason #1
+- reason #2
