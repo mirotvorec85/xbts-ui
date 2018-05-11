@@ -1,13 +1,13 @@
-# 区块链
+# Blockchain
 
-与大多数数字货币类似，Graphene (石墨烯) 使用区块链来记录参与者的转账信息及市场行为。由于每个区块总是指向前一个区块，我们获得一个区块链条包含了所有在网络上发生的交易信息。区块链是一个公开的，可审计的账簿，每个人都能够查看详细数据，并验证交易、市场订单和买卖盘数据。
+As most crypto currencies, Graphene makes use of a blockchain to update participants about transfers and market activities. Since blocks always refer to the previous block, we get a chain of blocks (blockchain) that contains all transactions every made in the network. Because the blockchain is a publicly accessible and auditable ledger, everyone can take a closer look and verify transfers as well as market orders and order books.
 
-当然，本钱包软件内置了一个区块链浏览工具，帮助你进行数据查看和审验。
+Of course, this web wallet offers a block explorer to assist you with your audit.
 
-## 共识机制
+## Consensus Mechanism
 
-由谁在什么时间来*打包生成*区块是由被称为*Delegated Proof of Stak (DPOS)*的共识算法决定的。算法的本质是 BitShares 的股东(BTS的持有者)能通过投票来决定他们期望的块打包者。由获得最多票数的所谓"见证人"来打包生成区块。
+Who exactly is allows to *produce* a block at which time instant is defined by a consensus mechanism called *Delegated Proof of Stake*. In essence, the shareholders of BitShares (holders of the BTS token) can cast a vote for their preferred block producers on the blockchain. Those so called *witnesses* with the most votes are allowed to produce blocks.
 
-## 交易
+## Transactions
 
-Graphene (石墨烯) 区块链技术提供了多种交易类型。用户不仅可以相互进行简单的资产转账，还能与去中心化交易所进行交互。大多数交易类型可通过字面意思理解，其他的则要求对系统的内部运作机制有较深的理解。
+The Graphene blockchain technology offers a variety of transaction types. Users are not only able to simply transfer assets between each other, but there are also transactions to interact with the decentralized exchange. Most of these transaction types are labeled with a self-explaining tag, others require more knowledge about the inner workings of the company.
