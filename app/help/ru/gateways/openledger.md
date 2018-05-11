@@ -1,14 +1,14 @@
-# Шлюз от Openledger
+# Openledger Gateway Service
 
-Openledger – сервис шлюза, построенный на бирже Bitshares. Сервис шлюза ответственнен за ввод и вывод криптовалют с биржи Bitshares. Он поддерживает обширный список популярных активов. Вы легко можете определить, какие из них поддерживает OpenLedger, так как они обладают префиксом вида OPEN.*. Например, OPEN.BTC, OPEN.LTC и т.п.
+OpenLedger is a gateway service built on the Bitshares Exchange. A gateway service is responsible for moving cryptocurrencies to and from the Bitshares Exchange. They support a wide range of popular assets. You can easily identify those supported by OpenLedger because they are prefixed with the word OPEN.*. For example OPEN.BTC, OPEN.LTC etc.
 
-## Веб-сайт
+## Website
 
 <https://openledger.info>
 
-## Поддержка
+## Support
 
-Если у вас возник вопрос или случилась задержка в отправке или получении активов, обратитесь сюда:
+If you have questions or experience delays with sending or receiving assets:
 
-- [Откройте тикет](https://openledger.freshdesk.com/support/home)
-- [Чат в Telegram](https://t.me/OpenLedgerDC)
+- [Open a Ticket](https://openledger.freshdesk.com/support/home)
+- [Telegram Chat](https://t.me/OpenLedgerDC).
