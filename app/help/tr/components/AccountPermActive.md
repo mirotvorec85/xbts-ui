@@ -1,3 +1,3 @@
-Etkin izinler, bu hesaptaki fonları harcamaya izni olan hesapları belirler.
+Active permissions define the accounts that have permission to spend funds for this account.
 
-Etkin izinler kolay bir şekilde çok-imzalı bir düzen kurmak için kullanılabilirler, daha fazla bilgi için [izinler](accounts/permissions) bölümüne bakabilirsiniz.
+They can be used to easily setup a multi-signature scheme, see [permissions](accounts/permissions) for more details.
