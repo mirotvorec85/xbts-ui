@@ -1,12 +1,12 @@
-# Шлюз от RuDEX
+# Rudex Gateway Service
 
-RuDEX предоставляет сервис шлюза, построенный на бирже BitShares. Сервис шлюза отвечает за ввод и вывод криптовалют с биржи BitShares. Он поддерживает обширный список популярных активов. Вы легко можете определить, какие из них поддерживает RuDEX, так как они обладают префиксом вида RUDEX.*. Например, RUDEX.STEEM, RUDEX.GOLOS и т.п.
+Rudex is a gateway service built on the Bitshares Exchange. A gateway service is responsible for moving cryptocurrencies to and from the Bitshares Exchange. They support a wide range of popular assets. You can easily identify those supported by RuDEX because they are prefixed with the word RUDEX.*. For example RUDEX.STEEM, RUDEX.GOLOS etc.
 
-## Веб-сайт
+## Website
 
-[RuDEX.org](https://rudex.org)
+<https://rudex.org>
 
-## Поддержка
+## Support
 
-- [Открыть тикет](https://rudex.freshdesk.com)
-- [Telegram Чат](https://t.me/BitSharesDEX_RU)
+- [Open a Ticket](https://rudex.freshdesk.com)
+- [Telegram Chat](https://t.me/BitSharesDEX_RU)
