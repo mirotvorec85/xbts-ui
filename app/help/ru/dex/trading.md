@@ -1,34 +1,34 @@
-# Торговля
+# Trading
 
-Эта страница предоставит Вам краткую интерпретацию терминов, используемых на DEX, и информацию о том, как размещаются торговые пары.
+This page will give a very quick introduction on how to interpret the terms used by the DEX and how trading pairs are presented.
 
-## Пары
+## Pairs
 
-На BitShares практически любой актив может торговаться со всеми остальными активами. Как только мы выбрали два актива, обычно мы ссылаемся на определенную *рыночную пару*. Например, мы можем торговать USD против EUR в паре USD:EUR.
+In BitShares, almost any asset can be traded with all other assets. Once we have picked two assets, we usually refer to a *market pair*. For instance, we can trade USD against EUR in the USD:EUR pair.
 
-В целях установки ориентира, мы будем использовать общие термины *базовый* и *котируемый*, где подобные пары представлены как
+For sake of consistency, we will use the generalized terms *base* and *quote* such that pairs are represented as
 
-    "котируемый" : "базовый"
+    *quote* : *base*
     
 
-в частности, в представленной паре EUR:USD, *базовым* активом будет являться USD, а *котируемым* - EUR.
+and for instance with *base* being USD and *quote* being EUR, denote the EUR:USD pair.
 
-## Регистр Ордеров
+## Order Books
 
-Регистр состоит из цен *покупки* и цен *продажи*. Так как стороны торговых пар не фиксированы и могут меняться, следующая таблица даст Вам представление о ценах покупки и продажи в соответствии с продаваемым/покупаемым лотом для каждого случая:
+The order book consists of an *ask* and a *bid* side. Since trading pairs do not have a preferred orientation, and can be flipped, the following table shall give an overview of ask/bid and the corresponding buy/sell operations for each side:
 
-| Сторона       | Продажа      | Покупка      |
-| ------------- | ------------ | ------------ |
-| Цена Покупки  | *котируемый* | *базовый*    |
-| Цена Продажи  | *базовый*    | *котируемый* |
-| \---\---\---- | \---\----    | \---\----    |
+| Side          | Sell      | Buy       |
+| ------------- | --------- | --------- |
+| Ask           | *quote*   | *base*    |
+| Bid           | *base*    | *quote*   |
+| \---\---\---- | \---\---- | \---\---- |
 
-Естественно, цена покупки пары USD:EUR является ценой продажи обратной пары EUR:USD. Конечно, цены внутри представлены в виде фракций, а потому результаты в обеих парах будут идентичны.
+Obviously, what is on the bid side of the USD:EUR pair will be on the ask side on the EUR:USD pair. Of course prices are internally represented as fractions, and thus results in both pairs being identical.
 
-## Торговля
+## Trading
 
-Чтобы разместить торговый ордер, Вам нужно заполнить форму либо *покупки*, либо *продажи*, а также определить *цену* и *количество* покупаемого/продаваемого актива. Вам нужно будет определить *цену* и *количество* покупаемого/продаваемого актива. Стоимость ордера будет рассчитана автоматически. Обратите внимание, что для размещения ордера нужно будет заплатить дополнительную комиссию.
+To place a trading order, it is required to fill the form on either the *ask* or the *bid* side (respectively, *buy* or *sell* side). You will need to define a *price* and an *amount* to sell/buy. The cost for this order will be calculated automatically. Note that there will be an additional fee required to actually place the order.
 
-Как только ордер будет исполнен (т.е. кто-то купил/продал Ваше предложение), на Ваш аккаунт будет переведен соответствующий актив.
+Once the order is filled (i.e. someone sold/bought your offer), your account will be credited by the corresponding asset.
 
-Неисполненные ордера могут быть отменены в любой момент.
+Unfilled orders can be canceled at any time.
