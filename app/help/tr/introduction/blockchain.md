@@ -1,27 +1,13 @@
-# Blokzinciri
+# Blockchain
 
-Graphene de çoğu kripto para gibi , transferler ve piyasa hareketleriyle
-ilgili katılımcıları haberdar  etmek için blokzincirinden  faydalanır.
-Her blok bir önceki bloğu kaynak olarak gösterdiği için ağda daha önceden 
-gerçekleşmiş tüm işlemleri içeren bir bloklar zinciri (blokzinciri) elde ederiz . Blokzinciri
-açık ve erişilebilir ve denetlenebilir bir defteri-kebir olduğundan , herkes transferlere,
- piyasa emirlerine ve sipariş defterlerine yakından  bakabilir ve teyit edebilir.
+As most crypto currencies, Graphene makes use of a blockchain to update participants about transfers and market activities. Since blocks always refer to the previous block, we get a chain of blocks (blockchain) that contains all transactions every made in the network. Because the blockchain is a publicly accessible and auditable ledger, everyone can take a closer look and verify transfers as well as market orders and order books.
 
- Tabii ki, bu web cüzdanı denetlemelerinize yardımcı olması için size bir blok 
-araştırıcısı da sunmaktadır.
+Of course, this web wallet offers a block explorer to assist you with your audit.
 
-## Mutabakat Mekanizması
+## Consensus Mechanism
 
-Hangi anda ve kimin blok *üretmeye* izni olduğu  , *Delegated Proof of Stake* 
-(Yetkilendirilmiş-vekil-pay-ispatı) denilen mutabakat mekanizmasıyla belirlenir. 
-Esasında, BitShares hissedarları (elinde BTS kuponu olan)  tercih ettikleri blok 
-üreticilerine blokzincirinde oy verebilirler.  En çok oyu alan o *tanıklar*ın
-blokları üretmelerine izin verilir.
+Who exactly is allows to *produce* a block at which time instant is defined by a consensus mechanism called *Delegated Proof of Stake*. In essence, the shareholders of BitShares (holders of the BTS token) can cast a vote for their preferred block producers on the blockchain. Those so called *witnesses* with the most votes are allowed to produce blocks.
 
-## İşlemler
+## Transactions
 
-Graphene blokzinciri teknolojisi çeşitli işlem türleri sunmaktadır.  Kullanıcılar 
-aralarında aktiif transferleri yapabildikleri gibi dağıtık borsayla ilişkili 
-işlemler de vardır. Bu işlem türlerinin bir çoğu kendini izah eden 
-fişlerle etiketlenmişlerdir, diğer işlemler ise şirketin iç işleriyle alakalı daha çok 
-bilgi gerektirir.
+The Graphene blockchain technology offers a variety of transaction types. Users are not only able to simply transfer assets between each other, but there are also transactions to interact with the decentralized exchange. Most of these transaction types are labeled with a self-explaining tag, others require more knowledge about the inner workings of the company.
