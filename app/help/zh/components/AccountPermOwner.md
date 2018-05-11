@@ -1,3 +1,3 @@
-账户权限设定谁可以控制本账户。控制人（账户名或公钥）可修改账户相关的各种设置，包括权限设置。
+Owner permissions define who has control over the account. Owners may overwrite all keys and change any account settings.
 
-参见 [权限](accounts/permissions) 了解更多信息。
+See [permissions](accounts/permissions) for more details.
