@@ -1,3 +1,3 @@
-### 词汇表
+### Glossary
 
-[返回索引页](index.md)
+[Back to index](index.md)
