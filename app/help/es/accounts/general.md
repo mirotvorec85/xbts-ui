@@ -1,9 +1,3 @@
-# Cuentas
+# Accounts
 
-Como ya se habrá notado, esta tecnología blockchain requiere que usted
-registre un nombre de cuenta. Esto trae numerosas ventajas. Además de incrementar
-la escalabilidad, hemos separado la identidad de la firma autorizante
- de las transacciones. En la práctica, *ser propietario de una cuenta* es independiente de poder
-*utilizar sus fondos". Adicionalmente, ambos derechos (que llamamos "permisos") pueden
-combinarse en una compleja relación arbitraria entre personas (que llamamos "autoridades")
-usando los parámetros *peso* y *humbral*.
+As you may have already noticed by now, this blockchain technology requires you to register an account name. This comes with many advantages: Besides improved scalability, we have separated the identity from the transaction authorizing signature. In practice, *owning an account name* is independent from being able to *spend its funds*. Furthermore, both rights (we call them *permissions*) can split among an arbitrary complex relation of people (we call them *authorities*) using *weights* and a required *thresholds*.
