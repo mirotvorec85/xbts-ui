@@ -1,23 +1,13 @@
-# Piyasa Sabitli Aktifler (MPA-Market Pegged Assets)
+# Market Pegged Assets
 
-Bitcoin'e benzeyen özelliklerde ve avantajlarda, amerikan Doları gibi tüm dünya
-tarafından benimsenmiş bir parayla pariteyi koruyabilen bir kripto-paranın
- sansürsüz ve kolay bir ticaret için çok faydası vardır. Bu, BitShares'in 
-piyasaya  sabitli varlıkları (MPA) sayesinde mümkün olur. Bunlar, serbestçe 
-alıp-satılabilen yeni  bir tür dijital varlıklardır. Bunların değerleri, fark-kontratı (CFD) yöntemiyle
-dayandıkları geleneksel varlıkların değerlerini takip etmek üzere dizayn edilmişlerdir. 
+A crypto-currency, with the properties and advantages of Bitcoin, that is capable of maintaining price parity with a globally adopted currency (e.g. U.S. dollar), has high utility for convenient and censorship resistant commerce. This can be achieved by BitShares' market pegged assets (MPA), a new type of freely traded digital asset whose value is meant to track the value of a conventional underlying asset by means of contracts for difference (CFD).
 
-*AkıllıPara* (eşanlamı MPA) , değerinin  *daima*  100% yada daha fazlası BitShares'in 
- ana para birimi (BTS) ile desteklenen bir kripto-paradır. Bu *AkıllıParalar* herhangi bir 
-zamanda bir fark-kontratı (CFD) içinde *teminat* olarak BTS'ye dönüştürülebilirler .
+A *SmartCoin* (synonym for MPA) is a crypto-currency that *always* has 100% or more of its value backed by the BitShares core currency (BTS), to which they can be converted at any time, as *collateral* in a CFD.
 
-Teminatla desteklenen FK'nı andırmalarına rağmen PSV'leri nadir yapan şey 
-onların  karşı taraf riskinden muaf olmalarıdır. Bunun mümkün olması için teminatı 
-güvence  altına alma ve hesap görme işlemleri ağın  kendi sorumluluğuna bırakılmıştır  
-(yazılım protokolüyle uygulanarak) . Bu konunun detayları aşağıda
-anlatılacaktır.
+What makes MPAs unique is that they are free from counterparty risk even though they resemble a CFD backed by collateral. This is achievable by letting the network itself (implemented as a software protocol) be responsible for securing the collateral and performing settlements as will be described in more detail below.
 
-Bu, piyasaya-sabitli-varlıkların mevcut bir alt kümesidir:
+This is a subset of the available market pegged assets:
+
 * BitUSD
 * BitCNY
 * BitEUR
