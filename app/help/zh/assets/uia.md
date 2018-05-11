@@ -1,5 +1,5 @@
-# 用户发行的资产
+# User Issued Assets
 
-除了之前提到的 *市场锚定资产* 外，BitShares允许个人或公司用户创建和发行各种自定义资产凭证(UIA)。相关的应用场景数不胜数。比如，UIA可被用来代替简单的活动门票，存入合格用户的手机钱包中，在进入活动现场时进行实时验证。同样，UIA可被用来进行众筹、所有权追踪，甚至是代表公司的股权。
+In addition to the aforementioned *market pegged* assets, BitShares allows individuals and companies to create and issue their own tokens for anything they can imagine. The potential use cases for so called user-issued assets (UIA) are innumerable. On the one hand, UIAs can be used as simple event tickets deposited on the customers mobile phone to pass the entrance of a concert. On the other hand, they can be used for crowd funding, ownership tracking or even to sell equity of a company in form of stock.
 
-显然，适用于不同凭证使用场景的法律法规可能天差地别，尤其是在不同国家时。所以，BitShares提供了一组工具来帮助发行人来合规发行和管理UIA。
+Obviously, the regulations that apply to each kind of token vary widely and are often different in every jurisdiction. Hence, BitShares comes with tools that allow issuers to remain compliant with all applicable regulations when issuing assets assuming regulators allow such assets in the first place.
