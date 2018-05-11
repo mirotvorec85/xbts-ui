@@ -1,37 +1,37 @@
-# Помощь Graphene
+# Graphene Help
 
-BitShares 2.0 - это платформа Финансовых Смарт-Контрактов, постороенная на технологии [Graphene](https://github.com/cryptonomex/graphene), созданной [Cryptonomex](http://cryptonomex.com). Graphene можно рассматривать как набор инструментов или технологию для создания блокчейнов работающих в режиме реального времени.
+BitShares 2.0 is a Financial Smart Contracts platform that is based on the [Graphene](https://github.com/cryptonomex/graphene) technology built by [Cryptonomex](http://cryptonomex.com). You can see Graphene as a toolkit or technology for real-time blockchains.
 
-Этот раздел помощи дает краткий обзор и описывает основные понятия этого приложения.
+This help section gives a brief overview and describes the most basic concepts of this application.
 
-## Введение
+## Introduction
 
 - [BitShares](introduction/bitshares.md)
-- [Кошелек](introduction/wallets.md)
-- [Резервные копии](introduction/backups.md)
-- [Блокчейн](introduction/blockchain.md)
-- [Делегаты](introduction/witness.md)
-- [Работники](introduction/workers.md)
-- [Члены Комитета](introduction/committee.md)
+- [Wallet](introduction/wallets.md)
+- [Backups](introduction/backups.md)
+- [Blockchain](introduction/blockchain.md)
+- [Witnesses](introduction/witness.md)
+- [Workers](introduction/workers.md)
+- [Committe Members](introduction/committee.md)
 
-## Аккаунты
+## Accounts
 
-- [Введение](accounts/general.md)
-- [Разрешения](accounts/permissions.md)
-- [Членство](accounts/membership.md)
+- [Introduction](accounts/general.md)
+- [Permissions](accounts/permissions.md)
+- [Memberships](accounts/membership.md)
 
-## Активы
+## Assets
 
-- [Привязанные к рынку активы](assets/mpa.md) (BitUSD, BitEUR, BitGOLD, Bit\*,...)
-- [Эмитированные пользователем активы](assets/uia.md)
-- [Приватизированные BitAssets](assets/privbitassets.md)
+- [Market Pegged Assets](assets/mpa.md) (BitUSD, BitEUR, BitGOLD, Bit\*,...)
+- [User Issued Assets](assets/uia.md)
+- [Privatized BitAssets](assets/privbitassets.md)
 
-## Децентрализованная биржа
+## Decentralized Exchange
 
-- [Введение](dex/introduction.md)
-- [Торговля](dex/trading.md)
-- [Короткая продажа BitAssets](dex/shorting.md)
+- [Introduction](dex/introduction.md)
+- [Trading](dex/trading.md)
+- [Short Selling BitAssets](dex/shorting.md)
 
 * * *
 
-[Глоссарий](glossary.md)
+[Glossary](glossary.md)
