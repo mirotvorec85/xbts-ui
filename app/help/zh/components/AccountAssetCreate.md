@@ -1,10 +1,5 @@
-创建自定义资产需要以下信息：
+[# permissions] Permissions define the available features for an asset. However, even if a feature is permitted, it must still be activated using the corresponding flag in order to be enforced by the blockchain.
 
-* 资产符号
-* 最大供给量
+After creation, you may only remove a given permission, you cannot enable a permission that was disabled on creation.
 
-精度决定了资产支持的小数点后的位数。
-
-资产创建需要支付的费用取决于资产符号的字符长度。
-
-你可以设定交易手续费率来决定用户交易时需要向你支付多少比例的费用。
+[# flags] Flags define which asset features are active or inactive. They can be switched on and off by the asset owner at any time.
