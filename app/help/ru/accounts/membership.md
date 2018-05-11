@@ -1,29 +1,29 @@
-# Подписки
+# Memberships
 
-Аккаунты в BitShares разделены на три группы. Мы решили дать пользователям возможность по желанию обновлять свои аккаунты до подобного VIP статуса, чтобы получать выгоду от сниженных комиссий и дополнительных функций.
+Accounts in BitShares are separated into three groups. We decided to give users the option to upgrade their accounts into a VIP-like status if they desire and profit from reduced fees and additional features.
 
-## Не имеющие подписки
+## Non-Members
 
-*Обычный* аккаунт *не имеет членства*.
+A *regular* account is a *non-member*.
 
-## Пожизненная подписка
+## Lifetime Members
 
-Пожизненные члены получают процентный кэшбэк с каждой комиссии за транзакцию, которую они оплачивают, и имеют право получать реферальный доход от пользователей, которых они регистрируют, или рефереров сети. Пожизненное членство подразумевает единоразовую оплату членского взноса, размер которого определяется комитетом.
+Lifetime Members get a percentage cashback on every transaction fee they pay and income from referrals. A Lifetime membership is associated with a certain one-time fee defined in this [schedule](/explorer/fees).
 
-## Ежегодная подписка
+## Annual Members
 
-Если пожизненное членство - это слишком много для Вас, Вы все так же можете получить кэшбэк за следующий год, приобретя годовое членство за меньший единоразовый взнос, которое продлится только один год.
+If a lifetime membership is too much you can still get the same cashback for the next year by becoming an annual subscriber for a smaller one-time fee which lasts for only one year.
 
-### Разделение комиссии
+### Fee Division
 
-Каждый раз, когда Ваш реферальный аккаунт оплачивает комиссию за транзакцию, эта комиссия делится между несколькими разными аккаунтами. Часть получает сеть, еще часть получает Пожизненный Член, рефералом которого является аккаунт.
+Every time an account you referred pays a transaction fee, that fee is divided among several different accounts. The network takes a cut, and the Lifetime Member who referred the account gets a cut.
 
-Регистратором является аккаунт, который оплатил комиссию за транзакцию при регистрации аккаунта в сети. Регистратор должен решить, как разделить оставшуюся комиссию между собой и своими аффилиатами.
+The registrar is the account that paid the transaction fee to register the account with the network. The registrar gets to decide how to divide the remaining fee between themselves and their own affiliate.
 
-### Ожидаемые комиссии
+### Pending Fees
 
-Оплаченные комиссии разделяются между сетью, реферерами и регистраторами только один раз в определенный интервал обслуживания.
+Fees paid are only divided among the network, referrers, and registrars once every maintenance interval.
 
-### Вестинговые комиссии
+### Vesting Fees
 
-Большинство комиссий становятся доступны немедленно, но комиссии за переход порога (как при оплате повышения уровня Вашего членства или регистрации премиум-имени аккаунта) должны обрабатываться несколько дней, как это определено комитетом.
+Most fees are made available immediately, but fees over the vesting threshold (such as those paid to upgrade your membership or register a premium account name) must vest for some period of time as defined by the committee.
