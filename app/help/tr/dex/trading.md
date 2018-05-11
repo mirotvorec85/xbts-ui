@@ -1,47 +1,34 @@
-# Alış-Satış
+# Trading
 
-Bu sayfa DEX (dağıtık borsa)de kullanılan terimlerin nasıl yorumlanması gerektiği 
-ve al-sat eşlerinin nasıl temsil edildiğine dair hızlı bir giriştir.
+This page will give a very quick introduction on how to interpret the terms used by the DEX and how trading pairs are presented.
 
-## Çiftler/Eşler
+## Pairs
 
-BitShares'de , neredeyse her aktif tüm diğer aktiflerle alınıp-satılabilirler. İki varlık 
-seçmiş olduğumuz vakit , biz genelde *piyasa çifti* diye hitab ediyoruz. Mesela , 
-USD'yi EUR'a karşı  USD:EUR çiftinde takas edebiliriz.
+In BitShares, almost any asset can be traded with all other assets. Once we have picked two assets, we usually refer to a *market pair*. For instance, we can trade USD against EUR in the USD:EUR pair.
 
-Tutarlı olmak adına , biz *temel* ve *kota* genel terimlerini kullanacağız ,
-öyleki çiftler şöyle temsil edileceklerdir 
+For sake of consistency, we will use the generalized terms *base* and *quote* such that pairs are represented as
 
-    *kota* : *temel*
+    *quote* : *base*
+    
 
-ve mesela *temel* USD olursa ve *kota* da EUR olursa biz  bunu EUR:USD çifti olarak 
-belirteceğiz
+and for instance with *base* being USD and *quote* being EUR, denote the EUR:USD pair.
 
-## Sipariş Defterleri
+## Order Books
 
-Sipariş defteri *ask* (istenilen satış fiyatı) ve *bid* (verilen alış teklif fiyatı) yanlarından 
-oluşur. Alış-satış çiftlerin tercihen bir yönü olmadığından ters çevirilebilirler, aşağıdaki 
-tabloda ask/bid ve her iki tarafın ilgili al/sat operasyonlarına genel bakış verilmiştir:
+The order book consists of an *ask* and a *bid* side. Since trading pairs do not have a preferred orientation, and can be flipped, the following table shall give an overview of ask/bid and the corresponding buy/sell operations for each side:
 
-| Taraf   | Sat  | Al   | 
-| ---------- | ------- | ------- |
-| Ask        | *kota* | *temel*  |
-| Bid        | *temel*  | *kota* |
-| ---------- | ------- | ------- |
+| Side          | Sell      | Buy       |
+| ------------- | --------- | --------- |
+| Ask           | *quote*   | *base*    |
+| Bid           | *base*    | *quote*   |
+| \---\---\---- | \---\---- | \---\---- |
 
-USD:EUR çiftinin bid tarafında olan EUR:USD çiftinin ask tarafında 
-olacaktır. Tabiiki  fiyatlar kesir olarak temsil edileceğinden sonuçta her iki çift aynı 
-olacaktır.
+Obviously, what is on the bid side of the USD:EUR pair will be on the ask side on the EUR:USD pair. Of course prices are internally represented as fractions, and thus results in both pairs being identical.
 
-## Alış-Satış
+## Trading
 
-Al-sat emri vermek için , formun taraflarından birini doldurmak 
-gereklidir,  ya *ask*, yada *bid* tarafı ( *al* yada *sat* tarafı) . Satmak/almak için bir 
-*fiyat* ve bir *miktar* belirlemeniz gerekecektir. Bu emrin maliyeti otomatik olarak 
-hesaplanacaktır. 
-Bu emrin verilmesi için ilave ücret gerekecektir.
+To place a trading order, it is required to fill the form on either the *ask* or the *bid* side (respectively, *buy* or *sell* side). You will need to define a *price* and an *amount* to sell/buy. The cost for this order will be calculated automatically. Note that there will be an additional fee required to actually place the order.
 
-Emir icra edildiğinde (biri teklifinizi sattığında/aldığında) , hesabınıza söz konusu 
-varlıktan yatırılacaktır.
+Once the order is filled (i.e. someone sold/bought your offer), your account will be credited by the corresponding asset.
 
-Yerine getirilmemiş emirler herhangi bir zamanda iptal edilebilirler.
+Unfilled orders can be canceled at any time.
