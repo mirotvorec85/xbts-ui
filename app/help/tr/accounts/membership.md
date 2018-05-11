@@ -1,43 +1,29 @@
-# Üyelik
+# Memberships
 
-BitShares'deki hesaplar üç gruba ayrılırlar . Biz kullanıcılara dilerlerse hesaplarını VIP
-gibi bir statüye yükseltmelerine ve ilave özelliklerden ve indirimlerden 
-faydalanmalarına imkan tanıdık.
+Accounts in BitShares are separated into three groups. We decided to give users the option to upgrade their accounts into a VIP-like status if they desire and profit from reduced fees and additional features.
 
-## Üye-Olmayanlar
+## Non-Members
 
-*Normal*  hesap *üye-olmayan* bir hesaptır.
+A *regular* account is a *non-member*.
 
-## Ömür-boyu Üyeler
+## Lifetime Members
 
-Ömür-boyu-üyelerinin ödediği her işlem ücretinin belirli bir yüzdesi kendilerine iade 
-edilir ve kaydını yaptıkları ya da getirdikleri üyelerden komisyon geliri kazanmaya 
-hak kazanırlar. Ömür-boyu-üyelikle alakalı kurul tarafından belirlenmiş belli miktarda 
-tek-seferlik bir ücret vardır.
+Lifetime Members get a percentage cashback on every transaction fee they pay and income from referrals. A Lifetime membership is associated with a certain one-time fee defined in this [schedule](/explorer/fees).
 
-## Yıllık Üyeler
+## Annual Members
 
-Ömür-boyu-üyelik eğer çok fazla gelirse , bir yıl süreli tek-seferlik düşük bir bedel 
-karşılığında yıllık abone olarak bir sonraki seneye de aynı iadeyi 
-alabilirsiniz.
+If a lifetime membership is too much you can still get the same cashback for the next year by becoming an annual subscriber for a smaller one-time fee which lasts for only one year.
 
-### Ücret Paylaşımı
+### Fee Division
 
-Getirdiğiniz hesap her işlem ücreti ödediğinde o ücret birçok farklı hesap arasında 
-pay edilir. Ağımız bir kısmını alır , hesabı getiren ömür-boyu-üye de diğer kısmını alır.
-Hesabı getiren üye bir kısım pay alır.
+Every time an account you referred pays a transaction fee, that fee is divided among several different accounts. The network takes a cut, and the Lifetime Member who referred the account gets a cut.
 
-Kayıtçı , hesabın ağımıza kaydı yapılırken işlem ücretini ödeyen hesaptır. Kayıtçı 
-ücretin geri kalan kısmını kendisi ve bağlantılarıyla nasıl pay edeceğine kendisi karar 
-verir.
+The registrar is the account that paid the transaction fee to register the account with the network. The registrar gets to decide how to divide the remaining fee between themselves and their own affiliate.
 
-### Bekleyen Ücretler
+### Pending Fees
 
-Ödenen ücretler sadece ağımız, getirenler, ve kayıtçılar arasında her bakım aralığında 
-bir kez pay edilir.
-                 
-### Hak Edilen Ücretler
+Fees paid are only divided among the network, referrers, and registrars once every maintenance interval.
 
-Çoğu ücretler anında ödenmesine rağmen , bir limitin üzerindeki ücretler (mesela 
-üyeliğinizi yükseltmek için ödediğiniz ya da paralı hesap kaydetmek için ödediğiniz 
-ücretler) kurul tarafından belirlenen bir kaç gün boyunca haciz altında tutulabilirler.
+### Vesting Fees
+
+Most fees are made available immediately, but fees over the vesting threshold (such as those paid to upgrade your membership or register a premium account name) must vest for some period of time as defined by the committee.
