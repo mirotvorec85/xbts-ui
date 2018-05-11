@@ -1,3 +1,3 @@
-Sahip izinleri hesap üzerinde kimin kontrolü olduğunu belirler. Sahipler tüm anahtarların yenilerini belirleyebilir ve herhangi hesap ayarını değiştirebilir.
+Owner permissions define who has control over the account. Owners may overwrite all keys and change any account settings.
 
-Daha fazla bilgi için [izinler](accounts/permissions) .
+See [permissions](accounts/permissions) for more details.
