@@ -1061,8 +1061,8 @@
         "buysell_formatter": "{direction} {asset}",
         "trading_pair": "Торговая пара",
         "market_picker": {
-            "title": "Market Picker",
-            "sub_title": "Find an asset to replace",
+            "title": "Выбор рынка",
+            "sub_title": "Найти актив для замены",
             "search_mode": "Режим",
             "search_for_asset": "Search for asset",
             "find_by_asset": "Фильтр по активу",
