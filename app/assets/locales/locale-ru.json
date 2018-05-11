@@ -855,7 +855,7 @@
                 "maximum_short_squeeze_ratio": "Максимальный коэффициент краткого сжатия (MSSR)",
                 "global_settlement_price": "Цена глобального погашения",
                 "settlement_delay": "Задержка погашения",
-                "force_settlement_offset": "Force settlement offset"
+                "force_settlement_offset": "Смещение принудительного погашения"
             },
             "fee_pool": {
                 "title": "Пул комиссии",
@@ -1228,7 +1228,7 @@
         "dont_ask_for_backup": "Больше не спрашивать о создании резервной копии",
         "different_file_type": "У вас другой тип файла?",
         "restore_it_here": "Восстановите его здесь",
-        "backup_login": "Backup & login",
+        "backup_login": "Резервное копирование и вход в систему",
         "select_wallet": "Выбрать файл резервной копии ключей",
         "using": "Используемый:",
         "use_different": "Использовать другой файл",
@@ -1387,7 +1387,7 @@
             "collateral": "Недостаточный остаток на счете"
         },
         "use_max": "Использовать максимум",
-        "pay_max_debt": "Pay Max Debt",
+        "pay_max_debt": "Выплатить максимальный долг",
         "maximize_debt_set_ratio_slider": "Прежде чем максимизировать долг, вы должны задать коэффициент залогового обеспечения"
     },
     "modal": {
