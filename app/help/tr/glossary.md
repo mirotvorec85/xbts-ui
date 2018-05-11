@@ -1,3 +1,3 @@
-### Terimler
+### Glossary
 
-[İndexe Geri Git](index.md)
+[Back to index](index.md)
