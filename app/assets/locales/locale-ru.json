@@ -2,8 +2,8 @@
     "page404": {
         "page_not_found_title": "404 Страница не найдена",
         "page_not_found_subtitle": "Эта страница не существует.",
-        "asset_not_found_subtitle": "That asset does not exist",
-        "market_not_found_subtitle": "That market does not exist",
+        "asset_not_found_subtitle": "Такого актива не существует",
+        "market_not_found_subtitle": "Такого рынка не существует",
         "home": "Главная"
     },
     "counterpart": {
@@ -182,7 +182,7 @@
         "as_collateral": "Обеспечение",
         "open_orders": "Открытые ордера",
         "filter_orders": "Фильтровать",
-        "submit_orders": "Добавить",
+        "submit_orders": "Подтвердить",
         "reset_orders": "Сбросить",
         "total_value": "Общая стоимость",
         "show_hidden": "Скрытые",
@@ -492,7 +492,7 @@
         "create_account": "Создать аккаунт",
         "create_new": "Создать новый аккаунт",
         "password_login": "Войти используя пароль",
-        "login_with": "Login with",
+        "login_with": "Войти при помощи",
         "identicon": "Айдентикон",
         "pay_from": "Оплатить из",
         "existing_accounts": "Существующие аккаунты",
@@ -945,7 +945,7 @@
         }
     },
     "settings": {
-        "automatic_short": "Automatic Switching",
+        "automatic_short": "Автоматическое переключение",
         "passwordLogin": "Режим входа",
         "cloud_login": "Вход в облачный кошелек (модель \"Аккаунт\")",
         "local_wallet": "Вход в локальный кошелек (модель \"Кошелек\")",
@@ -986,7 +986,7 @@
         "restore": "Восстановить/импортировать",
         "access": "Доступ",
         "automatic": "Выбирать узел автоматически (доступно %(totalNodes)s)",
-        "ping": "Ping Nodes",
+        "ping": "Проверить Узлы",
         "reset_text": "Восстановить настройки до их первоначальных значений по умолчанию",
         "reset_text_description": "Это действие сбросит все настройки Ваших %(generalName)s, %(accessName)s и %(faucetName)s",
         "general_text": "Выбрать основные настройки.",
@@ -998,7 +998,7 @@
         "access_text": "",
         "view_keys": "Просмотреть ключи",
         "backup_backup": "Восстановить из файла резервной копии (.bin)",
-        "backup_backup_short": "Restore from a backup",
+        "backup_backup_short": "Восстановить из резервной копии",
         "backup_key": "Импортировать приватный ключ",
         "backup_legacy": "Импортировать экспорт-файл (.json) ключа BTS 0.9.3c",
         "backup_brainkey": "Восстановить с помощью brainkey локального кошелька",
@@ -1063,14 +1063,14 @@
         "market_picker": {
             "title": "Market Picker",
             "sub_title": "Find an asset to replace",
-            "search_mode": "Mode",
+            "search_mode": "Режим",
             "search_for_asset": "Search for asset",
-            "find_by_asset": "Find by asset",
-            "filter_by_issuer": "Filter by issuer",
-            "results": "Results (%(total_assets)s)",
-            "use": "Use",
-            "show_all": "Show All",
-            "search": "Asset name"
+            "find_by_asset": "Фильтр по активу",
+            "filter_by_issuer": "Фильтр по эмитенту",
+            "results": "Результаты (%(total_assets)s)",
+            "use": "Использовать",
+            "show_all": "Показать все",
+            "search": "Имя актива"
         },
         "chart_options": {
             "tools": "Инструменты",
