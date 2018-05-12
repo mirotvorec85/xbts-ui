@@ -20,20 +20,20 @@
     цена дострочного выкупа = DEBT / COLLATERAL * MCR
     
 
-The margin call will take the collateral, buy shares of borrowed bitAsset at market rates up to the SQP and close the position. The remaining BTS of the collateral are returned to the customer.
+При маржин колле одолженный актив будет куплен на внесенное залоговое обеспечение по рыночной цене вплоть до SQP и позиция будет закрыта. Оставшиеся от залога BTS будут возвращены клиенту.
 
-### Settlement
+### Погашение
 
-Holders of any bitAsset can request a settlement at a *fair price* at any time. The settlement closes the borrow/short positions with lowest collateral ratio and sells the collateral for the settlement.
+Держатели любого bitAsset могут запросить расчет по *справедливой цене* в любой момент. Расчет закрывает заемные/шорт позиции с самым низким уровнем залогового обеспечения и продает залог для расчета.
 
-## Selling
+## Продажа
 
-After borrowing bitAssets, they can be sold free at any of the corresponding markets at any price a buyer is willing to pay. With this step, the short-selling is now complete and you are short that particular bitAsset.
+После заёма bitAssets Вы можете свободно продавать их на любых соответствующих рынках по любой цене, какую будет готов заплатить покупатель. После этого шага короткая продажа считается завершенной, и Вы закрыли короткую позицию с этим конкретным bitAsset.
 
-## Updating Collateral Ratio
+## Обновление обеспечивающего залога
 
-At any time, the holder of a borrow/short position can modify the collateral ratio in order to flexibly adjust to market behavior. If the collateral ratio is increase, an additional amount of BTS is locked as collateral, while reducing the collateral ratio will require an amount of the corresponding BitAsset to be payed back to the network.
+В любой момент держатель заемной/шорт позиции может изменить обеспечивающий залог в стремлении гибко подстроиться под поведение рынка. Если обеспечивающий залог увеличится, в качестве залога будет заморожено дополнительное количество BTS, тогда как уменьшение обеспечивающего залога потребует выплаты соответствующего количества BitAsset обратно сети.
 
-## Covering
+## Покрытие
 
-To close a borrow/short position, one must hold the borrowed amount of that particular bitAsset to hand it over to the BitShares network. After that, the BitAssets are reduced from the corresponding supply and the collateral is released and given back to its owner.
+Чтобы закрыть заемную/шорт позицию нужно обладать одолженным количеством этого конкретного bitAsset, дабы передать его сети BitShares. После этого BitAssets снимаются с соответствующего баланса, а залог освобождается и отправляется обратно владельцу.
