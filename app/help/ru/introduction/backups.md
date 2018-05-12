@@ -1,12 +1,12 @@
-# Backups
+# Резервные копии
 
-## Local Wallet
+## Локальный кошелек
 
-It is recommended to make regular backups of your Local Wallet even though in most cases a single backup may be sufficient. Please note that in order to recover from a backup you will also need to provide the passphrase (password) because **backups are encrypted**. Hence, if you either lose your wallet or your passphrase you will be unable to access any of your funds again!
+Мы настоятельно рекомендуем Вам регулярно создавать резервные копии Вашего локального кошелька несмотря на то, что одной резервной копии в большинстве случаев оказывается достаточно. Пожалуйста, обратите внимание, что для восстановления из резервной копии будет необходимо предоставить фразу-пароль (пароль), так как **резервные копии зашифрованы**. Следовательно, если Вы потеряете кошелек или Вашу фразу-пароль, то больше никогда не сможете получить доступ к своим средствам!
 
-You can create a backup from [Settings -> Backup](/settings).
+Вы можете создать резервную копию из меню [Настройки -> Резервная копия](/settings).
 
-- Store this backup in at least two secure locations only accessible by you
+- Храните свою резервную копию по крайней мере в двух местах, доступных только вам
 - The backup is encrypted with your passphrase/password so do not store your passwrod in the same location
 
 ## Advanced Users Only
