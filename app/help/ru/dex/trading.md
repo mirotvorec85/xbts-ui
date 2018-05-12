@@ -1,23 +1,23 @@
-# Trading
+# Торговля
 
-This page will give a very quick introduction on how to interpret the terms used by the DEX and how trading pairs are presented.
+Эта страница предоставит вам краткую интерпретацию терминов, используемых на DEX, и информацию о том, как размещаются торговые пары.
 
-## Pairs
+## Пары
 
-In BitShares, almost any asset can be traded with all other assets. Once we have picked two assets, we usually refer to a *market pair*. For instance, we can trade USD against EUR in the USD:EUR pair.
+На BitShares практически любой актив может торговаться со всеми остальными активами. Как только мы выбрали два актива, обычно мы ссылаемся на определенную *рыночную пару*. Например, мы можем торговать USD против EUR в паре USD:EUR.
 
-For sake of consistency, we will use the generalized terms *base* and *quote* such that pairs are represented as
+В целях установки ориентира, мы будем использовать общие термины *базовый* и *котируемый*, где подобные пары представлены как
 
-    *quote* : *base*
+    "котируемый" : "базовый"
     
 
-and for instance with *base* being USD and *quote* being EUR, denote the EUR:USD pair.
+в частности, в представленной паре EUR:USD *базовым* активом будет являться USD, а *котируемым* – EUR.
 
-## Order Books
+## Биржевой стакан
 
-The order book consists of an *ask* and a *bid* side. Since trading pairs do not have a preferred orientation, and can be flipped, the following table shall give an overview of ask/bid and the corresponding buy/sell operations for each side:
+Так называемый стакан состоит из цен *покупки* и цен *продажи*. Так как стороны торговых пар не фиксированы и могут меняться, следующая таблица даст Вам представление о ценах покупки и продажи в соответствии с продаваемым/покупаемым лотом для каждого случая:
 
-| Side          | Sell      | Buy       |
+| Сторона       | Продажа   | Покупка   |
 | ------------- | --------- | --------- |
 | Ask           | *quote*   | *base*    |
 | Bid           | *base*    | *quote*   |
