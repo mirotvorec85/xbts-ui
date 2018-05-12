@@ -1,11 +1,11 @@
-# Winex Gateway Service
+# Шлюз от Winex
 
-Winex is a gateway service built on the Bitshares Exchange. A gateway service is responsible for moving cryptocurrencies to and from the Bitshares Exchange. They support a wide range of popular assets. You can easily identify those supported by Winex because they are prefixed with the word WIN.*. For example WIN.EOS etc.
+Winex предоставляет сервис шлюза, построенный на бирже Bitshares. Сервис шлюза отвечает за ввод и вывод криптовалют с биржи Bitshares. Он поддерживает широкий спектр популярных активов. Вы легко можете определить, какие из них поддерживает Winex, так как они обладают префиксом вида WIN.*. Например, WIN.EOS и т.п.
 
-## Website
+## Веб-сайт
 
 <https://exchange.winex.pro/>
 
-## Support
+## Поддержка
 
-- Ask For Help：support@winex.pro
+- Обращайтесь на support@winex.pro
