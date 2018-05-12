@@ -17,18 +17,18 @@
 
 Так называемый стакан состоит из цен *покупки* и цен *продажи*. Так как стороны торговых пар не фиксированы и могут меняться, следующая таблица даст Вам представление о ценах покупки и продажи в соответствии с продаваемым/покупаемым лотом для каждого случая:
 
-| Сторона       | Продажа   | Покупка   |
-| ------------- | --------- | --------- |
-| Ask           | *quote*   | *base*    |
-| Bid           | *base*    | *quote*   |
-| \---\---\---- | \---\---- | \---\---- |
+| Сторона       | Продажа      | Покупка      |
+| ------------- | ------------ | ------------ |
+| Цена Покупки  | *котируемый* | *базовый*    |
+| Цена Продажи  | *базовый*    | *котируемый* |
+| \---\---\---- | \---\----    | \---\----    |
 
-Obviously, what is on the bid side of the USD:EUR pair will be on the ask side on the EUR:USD pair. Of course prices are internally represented as fractions, and thus results in both pairs being identical.
+Естественно, цена покупки пары USD:EUR является ценой продажи обратной пары EUR:USD. Конечно, цены внутри представлены в виде фракций, а потому результаты в обеих парах будут идентичны.
 
-## Trading
+## Торговля
 
-To place a trading order, it is required to fill the form on either the *ask* or the *bid* side (respectively, *buy* or *sell* side). You will need to define a *price* and an *amount* to sell/buy. The cost for this order will be calculated automatically. Note that there will be an additional fee required to actually place the order.
+Чтобы разместить торговый ордер, Вам нужно заполнить форму либо *покупки*, либо *продажи*, а также определить *цену* и *количество* покупаемого/продаваемого актива. Вам нужно будет определить *цену* и *количество* покупаемого/продаваемого актива. Стоимость ордера будет рассчитана автоматически. Обратите внимание, что для размещения ордера нужно будет заплатить дополнительную комиссию.
 
-Once the order is filled (i.e. someone sold/bought your offer), your account will be credited by the corresponding asset.
+Как только ордер будет исполнен (т.е. кто-то купил/продал Ваше предложение), на Ваш аккаунт будет переведен соответствующий актив.
 
-Unfilled orders can be canceled at any time.
+Неисполненные ордера могут быть отменены в любой момент.
