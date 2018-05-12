@@ -7,14 +7,14 @@
 Вы можете создать резервную копию из меню [Настройки -> Резервная копия](/settings).
 
 - Храните свою резервную копию по крайней мере в двух местах, доступных только вам
-- The backup is encrypted with your passphrase/password so do not store your passwrod in the same location
+- Резервная копия зашифрована вашим паролем, поэтому не храните пароль в том же самом месте
 
-## Advanced Users Only
+## Только для опытных пользователей
 
 ### Brainkey
 
-> If you never manually imported an account key into your wallet, you can alternatively backup your accounts and their funds by exporting the *brainkey*, a string of words from which your keys are derived deterministically.
+> Если Вы никогда не импортировали ключ аккаунта в свой кошелек вручную, Вы также можете создать резервную копию Вашего аккаунта и принадлежащих ему средств, экспортировав *brainkey* – цепочку слов, из которой Ваши ключи извлекаются детерминированно.
 
-Remark: Hierarchical Authorities (advanced uses ONLY)
+Примечание: Иерархическое управление (ТОЛЬКО для опытных пользователей)
 
-> If you are using hierarchical authorities (account and/or active permissions), backing up your keys alone may not be sufficient to regain access to your funds! Please revise the documentations about hierarchical authorities.
+> Если Вы используете иерархическое управление (разрешения аккаунта/активные разрешения), создания резервной копии одних только ключей может быть недостаточно для восстановления доступа к Вашим средствам! Пожалуйста, ознакомьтесь с документацией об иерархическом управлении.
