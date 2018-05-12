@@ -12,12 +12,12 @@
 - *защита от сжатия шорта*(SQP): Определяет предельную величину принудительного покрытия позиции 
 - *черта марджин колла* (CP): Цена, при которой шорт будет принудительно закрыт
 
-### Марджин Колл
+### Маржин Колл
 
-The BitShares network is capable of margin calling those positions that do not have enough collateral to back their borrowed bitAssets. A margin call will occur any time the highest bid is less than the *call price* and greater than *SQP*. The margin position will be forced to sell its collateral anytime the highest offer to buy the collateral is less than the call price (x/BTS).
+Сеть BitShares способна применять маржин колл к тем позициям, которые не имеют достаточного залогового обеспечения для покрытия одолженных ими bitAssets. Маржин колл будет происходить каждый раз, когда самая высокая ставка окажется меньше, чем *цена досрочного выкупа* и больше *SQP*. Маржинальная позиция будет вынуждена продавать своё залоговое обеспечение каждый раз, когда самое высокое предложение на покупку обеспечения окажется меньше, чем цена дострочного выкупа (x/BTS).
 
-    SQP = settlement price / MSQR
-    call price = DEBT / COLLATERAL * MCR
+    SQP = расчетная цена / MSQR
+    цена дострочного выкупа = DEBT / COLLATERAL * MCR
     
 
 The margin call will take the collateral, buy shares of borrowed bitAsset at market rates up to the SQP and close the position. The remaining BTS of the collateral are returned to the customer.
