@@ -4,6 +4,7 @@ import Translate from "react-translate-component";
 import {connect} from "alt-react";
 import SettingsStore from "stores/SettingsStore";
 import SettingsActions from "actions/SettingsActions";
+import AssetImage from "../../Utility/AssetImage";
 import {
     RecentTransactions,
     TransactionWrapper
@@ -11,6 +12,8 @@ import {
 import Immutable from "immutable";
 import cnames from "classnames";
 import LoadingIndicator from "../../LoadingIndicator";
+import Select from "react-select";
+import "react-select/dist/react-select.css";
 
 class RuDexGateway extends React.Component {
     constructor(props) {
@@ -60,13 +63,27 @@ class RuDexGateway extends React.Component {
         }
     }
 
+    // onSelectCoin(e) {
+    //     this.setState({
+    //         activeCoin: e.target.value
+    //     });
+    //
+    //     let setting = {};
+    //     let coinName = e.target.value;
+    //     if (this.state.action === "withdraw") {
+    //         coinName = this._findCoinBySymbol(this.props, coinName).backingCoin;
+    //     }
+    //     setting["activeCoin_rudex"] = coinName;
+    //     SettingsActions.changeViewSetting(setting);
+    // }
+
     onSelectCoin(e) {
         this.setState({
-            activeCoin: e.target.value
+            activeCoin: e.value
         });
 
         let setting = {};
-        let coinName = e.target.value;
+        let coinName = e.value;
         if (this.state.action === "withdraw") {
             coinName = this._findCoinBySymbol(this.props, coinName).backingCoin;
         }
@@ -109,11 +126,28 @@ class RuDexGateway extends React.Component {
                     action === "deposit"
                         ? coin.backingCoin.toUpperCase()
                         : coin.symbol;
-                return (
-                    <option value={option} key={coin.symbol}>
-                        {option.replace("RUDEX.", "")}
-                    </option>
-                );
+                // return (
+                //     <option value={option} key={coin.symbol}>
+                //         {option.replace("RUDEX.", "")}
+                //     </option>
+
+                // Work around to get symbol name
+                let name = option.replace("RUDEX.", "");
+                let prefix = name === "PPY" ? "" : "RUDEX.";
+
+                return {
+                    value: option,
+                    label: (
+                        <div>
+                            <AssetImage
+                                replaceNoneToBts={false}
+                                maxWidth={20}
+                                name={prefix + name}
+                            />
+                            {option.replace("RUDEX.", "")}
+                        </div>
+                    )
+                };
             })
             .filter(a => {
                 return a !== null;
@@ -144,13 +178,17 @@ class RuDexGateway extends React.Component {
                                     content={"gateway.choose_" + action}
                                 />:{" "}
                             </label>
-                            <select
-                                className="external-coin-types bts-select"
+                            <Select
+                                //className="external-coin-types bts-select"
+                                //onChange={this.onSelectCoin.bind(this)}
                                 onChange={this.onSelectCoin.bind(this)}
+                                clearable={false}
+                                searchable={false}
                                 value={activeCoin}
-                            >
-                                {coinOptions}
-                            </select>
+                                options={coinOptions}
+                            />
+
+                            {/*</Select>*/}
                         </div>
                     </div>
 
