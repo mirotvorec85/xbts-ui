@@ -219,6 +219,7 @@ class SettingsStore {
                     "CNY",
                     "GOLD",
                     "SILVER",
+                    "RUDEX.BTC",
                     "RUDEX.ETH",
                     "RUDEX.GOLOS",
                     "RUDEX.GBG",
@@ -239,7 +240,6 @@ class SettingsStore {
                     "BTWTY",
                     "ZEPH",
                     "ESCROW.RUBLE",
-                    "GDEX.BTC",
                     "GDEX.EOS"
                 ],
                 markets_39f5e2ed: [
@@ -254,7 +254,7 @@ class SettingsStore {
                     // BTS MAIN NET
                     "BTS",
                     "RUBLE",
-                    "GDEX.BTC",
+                    "RUDEX.BTC",
                     "USD",
                     "CNY"
                 ],
