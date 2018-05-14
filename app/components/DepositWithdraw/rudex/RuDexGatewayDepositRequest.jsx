@@ -354,14 +354,25 @@ class RuDexGatewayDepositRequest extends React.Component {
                                 <tbody>
                                     <tr>
                                         <td>
-                                            ADDRESS:{" "}
+                                            <Translate
+                                                style={{
+                                                    textTransform: "uppercase"
+                                                }}
+                                                content="gateway.address"
+                                            />:{" "}
                                             <b>{deposit_address_fragment}</b>
                                         </td>
                                     </tr>
                                     {deposit_memo ? (
                                         <tr>
                                             <td>
-                                                MEMO: <b>{deposit_memo}</b>
+                                                <Translate
+                                                    style={{
+                                                        textTransform:
+                                                            "uppercase"
+                                                    }}
+                                                    content="gateway.memo"
+                                                />: <b>{deposit_memo}</b>
                                             </td>
                                         </tr>
                                     ) : null}
@@ -379,7 +390,7 @@ class RuDexGatewayDepositRequest extends React.Component {
                                             clipboardText
                                         )}
                                     >
-                                        Copy address
+                                        <Translate content="gateway.copy_address" />
                                     </div>
                                 ) : null}
                                 {memoText ? (
@@ -390,7 +401,7 @@ class RuDexGatewayDepositRequest extends React.Component {
                                             memoText
                                         )}
                                     >
-                                        Copy memo
+                                        <Translate content="gateway.copy_memo" />
                                     </div>
                                 ) : null}
                             </div>
