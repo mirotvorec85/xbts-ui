@@ -240,7 +240,8 @@ class SettingsStore {
                     "BTWTY",
                     "ZEPH",
                     "ESCROW.RUBLE",
-                    "GDEX.EOS"
+                    "GDEX.EOS",
+                    "BTC"
                 ],
                 markets_39f5e2ed: [
                     // TESTNET
