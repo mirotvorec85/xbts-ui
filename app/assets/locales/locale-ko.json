@@ -56,12 +56,12 @@
             "This is the estimated value of the %(asset)s you have in open orders.",
         "intro_text_1": "Your Decentralized Exchange",
         "intro_text_2":
-            "<b>The DEX</b> is inherently decentralized, enabling you to trade the BitShares core token (BTS) and a range of trustless price-stable, market-pegged assets such as bitUSD, bitCNY, bitBTC, bitGold and more. These assets can all be traded with <b>zero</b> counter-party risk, putting you in total control of your funds.",
+            "<b>The DEX</b> is inherently decentralized, enabling you to trade the BitShares core token (BTS) and a range of trustless price-stable, market-pegged assets such as bitRUBLE, bitUSD, bitCNY, bitBTC, bitGold and more. These assets can all be traded with <b>zero</b> counter-party risk, putting you in total control of your funds.",
         "intro_text_3":
             "<b>The DEX</b> also enables creation of user-issued assets (UIAs), which can be traded against any other UIAs or trustless assets on the platform.  One well-known issuer on The DEX is <b>OpenLedger</b>, offering a host of assets including BTC, ETH, STEEM, DASH, LTC, DOGE, and many more",
         "intro_text_4":
             "This gives cryptocurrency traders a unique blend of traditional and decentralized trading, all in a familiar exchange interface. Happy trading!",
-        "intro_text_title": "Welcome to BitShares",
+        "intro_text_title": "Welcome to RuDEX",
         "login_with": "Login with",
         "market_actions": "Market actions",
         "market_value": "시장가치",
@@ -883,6 +883,10 @@
             "coming_soon": "Coming soon",
             "min_amount": "Minimum amount: %(minAmount)s %(symbol)s",
             "min_amount_error": "Please enter number >= minimum",
+            "openledger_notice1":
+                "Read the official position of OpenLedger on the use of their gateways:",
+            "openledger_notice1_informed":
+                "I have read and am informed about OpenLedgers position.",
             "support_block": "For support, please contact RuDEX at:",
             "under_construction": "Under Construction"
         },
@@ -957,7 +961,7 @@
         "payments_beta": "Send (Beta)",
         "payments_legacy": "Send (legacy)",
         "settings": "설정",
-        "title": "비트쉐어 2.0",
+        "title": "RuDEX",
         "unlock": "잠금해제",
         "unlock_password": "Log in using a password",
         "unlock_short": "Login",
@@ -1004,7 +1008,7 @@
             "borrow": "Borrow",
             "buy": "Buy"
         },
-        "download": "Download new version of BitShares UI",
+        "download": "Download new version of RuDEX UI",
         "excel": "Download .csv file",
         "eye": "Hide Node",
         "eye-striked": "Show Node",
@@ -1115,9 +1119,9 @@
             "In an effort to provide enhanced security for the web-based wallet, we are migrating it, effective immediately to the address below. Please be sure to update any bookmarks you may have.",
         "text_1": "Local wallet detected",
         "text_2":
-            "Please backup your wallet now and restore the backup file to <a href='https://wallet.bitshares.org' target='blank' rel='noopener noreferrer'>https://wallet.bitshares.org</a>, which will be your new address for the web wallet. Thanks for your continued support.",
+            "Please backup your wallet now and restore the backup file to <a href='https://market.rudex.org' target='blank' rel='noopener noreferrer'>https://market.rudex.org</a>, which will be your new address for the web wallet. Thanks for your continued support.",
         "text_3":
-            "Please use <a href='https://wallet.bitshares.org' target='blank' rel='noopener noreferrer'>https://wallet.bitshares.org</a> from now on, your existing credentials will let you login there as well.",
+            "Please use <a href='https://market.rudex.org' target='blank' rel='noopener noreferrer'>https://market.rudex.org</a> from now on, your existing credentials will let you login there as well.",
         "title": "Notice"
     },
     "modal": {
@@ -1353,6 +1357,143 @@
         "retry": "다시 해 보다",
         "use_address": "주소를 사용하다"
     },
+    "refcode": {
+        "claim": "Claim",
+        "claim_refcode": "Claim Referral Code",
+        "enter_refcode": "Enter referral code",
+        "refcode_optional": "Referral Code (optional)"
+    },
+    "news": {
+        "author": "Author",
+        "errors": {
+            "fetch": "Ops... Something went wrong fetching the news"
+        },
+        "news": "News",
+        "subject": "Subject"
+    },
+    "openledger": {
+        "deposit_amount": "Deposit Amount",
+        "deposit_details": "Details",
+        "deposit_none": "No deposits",
+        "header_fiat": "Fiat",
+        "header_transaction_history": "Transaction history",
+        "loading": "Loading...",
+        "refresh_transaction_history": "Refresh",
+        "retry": "Retry",
+        "show_transaction_history": "Show transaction history",
+        "status": "Status",
+        "withdraw_amount": "Withdrawal Amount",
+        "withdraw_none": "No withdrawals"
+    },
+    "operation": {
+        "annual_upgrade_account": "{account} was upgraded to annual member",
+        "asset_create": "{account} created the asset {asset}",
+        "asset_fund_fee_pool":
+            "{account} funded {asset} fee pool with {amount}",
+        "asset_global_settle":
+            "{account} requested global settlement of {asset} at {price}",
+        "asset_issue": "{account} issued {amount} to {to}",
+        "asset_reserve": "{account} reserved {amount}",
+        "asset_settle": "{account} requested settlement of {amount}",
+        "asset_update": "{account} updated the asset {asset}",
+        "asset_update_feed_producers":
+            "{account} updated the feed producers for the asset {asset}",
+        "balance_claim": "{account} claimed a balance of {amount}",
+        "blacklisted_by": "{lister} blacklisted the account {listee}",
+        "call_order_update":
+            "{account} changed {debtSymbol} debt by {debt} and collateral by {collateral}",
+        "committee_member_update_global_parameters":
+            "{account} updated the global committee parameters",
+        "fill_order_buy": "{account} bought {amount} at {price}",
+        "fill_order_sell": "{account} sold {amount} at {price}",
+        "lifetime_upgrade_account": "{account} was upgraded to lifetime member",
+        "limit_order_buy":
+            "{account} placed an order to buy {amount} at {price}",
+        "limit_order_cancel": "{account} cancelled order #%(order)s",
+        "limit_order_sell":
+            "{account} placed an order to sell {amount} at {price}",
+        "no_recent": "No recent transactions",
+        "override_transfer":
+            "{issuer} transferred {amount} from {from} to {to}",
+        "pending": "승인대기 중... %(blocks)s 블록",
+        "proposal_create": "{account} created a proposed transaction",
+        "proposal_delete": "{account} deleted a proposed transaction",
+        "proposal_update": "{account} updated a proposed transaction",
+        "publish_feed": "{account} published feed price of {price}",
+        "reg_account": "{registrar} registered the account {new_account}",
+        "set_proxy": "{account} set {proxy} as their voting proxy",
+        "transfer": "{from} sent {amount} to {to}",
+        "transfer_account": "{account} ownership transferred to {to}",
+        "unlisted_by": "{lister} unlisted the account {listee}",
+        "update_account": "{account} updated their account data",
+        "vesting_balance_withdraw":
+            "{account} withdrew vesting balance of {amount}",
+        "whitelisted_by": "{lister} whitelisted the account {listee}",
+        "witness_create": "{account} was upgraded to become a witness",
+        "witness_pay": "Withdrew witness pay to account",
+        "witness_receive": "Received witness from witness",
+        "witness_update": "{account} update its witness info",
+        "worker_create":
+            "{account} created a worker proposal with daily pay of {pay}"
+    },
+    "page404": {
+        "asset_not_found_subtitle": "That asset does not exist",
+        "home": "집",
+        "market_not_found_subtitle": "That market does not exist",
+        "page_not_found_subtitle": "이 페이지는 존재하지 않습니다",
+        "page_not_found_title": "4페이지를 찾을 수 없습니다"
+    },
+    "pagination": {
+        "newer": "이전",
+        "older": "다음"
+    },
+    "proposal": {
+        "action": "Actions",
+        "approve": "Approve",
+        "asset_create":
+            "Create the asset %(asset)s using the account {account}",
+        "asset_issue": "Issue {amount} to {to} using {account}",
+        "asset_reserve": "Burn (reserve) {amount} using {account}",
+        "asset_settle": "Request a settlement of",
+        "asset_update": "Update the asset {asset} using the account {account}",
+        "call_order_update":
+            "Change {account} {debtSymbol} debt by {debt} and collateral by {collateral}",
+        "committee_member_update_global_parameters":
+            "Update committee global parameters by {account}",
+        "expires": "Expires",
+        "feed_producer":
+            "Update the feed producers for the asset {asset} using the account {account}",
+        "limit_order_buy":
+            "Place an order to buy {amount} at {price} for {account}",
+        "limit_order_create":
+            "Place order to buy %(buy_amount)s for %(sell_amount)s for %(account)s",
+        "limit_order_sell":
+            "Place an order to sell {amount} at {price} for {account}",
+        "override_transfer":
+            "Transfer {amount} from {from} to {to} by authority of {issuer}",
+        "reject": "Reject",
+        "status": "Status",
+        "transfer": "Transfer {amount} from {from} to {to}",
+        "update": {
+            "active_approvals_to_add": "Active approvals to add",
+            "active_approvals_to_remove": "Active approvals to remove",
+            "key_approvals_to_add": "Key approvals to add",
+            "key_approvals_to_remove": "Key approvals to remove",
+            "owner_approvals_to_add": "Owner approvals to add",
+            "owner_approvals_to_remove": "Owner approvals to remove"
+        },
+        "update_account": "Update account data for {account}",
+        "vesting_balance_withdraw":
+            "Withdraw {amount} from vesting balance of {account}"
+    },
+    "proposal_create": {
+        "expiration_time": "Expiration time",
+        "fee_paying_account": "Fee paying account",
+        "id": "Proposal object id",
+        "proposed_operations": "Proposed operations",
+        "review_period": "Review period begin"
+    },
+    "propose": "Propose",
     "refcode": {
         "claim": "Claim",
         "claim_refcode": "Claim Referral Code",
@@ -1638,7 +1779,6 @@
             "asset_publish_feed": "자산 가격정보 발행",
             "asset_reserve": "자산 소각",
             "asset_settle": "자산 강제청산",
-            "asset_settle_cancel": "Cancel asset settlement",
             "asset_update": "자산 업데이트",
             "asset_update_bitasset": "스마트코인 업데이트",
             "asset_update_feed_producers": "자산 피드 생성자 업데이트",

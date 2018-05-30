@@ -55,14 +55,14 @@
         "in_open_value":
             "%(asset)s piyasasındaki bekleyen emirlerin büyüklüğü (anlık değere göre): ",
         "intro_text_1":
-            "<b>Bitshares Merkezsiz Kriptopara Borsası</b> (BMKB) kripto para al-sat deneyiminizi kökten değiştirecek, yeni nesil bir borsa platformudur.",
+            "<b>RuDEX Merkezsiz Kriptopara Borsası</b> (BMKB) kripto para al-sat deneyiminizi kökten değiştirecek, yeni nesil bir borsa platformudur.",
         "intro_text_2":
             "<b>Bitshares</b>'de al-sat işlemleri herhangi bir aracı olmaksızın, doğrudan kullanıcıların kendi arasında gerçekleşir.",
         "intro_text_3":
             "Platform üzerinde kullanıcılar kendi hesaplarının tam kontrolüne sahiptir - hiçbir aracı kurum işlemlerinize müdahale edemez!",
         "intro_text_4":
             "Platformda BTC, ETH, STEEM, DASH, LTC, DOGE gibi coin'lerle işlem yapabileceğiniz gibi aynı zamanda kendi coin'inizi oluşturabilir ve hemen ticaretine başlayabilirsiniz.",
-        "intro_text_title": "Bitshares'e Hoş Geldiniz",
+        "intro_text_title": "RuDEX'e Hoş Geldiniz",
         "login_with": "Login with",
         "market_actions": "Takas işlemleri",
         "market_value": "Piyasa Değeri",
@@ -1126,9 +1126,9 @@
             "In an effort to provide enhanced security for the web-based wallet, we are migrating it, effective immediately to the address below. Please be sure to update any bookmarks you may have.",
         "text_1": "Local wallet detected",
         "text_2":
-            "Please backup your wallet now and restore the backup file to <a href='https://wallet.bitshares.org' target='blank' rel='noopener noreferrer'>https://wallet.bitshares.org</a>, which will be your new address for the web wallet. Thanks for your continued support.",
+            "Please backup your wallet now and restore the backup file to <a href='https://wallet.rudex.org' target='blank' rel='noopener noreferrer'>https://wallet.rudex.org</a>, which will be your new address for the web wallet. Thanks for your continued support.",
         "text_3":
-            "Please use <a href='https://wallet.bitshares.org' target='blank' rel='noopener noreferrer'>https://wallet.bitshares.org</a> from now on, your existing credentials will let you login there as well.",
+            "Please use <a href='https://wallet.rudex.org' target='blank' rel='noopener noreferrer'>https://wallet.rudex.org</a> from now on, your existing credentials will let you login there as well.",
         "title": "Notice"
     },
     "modal": {
@@ -1318,7 +1318,6 @@
     "proposal": {
         "action": "Hareketler",
         "approve": "Onayla",
-        "approvers": "Approver(s)",
         "asset_create":
             "%(asset)s dijital varlığını {account} hesabından oluştur.",
         "asset_issue": "Issue {amount} to {to} using {account}",
@@ -1340,7 +1339,6 @@
             "{account} adlı hesaptan {price} fiyatı üzerinden {amount} satmak için bir emir ver",
         "override_transfer":
             "Transfer {amount} from {from} to {to} by authority of {issuer}",
-        "proposals": "Proposals",
         "reject": "Reddet",
         "status": "Durum",
         "transfer": "Transfer miktarı: {amount}, gönderen: {from}, alıcı: {to}",
@@ -1656,7 +1654,6 @@
             "asset_publish_feed": "Yayın Duyurma",
             "asset_reserve": "Rezerve et",
             "asset_settle": "Aktif ödemesi",
-            "asset_settle_cancel": "Cancel asset settlement",
             "asset_update": "Güncelle",
             "asset_update_bitasset": "Akıllıpara güncelleme",
             "asset_update_feed_producers": "Fiyat kaynağı hesabı güncelleme",

@@ -585,7 +585,7 @@ class Header extends React.Component {
                         size="1_5x"
                         style={{position: "relative", top: 0, left: -8}}
                         name="deposit"
-                        title="icons.deposit"
+                        title="icons.deposit.deposit_withdraw"
                     />
                     <Translate
                         className="column-hide-small"
@@ -1028,6 +1028,7 @@ class Header extends React.Component {
                                             left: -8
                                         }}
                                         name="dashboard"
+                                        title="icons.dashboard"
                                     />
                                     <Translate
                                         className="column-hide-small"
@@ -1073,7 +1074,7 @@ class Header extends React.Component {
                                                 left: -8
                                             }}
                                             name="user"
-                                            title="icons.user"
+                                            title="icons.user.account"
                                         />
                                         <Translate
                                             className="column-hide-small"
@@ -1322,7 +1323,7 @@ class Header extends React.Component {
                                             <Icon
                                                 size="2x"
                                                 name="dashboard"
-                                                title="icons.dasboard"
+                                                title="icons.dashboard"
                                             />
                                         </div>
                                         <div className="table-cell">
@@ -1458,7 +1459,7 @@ class Header extends React.Component {
                                         <Icon
                                             size="2x"
                                             name="deposit-withdraw"
-                                            title="icons.deposit-withdraw"
+                                            title="icons.deposit.deposit_withdraw"
                                         />
                                     </div>
                                     <div className="table-cell">
@@ -1532,7 +1533,11 @@ class Header extends React.Component {
                                     )}
                                 >
                                     <div className="table-cell">
-                                        <Icon size="2x" name="server" />
+                                        <Icon
+                                            size="2x"
+                                            name="server"
+                                            title="icons.server"
+                                        />
                                     </div>
                                     <div className="table-cell">
                                         <Translate content="header.explorer" />
@@ -1549,7 +1554,11 @@ class Header extends React.Component {
                                     }}
                                 >
                                     <div className="table-cell">
-                                        <Icon size="2x" name="support" />
+                                        <Icon
+                                            size="2x"
+                                            name="support"
+                                            title="icons.support"
+                                        />
                                     </div>
                                     <div className="table-cell">
                                         <Translate content="header.support" />

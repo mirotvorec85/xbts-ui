@@ -58,7 +58,7 @@
             "发行用户定义资产（UIA），也可以买卖通用的数字资产如BTC、ETH等。",
         "intro_text_3": "尽情享受交易的乐趣吧！",
         "intro_text_4":
-            "<br/>网站：&nbsp;&nbsp;&nbsp;&nbsp;<a target='_blank' rel='noopener noreferrer' href='https://bitshares.org'>https://bitshares.org</a><br/>论坛：&nbsp;&nbsp;&nbsp;&nbsp;<a target='_blank' rel='noopener noreferrer' href='https://bitsharestalk.org'>https://bitsharestalk.org</a><br/>GitHub：<a target='_blank' rel='noopener noreferrer' href='https://github.com/bitshares/bitshares-core'>https://github.com/bitshares/bitshares-core</a>",
+            "<br/>网站：&nbsp;&nbsp;&nbsp;&nbsp;<a target='_blank' rel='noopener noreferrer' href='https://rudex.org'>https://rudex.org</a><br/>论坛：&nbsp;&nbsp;&nbsp;&nbsp;<a target='_blank' rel='noopener noreferrer' href='https://bitsharestalk.org'>https://bitsharestalk.org</a><br/>GitHub：<a target='_blank' rel='noopener noreferrer' href='https://github.com/bitshares/bitshares-core'>https://github.com/bitshares/bitshares-core</a>",
         "intro_text_title": "欢迎使用比特股去中心化交易所！",
         "login_with": "Login with",
         "market_actions": "市场操作",
@@ -379,7 +379,7 @@
             "workers_short": "预算项目"
         },
         "voting": "投票",
-        "welcome": "欢迎使用 BitShares 系统",
+        "welcome": "欢迎使用 RuDEX 系统",
         "whitelist": {
             "add": "加到白名单",
             "add_black": "加到黑名单",
@@ -750,7 +750,7 @@
         "loading": "载入中…",
         "nosync": "区块链数据陈旧，请等待数据完成同步",
         "synced": "已同步",
-        "title": "BitShares",
+        "title": "RuDEX",
         "unsynced": "未同步",
         "update_available": "有可用的更新"
     },
@@ -825,7 +825,7 @@
         "frozen": "账户 %(account)s 充提服务被冻结",
         "gateway": "网关",
         "gateway_text":
-            "网关能让你将 BitShares 中的资产与外部资产进行互换，比如 OPEN.BTC 到 BTC。",
+            "网关能让你将 BitShares 中的资产与外部资产进行互换，比如 RUDEX.BTC 到 BTC。",
         "generate": "生成地址",
         "generate_new": "获得新地址",
         "generate_new_memo": "获得新备注内容",
@@ -931,7 +931,7 @@
         "payments_beta": "转账（测试版）",
         "payments_legacy": "Send (legacy)",
         "settings": "设置",
-        "title": "BitShares 钱包",
+        "title": "RuDEX 钱包",
         "unlock": "解锁钱包",
         "unlock_password": "使用密码登录",
         "unlock_short": "登录",
@@ -978,7 +978,7 @@
             "borrow": "Borrow",
             "buy": "Buy"
         },
-        "download": "Download new version of BitShares UI",
+        "download": "Download new version of RuDEX UI",
         "excel": "Download .csv file",
         "eye": "Hide Node",
         "eye-striked": "Show Node",
@@ -1089,9 +1089,9 @@
             "为了提高浏览器钱包的安全性，我们已经将服务迁移至以下地址。请更新您的书签。",
         "text_1": "检测到本地钱包",
         "text_2":
-            "请立刻备份钱包，并在 <a href='https://wallet.bitshares.org' target='blank' rel='noopener noreferrer'>https://wallet.bitshares.org</a>将钱包恢复。请今后使用此地址访问浏览器钱包。感谢您一贯的支持。",
+            "请立刻备份钱包，并在 <a href='https://wallet.rudex.org' target='blank' rel='noopener noreferrer'>https://wallet.rudex.org</a>将钱包恢复。请今后使用此地址访问浏览器钱包。感谢您一贯的支持。",
         "text_3":
-            "请今后使用 <a href='https://wallet.bitshares.org' target='blank' rel='noopener noreferrer'>https://wallet.bitshares.org</a> 访问浏览器钱包。您当前的账户和密码不变，可以继续使用。",
+            "请今后使用 <a href='https://wallet.rudex.org' target='blank' rel='noopener noreferrer'>https://wallet.rudex.org</a> 访问浏览器钱包。您当前的账户和密码不变，可以继续使用。",
         "title": "迁移提示"
     },
     "modal": {
@@ -1217,7 +1217,6 @@
         "asset_issue": "{account} 将 {amount} 发行给 {to}",
         "asset_reserve": "{account} 销毁了 {amount}",
         "asset_settle": "{account} 请求清算 {amount}",
-        "asset_settle_cancel": "{account} cancelled settlement of {amount}",
         "asset_update": "{account} 更新了资产 {asset}",
         "asset_update_feed_producers": "{account} 更新了资产 {asset} 的喂价者",
         "balance_claim": "{account} 领取了余额 {amount}",
@@ -1269,7 +1268,6 @@
     "proposal": {
         "action": "操作",
         "approve": "批准",
-        "approvers": "Approver(s)",
         "asset_create": "使用账户 {account} 创建资产 %{asset}s",
         "asset_issue": "使用账户 {account} 将 {amount} 发行给 {to}",
         "asset_reserve": "使用账户 {account} 销毁 {amount}",
@@ -1289,7 +1287,6 @@
             "为账户 {account} 下单，以价格 {price} 卖出 {amount}",
         "override_transfer":
             "由 {issuer} 授权，将 {amount} 从账户 {from} 转账到 {to}",
-        "proposals": "Proposals",
         "reject": "否决",
         "status": "状态",
         "transfer": "将 {amount} 从账户 {from} 转账到 {to}",
@@ -1585,7 +1582,6 @@
             "asset_publish_feed": "发布资产喂价",
             "asset_reserve": "销毁资产",
             "asset_settle": "资产清算",
-            "asset_settle_cancel": "Cancel asset settlement",
             "asset_update": "更新资产",
             "asset_update_bitasset": "更新智能币",
             "asset_update_feed_producers": "更新资产喂价者",
@@ -1663,7 +1659,7 @@
         "final": "转账后余额",
         "from": "来自",
         "header": "转账详情",
-        "header_subheader": "可以将资产转账给其他 BitShares 帐号持有者",
+        "header_subheader": "可以将资产转账给其他 RuDEX 帐号持有者",
         "memo": "备注消息",
         "memo_unlock": "解锁钱包以查看交易备注",
         "optional": "可选",

@@ -563,6 +563,7 @@
         "to_market": "Ir al mercado",
         "total": "Total",
         "trading_pair": "Trading pair",
+        "trollbox": "Trollbox",
         "value": "Valor",
         "vertical": "Vertical",
         "vol_short": "Vol",
@@ -898,6 +899,10 @@
             "coming_soon": "Próximamente",
             "min_amount": "Monto minimo: %(minAmount)s %(symbol)s",
             "min_amount_error": "Por favor ingrese número >= mínimo",
+            "openledger_notice1":
+                "Read the official position of OpenLedger on the use of their gateways:",
+            "openledger_notice1_informed":
+                "I have read and am informed about OpenLedgers position.",
             "support_block": "Para soporte, póngase en contacto con RuDEX en:",
             "under_construction": "Under Construction"
         },
@@ -975,6 +980,7 @@
         "payments_beta": "enviar (Beta)",
         "payments_legacy": "Send (legacy)",
         "settings": "Configuraciónes",
+        "support": "Support",
         "title": "BitShares - Interfaz de Usiario",
         "unlock": "Desbloquear",
         "unlock_password": "Inicio de sesión en el Cloud Wallet",
@@ -1133,9 +1139,9 @@
             "En un esfuerzo por proporcionar una mayor seguridad para el monedero basado en la web, lo estamos migrando, con efecto inmediato a la dirección a continuación. Por favor, asegúrese de actualizar los marcadores que pueda tener.",
         "text_1": "Cartera local detecta",
         "text_2":
-            "Haga una copia de seguridad de su billetera ahora y restaure el archivo de respaldo a <a href='https://wallet.bitshares.org' target='blank' rel='noopener noreferrer'>https://wallet.bitshares.org</a>, cuál será su nueva dirección para la billetera web. Gracias por su apoyo continuo.",
+            "Haga una copia de seguridad de su billetera ahora y restaure el archivo de respaldo a <a href='https://market.rudex.org' target='blank' rel='noopener noreferrer'>https://market.rudex.org</a>, cuál será su nueva dirección para la billetera web. Gracias por su apoyo continuo.",
         "text_3":
-            "Please use <a href='https://wallet.bitshares.org' target='blank' rel='noopener noreferrer'>https://wallet.bitshares.org</a> a partir de ahora, sus credenciales existentes le permitirán iniciar sesión allí también.",
+            "Please use <a href='https://market.rudex.org' target='blank' rel='noopener noreferrer'>https://market.rudex.org</a> a partir de ahora, sus credenciales existentes le permitirán iniciar sesión allí también.",
         "title": "Aviso"
     },
     "modal": {
@@ -1479,6 +1485,7 @@
         "restore_key_count": "# de llaves",
         "restore_text":
             "Restaurar desde una copia de seguridad o importar claves.",
+        "rudexDarkTheme": "RuDEX dark",
         "show": "Mostrar",
         "showAssetPercent":
             "Mostrar porcentajes de activos en la página de la cuenta",

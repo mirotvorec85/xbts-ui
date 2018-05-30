@@ -56,12 +56,12 @@
             "This is the estimated value of the %(asset)s you have in open orders.",
         "intro_text_1": "Your Decentralized Exchange",
         "intro_text_2":
-            "<b>The DEX</b> is inherently decentralized, enabling you to trade the BitShares core token (BTS) and a range of trustless price-stable, market-pegged assets such as bitUSD, bitCNY, bitBTC, bitGold and more. These assets can all be traded with <b>zero</b> counter-party risk, putting you in total control of your funds.",
+            "<b>The DEX</b> is inherently decentralized, enabling you to trade the BitShares core token (BTS) and a range of trustless price-stable, market-pegged assets such as bitRUBLE, bitUSD, bitCNY, bitBTC, bitGold and more. These assets can all be traded with <b>zero</b> counter-party risk, putting you in total control of your funds.",
         "intro_text_3":
             "<b>The DEX</b> also enables creation of user-issued assets (UIAs), which can be traded against any other UIAs or trustless assets on the platform.  One well-known issuer on The DEX is <b>OpenLedger</b>, offering a host of assets including BTC, ETH, STEEM, DASH, LTC, DOGE, and many more",
         "intro_text_4":
             "This gives cryptocurrency traders a unique blend of traditional and decentralized trading, all in a familiar exchange interface. Happy trading!",
-        "intro_text_title": "Welcome to BitShares",
+        "intro_text_title": "Welcome to RuDEX",
         "login_with": "Login with",
         "market_actions": "Market actions",
         "market_value": "Market Value",
@@ -551,6 +551,7 @@
         "to_market": "Go to market",
         "total": "Total",
         "trading_pair": "Trading pair",
+        "trollbox": "Trollbox",
         "value": "Value",
         "vertical": "Vertical",
         "vol_short": "Vol",
@@ -960,6 +961,7 @@
         "payments_beta": "Send (Beta)",
         "payments_legacy": "Send (legacy)",
         "settings": "Settings",
+        "support": "Support",
         "title": "BitShares UI",
         "unlock": "Local Wallet Login",
         "unlock_password": "Cloud Wallet Login",
@@ -1048,6 +1050,7 @@
         "question_circle": "Help",
         "server": "Explore",
         "settle": "Settle",
+        "support": "Support",
         "share": "About",
         "shuffle": "Switch trading pair",
         "text": {
