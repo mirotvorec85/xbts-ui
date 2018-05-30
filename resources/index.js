@@ -11,11 +11,7 @@
     require("./electron_context_menu")({
         prepend: (params, browserWindow) => [
             {
-<<<<<<< HEAD
                 label: "RuDEX"
-=======
-                label: "Bitshares"
->>>>>>> bitshares
             }
         ]
     });
