@@ -200,7 +200,6 @@ class Dashboard extends React.Component {
         }
 
         const entries = ["accounts", "contacts", "recent"];
-        const activeIndex = entries.indexOf(currentEntry);
 
         return (
             <div ref="wrapper" className="grid-block vertical">

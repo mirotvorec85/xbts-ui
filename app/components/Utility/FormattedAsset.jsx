@@ -3,7 +3,7 @@ import {IntlProvider} from "react-intl";
 import {FormattedNumber} from "react-intl";
 import utils from "common/utils";
 import assetUtils from "common/asset_utils";
-import {PropTypes} from "react";
+import PropTypes from "prop-types";
 import Popover from "react-popover";
 import HelpContent from "./HelpContent";
 import AssetName from "./AssetName";
