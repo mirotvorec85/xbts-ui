@@ -2,7 +2,7 @@ import {connect} from "alt-react";
 import AssetStore from "stores/AssetStore";
 import React from "react";
 import MarketsActions from "actions/MarketsActions";
-import {Link} from "react-router/es";
+import {Link} from "react-router-dom";
 import AssetName from "../Utility/AssetName";
 import Icon from "../Icon/Icon";
 import {debounce} from "lodash-es";
@@ -459,16 +459,19 @@ class MarketPicker extends React.Component {
     }
 }
 
-MarketPicker = connect(MarketPicker, {
-    listenTo() {
-        return [AssetStore];
-    },
-    getProps() {
-        return {
-            searchAssets: AssetStore.getState().assets,
-            assetsLoading: AssetStore.getState().assetsLoading
-        };
+MarketPicker = connect(
+    MarketPicker,
+    {
+        listenTo() {
+            return [AssetStore];
+        },
+        getProps() {
+            return {
+                searchAssets: AssetStore.getState().assets,
+                assetsLoading: AssetStore.getState().assetsLoading
+            };
+        }
     }
-});
+);
 
 export default MarketPicker;

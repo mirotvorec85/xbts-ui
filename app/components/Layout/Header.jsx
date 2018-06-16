@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router/es";
+import {Link} from "react-router-dom";
 import {connect} from "alt-react";
 import ActionSheet from "react-foundation-apps/src/action-sheet";
 import AccountActions from "actions/AccountActions";
@@ -27,7 +27,6 @@ import AccountImage from "../Account/AccountImage";
 import {ChainStore} from "bitsharesjs/es";
 import WithdrawModal from "../Modal/WithdrawModalNew";
 import {List} from "immutable";
-import PropTypes from "prop-types";
 
 var logo = require("assets/logo-rudex-big.png");
 
@@ -46,15 +45,10 @@ const SUBMENUS = {
 };
 
 class Header extends React.Component {
-    static contextTypes = {
-        location: PropTypes.object.isRequired,
-        router: PropTypes.object.isRequired
-    };
-
-    constructor(props, context) {
+    constructor(props) {
         super();
         this.state = {
-            active: context.location.pathname,
+            active: props.location.pathname,
             accountsListDropdownActive: false
         };
 
@@ -74,13 +68,11 @@ class Header extends React.Component {
     }
 
     componentWillMount() {
-        this.unlisten = this.context.router.listen((newState, err) => {
-            if (!err) {
-                if (this.unlisten && this.state.active !== newState.pathname) {
-                    this.setState({
-                        active: newState.pathname
-                    });
-                }
+        this.unlisten = this.props.history.listen(newState => {
+            if (this.unlisten && this.state.active !== newState.pathname) {
+                this.setState({
+                    active: newState.pathname
+                });
             }
         });
     }
@@ -173,7 +165,7 @@ class Header extends React.Component {
             });
         }
 
-        this.context.router.push(route);
+        this.props.history.push(route);
         this._closeDropdown();
     }
 
@@ -214,10 +206,10 @@ class Header extends React.Component {
     _accountClickHandler(account_name, e) {
         e.preventDefault();
         ZfApi.publish("account_drop_down", "close");
-        if (this.context.location.pathname.indexOf("/account/") !== -1) {
-            let currentPath = this.context.location.pathname.split("/");
+        if (this.props.location.pathname.indexOf("/account/") !== -1) {
+            let currentPath = this.props.location.pathname.split("/");
             currentPath[2] = account_name;
-            this.context.router.push(currentPath.join("/"));
+            this.props.history.push(currentPath.join("/"));
         }
         if (account_name !== this.props.currentAccount) {
             AccountActions.setCurrentAccount.defer(account_name);
@@ -231,15 +223,7 @@ class Header extends React.Component {
             });
             this._closeDropdown();
         }
-        // this.onClickUser(account_name, e);
     }
-
-    // onClickUser(account, e) {
-    //     e.stopPropagation();
-    //     e.preventDefault();
-    //
-    //     this.context.router.push(`/account/${account}/overview`);
-    // }
 
     _toggleAccountDropdownMenu() {
         // prevent state toggling if user cannot have multiple accounts
@@ -422,7 +406,7 @@ class Header extends React.Component {
                         (active.indexOf("dashboard") !== -1 &&
                             active.indexOf("account") === -1)
                 })}
-                onClick={this._onNavigate.bind(this, "/")}
+                onClick={this._onNavigate.bind(this, "/dashboard")}
             >
                 <img style={{margin: 0, height: 40}} src={logo} />
             </a>
@@ -1014,10 +998,9 @@ class Header extends React.Component {
                             <li>
                                 <Link
                                     style={{flexFlow: "row"}}
-                                    to={"/dashboard"}
+                                    to={"/"}
                                     className={cnames({
-                                        active:
-                                            active.indexOf("/dashboard") !== -1
+                                        active: active === "/"
                                     })}
                                 >
                                     <Icon
@@ -1829,39 +1812,42 @@ class Header extends React.Component {
     }
 }
 
-export default connect(Header, {
-    listenTo() {
-        return [
-            AccountStore,
-            WalletUnlockStore,
-            WalletManagerStore,
-            SettingsStore,
-            GatewayStore
-        ];
-    },
-    getProps() {
-        const chainID = Apis.instance().chain_id;
-        return {
-            backedCoins: GatewayStore.getState().backedCoins,
-            myActiveAccounts: AccountStore.getState().myActiveAccounts,
-            currentAccount:
-                AccountStore.getState().currentAccount ||
-                AccountStore.getState().passwordAccount,
-            passwordAccount: AccountStore.getState().passwordAccount,
-            locked: WalletUnlockStore.getState().locked,
-            current_wallet: WalletManagerStore.getState().current_wallet,
-            lastMarket: SettingsStore.getState().viewSettings.get(
-                `lastMarket${chainID ? "_" + chainID.substr(0, 8) : ""}`
-            ),
-            starredAccounts: AccountStore.getState().starredAccounts,
-            passwordLogin: SettingsStore.getState().settings.get(
-                "passwordLogin"
-            ),
-            currentLocale: SettingsStore.getState().settings.get("locale"),
-            hiddenAssets: SettingsStore.getState().hiddenAssets,
-            settings: SettingsStore.getState().settings,
-            locales: SettingsStore.getState().defaults.locale,
-            contacts: AccountStore.getState().accountContacts
-        };
+export default connect(
+    Header,
+    {
+        listenTo() {
+            return [
+                AccountStore,
+                WalletUnlockStore,
+                WalletManagerStore,
+                SettingsStore,
+                GatewayStore
+            ];
+        },
+        getProps() {
+            const chainID = Apis.instance().chain_id;
+            return {
+                backedCoins: GatewayStore.getState().backedCoins,
+                myActiveAccounts: AccountStore.getState().myActiveAccounts,
+                currentAccount:
+                    AccountStore.getState().currentAccount ||
+                    AccountStore.getState().passwordAccount,
+                passwordAccount: AccountStore.getState().passwordAccount,
+                locked: WalletUnlockStore.getState().locked,
+                current_wallet: WalletManagerStore.getState().current_wallet,
+                lastMarket: SettingsStore.getState().viewSettings.get(
+                    `lastMarket${chainID ? "_" + chainID.substr(0, 8) : ""}`
+                ),
+                starredAccounts: AccountStore.getState().starredAccounts,
+                passwordLogin: SettingsStore.getState().settings.get(
+                    "passwordLogin"
+                ),
+                currentLocale: SettingsStore.getState().settings.get("locale"),
+                hiddenAssets: SettingsStore.getState().hiddenAssets,
+                settings: SettingsStore.getState().settings,
+                locales: SettingsStore.getState().defaults.locale,
+                contacts: AccountStore.getState().accountContacts
+            };
+        }
     }
-});
+);

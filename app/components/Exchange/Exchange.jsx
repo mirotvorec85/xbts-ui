@@ -43,22 +43,17 @@ class Exchange extends React.Component {
     static propTypes = {
         marketCallOrders: PropTypes.object.isRequired,
         activeMarketHistory: PropTypes.object.isRequired,
-        viewSettings: PropTypes.object.isRequired,
-        priceData: PropTypes.array.isRequired,
-        volumeData: PropTypes.array.isRequired
+        viewSettings: PropTypes.object.isRequired
     };
 
     static defaultProps = {
         marketCallOrders: [],
         activeMarketHistory: {},
-        viewSettings: {},
-        priceData: [],
-        volumeData: []
+        viewSettings: {}
     };
 
     constructor(props) {
         super();
-
         this.state = {
             ...this._initialState(props),
             expirationType: {
@@ -68,7 +63,8 @@ class Exchange extends React.Component {
             expirationCustomTime: {
                 bid: moment().add(1, "day"),
                 ask: moment().add(1, "day")
-            }
+            },
+            feeStatus: {}
         };
 
         this._getWindowSize = debounce(this._getWindowSize.bind(this), 150);
@@ -209,7 +205,6 @@ class Exchange extends React.Component {
             buySellTop: ws.get("buySellTop", true),
             buyFeeAssetIdx: ws.get("buyFeeAssetIdx", 0),
             sellFeeAssetIdx: ws.get("sellFeeAssetIdx", 0),
-            feeStatus: {},
             height: window.innerHeight,
             width: window.innerWidth,
             chartHeight: ws.get("chartHeight", 600),
@@ -240,11 +235,20 @@ class Exchange extends React.Component {
         });
     }
 
-    shouldComponentUpdate(nextProps) {
-        if (!nextProps.marketReady && !this.props.marketReady) {
+    shouldComponentUpdate(np, ns) {
+        if (!np.marketReady && !this.props.marketReady) {
             return false;
         }
-        return true;
+        let propsChanged = false;
+        for (let key in np) {
+            if (np.hasOwnProperty(key)) {
+                propsChanged =
+                    propsChanged ||
+                    !utils.are_equal_shallow(np[key], this.props[key]);
+                if (propsChanged) break;
+            }
+        }
+        return propsChanged || !utils.are_equal_shallow(ns, this.state);
     }
 
     _checkFeeStatus(
@@ -1230,10 +1234,6 @@ class Exchange extends React.Component {
             "showVolumeChart",
             true
         );
-        const enableChartClamp = this.props.viewSettings.get(
-            "enableChartClamp",
-            true
-        );
 
         if (quoteAsset.size && baseAsset.size && currentAccount.size) {
             base = baseAsset;
@@ -1846,6 +1846,8 @@ class Exchange extends React.Component {
                                     {name: "add", index: 4}
                                 ]}
                                 current={`${quoteSymbol}_${baseSymbol}`}
+                                location={this.props.location}
+                                history={this.props.history}
                             />
                         </div>
 

@@ -1,7 +1,14 @@
 import React from "react";
 import WalletDb from "stores/WalletDb";
-import Settings from "./components/Settings/SettingsContainer";
 import Translate from "react-translate-component";
+import Loadable from "react-loadable";
+import LoadingIndicator from "./components/LoadingIndicator";
+
+const Settings = Loadable({
+    loader: () =>
+        import(/* webpackChunkName: "settings" */ "./components/Settings/SettingsContainer"),
+    loading: LoadingIndicator
+});
 
 export default class Deprecate extends React.Component {
     hasWallet() {

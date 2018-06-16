@@ -13,6 +13,7 @@ import Pulsate from "./Pulsate";
 import marketUtils from "common/market_utils";
 import {Asset, Price} from "common/MarketClasses";
 import PropTypes from "prop-types";
+import {withRouter} from "react-router-dom";
 
 /**
  *  Given an amount and an asset, render it with proper precision
@@ -30,10 +31,6 @@ class FormattedPrice extends React.Component {
         base_amount: PropTypes.any,
         quote_amount: PropTypes.any,
         decimals: PropTypes.number
-    };
-
-    static contextTypes = {
-        router: PropTypes.object
     };
 
     constructor(props) {
@@ -94,7 +91,7 @@ class FormattedPrice extends React.Component {
         e.preventDefault();
         const {marketName, first, second} = this.state;
         const inverted = this.props.marketDirections.get(marketName);
-        this.context.router.push(
+        this.props.history.push(
             `/market/${
                 !inverted ? first.get("symbol") : second.get("symbol")
             }_${!inverted ? second.get("symbol") : first.get("symbol")}`
@@ -244,6 +241,7 @@ class FormattedPrice extends React.Component {
 FormattedPrice = AssetWrapper(FormattedPrice, {
     propNames: ["base_asset", "quote_asset"]
 });
+FormattedPrice = withRouter(FormattedPrice);
 
 export default class FormattedPriceWrapper extends React.Component {
     render() {

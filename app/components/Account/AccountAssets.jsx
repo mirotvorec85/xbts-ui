@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Link} from "react-router/es";
+import {Link} from "react-router-dom";
 import Translate from "react-translate-component";
 import AssetActions from "actions/AssetActions";
 import AssetStore from "stores/AssetStore";
@@ -170,7 +170,7 @@ class AccountAssets extends React.Component {
 
     _editButtonClick(symbol, account_name, e) {
         e.preventDefault();
-        this.props.router.push(
+        this.props.history.push(
             `/account/${account_name}/update-asset/${symbol}`
         );
     }
@@ -400,20 +400,23 @@ AccountAssets = AssetWrapper(AccountAssets, {
     withDynamic: true
 });
 
-export default connect(AccountAssets, {
-    listenTo() {
-        return [AssetStore];
-    },
-    getProps(props) {
-        let assets = Map(),
-            assetsList = List();
-        if (props.account.get("assets", []).size) {
-            props.account.get("assets", []).forEach(id => {
-                assetsList = assetsList.push(id);
-            });
-        } else {
-            assets = AssetStore.getState().assets;
+export default connect(
+    AccountAssets,
+    {
+        listenTo() {
+            return [AssetStore];
+        },
+        getProps(props) {
+            let assets = Map(),
+                assetsList = List();
+            if (props.account.get("assets", []).size) {
+                props.account.get("assets", []).forEach(id => {
+                    assetsList = assetsList.push(id);
+                });
+            } else {
+                assets = AssetStore.getState().assets;
+            }
+            return {assets, assetsList};
         }
-        return {assets, assetsList};
     }
-});
+);

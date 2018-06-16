@@ -5,7 +5,7 @@ import SettingsStore from "stores/SettingsStore";
 import {settingsAPIs} from "../../api/apiConfig";
 import willTransitionTo from "../../routerTransition";
 // import {routerTransitioner} from "../../routerTransition";
-import {withRouter} from "react-router/es";
+import {withRouter} from "react-router-dom";
 import {connect} from "alt-react";
 import cnames from "classnames";
 import Icon from "../Icon/Icon";
@@ -39,12 +39,7 @@ class ApiNode extends React.Component {
         });
         setTimeout(
             function() {
-                willTransitionTo(
-                    this.props.router,
-                    this.props.router.replace,
-                    () => {},
-                    false
-                );
+                willTransitionTo(false);
             }.bind(this),
             50
         );
@@ -584,17 +579,20 @@ class AccessSettings extends React.Component {
     }
 }
 
-AccessSettings = connect(AccessSettings, {
-    listenTo() {
-        return [SettingsStore];
-    },
-    getProps() {
-        return {
-            currentNode: SettingsStore.getState().settings.get("apiServer"),
-            activeNode: SettingsStore.getState().settings.get("activeNode"),
-            apiLatencies: SettingsStore.getState().apiLatencies
-        };
+AccessSettings = connect(
+    AccessSettings,
+    {
+        listenTo() {
+            return [SettingsStore];
+        },
+        getProps() {
+            return {
+                currentNode: SettingsStore.getState().settings.get("apiServer"),
+                activeNode: SettingsStore.getState().settings.get("activeNode"),
+                apiLatencies: SettingsStore.getState().apiLatencies
+            };
+        }
     }
-});
+);
 
 export default AccessSettings;

@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Translate from "react-translate-component";
 import cnames from "classnames";
 import {connect} from "alt-react";
 import SettingsActions from "actions/SettingsActions";
 import SettingsStore from "stores/SettingsStore";
 import counterpart from "counterpart";
+import {withRouter} from "react-router-dom";
 
 /**
  *  Renders a tab layout, handling switching and optionally persists the currently open tab using the SettingsStore
@@ -115,10 +115,6 @@ class Tabs extends React.Component {
         style: {}
     };
 
-    static contextTypes = {
-        router: PropTypes.object.isRequired
-    };
-
     constructor(props) {
         super();
         this.state = {
@@ -165,8 +161,7 @@ class Tabs extends React.Component {
         // Persist current tab if desired
 
         if (isLinkTo !== "") {
-            this.context.router.push(isLinkTo);
-            return;
+            this.props.history.push(isLinkTo);
         }
 
         if (this.props.setting) {
@@ -265,13 +260,18 @@ class Tabs extends React.Component {
     }
 }
 
-Tabs = connect(Tabs, {
-    listenTo() {
-        return [SettingsStore];
-    },
-    getProps() {
-        return {viewSettings: SettingsStore.getState().viewSettings};
+Tabs = connect(
+    Tabs,
+    {
+        listenTo() {
+            return [SettingsStore];
+        },
+        getProps() {
+            return {viewSettings: SettingsStore.getState().viewSettings};
+        }
     }
-});
+);
+
+Tabs = withRouter(Tabs);
 
 export {Tabs, Tab};

@@ -16,7 +16,7 @@ import SettingsActions from "actions/SettingsActions";
 import assetUtils from "common/asset_utils";
 import counterpart from "counterpart";
 import Icon from "../Icon/Icon";
-import {Link} from "react-router/es";
+import {Link} from "react-router-dom";
 import EquivalentPrice from "../Utility/EquivalentPrice";
 import LinkToAssetById from "../Utility/LinkToAssetById";
 import utils from "common/utils";
@@ -230,11 +230,6 @@ class AccountOverview extends React.Component {
         return render ? <span>&nbsp;|&nbsp;</span> : null;
     }
 
-    _onNavigate(route, e) {
-        e.preventDefault();
-        this.props.router.push(route);
-    }
-
     triggerSend(asset) {
         this.setState({send_asset: asset}, () => {
             if (this.send_modal) this.send_modal.show();
@@ -384,18 +379,13 @@ class AccountOverview extends React.Component {
             //     </a>
             // );
             transferLink = (
-                <a
-                    onClick={this._onNavigate.bind(
-                        this,
-                        `/transfer?asset=${asset.get("id")}`
-                    )}
-                >
+                <Link to={`/transfer?asset=${asset.get("id")}`}>
                     <Icon
                         name="transfer"
                         title="icons.transfer"
                         className="icon-14px"
                     />
-                </a>
+                </Link>
             );
 
             let {isBitAsset, borrowModal, borrowLink} = renderBorrow(

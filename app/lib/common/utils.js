@@ -1,4 +1,5 @@
 var numeral = require("numeral");
+import {is} from "immutable";
 
 numeral.register("locale", "rudex", {
     delimiters: {
@@ -15,7 +16,13 @@ numeral.register("locale", "rudex", {
         var b = number % 10;
         return ~~((number % 100) / 10) === 1
             ? "th"
-            : b === 1 ? "st" : b === 2 ? "nd" : b === 3 ? "rd" : "th";
+            : b === 1
+                ? "st"
+                : b === 2
+                    ? "nd"
+                    : b === 3
+                        ? "rd"
+                        : "th";
     },
     currency: {
         symbol: "$"
@@ -235,24 +242,20 @@ var Utils = {
             }
         }
         if (typeof a === "string" && typeof b === "string") {
-            return a !== b;
+            return a === b;
         }
+        if (a && a.toJS && b && b.toJS) return a === b;
         for (var key in a) {
-            if (!(key in b) || a[key] !== b[key]) {
+            if ((a.hasOwnProperty(key) && !(key in b)) || a[key] !== b[key]) {
                 return false;
             }
         }
         for (var key in b) {
-            if (!(key in a) || a[key] !== b[key]) {
+            if ((b.hasOwnProperty(key) && !(key in a)) || a[key] !== b[key]) {
                 return false;
             }
         }
-        if (
-            (a === null && b === undefined) ||
-            (b === null && a === undefined)
-        ) {
-            return false;
-        }
+
         return true;
     },
 
@@ -371,7 +374,7 @@ var Utils = {
 
         let eqValue =
             fromAsset.get("id") !== toAsset.get("id")
-                ? basePrecision * (amount / quotePrecision) / assetPrice
+                ? (basePrecision * (amount / quotePrecision)) / assetPrice
                 : amount;
 
         if (isNaN(eqValue) || !isFinite(eqValue)) {
@@ -415,7 +418,7 @@ var Utils = {
     },
 
     get_percentage(a, b) {
-        return Math.round(a / b * 100) + "%";
+        return Math.round((a / b) * 100) + "%";
     },
 
     replaceName(asset) {
@@ -447,7 +450,9 @@ var Utils = {
 
         let prefix = isBitAsset
             ? "bit"
-            : toReplace[i] ? toReplace[i].toLowerCase() : null;
+            : toReplace[i]
+                ? toReplace[i].toLowerCase()
+                : null;
 
         if (toReplace[i] === "RUDEX.") prefix = "";
 

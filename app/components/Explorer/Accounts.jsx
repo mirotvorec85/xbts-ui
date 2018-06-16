@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {Link} from "react-router/es";
+import {Link} from "react-router-dom";
 import Immutable from "immutable";
 import Translate from "react-translate-component";
 import AccountActions from "actions/AccountActions";
@@ -93,16 +93,19 @@ let AccountRowWrapper = props => {
     return <AccountRow {...props} />;
 };
 
-AccountRowWrapper = connect(AccountRowWrapper, {
-    listenTo() {
-        return [AccountStore];
-    },
-    getProps() {
-        return {
-            contacts: AccountStore.getState().accountContacts
-        };
+AccountRowWrapper = connect(
+    AccountRowWrapper,
+    {
+        listenTo() {
+            return [AccountStore];
+        },
+        getProps() {
+            return {
+                contacts: AccountStore.getState().accountContacts
+            };
+        }
     }
-});
+);
 
 class Accounts extends React.Component {
     constructor(props) {
