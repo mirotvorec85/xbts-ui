@@ -31,7 +31,7 @@ class RuDexGateway extends React.Component {
             let coin = props.coins[i];
             if (coin.backingCoin.toUpperCase() === name) return coin;
         }
-        return null;
+        return props.coins[0];
     }
 
     _findCoinBySymbol(props, name) {
@@ -327,13 +327,16 @@ class RuDexGateway extends React.Component {
     }
 }
 
-export default connect(RuDexGateway, {
-    listenTo() {
-        return [SettingsStore];
-    },
-    getProps() {
-        return {
-            viewSettings: SettingsStore.getState().viewSettings
-        };
+export default connect(
+    RuDexGateway,
+    {
+        listenTo() {
+            return [SettingsStore];
+        },
+        getProps() {
+            return {
+                viewSettings: SettingsStore.getState().viewSettings
+            };
+        }
     }
-});
+);
