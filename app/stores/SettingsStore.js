@@ -233,6 +233,7 @@ class SettingsStore {
                     "RUDEX.TT",
                     "RUDEX.SCR",
                     "RUDEX.DGB",
+                    "RUDEX.EOS",
                     "PPY",
                     "HERTZ",
                     "HERO",
@@ -242,7 +243,6 @@ class SettingsStore {
                     "BTWTY",
                     "ZEPH",
                     "ESCROW.RUBLE",
-                    "GDEX.EOS",
                     "BTC"
                 ],
                 markets_39f5e2ed: [
