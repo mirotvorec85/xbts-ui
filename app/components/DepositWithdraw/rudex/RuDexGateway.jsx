@@ -50,7 +50,6 @@ class RuDexGateway extends React.Component {
         if (state.action === "withdraw") {
             activeCoin = this._findCoinByName(props, activeCoin).symbol;
         }
-        console.log("getActiveCoin:", activeCoin, state);
 
         return activeCoin;
     }
