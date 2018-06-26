@@ -19,8 +19,10 @@ module.exports = {
         tooltipFillColor: "#fff",
         //axis
         axisLabelsColor: "#fff",
-        axisLineColor: "#AAAAAA",
-        indicatorLineColor: "#FFFFFF"
+        axisLineColor: "rgba(200, 200, 200, 0.3)",
+        indicatorLineColor: "#FFFFFF",
+        bgColor: "#191a1f",
+        textColor: "#e0e0e0"
     },
     rudexDarkTheme: {
         bidColor: "#50D2C2",
@@ -43,7 +45,9 @@ module.exports = {
         //axis
         axisLabelsColor: "#fff",
         axisLineColor: "#AAAAAA",
-        indicatorLineColor: "#FFFFFF"
+        indicatorLineColor: "#FFFFFF",
+        bgColor: "#191a1f",
+        textColor: "#e0e0e0"
     },
     darkTheme: {
         bidColor: "#6BA583",
@@ -65,8 +69,10 @@ module.exports = {
         tooltipFillColor: "#fff",
         //axis
         axisLabelsColor: "#fff",
-        axisLineColor: "#AAAAAA",
-        indicatorLineColor: "#FFFFFF"
+        axisLineColor: "rgba(200, 200, 200, 0.3)",
+        indicatorLineColor: "#FFFFFF",
+        bgColor: "#2a2a2a",
+        textColor: "#ffffff"
     },
     lightTheme: {
         bidColor: "#258A14",
@@ -88,7 +94,9 @@ module.exports = {
         tooltipFillColor: "#000",
         //axis
         axisLabelsColor: "#000",
-        axisLineColor: "#000",
-        indicatorLineColor: "#848484"
+        axisLineColor: "rgba(200, 200, 200, 0.3)",
+        indicatorLineColor: "#848484",
+        bgColor: "#fff",
+        textColor: "#3d3d3d"
     }
 };

@@ -20,6 +20,7 @@ class Dashboard extends React.Component {
             "4018d784": [
                 ["BTS", "RUBLE"],
                 ["RUBLE", "ESCROW.RUBLE"],
+                ["BTS", "RUDEX.EOS"],
                 ["BTS", "RUDEX.BTC"],
                 ["BTS", "RUDEX.ETH"],
                 ["BTS", "PPY"],
@@ -42,7 +43,6 @@ class Dashboard extends React.Component {
                 ["BTS", "OBITS"],
                 ["BTS", "SMOKE"],
                 ["BTS", "YOYOW"],
-                ["CNY", "GDEX.EOS"],
                 ["BTS", "BTWTY"],
                 ["BTS", "RUDEX.MUSE"],
                 ["BTS", "HERTZ"]
@@ -200,7 +200,6 @@ class Dashboard extends React.Component {
         }
 
         const entries = ["accounts", "contacts", "recent"];
-        const activeIndex = entries.indexOf(currentEntry);
 
         return (
             <div ref="wrapper" className="grid-block vertical">
@@ -232,13 +231,16 @@ let DashboardWrapper = props => {
     return <Dashboard {...props} />;
 };
 
-export default (DashboardWrapper = connect(DashboardWrapper, {
-    listenTo() {
-        return [SettingsStore];
-    },
-    getProps() {
-        return {
-            viewSettings: SettingsStore.getState().viewSettings
-        };
+export default (DashboardWrapper = connect(
+    DashboardWrapper,
+    {
+        listenTo() {
+            return [SettingsStore];
+        },
+        getProps() {
+            return {
+                viewSettings: SettingsStore.getState().viewSettings
+            };
+        }
     }
-}));
+));

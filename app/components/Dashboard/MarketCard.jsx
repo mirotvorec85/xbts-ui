@@ -8,16 +8,17 @@ import MarketsStore from "stores/MarketsStore";
 import {connect} from "alt-react";
 import utils from "common/utils";
 import Translate from "react-translate-component";
+import PropTypes from "prop-types";
 
 class MarketCard extends React.Component {
     static contextTypes = {
-        router: React.PropTypes.object.isRequired
+        router: PropTypes.object.isRequired
     };
 
     static propTypes = {
         quote: ChainTypes.ChainAsset.isRequired,
         base: ChainTypes.ChainAsset.isRequired,
-        invert: React.PropTypes.bool
+        invert: PropTypes.bool
     };
 
     static defaultProps = {
@@ -76,7 +77,10 @@ class MarketCard extends React.Component {
 
     goToMarket(e) {
         e.preventDefault();
-        this.context.router.push(
+
+        var history = this.context.router.history;
+
+        history.push(
             `/market/${this.props.base.get("symbol")}_${this.props.quote.get(
                 "symbol"
             )}`
@@ -112,7 +116,9 @@ class MarketCard extends React.Component {
             ? ""
             : parseFloat(marketStats.change) > 0
                 ? "change-up"
-                : parseFloat(marketStats.change) < 0 ? "change-down" : "";
+                : parseFloat(marketStats.change) < 0
+                    ? "change-down"
+                    : "";
 
         return (
             <div
@@ -182,15 +188,18 @@ class MarketCardWrapper extends React.Component {
     }
 }
 
-export default connect(MarketCardWrapper, {
-    listenTo() {
-        return [MarketsStore];
-    },
-    getProps(props) {
-        return {
-            marketStats: MarketsStore.getState().allMarketStats.get(
-                props.marketId
-            )
-        };
+export default connect(
+    MarketCardWrapper,
+    {
+        listenTo() {
+            return [MarketsStore];
+        },
+        getProps(props) {
+            return {
+                marketStats: MarketsStore.getState().allMarketStats.get(
+                    props.marketId
+                )
+            };
+        }
     }
-});
+);

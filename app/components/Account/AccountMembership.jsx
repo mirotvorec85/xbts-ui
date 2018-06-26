@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router/es";
+import {Link} from "react-router-dom";
 import Translate from "react-translate-component";
 import {ChainStore} from "bitsharesjs/es";
 import ChainTypes from "../Utility/ChainTypes";
@@ -74,11 +74,11 @@ class AccountMembership extends React.Component {
         let lifetime_fee = account.lifetime_referrer_fee_percentage / 100;
         let referrer_total_fee = 100 - network_fee - lifetime_fee;
         let referrer_fee =
-            referrer_total_fee * account.referrer_rewards_percentage / 10000;
+            (referrer_total_fee * account.referrer_rewards_percentage) / 10000;
         let registrar_fee = 100 - referrer_fee - lifetime_fee - network_fee;
 
         let lifetime_cost =
-            gprops.getIn([
+            (gprops.getIn([
                 "parameters",
                 "current_fees",
                 "parameters",
@@ -86,7 +86,7 @@ class AccountMembership extends React.Component {
                 1,
                 "membership_lifetime_fee"
             ]) *
-            gprops.getIn(["parameters", "current_fees", "scale"]) /
+                gprops.getIn(["parameters", "current_fees", "scale"])) /
             10000;
 
         let member_status = ChainStore.getAccountMemberStatus(
@@ -202,7 +202,7 @@ class AccountMembership extends React.Component {
                                                                 &nbsp; (<Link
                                                                     to={`account/${
                                                                         account.lifetime_referrer_name
-                                                                    }/overview`}
+                                                                    }`}
                                                                 >
                                                                     {
                                                                         account.lifetime_referrer_name
@@ -219,7 +219,7 @@ class AccountMembership extends React.Component {
                                                                 &nbsp; (<Link
                                                                     to={`account/${
                                                                         account.registrar_name
-                                                                    }/overview`}
+                                                                    }`}
                                                                 >
                                                                     {
                                                                         account.registrar_name
@@ -236,7 +236,7 @@ class AccountMembership extends React.Component {
                                                                 &nbsp; (<Link
                                                                     to={`account/${
                                                                         account.referrer_name
-                                                                    }/overview`}
+                                                                    }`}
                                                                 >
                                                                     {
                                                                         account.referrer_name

@@ -1,10 +1,11 @@
 import React from "react";
 import AssetWrapper from "./AssetWrapper";
+import PropTypes from "prop-types";
 
 class AssetImage extends React.Component {
     static propTypes = {
-        replaceNoneToBts: React.PropTypes.bool,
-        maxWidth: React.PropTypes.number
+        replaceNoneToBts: PropTypes.bool,
+        maxWidth: PropTypes.number
     };
 
     static defaultProps = {
