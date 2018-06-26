@@ -1,6 +1,6 @@
 import React from "react";
-import {PropTypes} from "react";
 import SettingsStore from "stores/SettingsStore";
+import PropTypes from "prop-types";
 
 /**
  *  Wrapper component for chatbro iframe

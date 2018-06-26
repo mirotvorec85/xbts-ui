@@ -14,23 +14,24 @@ import {ChainStore} from "bitsharesjs/es";
 import Modal from "react-foundation-apps/src/modal";
 import {checkFeeStatusAsync, checkBalance} from "common/trxHelper";
 import {Price, Asset} from "common/MarketClasses";
-import {debounce} from "lodash";
+import {debounce} from "lodash-es";
+import PropTypes from "prop-types";
 
 class RuDexWithdrawModal extends React.Component {
     static propTypes = {
         account: ChainTypes.ChainAccount.isRequired,
         issuer: ChainTypes.ChainAccount.isRequired,
         asset: ChainTypes.ChainAsset.isRequired,
-        output_coin_name: React.PropTypes.string.isRequired,
-        output_coin_symbol: React.PropTypes.string.isRequired,
-        output_coin_type: React.PropTypes.string.isRequired,
-        url: React.PropTypes.string,
-        output_wallet_type: React.PropTypes.string,
-        output_supports_memos: React.PropTypes.bool.isRequired,
-        amount_to_withdraw: React.PropTypes.string,
+        output_coin_name: PropTypes.string.isRequired,
+        output_coin_symbol: PropTypes.string.isRequired,
+        output_coin_type: PropTypes.string.isRequired,
+        url: PropTypes.string,
+        output_wallet_type: PropTypes.string,
+        output_supports_memos: PropTypes.bool.isRequired,
+        amount_to_withdraw: PropTypes.string,
         balance: ChainTypes.ChainObject,
-        min_amount: React.PropTypes.number,
-        withdraw_fee: React.PropTypes.number
+        min_amount: PropTypes.number,
+        withdraw_fee: PropTypes.number
     };
 
     constructor(props) {
@@ -606,7 +607,7 @@ class RuDexWithdrawModal extends React.Component {
                                 )}
                             />
                             <Trigger close={withdrawModalId}>
-                                <a href className="secondary button">
+                                <a className="secondary button">
                                     <Translate content="modal.confirmation.cancel" />
                                 </a>
                             </Trigger>
@@ -615,9 +616,9 @@ class RuDexWithdrawModal extends React.Component {
                 );
             }
             // if (this.state.withdraw_address_is_valid)
-            //   invalid_address_message = <Icon name="checkmark-circle" className="success" />;
+            //   invalid_address_message = <Icon name="checkmark-circle" title="icons.checkmark_circle.operation_succeed" className="success" />;
             // else
-            //   invalid_address_message = <Icon name="cross-circle" className="alert" />;
+            //   invalid_address_message = <Icon name="cross-circle" title="icons.cross_circle.operation_failed" className="alert" />;
         }
 
         let tabIndex = 1;
@@ -795,7 +796,6 @@ class RuDexWithdrawModal extends React.Component {
                             </label>
                             <div className="inline-label input-wrapper">
                                 <input type="text" disabled value={gateFee} />
-
                                 <div className="form-label select floating-dropdown">
                                     <div className="dropdown-wrapper inactive">
                                         <div>

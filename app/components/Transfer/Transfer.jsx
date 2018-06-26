@@ -18,15 +18,16 @@ import {
     checkBalance,
     shouldPayFeeWithAssetAsync
 } from "common/trxHelper";
-import {debounce, isNaN} from "lodash";
+import {debounce, isNaN} from "lodash-es";
 import classnames from "classnames";
 import {Asset} from "common/MarketClasses";
+import queryString from "query-string";
 
 class Transfer extends React.Component {
     constructor(props) {
         super(props);
         let state = Transfer.getInitialState();
-        let {query} = this.props.location;
+        let query = queryString.parse(props.location.search) || {};
 
         if (query.from) {
             state.from_name = query.from;
@@ -547,7 +548,9 @@ class Transfer extends React.Component {
                                 asset={
                                     asset_types.length > 0 && asset
                                         ? asset.get("id")
-                                        : asset_id ? asset_id : asset_types[0]
+                                        : asset_id
+                                            ? asset_id
+                                            : asset_types[0]
                                 }
                                 assets={asset_types}
                                 display_balance={balance}
@@ -726,15 +729,18 @@ class Transfer extends React.Component {
     }
 }
 
-export default connect(Transfer, {
-    listenTo() {
-        return [AccountStore];
-    },
-    getProps() {
-        return {
-            currentAccount: AccountStore.getState().currentAccount,
-            passwordAccount: AccountStore.getState().passwordAccount,
-            contactsList: AccountStore.getState().accountContacts
-        };
+export default connect(
+    Transfer,
+    {
+        listenTo() {
+            return [AccountStore];
+        },
+        getProps() {
+            return {
+                currentAccount: AccountStore.getState().currentAccount,
+                passwordAccount: AccountStore.getState().passwordAccount,
+                contactsList: AccountStore.getState().accountContacts
+            };
+        }
     }
-});
+);

@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "alt-react";
-import {Link} from "react-router/es";
+import {Link} from "react-router-dom";
 import {ChainStore} from "bitsharesjs/es";
 import Translate from "react-translate-component";
 import cnames from "classnames";
@@ -114,7 +114,9 @@ class MarketRow extends React.Component {
             ? ""
             : parseFloat(marketStats.change) > 0
                 ? "change-up"
-                : parseFloat(marketStats.change) < 0 ? "change-down" : "";
+                : parseFloat(marketStats.change) < 0
+                    ? "change-down"
+                    : "";
 
         let marketID = `${quote.get("symbol")}_${base.get("symbol")}`;
 
@@ -136,6 +138,7 @@ class MarketRow extends React.Component {
                             style={{cursor: "pointer"}}
                             className={starClass}
                             name="fi-star"
+                            title="icons.fi_star.market"
                         />
                     </div>
                 </td>
@@ -180,7 +183,7 @@ class MarketRow extends React.Component {
                 {inverted === null ? null : (
                     <td className="column-hide-small">
                         <a onClick={handleFlip}>
-                            <Icon name="shuffle" />
+                            <Icon name="shuffle" title="icons.shuffle" />
                         </a>
                     </td>
                 )}
@@ -192,6 +195,11 @@ class MarketRow extends React.Component {
                     >
                         <Icon
                             name={isHidden ? "plus-circle" : "cross-circle"}
+                            title={
+                                isHidden
+                                    ? "icons.plus_circle.show_market"
+                                    : "icons.cross_circle.hide_market"
+                            }
                             className="icon-14px"
                         />
                     </a>
@@ -202,19 +210,22 @@ class MarketRow extends React.Component {
 }
 
 MarketRow = BindToChainState(MarketRow);
-MarketRow = connect(MarketRow, {
-    listenTo() {
-        return [MarketsStore];
-    },
-    getProps(props) {
-        return {
-            marketStats: MarketsStore.getState().allMarketStats.get(
-                props.marketId
-            ),
-            starredMarkets: SettingsStore.getState().starredMarkets
-        };
+MarketRow = connect(
+    MarketRow,
+    {
+        listenTo() {
+            return [MarketsStore];
+        },
+        getProps(props) {
+            return {
+                marketStats: MarketsStore.getState().allMarketStats.get(
+                    props.marketId
+                ),
+                starredMarkets: SettingsStore.getState().starredMarkets
+            };
+        }
     }
-});
+);
 
 class MarketsTable extends React.Component {
     constructor() {
@@ -474,16 +485,19 @@ class MarketsTable extends React.Component {
     }
 }
 
-export default connect(MarketsTable, {
-    listenTo() {
-        return [SettingsStore];
-    },
-    getProps() {
-        let {marketDirections, hiddenMarkets} = SettingsStore.getState();
+export default connect(
+    MarketsTable,
+    {
+        listenTo() {
+            return [SettingsStore];
+        },
+        getProps() {
+            let {marketDirections, hiddenMarkets} = SettingsStore.getState();
 
-        return {
-            marketDirections,
-            hiddenMarkets
-        };
+            return {
+                marketDirections,
+                hiddenMarkets
+            };
+        }
     }
-});
+);

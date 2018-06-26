@@ -8,16 +8,17 @@ import MarketsStore from "stores/MarketsStore";
 import {connect} from "alt-react";
 import utils from "common/utils";
 import Translate from "react-translate-component";
+import PropTypes from "prop-types";
 
 class MarketCard extends React.Component {
     static contextTypes = {
-        router: React.PropTypes.object.isRequired
+        router: PropTypes.object.isRequired
     };
 
     static propTypes = {
         quote: ChainTypes.ChainAsset.isRequired,
         base: ChainTypes.ChainAsset.isRequired,
-        invert: React.PropTypes.bool
+        invert: PropTypes.bool
     };
 
     static defaultProps = {
@@ -112,7 +113,9 @@ class MarketCard extends React.Component {
             ? ""
             : parseFloat(marketStats.change) > 0
                 ? "change-up"
-                : parseFloat(marketStats.change) < 0 ? "change-down" : "";
+                : parseFloat(marketStats.change) < 0
+                    ? "change-down"
+                    : "";
 
         return (
             <div

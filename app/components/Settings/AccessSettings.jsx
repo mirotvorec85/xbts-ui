@@ -5,7 +5,7 @@ import SettingsStore from "stores/SettingsStore";
 import {settingsAPIs} from "../../api/apiConfig";
 import willTransitionTo from "../../routerTransition";
 // import {routerTransitioner} from "../../routerTransition";
-import {withRouter} from "react-router/es";
+import {withRouter} from "react-router-dom";
 import {connect} from "alt-react";
 import cnames from "classnames";
 import Icon from "../Icon/Icon";
@@ -39,12 +39,7 @@ class ApiNode extends React.Component {
         });
         setTimeout(
             function() {
-                willTransitionTo(
-                    this.props.router,
-                    this.props.router.replace,
-                    () => {},
-                    false
-                );
+                willTransitionTo(false);
             }.bind(this),
             50
         );
@@ -131,9 +126,11 @@ class ApiNode extends React.Component {
                             id="automatic_node_switcher"
                             type="checkbox"
                             checked={autoActive}
+                            onChange={() => {}}
                         />
                         <label />
                     </span>
+
                     <p style={{fontSize: "80%"}}>
                         <Translate content="settings.automatic_short" />:
                     </p>
@@ -144,20 +141,20 @@ class ApiNode extends React.Component {
                         <Icon
                             className={color + " default-icon"}
                             name={isActive ? "connected" : "disconnected"}
-                            size="1_5x"
-                            onClick={this.activate.bind(this, url)}
                             title={
                                 isActive
-                                    ? "settings.active_node"
-                                    : "settings.switch"
+                                    ? "icons.connected"
+                                    : "icons.disconnected"
                             }
+                            size="1_5x"
+                            onClick={this.activate.bind(this, url)}
                         />
                         <Icon
                             className={color + " hover-icon"}
                             name={"connect"}
+                            title="icons.connect"
                             size="1_5x"
                             onClick={this.activate.bind(this, url)}
-                            title="settings.switch"
                         />
                     </a>
                     {name}
@@ -178,6 +175,7 @@ class ApiNode extends React.Component {
                                 id="automatic_node_switcher"
                                 type="checkbox"
                                 checked={autoActive}
+                                onChange={() => {}}
                             />
                             <label />
                         </span>
@@ -235,8 +233,8 @@ class ApiNode extends React.Component {
                                     <Icon
                                         className={"shuffle"}
                                         name={"eye-striked"}
+                                        title="icons.eye_striked"
                                         size="1_5x"
-                                        title="settings.show"
                                     />
                                 </a>
                             )}
@@ -246,8 +244,8 @@ class ApiNode extends React.Component {
                                     <Icon
                                         className={"shuffle"}
                                         name={"eye"}
+                                        title="icons.eye"
                                         size="1_5x"
-                                        title="settings.hide"
                                     />
                                 </a>
                             )}
@@ -256,8 +254,8 @@ class ApiNode extends React.Component {
                                 <a onClick={this.remove.bind(this, url, name)}>
                                     <Icon
                                         name={"times"}
+                                        title="icons.times"
                                         size="1_5x"
-                                        title="settings.remove"
                                     />
                                 </a>
                             )}
@@ -270,20 +268,21 @@ class ApiNode extends React.Component {
                                     <Icon
                                         className={color + " default-icon"}
                                         name={"disconnected"}
+                                        title="icons.connect"
                                         size="1_5x"
-                                        title="settings.switch"
                                     />
                                     <Icon
                                         className={color + " hover-icon"}
                                         name={"connect"}
+                                        title="icons.connect"
                                         size="1_5x"
-                                        title="settings.switch"
                                     />
                                 </a>
                             ) : (
                                 <Icon
                                     className={color}
                                     name={"connected"}
+                                    title="icons.connected"
                                     size="2x"
                                     title="settings.active_node"
                                 />
@@ -581,17 +580,20 @@ class AccessSettings extends React.Component {
     }
 }
 
-AccessSettings = connect(AccessSettings, {
-    listenTo() {
-        return [SettingsStore];
-    },
-    getProps() {
-        return {
-            currentNode: SettingsStore.getState().settings.get("apiServer"),
-            activeNode: SettingsStore.getState().settings.get("activeNode"),
-            apiLatencies: SettingsStore.getState().apiLatencies
-        };
+AccessSettings = connect(
+    AccessSettings,
+    {
+        listenTo() {
+            return [SettingsStore];
+        },
+        getProps() {
+            return {
+                currentNode: SettingsStore.getState().settings.get("apiServer"),
+                activeNode: SettingsStore.getState().settings.get("activeNode"),
+                apiLatencies: SettingsStore.getState().apiLatencies
+            };
+        }
     }
-});
+);
 
 export default AccessSettings;

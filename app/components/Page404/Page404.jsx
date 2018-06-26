@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router";
+import {Link} from "react-router-dom";
 import {connect} from "alt-react";
 import SettingsStore from "stores/SettingsStore";
 import Translate from "react-translate-component";
@@ -57,13 +57,16 @@ class Page404 extends React.Component {
     }
 }
 
-export default (Page404 = connect(Page404, {
-    listenTo() {
-        return [SettingsStore];
-    },
-    getProps() {
-        return {
-            theme: SettingsStore.getState().settings.get("themes")
-        };
+export default (Page404 = connect(
+    Page404,
+    {
+        listenTo() {
+            return [SettingsStore];
+        },
+        getProps() {
+            return {
+                theme: SettingsStore.getState().settings.get("themes")
+            };
+        }
     }
-}));
+));

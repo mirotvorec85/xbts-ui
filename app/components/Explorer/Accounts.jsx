@@ -1,10 +1,10 @@
 import React from "react";
-import {PropTypes} from "react";
-import {Link} from "react-router/es";
+import PropTypes from "prop-types";
+import {Link} from "react-router-dom";
 import Immutable from "immutable";
 import Translate from "react-translate-component";
 import AccountActions from "actions/AccountActions";
-import {debounce} from "lodash";
+import {debounce} from "lodash-es";
 import ChainTypes from "../Utility/ChainTypes";
 import Icon from "../Icon/Icon";
 import BindToChainState from "../Utility/BindToChainState";
@@ -52,11 +52,17 @@ class AccountRow extends React.Component {
                 <td>{account.get("id")}</td>
                 {contacts.has(accountName) ? (
                     <td onClick={this._onRemoveContact.bind(this, accountName)}>
-                        <Icon name="minus-circle" />
+                        <Icon
+                            name="minus-circle"
+                            title="icons.minus_circle.remove_contact"
+                        />
                     </td>
                 ) : (
                     <td onClick={this._onAddContact.bind(this, accountName)}>
-                        <Icon name="plus-circle" />
+                        <Icon
+                            name="plus-circle"
+                            title="icons.plus_circle.add_contact"
+                        />
                     </td>
                 )}
                 <td>
@@ -87,16 +93,19 @@ let AccountRowWrapper = props => {
     return <AccountRow {...props} />;
 };
 
-AccountRowWrapper = connect(AccountRowWrapper, {
-    listenTo() {
-        return [AccountStore];
-    },
-    getProps() {
-        return {
-            contacts: AccountStore.getState().accountContacts
-        };
+AccountRowWrapper = connect(
+    AccountRowWrapper,
+    {
+        listenTo() {
+            return [AccountStore];
+        },
+        getProps() {
+            return {
+                contacts: AccountStore.getState().accountContacts
+            };
+        }
     }
-});
+);
 
 class Accounts extends React.Component {
     constructor(props) {
@@ -192,7 +201,10 @@ class Accounts extends React.Component {
                                         />
                                     </th>
                                     <th>
-                                        <Icon name="user" />
+                                        <Icon
+                                            name="user"
+                                            title="icons.user.account"
+                                        />
                                     </th>
                                     <th>
                                         <Translate
