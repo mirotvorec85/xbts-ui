@@ -208,8 +208,12 @@ const MarketUtils = {
             base.toJS ? base.get("precision") : base.precision
         );
         let pricePrecision = order.call_price
-            ? quote.toJS ? quote.get("precision") : quote.precision
-            : base.toJS ? base.get("precision") : base.precision;
+            ? quote.toJS
+                ? quote.get("precision")
+                : quote.precision
+            : base.toJS
+                ? base.get("precision")
+                : base.precision;
 
         let buy, sell;
         let callPrice;
@@ -271,7 +275,7 @@ const MarketUtils = {
             }
         } else if (!ask) {
             amount = this.limitByPrecision(
-                buy.amount / sell.amount * order.for_sale / quotePrecision,
+                ((buy.amount / sell.amount) * order.for_sale) / quotePrecision,
                 quote
             );
             value = order.for_sale / basePrecision;
@@ -332,7 +336,9 @@ const MarketUtils = {
         );
         let className = isCall
             ? "orderHistoryCall"
-            : isAsk ? "orderHistoryBid" : "orderHistoryAsk";
+            : isAsk
+                ? "orderHistoryBid"
+                : "orderHistoryAsk";
 
         let time;
         if (order.time) {

@@ -79,6 +79,7 @@ class SyncError extends React.Component {
                     <p style={{marginBottom: 0}}>
                         <Translate content="sync_fail.sub_text_1" />
                     </p>
+
                     <Icon name="clock" title="icons.clock" size="5x" />
 
                     <p>
@@ -103,22 +104,25 @@ class SyncError extends React.Component {
     }
 }
 
-SyncError = connect(SyncError, {
-    listenTo() {
-        return [BlockchainStore, SettingsStore];
-    },
-    getProps() {
-        return {
-            rpc_connection_status: BlockchainStore.getState()
-                .rpc_connection_status,
-            apis: SettingsStore.getState().defaults.apiServer,
-            apiServer: SettingsStore.getState().settings.get("apiServer"),
-            defaultConnection: SettingsStore.getState().defaultSettings.get(
-                "apiServer"
-            ),
-            apiLatencies: SettingsStore.getState().apiLatencies
-        };
+SyncError = connect(
+    SyncError,
+    {
+        listenTo() {
+            return [BlockchainStore, SettingsStore];
+        },
+        getProps() {
+            return {
+                rpc_connection_status: BlockchainStore.getState()
+                    .rpc_connection_status,
+                apis: SettingsStore.getState().defaults.apiServer,
+                apiServer: SettingsStore.getState().settings.get("apiServer"),
+                defaultConnection: SettingsStore.getState().defaultSettings.get(
+                    "apiServer"
+                ),
+                apiLatencies: SettingsStore.getState().apiLatencies
+            };
+        }
     }
-});
+);
 
 export default SyncError;
