@@ -9,6 +9,11 @@ require("file-loader?name=asset-symbols/[name].png!./gold.png");
 require("file-loader?name=asset-symbols/[name].png!./btc.png");
 require("file-loader?name=asset-symbols/silver.png!./silver.png");
 
+// xbts assets
+require("file-loader?name=asset-symbols/[name].png!./xbtsx.sth.png");
+require("file-loader?name=asset-symbols/[name].png!./xbtsx.post.png");
+require("file-loader?name=asset-symbols/[name].png!./yaranet.png");
+
 // rudex assets
 require("file-loader?name=asset-symbols/[name].png!./ppy.png");
 require("file-loader?name=asset-symbols/[name].png!./rudex.btc.png");
@@ -19,7 +24,6 @@ require("file-loader?name=asset-symbols/[name].png!./rudex.eos.png");
 require("file-loader?name=asset-symbols/[name].png!./rudex.eth.png");
 require("file-loader?name=asset-symbols/[name].png!./rudex.gbg.png");
 require("file-loader?name=asset-symbols/[name].png!./rudex.golos.png");
-require("file-loader?name=asset-symbols/[name].png!./rudex.ltc.png");
 require("file-loader?name=asset-symbols/[name].png!./rudex.muse.png");
 require("file-loader?name=asset-symbols/[name].png!./rudex.sbd.png");
 require("file-loader?name=asset-symbols/[name].png!./rudex.scr.png");
@@ -30,7 +34,6 @@ require("file-loader?name=asset-symbols/[name].png!./rudex.krm.png");
 // 3rd party assets
 require("file-loader?name=asset-symbols/[name].png!./obits.png");
 require("file-loader?name=asset-symbols/[name].png!./btwty.png");
-require("file-loader?name=asset-symbols/[name].png!./gdex.eos.png");
 require("file-loader?name=asset-symbols/[name].png!./yoyow.png");
 require("file-loader?name=asset-symbols/[name].png!./hero.png");
 require("file-loader?name=asset-symbols/[name].png!./ruble.png");
@@ -39,3 +42,14 @@ require("file-loader?name=asset-symbols/[name].png!./rub.png");
 require("file-loader?name=asset-symbols/[name].png!./smoke.png");
 require("file-loader?name=asset-symbols/[name].png!./zeph.png");
 require("file-loader?name=asset-symbols/[name].png!./hertz.png");
+require("file-loader?name=asset-symbols/[name].png!./open.btc.png");
+require("file-loader?name=asset-symbols/[name].png!./open.eth.png");
+require("file-loader?name=asset-symbols/[name].png!./open.ltc.png");
+require("file-loader?name=asset-symbols/[name].png!./open.lisk.png");
+require("file-loader?name=asset-symbols/[name].png!./open.waves.png");
+require("file-loader?name=asset-symbols/[name].png!./open.doge.png");
+require("file-loader?name=asset-symbols/[name].png!./gdex.eth.png");
+require("file-loader?name=asset-symbols/[name].png!./gdex.btc.png");
+require("file-loader?name=asset-symbols/[name].png!./gdex.eos.png");
+require("file-loader?name=asset-symbols/[name].png!./open.steem.png");
+require("file-loader?name=asset-symbols/[name].png!./open.dash.png");
