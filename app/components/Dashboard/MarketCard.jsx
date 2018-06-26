@@ -77,7 +77,10 @@ class MarketCard extends React.Component {
 
     goToMarket(e) {
         e.preventDefault();
-        this.context.router.push(
+
+        var history = this.context.router.history;
+
+        history.push(
             `/market/${this.props.base.get("symbol")}_${this.props.quote.get(
                 "symbol"
             )}`
@@ -185,15 +188,18 @@ class MarketCardWrapper extends React.Component {
     }
 }
 
-export default connect(MarketCardWrapper, {
-    listenTo() {
-        return [MarketsStore];
-    },
-    getProps(props) {
-        return {
-            marketStats: MarketsStore.getState().allMarketStats.get(
-                props.marketId
-            )
-        };
+export default connect(
+    MarketCardWrapper,
+    {
+        listenTo() {
+            return [MarketsStore];
+        },
+        getProps(props) {
+            return {
+                marketStats: MarketsStore.getState().allMarketStats.get(
+                    props.marketId
+                )
+            };
+        }
     }
-});
+);
