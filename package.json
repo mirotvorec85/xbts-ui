@@ -1,9 +1,9 @@
 {
-    "name": "RuDEX-light",
+    "name": "XBTS-light",
     "version": "2.0.180623",
     "description": "Advanced wallet interface for the BitShares financial blockchain.",
-    "homepage": "https://github.com/blckchnd/rudex-ui",
-    "author": "RuDEX Team <support@rudex.org>",
+    "homepage": "https://github.com/xbts/xbts-ui",
+    "author": "XBTS Team",
     "contributors": [
         "Sigve Kvalsvik <kvalsvik.crypto@gmail.com>",
         "James Calfee",
@@ -18,7 +18,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/blckchnd/rudex-ui"
+        "url": "git://github.com/xbts/xbts-ui"
     },
     "main": "build/electron/index.js",
     "scripts": {
@@ -81,8 +81,8 @@
     },
     "browsersList": "electron 1.7",
     "build": {
-        "productName": "RuDEX",
-        "appId": "org.rudex.market",
+        "productName": "XBTS",
+        "appId": "io.xbts.ex",
         "files": [
             "build/electron",
             "!node_modules"
@@ -121,7 +121,7 @@
                 "deb",
                 "AppImage"
             ],
-            "synopsis": "RuDEX (BitShares): Cryptocurrency and Decentralized Exchange"
+            "synopsis": "XBTS (BitShares): Cryptocurrency and Decentralized Exchange"
         },
         "directories": {
             "buildResources": "resources",
