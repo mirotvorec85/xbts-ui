@@ -15,7 +15,7 @@ class ChatBro extends React.Component {
         let chatUrl = null;
         switch (currentLocale) {
             default:
-                chatUrl = `https://chat.rudex.org/${currentLocale}/`;
+                chatUrl = `https://chat.xbts.io/${currentLocale}/`;
                 break;
         }
 
