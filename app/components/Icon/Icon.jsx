@@ -58,7 +58,16 @@ let icons = [
     "withdraw",
     "filter",
     "info-circle-o",
-    "zoom"
+    "zoom",
+    "sign-msg",
+    "pie-chart",
+    "privacy",
+    "explorer",
+    "group",
+    "create-user",
+    "user-login",
+    "network",
+    "mining"
 ];
 
 let icons_map = {};
