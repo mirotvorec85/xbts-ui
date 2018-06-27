@@ -28,7 +28,7 @@ import {ChainStore} from "bitsharesjs/es";
 import WithdrawModal from "../Modal/WithdrawModalNew";
 import {List} from "immutable";
 
-var logo = require("assets/logo-rudex-big.png");
+var logo = require("assets/logo-xbts.png");
 
 const FlagImage = ({flag, width = 20, height = 20}) => {
     return (
@@ -393,7 +393,7 @@ class Header extends React.Component {
             <a
                 style={{padding: "12px 1.75rem"}}
                 className={cnames({active: false})}
-                href="https://rudex.org"
+                href="https://xbts.io"
                 target="_blank"
             >
                 <img style={{margin: 0, height: 40}} src={logo} />
@@ -592,8 +592,8 @@ class Header extends React.Component {
                     <Icon
                         size="1_5x"
                         style={{position: "relative", top: 0, left: -8}}
-                        name="server"
-                        title="icons.deposit.server"
+                        name="explorer"
+                        title="icons.deposit.explorer"
                     />
                     <Translate
                         className="column-hide-small"
@@ -701,8 +701,8 @@ class Header extends React.Component {
                     <Icon
                         size="1_5x"
                         style={{position: "relative", top: 0, left: -8}}
-                        name="text"
-                        title="icons.text.signed_messages"
+                        name="sign-msg"
+                        title="icons.sign-msg.signed_messages"
                     />
                     <Translate
                         className="column-hide-small"
@@ -723,8 +723,8 @@ class Header extends React.Component {
                     <Icon
                         size="1_5x"
                         style={{position: "relative", top: 0, left: -8}}
-                        name="text"
-                        title="icons.text.membership_stats"
+                        name="network"
+                        title="icons.network.membership_stats"
                     />
                     <Translate
                         className="column-hide-small"
@@ -789,8 +789,8 @@ class Header extends React.Component {
                     <Icon
                         size="1_5x"
                         style={{position: "relative", top: 0, left: -8}}
-                        name="warning"
-                        title="icons.warning"
+                        name="privacy"
+                        title="icons.privacy"
                     />
                     <Translate
                         className="column-hide-small"
@@ -1179,8 +1179,8 @@ class Header extends React.Component {
                                 <div className="table-cell">
                                     <Icon
                                         size="2x"
-                                        name="folder"
-                                        title="icons.folder"
+                                        name="group"
+                                        title="icons.group"
                                     />
                                 </div>
                                 <div className="table-cell">
@@ -1243,8 +1243,8 @@ class Header extends React.Component {
                                     <div className="table-cell">
                                         <Icon
                                             size="2x"
-                                            name="power"
-                                            title="icons.power"
+                                            name="user-login"
+                                            title="icons.user-login"
                                         />
                                     </div>
                                     <div className="table-cell">
@@ -1394,8 +1394,8 @@ class Header extends React.Component {
                                     <div className="table-cell">
                                         <Icon
                                             size="2x"
-                                            name="server"
-                                            title="icons.server"
+                                            name="explorer"
+                                            title="icons.explorer"
                                         />
                                     </div>
                                     <div className="table-cell">
@@ -1522,8 +1522,8 @@ class Header extends React.Component {
                                     <div className="table-cell">
                                         <Icon
                                             size="2x"
-                                            name="server"
-                                            title="icons.server"
+                                            name="explorer"
+                                            title="icons.explorer"
                                         />
                                     </div>
                                     <div className="table-cell">
@@ -1535,7 +1535,7 @@ class Header extends React.Component {
                                     onClick={e => {
                                         e.preventDefault;
                                         window.open(
-                                            "https://rudex.freshdesk.com",
+                                            "https://t.me/xbtsio",
                                             "_blank"
                                         );
                                     }}
@@ -1663,8 +1663,8 @@ class Header extends React.Component {
                                     <div className="table-cell">
                                         <Icon
                                             size="2x"
-                                            name="text"
-                                            title="icons.text.signed_messages"
+                                            name="sign-msg"
+                                            title="icons.sign-msg.signed_messages"
                                         />
                                     </div>
                                     <div className="table-cell">
@@ -1687,8 +1687,8 @@ class Header extends React.Component {
                                     <div className="table-cell">
                                         <Icon
                                             size="2x"
-                                            name="text"
-                                            title="icons.text.membership_stats"
+                                            name="network"
+                                            title="icons.network.membership_stats"
                                         />
                                     </div>
                                     <div className="table-cell">
@@ -1759,8 +1759,8 @@ class Header extends React.Component {
                                     <div className="table-cell">
                                         <Icon
                                             size="2x"
-                                            name="warning"
-                                            title="icons.warning"
+                                            name="privacy"
+                                            title="icons.privacy"
                                         />
                                     </div>
                                     <div className="table-cell">
@@ -1787,8 +1787,8 @@ class Header extends React.Component {
                                         <div className="table-cell">
                                             <Icon
                                                 size="2x"
-                                                name="folder"
-                                                title="icons.folder"
+                                                name="group"
+                                                title="icons.group"
                                             />
                                         </div>
                                         <div className="table-cell">
