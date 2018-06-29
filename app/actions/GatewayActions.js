@@ -101,6 +101,38 @@ class GatewayActions {
         }
     }
 
+    fetchCoinsSimple({backer = "XBTSX", url = undefined} = {}) {
+        if (!inProgress["fetchCoinsSimple_" + backer]) {
+            inProgress["fetchCoinsSimple_" + backer] = true;
+            return dispatch => {
+                let fetchCoinsTimeout = setTimeout(
+                    onGatewayTimeout.bind(null, dispatch, backer),
+                    GATEWAY_TIMEOUT
+                );
+                fetchCoinsSimple(url)
+                    .then(coins => {
+                        clearTimeout(fetchCoinsTimeout);
+                        delete inProgress["fetchCoinsSimple_" + backer];
+                        dispatch({
+                            coins: coins,
+                            backer
+                        });
+                    })
+                    .catch(() => {
+                        clearTimeout(fetchCoinsTimeout);
+                        delete inProgress["fetchCoinsSimple_" + backer];
+
+                        dispatch({
+                            coins: [],
+                            backer
+                        });
+                    });
+            };
+        } else {
+            return {};
+        }
+    }
+
     fetchPairs() {
         if (!inProgress["fetchTradingPairs"]) {
             inProgress["fetchTradingPairs"] = true;

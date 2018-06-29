@@ -459,6 +459,7 @@ class AssetActions {
                         "BRIDGE",
                         "GDEX",
                         "RUDEX",
+                        "XBTSX",
                         "OPEN",
                         "WIN"
                     ];
