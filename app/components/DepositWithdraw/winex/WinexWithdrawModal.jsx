@@ -178,6 +178,7 @@ class WinexWithdrawModal extends React.Component {
     }
 
     onWithdrawAmountChange({amount}) {
+        console.log(amount);
         this.setState(
             {
                 withdraw_amount: amount,
