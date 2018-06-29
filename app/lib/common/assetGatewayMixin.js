@@ -28,7 +28,7 @@ function _getCoinToGatewayMapping(boolCheck = "depositAllowed") {
 function _openGatewaySite() {
     let {selectedGateway, gatewayStatus} = this.state;
     let win = window.open(
-        "https://market.rudex.org/#/help/gateways/" +
+        "https://ex.xbts.io/#/help/gateways/" +
             gatewayStatus[selectedGateway].name.toLowerCase().replace("-", ""),
         "_blank"
     );

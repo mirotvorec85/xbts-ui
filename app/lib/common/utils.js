@@ -437,7 +437,8 @@ var Utils = {
             "RUDEX.",
             "ESCROW.",
             "GDEX.",
-            "WIN."
+            "WIN.",
+            "XBTSX."
         ];
         let suffix = "";
         let i;
@@ -454,7 +455,7 @@ var Utils = {
                 ? toReplace[i].toLowerCase()
                 : null;
 
-        if (toReplace[i] === "RUDEX.") prefix = "";
+        if (toReplace[i] === "XBTSX.") prefix = "";
 
         return {
             name,
