@@ -48,11 +48,11 @@ export default class Deprecate extends React.Component {
                         />
                         <p>
                             <a
-                                href="https://market.rudex.org"
+                                href="https://ex.xbts.io"
                                 target="blank"
                                 rel="noopener noreferrer"
                             >
-                                https://market.rudex.org
+                                https://ex.xbts.io
                             </a>
                         </p>
 
