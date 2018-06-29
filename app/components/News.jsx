@@ -4,7 +4,7 @@ import {api} from "steem-js-api";
 import Translate from "react-translate-component";
 import LoadingIndicator from "./LoadingIndicator";
 
-const query = {tag: "blockchained", limit: 20};
+const query = {tag: "technolog", limit: 10};
 
 const alignRight = {textAlign: "right"};
 const alignLeft = {textAlign: "left"};
