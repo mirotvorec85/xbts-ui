@@ -64,6 +64,23 @@ export const gdexAPIs = {
     WITHDRAW_RULE: "/gateway/withdraw/rule"
 };
 
+export const xbtsioAPIs = {
+    BASE: "https://apis.xbts.io/api/v1",
+    //BASE: "http://localhost:3080/api/v1",
+    COINS_LIST: "/coins",
+    ACTIVE_WALLETS: "/active-wallets",
+    NEW_DEPOSIT_ADDRESS: "/new-deposit-address",
+    WITHDRAW_HISTORY: "/latelyWithdraw",
+    TRADING_PAIRS: "/trading-pairs",
+    DEPOSIT_HISTORY: "/latelyRecharge"
+};
+
+export const xbtsxAPIs = {
+    BASE: "https://apis.xbts.io/api/v1",
+    //BASE: "http://localhost:3080/api/v1",
+    COINS_LIST: "/coin"
+};
+
 export const settingsAPIs = {
     DEFAULT_WS_NODE: "wss://fake.automatic-selection.com",
     WS_NODE_LIST: [
@@ -72,6 +89,7 @@ export const settingsAPIs = {
             location: {translate: "settings.api_closest"}
         },
         {url: "ws://127.0.0.1:8090", location: "Locally hosted"},
+        {url: "wss://node.xbts.io/ws", location: "Falkenstein, Germany"},
         {url: "wss://api.bts.blckchnd.com", location: "Falkenstein, Germany"},
         {url: "wss://api-ru.bts.blckchnd.com", location: "Moscow, Russia"},
         {
@@ -145,7 +163,8 @@ export const settingsAPIs = {
             location: "TESTNET - APT BitShares (Dallas, USA)"
         }
     ],
-    DEFAULT_FAUCET: "https://faucet.rudex.org",
+    // DEFAULT_FAUCET: "https://faucet.rudex.org",
+    DEFAULT_FAUCET: "https://faucet.bitshares.eu/onboarding",
     TESTNET_FAUCET: "https://faucet.testnet.bitshares.eu",
     RPC_URL: "https://openledger.info/api/"
 };

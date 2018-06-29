@@ -670,6 +670,11 @@ class AccountOverview extends React.Component {
                                 .find(
                                     a => a.backingCoin === thisAssetName[1]
                                 ) ||
+                            !!this.props.backedCoins
+                                .get("XBTSX", [])
+                                .find(
+                                    a => a.backingCoin === thisAssetName[1]
+                                ) ||
                             asset.get("symbol") == "BTS";
 
                         const canBuy = !!this.props.bridgeCoins.get(

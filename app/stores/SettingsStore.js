@@ -116,8 +116,8 @@ class SettingsStore {
             themes: [
                 "darkTheme",
                 "lightTheme",
-                "midnightTheme",
-                "rudexDarkTheme"
+                "midnightTheme"
+                // "rudexDarkTheme"
             ],
             passwordLogin: [
                 {translate: "cloud_login"},
@@ -221,29 +221,29 @@ class SettingsStore {
                     "CNY",
                     "GOLD",
                     "SILVER",
-                    "RUDEX.BTC",
-                    "RUDEX.ETH",
+                    "XBTSX.STH",
+                    //"XBTSX.POST",
+                    //"RUDEX.BTC",
+                    //"RUDEX.ETH",
                     "RUDEX.GOLOS",
                     "RUDEX.GBG",
-                    "RUDEX.MUSE",
+                    //"RUDEX.MUSE",
                     "RUDEX.STEEM",
-                    "RUDEX.SBD",
-                    "RUDEX.KRM",
-                    "RUDEX.DCT",
-                    "RUDEX.TT",
-                    "RUDEX.SCR",
-                    "RUDEX.DGB",
-                    "RUDEX.EOS",
+                    "GDEX.EOS",
                     "PPY",
-                    "HERTZ",
-                    "HERO",
-                    "OBITS",
-                    "YOYOW",
-                    "SMOKE",
-                    "BTWTY",
-                    "ZEPH",
+                    //"HERTZ",
+                    //"HERO",
+                    //"OBITS",
+                    //"YOYOW",
+                    //"SMOKE",
+                    //"BTWTY",
+                    //"ZEPH",
                     "ESCROW.RUBLE",
-                    "BTC"
+                    "BTC",
+                    "OPEN.BTC",
+                    "OPEN.DOGE",
+                    "OPEN.LTC",
+                    "OPEN.ETH"
                 ],
                 markets_39f5e2ed: [
                     // TESTNET
@@ -256,8 +256,9 @@ class SettingsStore {
                 markets_4018d784: [
                     // BTS MAIN NET
                     "BTS",
+                    "XBTSX.STH",
                     "RUBLE",
-                    "RUDEX.BTC",
+                    "OPEN.BTC",
                     "USD",
                     "CNY"
                 ],

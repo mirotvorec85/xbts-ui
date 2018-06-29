@@ -354,7 +354,7 @@ class MyMarkets extends React.Component {
             nextState.activeTab === "find-market" &&
             !nextProps.searchAssets.size
         ) {
-            this._lookupAssets("RUDEX.", true);
+            this._lookupAssets("XBTSX.", true);
         }
 
         return (
@@ -409,7 +409,7 @@ class MyMarkets extends React.Component {
         this._setMinWidth();
 
         if (this.state.activeTab === "find-market") {
-            this._lookupAssets("RUDEX.", true);
+            this._lookupAssets("XBTSX.", true);
         }
     }
 
@@ -605,7 +605,7 @@ class MyMarkets extends React.Component {
         ];
 
         /* By default, show the OPEN.X assets */
-        if (!lookupQuote) lookupQuote = "RUDEX.";
+        if (!lookupQuote) lookupQuote = "XBTSX.";
 
         /* In the find-market tab, only use market tab 0 */
         if (!myMarketTab) activeMarketTab = 0;
