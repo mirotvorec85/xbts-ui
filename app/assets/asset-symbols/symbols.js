@@ -12,7 +12,7 @@ require("file-loader?name=asset-symbols/silver.png!./silver.png");
 // xbts assets
 require("file-loader?name=asset-symbols/[name].png!./xbtsx.sth.png");
 require("file-loader?name=asset-symbols/[name].png!./xbtsx.post.png");
-require("file-loader?name=asset-symbols/[name].png!./yaranet.png");
+// require("file-loader?name=asset-symbols/[name].png!./yaranet.png");
 
 // rudex assets
 require("file-loader?name=asset-symbols/[name].png!./ppy.png");
