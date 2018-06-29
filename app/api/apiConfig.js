@@ -64,20 +64,9 @@ export const gdexAPIs = {
     WITHDRAW_RULE: "/gateway/withdraw/rule"
 };
 
-export const xbtsioAPIs = {
-    BASE: "https://apis.xbts.io/api/v1",
-    //BASE: "http://localhost:3080/api/v1",
-    COINS_LIST: "/coins",
-    ACTIVE_WALLETS: "/active-wallets",
-    NEW_DEPOSIT_ADDRESS: "/new-deposit-address",
-    WITHDRAW_HISTORY: "/latelyWithdraw",
-    TRADING_PAIRS: "/trading-pairs",
-    DEPOSIT_HISTORY: "/latelyRecharge"
-};
-
 export const xbtsxAPIs = {
-    BASE: "https://apis.xbts.io/api/v1",
-    //BASE: "http://localhost:3080/api/v1",
+    //BASE: "https://apis.xbts.io/api/v1",
+    BASE: "http://localhost:3080/api/v1",
     COINS_LIST: "/coin"
 };
 

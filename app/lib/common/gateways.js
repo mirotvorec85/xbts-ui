@@ -9,8 +9,7 @@ import {
     openledgerAPIs,
     cryptoBridgeAPIs,
     gdex2APIs,
-    xbtsxAPIs,
-    xbtsioAPIs
+    xbtsxAPIs
 } from "api/apiConfig";
 
 export const availableGateways = {
@@ -76,17 +75,6 @@ export const availableGateways = {
             selected: false
         }
     },
-    XBTSIO: {
-        id: "XBTSIO",
-        name: "XBTSIO",
-        baseAPI: xbtsioAPIs,
-        isEnabled: true,
-        selected: false,
-        options: {
-            enabled: false,
-            selected: false
-        }
-    },
     XBTSX: {
         id: "XBTSX",
         name: "XBTSX",
@@ -95,7 +83,7 @@ export const availableGateways = {
         isSimple: true,
         selected: false,
         simpleAssetGateway: true,
-        //addressValidatorMethod: "POST",
+        addressValidatorMethod: "POST",
         options: {
             enabled: false,
             selected: false
