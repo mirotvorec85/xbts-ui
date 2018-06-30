@@ -152,8 +152,8 @@ export const settingsAPIs = {
             location: "TESTNET - APT BitShares (Dallas, USA)"
         }
     ],
-    // DEFAULT_FAUCET: "https://faucet.rudex.org",
-    DEFAULT_FAUCET: "https://faucet.bitshares.eu/onboarding",
+    DEFAULT_FAUCET: "https://faucet.rudex.org",
+    //DEFAULT_FAUCET: "https://faucet.bitshares.eu/onboarding",
     TESTNET_FAUCET: "https://faucet.testnet.bitshares.eu",
     RPC_URL: "https://openledger.info/api/"
 };

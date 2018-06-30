@@ -106,7 +106,7 @@ class WalletActions {
 
                 //let faucetAddress = SettingsStore.getSetting("faucet_address");
                 //let faucetAddress = "https://faucet.rudex.org";
-                let faucetAddress = "https://faucet.bitshares.eu/onboarding";
+                let faucetAddress = "https://faucet.rudex.org";
 
                 if (
                     window &&
