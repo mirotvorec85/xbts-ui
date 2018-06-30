@@ -110,19 +110,15 @@
             background-color: #fff;
         }
     }
-
     .font-secondary {
         color: $secondary-text-color;
     }
-
     svg > path {
         transition: all 0.3s ease 0s;
     }
-
     #content-wrapper {
         @include color($primary-text-color, $bg-color);
     }
-
     hr {
         border-color: $dark-text-color;
         background-color: $dark-text-color !important;
@@ -165,6 +161,7 @@
             color: $warning-color;
         }
     }
+
     .label.cancel,
     .label.alert {
         color: $alert-color;
@@ -192,7 +189,6 @@
     .txtann.warning {
         color: $warning-color;
     }
-
     .txtann.error {
         color: $alert-color;
     }
@@ -206,7 +202,6 @@
     .notification-success {
         border-left-color: $success-color !important;
     }
-
     .action-sheet {
         @include color($light-text-color, $super-light-panel-bg-color);
         &::after {
@@ -238,7 +233,6 @@
             border-left-color: $super-light-panel-bg-color !important;
         }
     }
-
     .json-inspector__key {
         color: $secondary-text-color !important;
     }
@@ -250,7 +244,6 @@
     h6 {
         color: $primary-text-color;
     }
-
     // copyicons
     .copyIcon {
         background-color: $button-bg-color;
@@ -418,7 +411,6 @@
             background-color: lighten($alert-color, 4%) !important;
         }
     }
-
     .header a.button.create-account {
         transition: color 0s !important;
         color: $button-bg-color !important;
@@ -550,7 +542,8 @@
         }
         svg > path {
             fill: #fff;
-        } // svg:hover > path { fill: $primary-text-color; }
+        }
+        // svg:hover > path { fill: $primary-text-color; }
     }
     .settings-cog {
         svg > path {
@@ -595,7 +588,7 @@
         }
         > tbody > tr > td {
             border-bottom-color: $dark-text-color;
-            font-size: 0.75rem;
+            font-size: 0.76rem;
         }
         &.table-hover > tbody > tr:hover > td,
         .table-hover > tbody > tr:hover > th {
@@ -689,7 +682,6 @@
             border-color: $secondary-text-color transparent;
         }
     }
-
     .account-image {
         .icon:hover {
             svg path {
@@ -842,7 +834,6 @@
             border-bottom: 1px solid $button-bg-color;
         }
     }
-
     // Tabs
     .tabs {
         border-bottom-color: $dark-text-color;
@@ -997,7 +988,6 @@
             color: $secondary-text-color;
         }
     }
-
     // Formatted assets
     .facolor-success {
         color: $success-color;
@@ -1014,7 +1004,6 @@
     .facolor-error {
         color: $error-text-color;
     }
-
     .facolor-fee {
         color: $fee-color;
     }
@@ -1067,6 +1056,7 @@
             height: 48px;
         }
     }
+
     .remove {
         color: $alert-color;
         border: none;
@@ -1335,7 +1325,6 @@
             height: 100%;
             width: 100%;
         }
-
         #sticky-header-row {
             background-color: $panel-bg-color;
         }
@@ -1391,7 +1380,6 @@
         font-size: 11px;
         color: gray;
     }
-
     .buy-sell-box {
         background-color: $header-color;
         > select {
@@ -1431,7 +1419,6 @@
         text-transform: uppercase;
         cursor: pointer;
     }
-
     div.exchange-content-header {
         background-color: $header-color !important;
     }
@@ -1601,7 +1588,8 @@
         }
         &:hover,
         &:focus {
-            color: $primary-text-color; // box-shadow: 1px 2px 3px #000;
+            color: $primary-text-color;
+            // box-shadow: 1px 2px 3px #000;
             border: 2px solid $primary-text-color;
         }
     }
@@ -1613,7 +1601,6 @@
             border-bottom: 2px solid #020202;
         }
     }
-
     ul.dashboard-links {
         > li.active {
             color: $primary-text-color;
@@ -1665,7 +1652,6 @@
     td.pub-key {
         word-break: break-all;
     }
-
     /* Table view account */
     div.grid-content.app-tables {
         background-color: $account-background;
@@ -1673,7 +1659,6 @@
     div.tabs-container {
         background-color: $account-background;
     }
-
     div.account-tabs {
         > div.service-selector {
             background-color: $bg-color;
@@ -1826,7 +1811,6 @@
             animation-direction: reverse;
         }
     }
-
     @keyframes pulsate-green {
         0% {
             color: $pulsate-green-start;
@@ -1918,7 +1902,6 @@
     .order-book-button-v {
         display: none;
     }
-
     @include breakpoint(large) {
         .order-book-button-v {
             display: inline-block;
@@ -2045,7 +2028,6 @@
     .qr-address-scanner {
         &-btn {
             background: #049cce;
-
             height: 2.4rem;
             border-radius: 0 5px 5px 0;
             width: 40px;
