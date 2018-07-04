@@ -137,15 +137,15 @@ class BuySell extends React.Component {
             ? 0
             : Math.min(
                   maxQuoteMarketFee.getAmount({real: true}),
-                  amount *
-                      quote.getIn(["options", "market_fee_percent"]) /
+                  (amount * quote.getIn(["options", "market_fee_percent"])) /
                       10000
               ).toFixed(maxQuoteMarketFee.precision);
         const baseFee = !amount
             ? 0
             : Math.min(
                   maxBaseMarketFee.getAmount({real: true}),
-                  total * base.getIn(["options", "market_fee_percent"]) / 10000
+                  (total * base.getIn(["options", "market_fee_percent"])) /
+                      10000
               ).toFixed(maxBaseMarketFee.precision);
         const baseFlagBooleans = assetUtils.getFlagBooleans(
             base.getIn(["options", "flags"]),
@@ -518,6 +518,27 @@ class BuySell extends React.Component {
                         }
                         noValidate
                     >
+                        <div className="grid-block no-padding buy-sell-row">
+                            <div className="grid-block small-3 no-margin no-overflow buy-sell-label">
+                                <Translate content="transfer.amount" />:
+                            </div>
+                            <div className="grid-block small-5 no-margin no-overflow buy-sell-input">
+                                <ExchangeInput
+                                    id={`${type}Amount`}
+                                    value={amount}
+                                    onChange={amountChange}
+                                    autoComplete="off"
+                                    placeholder="0.0"
+                                />
+                            </div>
+                            <div className="grid-block small-4 no-margin no-overflow buy-sell-box">
+                                <AssetName
+                                    dataPlace="right"
+                                    name={quote.get("symbol")}
+                                />
+                            </div>
+                        </div>
+
                         <div className="grid-block vertical no-overflow no-padding">
                             <div className="grid-block no-padding buy-sell-row">
                                 <div className="grid-block small-3 no-margin no-overflow buy-sell-label">
@@ -538,27 +559,6 @@ class BuySell extends React.Component {
                                         name={base.get("symbol")}
                                     />
                                     &nbsp;/&nbsp;
-                                    <AssetName
-                                        dataPlace="right"
-                                        name={quote.get("symbol")}
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="grid-block no-padding buy-sell-row">
-                                <div className="grid-block small-3 no-margin no-overflow buy-sell-label">
-                                    <Translate content="transfer.amount" />:
-                                </div>
-                                <div className="grid-block small-5 no-margin no-overflow buy-sell-input">
-                                    <ExchangeInput
-                                        id={`${type}Amount`}
-                                        value={amount}
-                                        onChange={amountChange}
-                                        autoComplete="off"
-                                        placeholder="0.0"
-                                    />
-                                </div>
-                                <div className="grid-block small-4 no-margin no-overflow buy-sell-box">
                                     <AssetName
                                         dataPlace="right"
                                         name={quote.get("symbol")}
