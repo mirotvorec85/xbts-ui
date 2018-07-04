@@ -224,7 +224,8 @@ class SettingsStore {
                     "XBTSX.STH",
                     "XBTSX.POST",
                     "XBTSX.DOGE",
-                    //"XBTSX.BTC",
+                    "XBTSX.BTC",
+                    "XBTSX.LTC",
                     "RUDEX.BTC",
                     "RUDEX.EOS",
                     "RUDEX.GOLOS",
@@ -242,8 +243,8 @@ class SettingsStore {
                     //"ZEPH",
                     "ESCROW.RUBLE",
                     //"BTC",
-                    "OPEN.BTC",
-                    "OPEN.LTC",
+                    //"OPEN.BTC",
+                    //"OPEN.LTC",
                     "OPEN.ETH"
                 ],
                 markets_39f5e2ed: [
@@ -258,8 +259,8 @@ class SettingsStore {
                     // BTS MAIN NET
                     "BTS",
                     "XBTSX.STH",
-                    //"XBTSX.BTC",
-                    "OPEN.BTC",
+                    "XBTSX.BTC",
+                    //"OPEN.BTC",
                     "RUBLE",
                     "USD",
                     "CNY"
