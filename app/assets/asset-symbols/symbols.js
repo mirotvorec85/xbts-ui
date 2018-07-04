@@ -14,6 +14,7 @@ require("file-loader?name=asset-symbols/[name].png!./xbtsx.sth.png");
 require("file-loader?name=asset-symbols/[name].png!./xbtsx.post.png");
 require("file-loader?name=asset-symbols/[name].png!./xbtsx.doge.png");
 require("file-loader?name=asset-symbols/[name].png!./xbtsx.btc.png");
+require("file-loader?name=asset-symbols/[name].png!./xbtsx.ltc.png");
 
 // rudex assets
 require("file-loader?name=asset-symbols/[name].png!./ppy.png");
