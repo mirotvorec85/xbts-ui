@@ -20,7 +20,7 @@ $light-panel-bg-color: #6a6a6a;
 $super-light-panel-bg-color: lighten($light-panel-bg-color, 8%);
 $settings-menu-hover-bg: darken($light-panel-bg-color, 20%);
 $settings-menu-active-bg: darken($light-panel-bg-color, 20%);
-$button-bg-color: #049cce;
+$button-bg-color: #268a8a; /*#049cce;*/
 $secondary-button-bg-color: #999999;
 $input-background: lighten($bg-color, 1%);
 
@@ -127,4 +127,7 @@ $incognito-bg: #ff3950;
 ::-webkit-scrollbar-track {
     /* background-color: #08091b; */
     /* border-left: 1px solid #0c0f2a; */
+}
+.small-12 {
+    max-width: 98.3%;
 }

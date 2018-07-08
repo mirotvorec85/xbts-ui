@@ -216,6 +216,7 @@ class SettingsStore {
                     // BTS MAIN NET
                     "BTS",
                     "RUBLE",
+                    "ESCROW.RUBLE",
                     "USD",
                     "EUR",
                     "CNY",
@@ -226,13 +227,14 @@ class SettingsStore {
                     "XBTSX.DOGE",
                     "XBTSX.BTC",
                     "XBTSX.LTC",
+                    "XBTSX.DASH",
                     "RUDEX.BTC",
                     "RUDEX.EOS",
                     "RUDEX.GOLOS",
                     //"RUDEX.GBG",
                     "RUDEX.ETH",
-                    "RUDEX.STEEM",
-                    "GDEX.EOS",
+                    "RUDEX.STEEM"
+                    //"GDEX.EOS",
                     //"PPY",
                     //"HERTZ",
                     //"HERO",
@@ -241,11 +243,10 @@ class SettingsStore {
                     //"SMOKE",
                     //"BTWTY",
                     //"ZEPH",
-                    "ESCROW.RUBLE",
                     //"BTC",
                     //"OPEN.BTC",
                     //"OPEN.LTC",
-                    "OPEN.ETH"
+                    //"OPEN.ETH"
                 ],
                 markets_39f5e2ed: [
                     // TESTNET
@@ -258,12 +259,11 @@ class SettingsStore {
                 markets_4018d784: [
                     // BTS MAIN NET
                     "BTS",
-                    "XBTSX.STH",
                     "XBTSX.BTC",
-                    //"OPEN.BTC",
+                    "XBTSX.STH",
                     "RUBLE",
-                    "USD",
-                    "CNY"
+                    "USD"
+                    //"CNY",
                 ],
                 markets_39f5e2ed: [
                     // TESTNET

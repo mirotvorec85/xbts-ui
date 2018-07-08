@@ -23,6 +23,7 @@ class Dashboard extends React.Component {
                 ["XBTSX.STH", "XBTSX.DOGE"],
                 ["XBTSX.STH", "XBTSX.BTC"],
                 ["XBTSX.STH", "XBTSX.LTC"],
+                ["XBTSX.BTC", "XBTSX.DASH"],
                 ["XBTSX.STH", "RUBLE"],
                 ["RUBLE", "ESCROW.RUBLE"],
                 ["BTS", "USD"],
@@ -43,10 +44,10 @@ class Dashboard extends React.Component {
                 ["BTS", "RUDEX.BTC"],
                 ["BTS", "RUDEX.ETH"],
                 //["BTS", "PPY"],
-                ["RUBLE", "RUDEX.GOLOS"]
-                //["RUBLE", "RUDEX.GBG"],
-                //["BTS", "RUDEX.STEEM"]
-                //["BTS", "RUDEX.SBD"],
+                ["RUBLE", "RUDEX.GOLOS"],
+                ["RUBLE", "RUDEX.GBG"],
+                ["BTS", "RUDEX.STEEM"],
+                ["BTS", "RUDEX.SBD"]
                 //["BTS", "ZEPH"],
                 //["BTS", "RUDEX.DCT"],
                 //["BTS", "RUDEX.KRM"],

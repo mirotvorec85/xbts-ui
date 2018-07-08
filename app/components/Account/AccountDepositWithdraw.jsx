@@ -15,7 +15,7 @@ import AccountStore from "stores/AccountStore";
 import SettingsStore from "stores/SettingsStore";
 import SettingsActions from "actions/SettingsActions";
 import {settingsAPIs} from "api/apiConfig";
-import BitKapital from "../DepositWithdraw/BitKapital";
+//import BitKapital from "../DepositWithdraw/BitKapital";
 import RuDexGateway from "../DepositWithdraw/rudex/RuDexGateway";
 import GatewayStore from "stores/GatewayStore";
 import AccountImage from "../Account/AccountImage";
@@ -430,7 +430,7 @@ class AccountDepositWithdraw extends React.Component {
                 </div>
             )
         });
-
+        /*
         serList.push({
             name: "BitKapital",
             template: (
@@ -440,7 +440,7 @@ class AccountDepositWithdraw extends React.Component {
                 />
             )
         });
-
+*/
         serList.push({
             name: "GDEX",
             template: (
@@ -511,14 +511,13 @@ class AccountDepositWithdraw extends React.Component {
         });
 
         const serviceNames = [
-            //"XBTSIO",
             "XBTSX",
             "RUDEX",
             "Winex",
             "GDEX",
             "OPEN",
-            "TRADE",
-            "BITKAPITAL"
+            "TRADE"
+            //"BITKAPITAL"
         ];
         const currentServiceName = serviceNames[activeService];
         const currentServiceDown = servicesDown.get(currentServiceName);
