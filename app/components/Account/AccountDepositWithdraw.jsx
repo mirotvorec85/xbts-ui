@@ -21,7 +21,6 @@ import GatewayStore from "stores/GatewayStore";
 import AccountImage from "../Account/AccountImage";
 import GdexGateway from "../DepositWithdraw/gdex/GdexGateway";
 import WinexGateway from "../DepositWithdraw/winex/WinexGateway";
-//import XbtsioGateway from "../DepositWithdraw/xbtsio/XbtsioGateway";
 import XbtsxGateway from "../DepositWithdraw/xbtsx/XbtsxGateway";
 import PropTypes from "prop-types";
 
@@ -190,6 +189,20 @@ class AccountDepositWithdraw extends React.Component {
                                     <Translate content="gateway.gateway" />
                                 </a>
                             </li>
+                            <li
+                                onClick={this.toggleXbtsxService.bind(
+                                    this,
+                                    "bridge"
+                                )}
+                                className={
+                                    xbtsxService === "bridge" ? "is-active" : ""
+                                }
+                            >
+                                <Translate
+                                    component="a"
+                                    content="gateway.bridge"
+                                />
+                            </li>
                         </ul>
                     </div>
 
@@ -200,7 +213,7 @@ class AccountDepositWithdraw extends React.Component {
                         />
                     ) : null}
 
-                    {xbtsxService === "fiat" ? (
+                    {xbtsxService === "bridge" ? (
                         <div>
                             <Translate content="gateway.xbtsx.coming_soon" />
                         </div>
@@ -661,10 +674,7 @@ export default connect(
                     "WIN",
                     []
                 ),
-                //xbtsioBackedCoins: GatewayStore.getState().backedCoins.get(
-                //"XBTSIO",
-                //[]
-                //),
+
                 servicesDown: GatewayStore.getState().down || {}
             };
         }

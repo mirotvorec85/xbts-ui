@@ -82,7 +82,7 @@ export const availableGateways = {
         isEnabled: true,
         isSimple: true,
         selected: false,
-        simpleAssetGateway: true,
+        simpleAssetGateway: false,
         addressValidatorMethod: "POST",
         options: {
             enabled: false,
