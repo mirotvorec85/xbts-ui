@@ -915,6 +915,13 @@
             "support_block": "Per supporto, contatta RuDEX a:",
             "under_construction": "Under Construction"
         },
+        "xbtsx": {
+            "coming_soon": "Prossimamente",
+            "min_amount": "Quantità minima: %(minAmount)s %(symbol)s",
+            "min_amount_error": "Per favore inserisci un numero >= minimo",
+            "support_block": "Per supporto, contatta XBTS.io a:",
+            "under_construction": "Under Construction"
+        },
         "scan_qr": "Scandisci QR",
         "service": "Servizio di Trasferimento",
         "status": "Status",
@@ -931,6 +938,8 @@
             "Il Gateway OpenLedger non è disponibile o non risponde",
         "unavailable_RUDEX":
             "Il Gateway RuDEX non è disponibile o non risponde",
+        "unavailable_XBTSX":
+            "Il Gateway XBTSX non è disponibile o non risponde",
         "unavailable_TRADE":
             "Il Bridge Blocktrades non è disponibile o non risponde",
         "unavailable_bridge":
@@ -1141,9 +1150,9 @@
             "In an effort to provide enhanced security for the web-based wallet, we are migrating it, effective immediately to the address below. Please be sure to update any bookmarks you may have.",
         "text_1": "Local wallet detected",
         "text_2":
-            "Please backup your wallet now and restore the backup file to <a href='https://wallet.rudex.org' target='blank' rel='noopener noreferrer'>https://wallet.rudex.org</a>, which will be your new address for the web wallet. Thanks for your continued support.",
+            "Please backup your wallet now and restore the backup file to <a href='https://ex.xbts.io' target='blank' rel='noopener noreferrer'>https://ex.xbts.io</a>, which will be your new address for the web wallet. Thanks for your continued support.",
         "text_3":
-            "Please use <a href='https://wallet.rudex.org' target='blank' rel='noopener noreferrer'>https://wallet.rudex.org</a> from now on, your existing credentials will let you login there as well.",
+            "Please use <a href='https://ex.xbts.io' target='blank' rel='noopener noreferrer'>https://ex.xbts.io</a> from now on, your existing credentials will let you login there as well.",
         "title": "Notice"
     },
     "modal": {

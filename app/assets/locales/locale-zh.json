@@ -379,7 +379,7 @@
             "workers_short": "预算项目"
         },
         "voting": "投票",
-        "welcome": "欢迎使用 RuDEX 系统",
+        "welcome": "欢迎使用 XBTS 系统",
         "whitelist": {
             "add": "加到白名单",
             "add_black": "加到黑名单",
@@ -766,7 +766,7 @@
         "loading": "载入中…",
         "nosync": "区块链数据陈旧，请等待数据完成同步",
         "synced": "已同步",
-        "title": "RuDEX",
+        "title": "XBTS",
         "unsynced": "未同步",
         "update_available": "有可用的更新"
     },
@@ -841,7 +841,7 @@
         "frozen": "账户 %(account)s 充提服务被冻结",
         "gateway": "网关",
         "gateway_text":
-            "网关能让你将 BitShares 中的资产与外部资产进行互换，比如 RUDEX.BTC 到 BTC。",
+            "网关能让你将 BitShares 中的资产与外部资产进行互换，比如 XBTSX.BTC 到 BTC。",
         "generate": "生成地址",
         "generate_new": "获得新地址",
         "generate_new_memo": "获得新备注内容",
@@ -881,6 +881,13 @@
             "support_block": "请联系 RuDEX 获取客户支持：",
             "under_construction": "Under Construction"
         },
+        "xbtsx": {
+            "coming_soon": "即将上线",
+            "min_amount": "最小金额：%(minAmount)s %(symbol)s",
+            "min_amount_error": "请输入大于最小金额的数量",
+            "support_block": "请联系 XBTS.io 获取客户支持：",
+            "under_construction": "Under Construction"
+        },
         "scan_qr": "扫描二维码，手机支付",
         "service": "转账服务",
         "status": "状态",
@@ -894,6 +901,7 @@
         "unavailable": "此资产的网关服务暂时不可用，请稍后再试",
         "unavailable_OPEN": "OpenLedger 网关不可用或无响应",
         "unavailable_RUDEX": "RuDEX 网关不可用或无响应",
+        "unavailable_XBTSX": "XBTSX 网关不可用或无响应",
         "unavailable_TRADE": "Blocktrades 桥接服务不可用或无响应",
         "unavailable_bridge": "此资产的抢劫服务暂时不可用，请稍后再试",
         "use_copy_button":

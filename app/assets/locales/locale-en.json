@@ -905,6 +905,13 @@
             "support_block": "For support, please contact RuDEX at:",
             "under_construction": "Under Construction"
         },
+        "xbtsx": {
+            "coming_soon": "Coming soon",
+            "min_amount": "Minimum amount: %(minAmount)s %(symbol)s",
+            "min_amount_error": "Please enter number >= minimum",
+            "support_block": "For support, please contact XBTS.io at:",
+            "under_construction": "Under Construction"
+        },
         "scan_qr": "Scan QR",
         "service": "Transfer Service",
         "status": "Status",
@@ -920,6 +927,7 @@
             "The gateway service for this asset is currently down, please try again later",
         "unavailable_OPEN": "The OpenLedger Gateway is down or not responding",
         "unavailable_RUDEX": "The RuDEX Gateway is down or not responding",
+        "unavailable_XBTSX": "The XbtsX Gateway is down or not responding",
         "unavailable_TRADE": "The Blocktrades Bridge is down or not responding",
         "unavailable_bridge":
             "The bridge service for this asset is currently down, please try again later",

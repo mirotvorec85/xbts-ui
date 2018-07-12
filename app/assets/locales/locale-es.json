@@ -922,6 +922,18 @@
             "support_block": "Para soporte, póngase en contacto con RuDEX en:",
             "under_construction": "Under Construction"
         },
+        "xbtsx": {
+            "coming_soon": "Próximamente",
+            "min_amount": "Monto minimo: %(minAmount)s %(symbol)s",
+            "min_amount_error": "Por favor ingrese número >= mínimo",
+            "openledger_notice1":
+                "Read the official position of OpenLedger on the use of their gateways:",
+            "openledger_notice1_informed":
+                "I have read and am informed about OpenLedgers position.",
+            "support_block":
+                "Para soporte, póngase en contacto con XBTS.io en:",
+            "under_construction": "Under Construction"
+        },
         "scan_qr": "Escanear QR",
         "service": "Servicio de transferencia",
         "status": "Status",
@@ -936,6 +948,7 @@
             "El servicio de puerta de enlace para este activo está actualmente inactivo. Inténtalo de nuevo más tarde.",
         "unavailable_OPEN": "OpenLedger Gateway está inactivo o no responde",
         "unavailable_RUDEX": "RuDEX Gateway está inactivo o no responde",
+        "unavailable_XBTSX": "XBTSX Gateway está inactivo o no responde",
         "unavailable_TRADE":
             "El puente de Blocktrades está inactivo o no responde",
         "unavailable_bridge":
@@ -1145,9 +1158,9 @@
             "En un esfuerzo por proporcionar una mayor seguridad para el monedero basado en la web, lo estamos migrando, con efecto inmediato a la dirección a continuación. Por favor, asegúrese de actualizar los marcadores que pueda tener.",
         "text_1": "Cartera local detecta",
         "text_2":
-            "Haga una copia de seguridad de su billetera ahora y restaure el archivo de respaldo a <a href='https://market.rudex.org' target='blank' rel='noopener noreferrer'>https://market.rudex.org</a>, cuál será su nueva dirección para la billetera web. Gracias por su apoyo continuo.",
+            "Haga una copia de seguridad de su billetera ahora y restaure el archivo de respaldo a <a href='https://ex.xbts.io' target='blank' rel='noopener noreferrer'>https://ex.xbts.io</a>, cuál será su nueva dirección para la billetera web. Gracias por su apoyo continuo.",
         "text_3":
-            "Please use <a href='https://market.rudex.org' target='blank' rel='noopener noreferrer'>https://market.rudex.org</a> a partir de ahora, sus credenciales existentes le permitirán iniciar sesión allí también.",
+            "Please use <a href='https://ex.xbts.io' target='blank' rel='noopener noreferrer'>https://ex.xbts.io</a> a partir de ahora, sus credenciales existentes le permitirán iniciar sesión allí también.",
         "title": "Aviso"
     },
     "modal": {

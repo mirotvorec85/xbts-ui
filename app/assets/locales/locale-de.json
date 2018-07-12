@@ -61,7 +61,7 @@
             "<b>The DEX</b> also enables creation of user-issued assets (UIAs), which can be traded against any other UIAs or trustless assets on the platform.  One well-known issuer on The DEX is <b>OpenLedger</b>, offering a host of assets including BTC, ETH, STEEM, DASH, LTC, DOGE, and many more",
         "intro_text_4":
             "This gives cryptocurrency traders a unique blend of traditional and decentralized trading, all in a familiar exchange interface. Happy trading!",
-        "intro_text_title": "Welcome to RuDEX",
+        "intro_text_title": "Welcome to XBTS",
         "login_with": "Login with",
         "market_actions": "Market actions",
         "market_value": "Marktwert",
@@ -914,6 +914,17 @@
             "support_block": "For support, please contact RuDEX at:",
             "under_construction": "Under Construction"
         },
+        "xbtsx": {
+            "coming_soon": "Coming soon",
+            "min_amount": "Minimum amount: %(minAmount)s %(symbol)s",
+            "min_amount_error": "Please enter number >= minimum",
+            "openledger_notice1":
+                "Read the official position of OpenLedger on the use of their gateways:",
+            "openledger_notice1_informed":
+                "I have read and am informed about OpenLedgers position.",
+            "support_block": "For support, please contact XBTS.io at:",
+            "under_construction": "Under Construction"
+        },
         "scan_qr": "Scan QR",
         "service": "Transfer Service",
         "status": "Status",
@@ -929,6 +940,7 @@
             "The gateway service for this asset is currently down, please try again later",
         "unavailable_OPEN": "The OpenLedger Gateway is down or not responding",
         "unavailable_RUDEX": "The RuDEX Gateway is down or not responding",
+        "unavailable_XBTSX": "The XBTSX Gateway is down or not responding",
         "unavailable_TRADE": "The Blocktrades Bridge is down or not responding",
         "unavailable_bridge":
             "The bridge service for this asset is currently down, please try again later",
@@ -1134,9 +1146,9 @@
             "In an effort to provide enhanced security for the web-based wallet, we are migrating it, effective immediately to the address below. Please be sure to update any bookmarks you may have.",
         "text_1": "Local wallet detected",
         "text_2":
-            "Please backup your wallet now and restore the backup file to <a href='https://market.rudex.org' target='blank' rel='noopener noreferrer'>https://market.rudex.org</a>, which will be your new address for the web wallet. Thanks for your continued support.",
+            "Please backup your wallet now and restore the backup file to <a href='https://ex.xbts.io' target='blank' rel='noopener noreferrer'>https://ex.xbts.io</a>, which will be your new address for the web wallet. Thanks for your continued support.",
         "text_3":
-            "Please use <a href='https://market.rudex.org' target='blank' rel='noopener noreferrer'>https://market.rudex.org</a> from now on, your existing credentials will let you login there as well.",
+            "Please use <a href='https://ex.xbts.io' target='blank' rel='noopener noreferrer'>https://ex.xbts.io</a> from now on, your existing credentials will let you login there as well.",
         "title": "Notice"
     },
     "modal": {

@@ -2100,25 +2100,5 @@
             "finalNumber": "Фактическая сумма:%(final_number)s",
             "winAmount": "Минимальная сумма: %(min_amount)s %(asset)s"
         }
-    },
-    "xbtsio": {
-        "gateway": {
-            "support_block":
-                "Для получения поддержки, пожалуйста, свяжитесь с XBTS.io по адресу:",
-            "fee": "Комиссия Шлюза",
-            "deposit_warning":
-                "Не пополняйте не-%(asset)s активами %(asset)s адрес, иначе они не будут восстановлены. В случае ошибок в переводе монеты вернутся на ваш адрес за вычетом комиссии сети.",
-            "click_getaddress": "Пожалуйста, получите адрес депозита",
-            "get_deposit_address": "получить адрес депозита"
-        },
-        "withdraw": {
-            "minAmount": "Минимальная сумма: %(min_amount)s %(asset)s",
-            "finalNumber": "Фактическая сумма:%(final_number)s"
-        },
-        "transfer": {
-            "errors": {
-                "minWithdraw": "Минимальная сумма: %(min_amount)s"
-            }
-        }
     }
 }
