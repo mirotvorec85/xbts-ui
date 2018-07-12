@@ -20,7 +20,7 @@
 - [Короткая продажа BitAssets](dex/shorting.md)
 - Шлюзы 
     - [OpenLedger](gateways/openledger.md)
-	- [XBTSIO](gateways/xbtsx.md)
+	- [XBTSX](gateways/xbtsx.md)
     - [Rudex](gateways/rudex.md)
     - [CryptoBridge](gateways/cryptobridge.md)
     - [Winex](gateways/winex.md)
