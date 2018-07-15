@@ -111,9 +111,3 @@ div.bordered-header {
 .grid-content.app-tables > .content-block {
     margin-bottom: 0 !important;
 }
-
-@media screen and (max-width: 600px) {
-    .menu-bar > li > a > img {
-        display: none;
-    }
-}
