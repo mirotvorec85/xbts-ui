@@ -227,6 +227,7 @@ class SettingsStore {
                     "XBTSX.BTC",
                     "XBTSX.LTC",
                     "XBTSX.DASH",
+                    "XBTSX.KEC",
                     "RUDEX.BTC",
                     "RUDEX.EOS",
                     "RUDEX.GOLOS",
