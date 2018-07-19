@@ -223,6 +223,7 @@ class SettingsStore {
                     "GOLD",
                     "SILVER",
                     "XBTSX.STH",
+                    "XBTSX.POST",
                     "XBTSX.DOGE",
                     "XBTSX.BTC",
                     "XBTSX.LTC",
@@ -233,12 +234,11 @@ class SettingsStore {
                     "RUDEX.GOLOS",
                     "RUDEX.GBG",
                     "RUDEX.ETH",
-                    "RUDEX.STEEM",
+                    "RUDEX.STEEM"
                     //"GDEX.EOS",
                     //"PPY",
                     //"HERTZ",
-                    "HERO",
-                    "XBTSX.POST"
+                    //"HERO",
                     //"OBITS",
                     //"YOYOW",
                     //"SMOKE",
