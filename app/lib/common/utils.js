@@ -33,6 +33,7 @@ numeral.locale("rudex");
 let id_regex = /\b\d+\.\d+\.(\d+)\b/;
 
 import {ChainTypes} from "bitsharesjs/es";
+
 var {object_type} = ChainTypes;
 
 var Utils = {
@@ -92,6 +93,15 @@ var Utils = {
     },
 
     format_number: (number, decimals, trailing_zeros = true) => {
+        //trailing_zeros = false;
+        /*
+        var maxDecimals = 3;
+        for (let i = 0; i < number.length; i++) {
+            if (number[i] !== "0") {
+                maxDecimals = i + 1;
+            }
+        }
+*/
         if (
             isNaN(number) ||
             !isFinite(number) ||
@@ -99,13 +109,17 @@ var Utils = {
             number === null
         )
             return "";
+        if (number > 1000) {
+            //decimals = maxDecimals;
+        }
+
         let zeros = ".";
         for (var i = 0; i < decimals; i++) {
             zeros += "0";
         }
         let num = numeral(number).format("0,0" + zeros);
         if (num.indexOf(".") > 0 && !trailing_zeros)
-            return num.replace(/0+$/, "").replace(/\.$/, "");
+            return num.replace(/0+$/, "").replace(/\.0$/, "");
         return num;
     },
 

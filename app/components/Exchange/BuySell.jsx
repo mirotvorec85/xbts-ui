@@ -558,11 +558,6 @@ class BuySell extends React.Component {
                                         dataPlace="right"
                                         name={base.get("symbol")}
                                     />
-                                    &nbsp;/&nbsp;
-                                    <AssetName
-                                        dataPlace="right"
-                                        name={quote.get("symbol")}
-                                    />
                                 </div>
                             </div>
 
