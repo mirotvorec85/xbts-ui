@@ -185,6 +185,16 @@ class XbtsxGatewayDepositRequest extends React.Component {
         // else
         // {
         let clipboardText = "";
+        let payFromWallet =
+            "sth:" +
+            receive_address.address +
+            "?vendorField=" +
+            this.props.account.get("name");
+        var showPayFromWallet = false;
+        if (this.props.deposit_asset === "STH") {
+            showPayFromWallet = true;
+        }
+
         let memoText;
         if (this.props.deposit_account) {
             deposit_address_fragment = (
@@ -404,6 +414,12 @@ class XbtsxGatewayDepositRequest extends React.Component {
                                     >
                                         <Translate content="gateway.copy_memo" />
                                     </div>
+                                ) : null}
+                                {showPayFromWallet ? (
+                                    <a className="button" href={payFromWallet}>
+                                        <Translate content="gateway.pay_from_wallet" />{" "}
+                                        {this.props.deposit_asset}
+                                    </a>
                                 ) : null}
                             </div>
                             <Translate

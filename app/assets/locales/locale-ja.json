@@ -838,6 +838,7 @@
         "convert_now": "今すぐ変換",
         "copy_address": "アドレスをコピー",
         "copy_memo": "メモをコピー",
+        "pay_from_wallet": "Pay From Wallet",
         "deposit": "入金",
         "deposit_address": "入金アドレス",
         "deposit_history_status": {

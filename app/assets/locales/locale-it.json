@@ -848,6 +848,7 @@
         "convert_now": "Converti adesso",
         "copy_address": "Copy address",
         "copy_memo": "Copy memo",
+        "pay_from_wallet": "Pay From Wallet",
         "deposit": "Deposito",
         "deposit_address": "Deposit address",
         "deposit_history_status": {

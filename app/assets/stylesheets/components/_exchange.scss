@@ -58,6 +58,10 @@
         font-size: 0.74em !important;
         padding-bottom: 4px;
     }
+
+    > tbody > tr > td.order-time {
+        font-size: 10px !important;
+    }
 }
 
 .my-orders {
@@ -763,4 +767,12 @@ tbody.orderbook > tr.my-order > td {
 
 .orderHistoryBid {
     overflow-x: hidden;
+}
+
+.darkTheme .header-sub-title {
+    font-size: 10px !important;
+}
+
+body.darkTheme a.button {
+    color: #fff;
 }
