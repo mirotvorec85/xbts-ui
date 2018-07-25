@@ -659,7 +659,7 @@ class Exchange extends React.Component {
             setting[marketName] = !inverted;
             SettingsActions.changeMarketDirection(setting);
         }
-        console.log("order:", JSON.stringify(order.toObject()));
+        // console.log("order:", JSON.stringify(order.toObject()));
         return MarketsActions.createLimitOrder2(order)
             .then(result => {
                 if (result.error) {

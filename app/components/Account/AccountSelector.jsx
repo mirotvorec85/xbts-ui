@@ -139,7 +139,7 @@ class AccountSelector extends React.Component {
 
         // If regex matches ^.*#/account/account-name/.*$, parse out account-name
         let _value = value.replace("#", "").match(/(?:\/account\/)(.*)/);
-        console.log("getVerifiedAccountName", value);
+        // console.log("getVerifiedAccountName", value);
         if (_value) value = _value[1];
 
         return value;
