@@ -109,8 +109,8 @@ var Utils = {
             number === null
         )
             return "";
-        if (number > 1000) {
-            //decimals = maxDecimals;
+        if (number > 1000000) {
+            decimals = 4;
         }
 
         let zeros = ".";
