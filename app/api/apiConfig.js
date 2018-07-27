@@ -70,6 +70,34 @@ export const xbtsxAPIs = {
     COINS_LIST: "/coin"
 };
 
+export const nodeRegions = [
+    // region of the node follows roughly https://en.wikipedia.org/wiki/Subregion#/media/File:United_Nations_geographical_subregions.png
+    "Northern Europe",
+    "Western Europe",
+    "Southern Europe",
+    "Eastern Europe",
+    "Northern Asia",
+    "Western Asia",
+    "Southern Asia",
+    "Eastern Asia",
+    "Central Asia",
+    "Southeastern Asia",
+    "Australia",
+    "New Zealand",
+    "Melanesia",
+    "Polynesia",
+    "Micronesia",
+    "Northern Africa",
+    "Western Africa",
+    "Middle Africa",
+    "Eastern Africa",
+    "Southern Africa",
+    "Northern America",
+    "Central America",
+    "Caribbean",
+    "South America"
+];
+
 export const settingsAPIs = {
     DEFAULT_WS_NODE: "wss://fake.automatic-selection.com",
     WS_NODE_LIST: [
@@ -78,7 +106,6 @@ export const settingsAPIs = {
             location: {translate: "settings.api_closest"}
         },
         {url: "ws://127.0.0.1:8090", location: "Locally hosted"},
-        {url: "wss://node.xbts.io/ws", location: "Falkenstein, Germany"},
         {url: "wss://api.bts.blckchnd.com", location: "Falkenstein, Germany"},
         {url: "wss://api-ru.bts.blckchnd.com", location: "Moscow, Russia"},
         {
@@ -138,6 +165,7 @@ export const settingsAPIs = {
         {url: "wss://bts-seoul.clockwork.gr/", location: "Seoul, Korea"},
         {url: "wss://bts.to0l.cn:4443/ws", location: "China"},
         {url: "wss://btsfullnode.bangzi.info/ws", location: "Germany"},
+        {url: "wss://node.xbts.io/ws", location: "Falkenstein, Germany"},
         // Testnet
         {
             url: "wss://node.testnet.bitshares.eu",
