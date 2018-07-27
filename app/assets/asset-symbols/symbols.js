@@ -58,3 +58,4 @@ require("file-loader?name=asset-symbols/[name].png!./gdex.eos.png");
 require("file-loader?name=asset-symbols/[name].png!./open.steem.png");
 require("file-loader?name=asset-symbols/[name].png!./open.dash.png");
 require("file-loader?name=asset-symbols/[name].png!./open.eos.png");
+require("file-loader?name=asset-symbols/[name].png!./cvcoin.png");
