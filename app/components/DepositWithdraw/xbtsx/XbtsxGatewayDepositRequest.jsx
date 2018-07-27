@@ -15,6 +15,7 @@ import LinkToAccountById from "components/Utility/LinkToAccountById";
 import utils from "lib/common/utils";
 import counterpart from "counterpart";
 import PropTypes from "prop-types";
+import QRCode from "qrcode.react";
 
 class XbtsxGatewayDepositRequest extends React.Component {
     static propTypes = {
@@ -339,6 +340,11 @@ class XbtsxGatewayDepositRequest extends React.Component {
                                 </tbody>
                             </table>
                         </div>
+                        {!memoText ? (
+                            <div className="QR">
+                                <QRCode size={128} value={clipboardText} />
+                            </div>
+                        ) : null}
                     </div>
                     <div className="small-12 medium-7">
                         <Translate
