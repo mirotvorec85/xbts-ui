@@ -7,6 +7,7 @@ import SettingsStore from "stores/SettingsStore";
 // import SettingsActions from "actions/SettingsActions";
 import MarketsStore from "stores/MarketsStore";
 import MarketsTable from "./MarketsTable";
+import {getFeaturedMarkets} from "../../branding";
 
 class StarredMarkets extends React.Component {
     render() {
@@ -41,48 +42,7 @@ class FeaturedMarkets extends React.Component {
         super();
 
         this.marketsByChain = {
-            "4018d784": [
-                ["BTS", "XBTSX.STH"],
-                ["BTS", "XBTSX.POST"],
-                ["BTS", "XBTSX.DOGE"],
-                ["BTS", "XBTSX.BTC"],
-                ["BTS", "XBTSX.LTC"],
-                ["XBTSX.BTC", "XBTSX.KEC"],
-                ["BTS", "RUBLE"],
-                ["RUBLE", "XBTSX.BTC"],
-                //["RUBLE", "ESCROW.RUBLE"],
-                ["XBTSX.BTC", "XBTSX.STH"],
-                ["BTS", "OPEN.ETH"],
-                ["BTS", "OPEN.BTC"],
-                ["BTS", "OPEN.EOS"],
-                ["BTS", "PPY"],
-                //["BTS", "RUDEX.ETH"],
-                //["BTS", "RUDEX.BTC"],
-                //["BTS", "RUDEX.DGB"],
-                //["RUBLE", "RUDEX.GOLOS"],
-                //["RUBLE", "RUDEX.GBG"],
-                //["BTS", "RUDEX.STEEM"],
-                //["BTS", "RUDEX.SBD"],
-                ["BTS", "ZEPH"],
-                //["BTS", "RUDEX.DCT"],
-                //["BTS", "RUDEX.KRM"],
-                //["BTS", "RUDEX.TT"],
-                //["BTS", "RUDEX.SCR"],
-                ["BTS", "USD"],
-                ["BTS", "EUR"],
-                ["BTS", "CNY"],
-                ["BTS", "GOLD"],
-                ["BTS", "SILVER"],
-                ["BTS", "HERO"],
-                ["BTS", "OBITS"],
-                ["BTS", "SMOKE"],
-                ["BTS", "YOYOW"],
-                ["CNY", "GDEX.EOS"],
-                ["BTS", "BRIDGE.BTC"],
-                ["BTS", "BTWTY"],
-                ["BTS", "ZEPH"],
-                ["BTS", "HERTZ"]
-            ],
+            "4018d784": getFeaturedMarkets(),
             "39f5e2ed": [["TEST", "PEG.FAKEUSD"], ["TEST", "BTWTY"]]
         };
 

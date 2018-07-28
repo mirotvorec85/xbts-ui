@@ -62,11 +62,9 @@ export function getIntermediateAccount(symbol, backedCoins) {
     let {selectedGateway} = getAssetAndGateway(symbol);
     let coin = getBackedCoin(symbol, backedCoins);
     if (!coin) return undefined;
-    else if (selectedGateway === "RUDEX") {
-        return coin.issuerId || coin.issuer;
-    } else if (selectedGateway === "XBTSX") {
-        return coin.issuerId || coin.issuer;
-    } else return coin.intermediateAccount || coin.issuer;
+    else if (selectedGateway === "RUDEX") return coin.issuerId || coin.issuer;
+    else if (selectedGateway === "XBTSX") return coin.issuerId || coin.issuer;
+    else return coin.intermediateAccount || coin.issuer;
 }
 
 export function getBackedCoin(symbol, backedCoins) {

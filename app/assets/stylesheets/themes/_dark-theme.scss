@@ -7,20 +7,20 @@ $dark-text-color: #444;
 $primary-text-color: #ffffff;
 $secondary-text-color: darken($primary-text-color, 20%);
 $inactive-text-color: darken($primary-text-color, 30%);
-$link-text-color: #1ec3fa;
+$link-text-color: #25c1c1;
 $error-text-color: #ff3950;
 
 $settings-select-bg: #3f3f3f;
 $settings-select-color: darken($primary-text-color, 20%);
 $settings-api-node-border-color: #2a2a2a;
 $main-content-margin-block-bg-color: #1e1e1e;
-$bg-color: #2a2a2a;
+$bg-color: #323435;
 $panel-bg-color: #3f3f3f;
 $light-panel-bg-color: #6a6a6a;
 $super-light-panel-bg-color: lighten($light-panel-bg-color, 8%);
 $settings-menu-hover-bg: darken($light-panel-bg-color, 20%);
 $settings-menu-active-bg: darken($light-panel-bg-color, 20%);
-$button-bg-color: #268a8a; /*#049cce;*/
+$button-bg-color: #268a8a;
 $secondary-button-bg-color: #999999;
 $input-background: lighten($bg-color, 1%);
 
@@ -129,5 +129,8 @@ $incognito-bg: #ff3950;
     /* border-left: 1px solid #0c0f2a; */
 }
 .small-12 {
-    max-width: 98.3%;
+    /* max-width: 98.3%; */
+}
+body.darkTheme a {
+    color: #26dcdc;
 }

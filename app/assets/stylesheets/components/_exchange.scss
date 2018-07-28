@@ -1,3 +1,7 @@
+div#CenterContent {
+    padding-bottom: 2rem !important;
+}
+
 .market-layout {
     > .grid-block {
         // padding: 0.25rem 0.25rem 0.25rem 0.25rem !important;
@@ -260,10 +264,6 @@ tr.spread-row {
     font-size: 0.74em;
 }
 
-.buy-sell-info td:first-child {
-    width: 42%;
-}
-
 a.order-cancel {
     font-size: 90%;
     letter-spacing: 2px;
@@ -379,7 +379,7 @@ div.bucket-option {
 }
 
 .buy-sell-label {
-    font-size: 82%;
+    font-size: 90%;
     line-height: 1.75rem;
     height: 1.75rem;
 }
@@ -757,10 +757,6 @@ tbody.orderbook > tr.my-order > td {
     }
 }
 
-.grouped_order {
-    /*	display:none;*/
-}
-
 .exchange-content-header {
     font-size: 0.9em !important;
 }
@@ -769,6 +765,17 @@ tbody.orderbook > tr.my-order > td {
     font-size: 10px !important;
 }
 
+.buy-sell-info td:first-child {
+    width: 42%;
+}
+
 body.darkTheme a.button {
-    color: #fff;
+    color: #fff !important;
+}
+
+a:visited button,
+a:link button {
+    text-decoration: none;
+    decoration: none;
+    color: #fff !important;
 }

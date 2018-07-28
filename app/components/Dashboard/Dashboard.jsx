@@ -12,57 +12,13 @@ import cnames from "classnames";
 import SettingsActions from "actions/SettingsActions";
 import SettingsStore from "stores/SettingsStore";
 import {connect} from "alt-react";
+import {getFeaturedMarkets} from "../../branding";
 
 class Dashboard extends React.Component {
     constructor(props) {
         super();
         let marketsByChain = {
-            "4018d784": [
-                ["BTS", "XBTSX.STH"],
-                ["XBTSX.DOGE", "XBTSX.STH"],
-                ["RUBLE", "XBTSX.STH"],
-                ["XBTSX.BTC", "XBTSX.STH"],
-                ["BTS", "CNY"],
-                ["BTS", "USD"],
-                ["BTS", "EUR"],
-                ["BTS", "RUBLE"],
-                ["BTS", "GOLD"],
-                ["BTS", "SILVER"],
-                // ["RUBLE", "ESCROW.RUBLE"],
-                ["XBTSX.BTC", "XBTSX.LTC"],
-                // ["XBTSX.BTC", "XBTSX.KEC"],
-                ["XBTSX.BTC", "XBTSX.POST"],
-                ["XBTSX.BTC", "XBTSX.DOGE"],
-                ["BTS", "XBTSX.BTC"],
-                //["BTS", "OPEN.BTC"],
-                //["BTS", "BTC"],
-                //["BTS", "BTWTY"],
-                //["BTS", "HERTZ"],
-                ["BTS", "ZEPH"],
-                ["BTS", "HERO"],
-                ["BTS", "OBITS"],
-                //["BTS", "SMOKE"],
-                ["CNY", "YOYOW"],
-                ["BTS", "OPEN.EOS"],
-                //["BTS", "RUDEX.BTC"],
-                ["BTS", "OPEN.ETH"]
-                //["BTS", "PPY"],
-                //["BTS", "RUDEX.GOLOS"],
-                //["RUBLE", "RUDEX.GBG"],
-                //["BTS", "RUDEX.STEEM"],
-                //["BTS", "RUDEX.MUSE"],
-                //["BTS", "RUDEX.SBD"],
-                //["BTS", "RUDEX.DCT"],
-                //["BTS", "RUDEX.KRM"],
-                //["BTS", "RUDEX.TT"],
-                //["BTS", "RUDEX.SCR"],
-                //["BTS", "RUDEX.DGB"],
-                //["USD","XBTSX.BTC"],
-                //["XBTSX.BTC","RUBLE"],
-                //["XBTSX.BTC", "XBTSX.DASH"],
-                //["XBTSX.BTC", "XBTSX.LTC"],
-                //["XBTSX.BTC", "XBTSX.DASH"],
-            ],
+            "4018d784": getFeaturedMarkets(),
             "39f5e2ed": [["TEST", "PEG.FAKEUSD"], ["TEST", "BTWTY"]]
         };
         let chainID = Apis.instance().chain_id;

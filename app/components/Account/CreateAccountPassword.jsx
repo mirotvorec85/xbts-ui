@@ -12,7 +12,7 @@ import TransactionConfirmStore from "stores/TransactionConfirmStore";
 import LoadingIndicator from "../LoadingIndicator";
 import Translate from "react-translate-component";
 import counterpart from "counterpart";
-import {ChainStore, FetchChain, key} from "bitsharesjs/es";
+import {ChainStore, FetchChain, key} from "bitsharesjs";
 import ReactTooltip from "react-tooltip";
 import utils from "common/utils";
 import SettingsActions from "actions/SettingsActions";
@@ -20,6 +20,7 @@ import WalletUnlockActions from "actions/WalletUnlockActions";
 import Icon from "../Icon/Icon";
 import CopyButton from "../Utility/CopyButton";
 import {withRouter} from "react-router-dom";
+import {scroller} from "react-scroll";
 
 class CreateAccountPassword extends React.Component {
     constructor() {
@@ -39,6 +40,7 @@ class CreateAccountPassword extends React.Component {
                 45
             ),
             confirm_password: "",
+            allow_proxy: true,
             understand_1: false,
             understand_2: false,
             understand_3: false
@@ -46,6 +48,8 @@ class CreateAccountPassword extends React.Component {
         this.onFinishConfirm = this.onFinishConfirm.bind(this);
 
         this.accountNameInput = null;
+
+        this.scrollToInput = this.scrollToInput.bind(this);
     }
 
     componentWillMount() {
@@ -59,10 +63,20 @@ class CreateAccountPassword extends React.Component {
 
     componentDidMount() {
         ReactTooltip.rebuild();
+        this.scrollToInput();
     }
 
     shouldComponentUpdate(nextProps, nextState) {
         return !utils.are_equal_shallow(nextState, this.state);
+    }
+
+    scrollToInput() {
+        scroller.scrollTo(`scrollToInput`, {
+            duration: 1500,
+            delay: 100,
+            smooth: true,
+            containerId: "accountForm"
+        });
     }
 
     isValid() {
@@ -124,7 +138,8 @@ class CreateAccountPassword extends React.Component {
             this.state.registrar_account,
             referralAccount || this.state.registrar_account,
             0,
-            refcode
+            refcode,
+            this.state.allow_proxy
         )
             .then(() => {
                 AccountActions.setPasswordAccount(name);
@@ -303,6 +318,32 @@ class CreateAccountPassword extends React.Component {
                         ) : null}
                     </section>
 
+                    <br />
+
+                    <div
+                        className="confirm-checks"
+                        onClick={this._onInput.bind(this, "allow_proxy")}
+                    >
+                        <label
+                            htmlFor="checkbox-allow-proxy"
+                            style={{position: "relative"}}
+                        >
+                            <input
+                                type="checkbox"
+                                id="checkbox-allow-proxy"
+                                onChange={() => {}}
+                                checked={this.state.allow_proxy}
+                                style={{
+                                    position: "absolute",
+                                    top: "-5px",
+                                    left: "0"
+                                }}
+                            />
+                            <div style={{paddingLeft: "30px"}}>
+                                <Translate content="wallet.allow_proxy" />
+                            </div>
+                        </label>
+                    </div>
                     <br />
 
                     <div
@@ -643,7 +684,11 @@ class CreateAccountPassword extends React.Component {
         // let my_accounts = AccountStore.getMyAccounts();
         // let firstAccount = my_accounts.length === 0;
         return (
-            <div className="sub-content">
+            <div
+                className="sub-content"
+                id="scrollToInput"
+                name="scrollToInput"
+            >
                 <div>
                     {step === 2 ? (
                         <p

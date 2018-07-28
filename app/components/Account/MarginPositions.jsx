@@ -4,10 +4,11 @@ import FormattedPrice from "../Utility/FormattedPrice";
 import ChainTypes from "../Utility/ChainTypes";
 import BindToChainState from "../Utility/BindToChainState";
 import AssetWrapper from "../Utility/AssetWrapper";
+import AssetImage from "../Utility/AssetImage";
 import AssetName from "../Utility/AssetName";
 import BorrowModal from "../Modal/BorrowModal";
 import WalletApi from "api/WalletApi";
-import {ChainStore} from "bitsharesjs/es";
+import {ChainStore} from "bitsharesjs";
 import WalletDb from "stores/WalletDb";
 import Translate from "react-translate-component";
 import utils from "common/utils";
@@ -204,6 +205,11 @@ class MarginPosition extends React.Component {
         return (
             <tr className="margin-row">
                 <td style={alignLeft}>
+                    <AssetImage
+                        replaceNoneToBts={false}
+                        maxWidth={30}
+                        name={debtAsset.get("symbol")}
+                    />
                     <Link to={`/asset/${debtAsset.get("symbol")}`}>
                         <AssetName noTip name={debtAsset.get("symbol")} />
                     </Link>
@@ -446,6 +452,11 @@ class MarginPositionPlaceHolder extends React.Component {
         return (
             <tr className="margin-row">
                 <td style={alignLeft}>
+                    <AssetImage
+                        replaceNoneToBts={false}
+                        maxWidth={30}
+                        name={debtAsset.get("symbol")}
+                    />
                     <Link to={`/asset/${debtAsset.get("symbol")}`}>
                         <AssetName noTip name={debtAsset.get("symbol")} />
                     </Link>

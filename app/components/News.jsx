@@ -4,7 +4,7 @@ import {api} from "steem-js-api";
 import Translate from "react-translate-component";
 import LoadingIndicator from "./LoadingIndicator";
 
-const query = {tag: "xbts", limit: 15};
+const query = {tag: "xbts", limit: 20};
 
 const alignRight = {textAlign: "right"};
 const alignLeft = {textAlign: "left"};

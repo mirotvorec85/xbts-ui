@@ -2,7 +2,7 @@ import WalletDb from "stores/WalletDb";
 import WalletUnlockActions from "actions/WalletUnlockActions";
 import CachedPropertyActions from "actions/CachedPropertyActions";
 import ApplicationApi from "api/ApplicationApi";
-import {TransactionBuilder, FetchChain} from "bitsharesjs/es";
+import {TransactionBuilder, FetchChain} from "bitsharesjs";
 import {Apis} from "bitsharesjs-ws";
 import alt from "alt-instance";
 import SettingsStore from "stores/SettingsStore";
@@ -51,7 +51,8 @@ class WalletActions {
         registrar,
         referrer,
         referrer_percent,
-        refcode
+        refcode,
+        allow_proxy = true
     ) {
         let {privKey: owner_private} = WalletDb.generateKeyFromPassword(
             account_name,
@@ -92,6 +93,7 @@ class WalletActions {
                     registrar, //registrar_id,
                     referrer, //referrer_id,
                     referrer_percent, //referrer_percent,
+                    allow_proxy, // allow_proxy
                     true //broadcast
                 )
                     .then(resolve)
@@ -105,9 +107,7 @@ class WalletActions {
                 // using faucet
 
                 //let faucetAddress = SettingsStore.getSetting("faucet_address");
-                //let faucetAddress = "https://faucet.rudex.org";
                 let faucetAddress = "https://faucet.rudex.org";
-
                 if (
                     window &&
                     window.location &&
@@ -140,6 +140,7 @@ class WalletActions {
                                 memo_key: memo_private
                                     .toPublicKey()
                                     .toPublicKeyString(),
+                                allow_proxy: allow_proxy,
                                 refcode: refcode,
                                 referrer: referrer
                             }
@@ -177,7 +178,8 @@ class WalletActions {
         registrar,
         referrer,
         referrer_percent,
-        refcode
+        refcode,
+        allow_proxy = true
     ) {
         if (WalletDb.isLocked()) {
             let error = "wallet locked";
@@ -206,6 +208,7 @@ class WalletActions {
                 registrar, //registrar_id,
                 referrer, //referrer_id,
                 referrer_percent, //referrer_percent,
+                allow_proxy, // allow_proxy
                 true //broadcast
             ).then(() => updateWallet());
         };
@@ -247,6 +250,7 @@ class WalletActions {
                                 .toPublicKey()
                                 .toPublicKeyString(),
                             //"memo_key": memo_private.private_key.toPublicKey().toPublicKeyString(),
+                            allow_proxy: allow_proxy,
                             refcode: refcode,
                             referrer: referrer
                         }

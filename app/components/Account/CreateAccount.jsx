@@ -14,13 +14,15 @@ import TransactionConfirmStore from "stores/TransactionConfirmStore";
 import LoadingIndicator from "../LoadingIndicator";
 import WalletActions from "actions/WalletActions";
 import Translate from "react-translate-component";
-import {ChainStore, FetchChain} from "bitsharesjs/es";
+import {ChainStore, FetchChain} from "bitsharesjs";
 import {BackupCreate} from "../Wallet/Backup";
 import ReactTooltip from "react-tooltip";
 import utils from "common/utils";
 import SettingsActions from "actions/SettingsActions";
 import counterpart from "counterpart";
 import {withRouter} from "react-router-dom";
+import {scroller} from "react-scroll";
+import {getWalletName} from "branding";
 
 class CreateAccount extends React.Component {
     constructor() {
@@ -33,11 +35,14 @@ class CreateAccount extends React.Component {
             loading: false,
             hide_refcode: true,
             show_identicon: false,
+            allow_proxy: true,
             step: 1
         };
         this.onFinishConfirm = this.onFinishConfirm.bind(this);
 
         this.accountNameInput = null;
+
+        this.scrollToInput = this.scrollToInput.bind(this);
     }
 
     componentWillMount() {
@@ -49,6 +54,7 @@ class CreateAccount extends React.Component {
 
     componentDidMount() {
         ReactTooltip.rebuild();
+        this.scrollToInput();
     }
 
     shouldComponentUpdate(nextProps, nextState) {
@@ -79,6 +85,12 @@ class CreateAccount extends React.Component {
         this.setState({validPassword: e.valid});
     }
 
+    _onInput(value, e) {
+        this.setState({
+            [value]: !this.state[value]
+        });
+    }
+
     onFinishConfirm(confirm_store_state) {
         if (
             confirm_store_state.included &&
@@ -98,6 +110,15 @@ class CreateAccount extends React.Component {
         }
     }
 
+    scrollToInput() {
+        scroller.scrollTo(`scrollToInput`, {
+            duration: 1500,
+            delay: 100,
+            smooth: true,
+            containerId: "accountForm"
+        });
+    }
+
     createAccount(name) {
         let refcode = this.refs.refcode ? this.refs.refcode.value() : null;
         let referralAccount = AccountStore.getState().referralAccount;
@@ -110,7 +131,8 @@ class CreateAccount extends React.Component {
                     this.state.registrar_account,
                     referralAccount || this.state.registrar_account,
                     0,
-                    refcode
+                    refcode,
+                    this.state.allow_proxy
                 )
                     .then(() => {
                         // User registering his own account
@@ -289,6 +311,33 @@ class CreateAccount extends React.Component {
                     </div>
                 )}
 
+                {firstAccount ? (
+                    <div
+                        className="confirm-checks"
+                        onClick={this._onInput.bind(this, "allow_proxy")}
+                    >
+                        <label
+                            htmlFor="checkbox-allow-proxy"
+                            style={{position: "relative"}}
+                        >
+                            <input
+                                type="checkbox"
+                                id="checkbox-allow-proxy"
+                                onChange={() => {}}
+                                checked={this.state.allow_proxy}
+                                style={{
+                                    position: "absolute",
+                                    top: "-5px",
+                                    left: "0"
+                                }}
+                            />
+                            <div style={{paddingLeft: "30px"}}>
+                                <Translate content="wallet.allow_proxy" />
+                            </div>
+                        </label>
+                    </div>
+                ) : null}
+
                 <div className="divider" />
 
                 {/* Submit button */}
@@ -354,7 +403,10 @@ class CreateAccount extends React.Component {
 
                 <p>
                     {!hasWallet ? (
-                        <Translate content="wallet.has_wallet" />
+                        <Translate
+                            content="wallet.has_wallet"
+                            wallet_name={getWalletName()}
+                        />
                     ) : null}
                 </p>
 
@@ -529,7 +581,11 @@ class CreateAccount extends React.Component {
         let {step} = this.state;
 
         return (
-            <div className="sub-content">
+            <div
+                className="sub-content"
+                id="scrollToInput"
+                name="scrollToInput"
+            >
                 <div style={{maxWidth: "95vw"}}>
                     {step !== 1 ? (
                         <p

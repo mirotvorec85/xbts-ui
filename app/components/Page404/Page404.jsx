@@ -24,8 +24,8 @@ class Page404 extends React.Component {
         }
 
         if (
-            this.props.theme === "midnightTheme" // ||
-            //this.props.theme === "rudexDarkTheme"
+            this.props.theme === "midnightTheme" ||
+            this.props.theme === "rudexDarkTheme"
         ) {
             logo = midnight;
         }

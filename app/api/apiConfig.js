@@ -1,3 +1,5 @@
+import {getFaucet} from "../branding";
+
 export const blockTradesAPIs = {
     BASE: "https://api.blocktrades.us/v2",
     COINS_LIST: "/coins",
@@ -70,34 +72,6 @@ export const xbtsxAPIs = {
     COINS_LIST: "/coin"
 };
 
-export const nodeRegions = [
-    // region of the node follows roughly https://en.wikipedia.org/wiki/Subregion#/media/File:United_Nations_geographical_subregions.png
-    "Northern Europe",
-    "Western Europe",
-    "Southern Europe",
-    "Eastern Europe",
-    "Northern Asia",
-    "Western Asia",
-    "Southern Asia",
-    "Eastern Asia",
-    "Central Asia",
-    "Southeastern Asia",
-    "Australia",
-    "New Zealand",
-    "Melanesia",
-    "Polynesia",
-    "Micronesia",
-    "Northern Africa",
-    "Western Africa",
-    "Middle Africa",
-    "Eastern Africa",
-    "Southern Africa",
-    "Northern America",
-    "Central America",
-    "Caribbean",
-    "South America"
-];
-
 export const settingsAPIs = {
     DEFAULT_WS_NODE: "wss://fake.automatic-selection.com",
     WS_NODE_LIST: [
@@ -117,8 +91,6 @@ export const settingsAPIs = {
         {url: "wss://bit.btsabc.org/ws", location: "Hong Kong"},
         {url: "wss://node.btscharts.com/ws", location: "Hong Kong"},
         {url: "wss://japan.bitshares.apasia.tech/ws", location: "Tokyo, Japan"},
-        {url: "wss://bitshares.dacplay.org/ws", location: "Hangzhou, China"},
-        {url: "wss://bitshares-api.wancloud.io/ws", location: "China"},
         {url: "wss://openledger.hk/ws", location: "Hong Kong"},
         {url: "wss://bitshares.crypto.fans/ws", location: "Munich, Germany"},
         {url: "wss://ws.gdex.io", location: "Japan"},
@@ -128,6 +100,9 @@ export const settingsAPIs = {
         {url: "wss://la.dexnode.net/ws", location: "LA, USA"},
         {url: "wss://kc-us-dex.xeldal.com/ws", location: "Kansas City, USA"},
         {url: "wss://btsza.co.za:8091/ws", location: "Cape Town, South Africa"},
+        {url: "wss://api.bitsharesdex.com/ws", location: "Missouri, USA"},
+        {url: "wss://api.fr.bitsharesdex.com/ws", location: "France"},
+        {url: "wss://blockzms.xyz/ws", location: "USA"},
         {
             url: "wss://eu.nodes.bitshares.ws",
             location: "Central Europe - BitShares Infrastructure Program"
@@ -155,17 +130,15 @@ export const settingsAPIs = {
         {url: "wss://api.btsgo.net/ws", location: "Singapore"},
         {url: "wss://bts.proxyhosts.info/wss", location: "Germany"},
         {url: "wss://bts.open.icowallet.net/ws", location: "Hangzhou, China"},
-        {url: "wss://blockzms.xyz/ws", location: "USA"},
         {url: "wss://crazybit.online", location: "China"},
         {url: "wss://freedom.bts123.cc:15138/", location: "China"},
         {url: "wss://bitshares.bts123.cc:15138/", location: "China"},
-        {url: "wss://api.bts.ai/", location: "Beijing, China"},
         {url: "wss://ws.hellobts.com/", location: "Japan"},
         {url: "wss://bitshares.cyberit.io/", location: "Hong Kong"},
         {url: "wss://bts-seoul.clockwork.gr/", location: "Seoul, Korea"},
         {url: "wss://bts.to0l.cn:4443/ws", location: "China"},
         {url: "wss://btsfullnode.bangzi.info/ws", location: "Germany"},
-        {url: "wss://node.xbts.io/ws", location: "Falkenstein, Germany"},
+        {url: "wss://node.xbts.io/ws", location: "Germany"},
         // Testnet
         {
             url: "wss://node.testnet.bitshares.eu",
@@ -180,8 +153,7 @@ export const settingsAPIs = {
             location: "TESTNET - APT BitShares (Dallas, USA)"
         }
     ],
-    DEFAULT_FAUCET: "https://faucet.rudex.org",
-    //DEFAULT_FAUCET: "https://faucet.bitshares.eu/onboarding",
+    DEFAULT_FAUCET: getFaucet().url,
     TESTNET_FAUCET: "https://faucet.testnet.bitshares.eu",
     RPC_URL: "https://openledger.info/api/"
 };
