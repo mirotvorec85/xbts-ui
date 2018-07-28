@@ -24,31 +24,6 @@ module.exports = {
         bgColor: "#191a1f",
         textColor: "#e0e0e0"
     },
-    rudexDarkTheme: {
-        bidColor: "#50D2C2",
-        bidFillColor: "rgba(80, 210, 194, 0.5)",
-        askColor: "#E3745B",
-        askFillColor: "rgba(227, 116, 91, 0.5)",
-        callColor: "#BBBF2B",
-        settleColor: "rgba(125, 134, 214, 1)",
-        settleFillColor: "rgba(125, 134, 214, 0.5)",
-        positiveColor: "#6BA583",
-        negativeColor: "#DB0000",
-        strokeColor: "#FFFF00",
-        primaryText: "#e0e0e0",
-        volumeColor: "#848484",
-
-        //tooltip
-        tooltipBackgroundColor: "rgba(0, 0, 0, 0.4)",
-        tooltipColor: "#fff",
-        tooltipFillColor: "#fff",
-        //axis
-        axisLabelsColor: "#fff",
-        axisLineColor: "#AAAAAA",
-        indicatorLineColor: "#FFFFFF",
-        bgColor: "#191a1f",
-        textColor: "#e0e0e0"
-    },
     darkTheme: {
         bidColor: "#6BA583",
         bidFillColor: "rgba(80, 210, 194, 0.5)",
@@ -73,6 +48,31 @@ module.exports = {
         indicatorLineColor: "#FFFFFF",
         bgColor: "#2a2a2a",
         textColor: "#ffffff"
+    },
+    rudexDarkTheme: {
+        bidColor: "#50D2C2",
+        bidFillColor: "rgba(80, 210, 194, 0.5)",
+        askColor: "#E3745B",
+        askFillColor: "rgba(227, 116, 91, 0.5)",
+        callColor: "#BBBF2B",
+        settleColor: "rgba(125, 134, 214, 1)",
+        settleFillColor: "rgba(125, 134, 214, 0.5)",
+        positiveColor: "#6BA583",
+        negativeColor: "#DB0000",
+        strokeColor: "#FFFF00",
+        primaryText: "#e0e0e0",
+        volumeColor: "#848484",
+
+        //tooltip
+        tooltipBackgroundColor: "rgba(0, 0, 0, 0.4)",
+        tooltipColor: "#fff",
+        tooltipFillColor: "#fff",
+        //axis
+        axisLabelsColor: "#fff",
+        axisLineColor: "#AAAAAA",
+        indicatorLineColor: "#FFFFFF",
+        bgColor: "#191a1f",
+        textColor: "#e0e0e0"
     },
     lightTheme: {
         bidColor: "#258A14",

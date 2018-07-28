@@ -394,8 +394,7 @@ class Header extends React.Component {
 
         let logoLink = (
             <a
-                style={{padding: "12px 1.75rem"}}
-                className={cnames({active: false})}
+                className={cnames("top-logo", {active: false})}
                 href="https://xbts.io"
                 target="_blank"
             >

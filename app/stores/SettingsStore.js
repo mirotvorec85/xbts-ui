@@ -121,12 +121,7 @@ class SettingsStore {
             unit: getUnits(),
             showSettles: [{translate: "yes"}, {translate: "no"}],
             showAssetPercent: [{translate: "yes"}, {translate: "no"}],
-            themes: [
-                "darkTheme",
-                "lightTheme",
-                "midnightTheme"
-                //"rudexDarkTheme"
-            ],
+            themes: ["darkTheme", "lightTheme", "midnightTheme"],
             passwordLogin: [
                 {translate: "cloud_login"},
                 {translate: "local_wallet"}
