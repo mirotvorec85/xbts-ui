@@ -49,7 +49,7 @@ class Footer extends React.Component {
     componentDidMount() {
         this.checkNewVersionAvailable.call(this);
 
-        this.downloadLink = "https://github.com/blckchnd/rudex-ui/releases";
+        this.downloadLink = "https://github.com/xbts/xbts-ui/releases";
 
         let ensure = this._ensureConnectivity.bind(this);
         ifvisible.on("wakeup", function() {
@@ -70,9 +70,7 @@ class Footer extends React.Component {
 
     checkNewVersionAvailable() {
         if (__ELECTRON__) {
-            fetch(
-                "https://api.github.com/repos/blckchnd/rudex-ui/releases/latest"
-            )
+            fetch("https://api.github.com/repos/xbts/xbts-ui/releases/latest")
                 .then(res => {
                     return res.json();
                 })

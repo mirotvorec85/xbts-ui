@@ -5,7 +5,7 @@
 .modal#simple_bridge_modal,
 .modal#deposit_modal_new,
 .modal#withdraw_modal_new {
-    max-width: 500px;
+    max-width: 550px;
 }
 
 .modal {
@@ -16,7 +16,7 @@
 
     .modal__header {
         text-align: center;
-        padding-top: 1rem;
+        padding-top: 0.5rem;
         > p {
             padding: 0px;
             margin: 0px;
