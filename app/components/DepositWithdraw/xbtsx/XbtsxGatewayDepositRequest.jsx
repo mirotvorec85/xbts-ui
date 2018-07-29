@@ -423,7 +423,7 @@ class XbtsxGatewayDepositRequest extends React.Component {
                                 ) : null}
                                 {showPayFromWallet ? (
                                     <a className="button" href={payFromWallet}>
-                                        <Translate content="gateway.pay_from_wallet" />{" "}
+                                        <Translate content="gateway.deposit_from_wallet" />{" "}
                                         {this.props.deposit_asset}
                                     </a>
                                 ) : null}

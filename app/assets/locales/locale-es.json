@@ -876,7 +876,7 @@
         "convert_now": "Convertir ahora",
         "copy_address": "Copy address",
         "copy_memo": "Copy memo",
-        "pay_from_wallet": "Pay From Wallet",
+        "deposit_from_wallet": "Deposit From Wallet",
         "deposit": "Depositar",
         "deposit_address": "Dirección de depósito",
         "deposit_history_status": {

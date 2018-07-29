@@ -1075,7 +1075,7 @@ class MyMarkets extends React.Component {
                     ) : null}
 
                     {/* Quote edit tab */}
-                    {/*
+
                     <li
                         key="quote_edit"
                         style={{textTransform: "uppercase"}}
@@ -1086,7 +1086,6 @@ class MyMarkets extends React.Component {
                     >
                         &nbsp;+&nbsp;
                     </li>
-						*/}
                 </ul>
 
                 <div

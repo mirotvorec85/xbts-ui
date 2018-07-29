@@ -841,7 +841,7 @@
         "convert_now": "兑换",
         "copy_address": "Copy address",
         "copy_memo": "Copy memo",
-        "pay_from_wallet": "Pay From Wallet",
+        "deposit_from_wallet": "Pay From Wallet",
         "deposit": "充值",
         "deposit_address": "充值地址",
         "deposit_history_status": {

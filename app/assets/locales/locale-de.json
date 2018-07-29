@@ -869,6 +869,7 @@
         "convert_now": "Convert now",
         "copy_address": "Copy address",
         "copy_memo": "Copy memo",
+        "deposit_from_wallet": "Deposit From Wallet",
         "deposit": "Einzahlung",
         "deposit_address": "Deposit address",
         "deposit_history_status": {
