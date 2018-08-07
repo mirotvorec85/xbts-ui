@@ -1,6 +1,6 @@
-RuDEX (BitShares-UI)
+BitShares-UI
 ============
-[中文版](README_zh.md)
+(README_zh.md)
 
 [![Slack](http://slack.bitshares.org/badge.svg)](http://slack.bitshares.org/)
 [![Build Status](https://travis-ci.org/blckchnd/rudex-ui.svg?branch=rudex)](https://travis-ci.org/blckchnd/rudex-ui)
