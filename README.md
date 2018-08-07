@@ -2,10 +2,6 @@ BitShares-UI
 ============
 (README_zh.md)
 
-[![Slack](http://slack.bitshares.org/badge.svg)](http://slack.bitshares.org/)
-[![Build Status](https://travis-ci.org/blckchnd/rudex-ui.svg?branch=rudex)](https://travis-ci.org/blckchnd/rudex-ui)
-[![Build status](https://ci.appveyor.com/api/projects/status/f08u82b21rqbkqxg/branch/rudex?svg=true)](https://ci.appveyor.com/project/RuslanSalikhov/rudex-ui/branch/rudex)
-
 This is a light wallet that connects to a BitShares API provided by the *witness_node* executable.
 
 
@@ -13,7 +9,7 @@ It *stores all keys locally* in the browser, *never exposing your keys to anyone
 
 ## Getting started
 
-RuDEX-UI depends node Node.js, and version 6+ is required.
+UI depends node Node.js, and version 6+ is required.
 
 On Ubuntu and OSX, the easiest way to install Node is to use the [Node Version Manager](https://github.com/creationix/nvm).
 
