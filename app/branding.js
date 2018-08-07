@@ -65,7 +65,16 @@ export function getDefaultLogin() {
  * @returns {[string,string,string,string,string,string]}
  */
 export function getUnits() {
-    return ["BTS", "RUBLE", "USD", "CNY", "BTC", "EUR", "GBP"];
+    return [
+        "BTS",
+        "RUBLE",
+        "USD",
+        "CNY",
+        "XBTSX.BTC",
+        "EUR",
+        "GBP",
+        "XBTSX.STH"
+    ];
 }
 
 /**
@@ -92,6 +101,8 @@ export function getMyMarketsQuotes() {
         "CNY",
         "GOLD",
         "SILVER",
+        "MXN",
+        "JPY",
         "XBTSX.STH",
         "XBTSX.POST",
         "XBTSX.DOGE",
@@ -99,13 +110,14 @@ export function getMyMarketsQuotes() {
         "XBTSX.LTC",
         "XBTSX.DASH",
         "XBTSX.KEC",
+        "XBTSX.BCH",
+        "XBTSX.BTG",
         "CVCOIN",
         "HERTZ",
         "HERO",
         "OBITS",
         "YOYOW",
         "SMOKE",
-        "BTWTY",
         "ZEPH"
     ];
 }
@@ -118,9 +130,9 @@ export function getMyMarketsQuotes() {
 export function getFeaturedMarkets() {
     return [
         ["BTS", "XBTSX.STH"],
+        ["XBTSX.BTC", "XBTSX.STH"],
         ["XBTSX.DOGE", "XBTSX.STH"],
         ["RUBLE", "XBTSX.STH"],
-        ["XBTSX.BTC", "XBTSX.STH"],
         ["BTS", "CNY"],
         ["BTS", "USD"],
         ["BTS", "EUR"],
@@ -133,7 +145,8 @@ export function getFeaturedMarkets() {
         ["BTS", "XBTSX.BTC"],
         ["BTS", "ZEPH"],
         ["BTS", "HERO"],
-        ["BTS", "OBITS"],
+        ["BTS", "CVCOIN"],
+        //["BTS", "OBITS"],
         ["CNY", "YOYOW"],
         ["BTS", "OPEN.EOS"],
         ["BTS", "OPEN.ETH"]
@@ -165,7 +178,7 @@ export function getAssetNamespaces() {
  */
 export function getAssetHideNamespaces() {
     // e..g "OPEN.", "bit"
-    return ["XBTSX.", "bit"];
+    return ["XBTSX."];
 }
 
 /**

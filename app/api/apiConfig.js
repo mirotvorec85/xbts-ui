@@ -68,7 +68,7 @@ export const gdexAPIs = {
 
 export const xbtsxAPIs = {
     BASE: "https://apis.xbts.io/api/v1",
-    //BASE: "http://localhost:3080/api/v1",
+    // BASE: "http://localhost:3080/api/v1",
     COINS_LIST: "/coin"
 };
 
@@ -90,7 +90,7 @@ export const settingsAPIs = {
         {url: "wss://bitshares.nu/ws", location: "Stockholm, Sweden"},
         {url: "wss://bit.btsabc.org/ws", location: "Hong Kong"},
         {url: "wss://node.btscharts.com/ws", location: "Hong Kong"},
-        {url: "wss://japan.bitshares.apasia.tech/ws", location: "Tokyo, Japan"},
+        // {url: "wss://japan.bitshares.apasia.tech/ws", location: "Tokyo, Japan"},
         {url: "wss://openledger.hk/ws", location: "Hong Kong"},
         {url: "wss://bitshares.crypto.fans/ws", location: "Munich, Germany"},
         {url: "wss://ws.gdex.io", location: "Japan"},
@@ -99,7 +99,7 @@ export const settingsAPIs = {
         {url: "wss://dexnode.net/ws", location: "Dallas, USA"},
         {url: "wss://la.dexnode.net/ws", location: "LA, USA"},
         {url: "wss://kc-us-dex.xeldal.com/ws", location: "Kansas City, USA"},
-        {url: "wss://btsza.co.za:8091/ws", location: "Cape Town, South Africa"},
+        // {url: "wss://btsza.co.za:8091/ws", location: "Cape Town, South Africa"},
         {url: "wss://api.bitsharesdex.com/ws", location: "Missouri, USA"},
         {url: "wss://api.fr.bitsharesdex.com/ws", location: "France"},
         {url: "wss://blockzms.xyz/ws", location: "USA"},

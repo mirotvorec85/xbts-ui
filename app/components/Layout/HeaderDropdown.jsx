@@ -359,7 +359,11 @@ export default class DropDownMenu extends React.Component {
                     )}
                 >
                     <div className="table-cell">
-                        <Icon size="2x" name="assets" title="icons.assets" />
+                        <Icon
+                            size="2x"
+                            name="pie-chart"
+                            title="icons.pie-chart"
+                        />
                     </div>
                     <div className="table-cell">
                         <Translate content="explorer.assets.title" />
@@ -379,8 +383,8 @@ export default class DropDownMenu extends React.Component {
                     <div className="table-cell">
                         <Icon
                             size="2x"
-                            name="text"
-                            title="icons.text.signed_messages"
+                            name="sign-msg"
+                            title="icons.sign-msg.signed_messages"
                         />
                     </div>
                     <div className="table-cell">
@@ -401,8 +405,8 @@ export default class DropDownMenu extends React.Component {
                     <div className="table-cell">
                         <Icon
                             size="2x"
-                            name="text"
-                            title="icons.text.membership_stats"
+                            name="network"
+                            title="icons.network.membership_stats"
                         />
                     </div>
                     <div className="table-cell">
@@ -462,7 +466,7 @@ export default class DropDownMenu extends React.Component {
                     )}
                 >
                     <div className="table-cell">
-                        <Icon size="2x" name="warning" title="icons.warning" />
+                        <Icon size="2x" name="privacy" title="icons.privacy" />
                     </div>
                     <div className="table-cell">
                         <Translate content="account.permissions" />

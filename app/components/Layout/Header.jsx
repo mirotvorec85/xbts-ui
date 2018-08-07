@@ -681,8 +681,8 @@ class Header extends React.Component {
                     <Icon
                         size="1_5x"
                         style={{position: "relative", top: 0, left: -8}}
-                        name="assets"
-                        title="icons.assets"
+                        name="pie-chart"
+                        title="icons.pie-chart"
                     />
                     <Translate
                         className="column-hide-small"
@@ -703,8 +703,8 @@ class Header extends React.Component {
                     <Icon
                         size="1_5x"
                         style={{position: "relative", top: 0, left: -8}}
-                        name="text"
-                        title="icons.text.signed_messages"
+                        name="sign-msg"
+                        title="icons.sign-msg.signed_messages"
                     />
                     <Translate
                         className="column-hide-small"
@@ -725,8 +725,8 @@ class Header extends React.Component {
                     <Icon
                         size="1_5x"
                         style={{position: "relative", top: 0, left: -8}}
-                        name="text"
-                        title="icons.text.membership_stats"
+                        name="network"
+                        title="icons.network.membership_stats"
                     />
                     <Translate
                         className="column-hide-small"
@@ -791,8 +791,8 @@ class Header extends React.Component {
                     <Icon
                         size="1_5x"
                         style={{position: "relative", top: 0, left: -8}}
-                        name="warning"
-                        title="icons.warning"
+                        name="privacy"
+                        title="icons.privacy"
                     />
                     <Translate
                         className="column-hide-small"

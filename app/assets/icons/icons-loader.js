@@ -53,7 +53,16 @@ let icons = [
     "user",
     "warning",
     "withdraw",
-    "zoom"
+    "zoom",
+    "sign-msg",
+    "pie-chart",
+    "privacy",
+    "explorer",
+    "group",
+    "create-user",
+    "user-login",
+    "network",
+    "mining"
 ];
 
 let iconsMap = {};
