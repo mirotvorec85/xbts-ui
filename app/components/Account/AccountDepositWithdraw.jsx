@@ -23,6 +23,7 @@ import AccountImage from "../Account/AccountImage";
 import GdexGateway from "../DepositWithdraw/gdex/GdexGateway";
 import WinexGateway from "../DepositWithdraw/winex/WinexGateway";
 import XbtsxGateway from "../DepositWithdraw/xbtsx/XbtsxGateway";
+import XbtsxFiatDepositWithdrawal from "../DepositWithdraw/xbtsx/XbtsxFiatDepositWithdrawal";
 import PropTypes from "prop-types";
 
 class AccountDepositWithdraw extends React.Component {
@@ -184,15 +185,15 @@ class AccountDepositWithdraw extends React.Component {
                             <li
                                 onClick={this.toggleXbtsxService.bind(
                                     this,
-                                    "bridge"
+                                    "fiat"
                                 )}
                                 className={
-                                    xbtsxService === "bridge" ? "is-active" : ""
+                                    rudexService === "fiat" ? "is-active" : ""
                                 }
                             >
                                 <Translate
                                     component="a"
-                                    content="gateway.bridge"
+                                    content="gateway.fiat"
                                 />
                             </li>
                         </ul>
@@ -205,15 +206,16 @@ class AccountDepositWithdraw extends React.Component {
                         />
                     ) : null}
 
-                    {xbtsxService === "bridge" ? (
+                    {xbtsxService === "fiat" ? (
                         <div>
-                            <Translate content="gateway.xbtsx.coming_soon" />
+                            <XbtsxFiatDepositWithdrawal account={account} />
+                            {/* Coming Soon */}
                         </div>
                     ) : null}
                 </div>
             )
         });
-
+        /*
         serList.push({
             name: "RuDEX (RUDEX.X)",
             template: (
@@ -270,7 +272,7 @@ class AccountDepositWithdraw extends React.Component {
                 </div>
             )
         });
-
+*/
         serList.push({
             name: "Openledger (OPEN.X)",
             template: (
@@ -435,7 +437,7 @@ class AccountDepositWithdraw extends React.Component {
                 </div>
             )
         });
-
+        /*
         serList.push({
             name: "BitKapital",
             template: (
@@ -463,6 +465,7 @@ class AccountDepositWithdraw extends React.Component {
                 </div>
             )
         });
+*/
 
         return serList;
     }

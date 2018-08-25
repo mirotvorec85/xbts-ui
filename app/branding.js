@@ -47,7 +47,7 @@ export function getLogo() {
  */
 export function getDefaultTheme() {
     // possible ["darkTheme", "lightTheme", "midnightTheme"]
-    return "lightTheme";
+    return "darkTheme";
 }
 
 /**
@@ -112,12 +112,15 @@ export function getMyMarketsQuotes() {
         "XBTSX.KEC",
         "XBTSX.BCH",
         "XBTSX.BTG",
+        "XBTSX.XSPEC",
+        // "XBTSX.NPC",
         "CVCOIN",
-        "HERTZ",
+        // "HERTZ",
         "HERO",
         "OBITS",
         "YOYOW",
-        "SMOKE",
+        // "SMOKE",
+        "RUDEX.EOS",
         "ZEPH"
     ];
 }
@@ -133,19 +136,20 @@ export function getFeaturedMarkets() {
         ["XBTSX.BTC", "XBTSX.STH"],
         ["XBTSX.DOGE", "XBTSX.STH"],
         ["RUBLE", "XBTSX.STH"],
-        ["BTS", "CNY"],
+        ["BTS", "RUBLE"],
         ["BTS", "USD"],
         ["BTS", "EUR"],
-        ["BTS", "RUBLE"],
+        ["BTS", "CNY"],
         ["BTS", "GOLD"],
         ["BTS", "SILVER"],
         ["XBTSX.BTC", "XBTSX.LTC"],
-        ["XBTSX.BTC", "XBTSX.POST"],
+        ["XBTSX.BTC", "XBTSX.XSPEC"],
         ["XBTSX.BTC", "XBTSX.DOGE"],
-        ["BTS", "XBTSX.BTC"],
+        ["RUBLE", "XBTSX.BTC"],
         ["BTS", "ZEPH"],
         ["BTS", "HERO"],
-        ["BTS", "CVCOIN"],
+        ["XBTSX.BTC", "XBTSX.POST"],
+        // ["BTS", "CVCOIN"],
         //["BTS", "OBITS"],
         ["CNY", "YOYOW"],
         ["BTS", "OPEN.EOS"],

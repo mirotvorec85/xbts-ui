@@ -2086,5 +2086,67 @@
             "finalNumber": "Actual amount ：%(final_number)s",
             "winAmount": "Minimum amount: %(min_amount)s %(asset)s"
         }
+    },
+    "cryptobridge": {
+        "general": {
+            "check_url": "Please check that you are visiting %(url)s",
+            "important": "Important",
+            "news": "News"
+        },
+        "gateway": {
+            "required_confirmations": "Required confirmations",
+            "support_block": "For support, please contact XBTS at:",
+            "deposit_or_withdrawal": "Depositing or withdrawing coins",
+            "deposit_intro":
+                "If you want to deposit or withdraw funds from other blockchains, please use the form below.",
+            "deposit_to_fee_warning":
+                "WARNING: Depositing %(asset)s more than once every %(fee_time_frame)s minutes will incur a %(fee_percentage)s% deposit fee (minimum %(fee_minimum)s %(asset)s). A deposit fee of %(fee_percentage_low_amounts)s% is charged when the deposit is below 1 %(asset)s.",
+            "deposit_minimum": "Minimum deposit",
+            "deposit_login":
+                "Your wallet must be unlocked before you make a deposit",
+            "receive_funds": "Receiving funds",
+            "receive_funds_intro":
+                "In order to receive funds from another person on XBTS, simply give them your account name: "
+        },
+        "footer": {
+            "title": "XBTS decentralized exchange"
+        },
+        "account": {
+            "id": "STH Staking ID",
+            "title":
+                "Stake your SmartHoldem Coin (STH) to earn profits from the DEX",
+            "intro_text_title": "Welcome to XBTS",
+            "staking_amount": "Staking amount",
+            "remaining": "Remaining in staking period",
+            "staking_text1":
+                "Everyone who stakes their STH is entitled to %(percent)s of the trading profits from the <b>XBTS decentralized exchange</b>. Staking will lock your coins for the time you specify below. During the staking period you automatically take part in the payout distributions. Payouts happen bi-weekly.",
+            "staking_text2":
+                "A longer staking duration results in a bigger payout factor. After the staking period has been reached, you can reclaim your staked STH balance with the <b>'Claim Now'</b> button. The blockchain fee to start a new staking position is currently set at <b>%(fee)s STH</b>. The blockchain fee to reclaim your staked STH is currently set at <b>%(reclaimFee)s STH.</b>",
+            "staking_text3":
+                "You can only stake STH that you have deposited into the <b>XBTS decentralized exchange</b>. You can find more information about the advantages of the <b>XBTS decentralized exchange</b> and its profit sharing at <a target=\"_new\" href=\"https://xbts.io\">xbts.io</a>.",
+            "status": "Status",
+            "staking": "SmartHoldem Staking",
+            "days": "%(days)s Days",
+            "available": "Available for claiming",
+            "month_1": "1 Month (%(bonus)s bonus)",
+            "month_3": "3 Month (%(bonus)s bonus)",
+            "month_6": "6 Month (%(bonus)s bonus)",
+            "month_12": "12 Month (%(bonus)s bonus)",
+            "month_1_plural": "1 Month",
+            "month_3_plural": "3 Months",
+            "month_6_plural": "6 Months",
+            "month_12_plural": "12 Months",
+            "amount_bco": "Amount of STH to stake",
+            "stake_bco": "Create a new STH staking position",
+            "length": "Staking duration",
+            "understand":
+                "I hereby agree that by staking %(amount)s STH, I fully understand that they will be locked away for %(month)s and that there is no way of claiming the funds before the staking term is over. I also accept the share in the profits of CryptoBridge platform which is attributed to my staked funds.",
+            "no_balances": "You have no open SmartHoldem staking positions.",
+            "bco_available": "Available: ",
+            "bco_not_available": "No STH available "
+        },
+        "dashboard": {
+            "all_markets": "All Markets"
+        }
     }
 }

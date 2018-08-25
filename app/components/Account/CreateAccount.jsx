@@ -331,6 +331,7 @@ class CreateAccount extends React.Component {
                                     left: "0"
                                 }}
                             />
+
                             <div style={{paddingLeft: "30px"}}>
                                 <Translate content="wallet.allow_proxy" />
                             </div>

@@ -980,7 +980,14 @@
                 "Я ознакомился с позицией OpenLedger.",
             "support_block":
                 "Для получения поддержки, пожалуйста, свяжитесь с XBTS по адресу:",
-            "under_construction": "Технические работы"
+            "under_construction": "Технические работы",
+            "partners": {
+                "trustcash": {
+                    "title": "Пополнение/Вывод bitRUBLE, bitUSD, bitEUR",
+                    "description":
+                        "Market. - P2P площадка по продаже битактивов и криптовалют за фиатные деньги, такие как RUB, USD, CNY, EUR, KRW и другие."
+                }
+            }
         },
         "scan_qr": "Сканировать QR-код",
         "service": "Перевод средств",
@@ -2142,6 +2149,68 @@
         "withdraw": {
             "finalNumber": "Фактическая сумма:%(final_number)s",
             "winAmount": "Минимальная сумма: %(min_amount)s %(asset)s"
+        }
+    },
+    "cryptobridge": {
+        "general": {
+            "check_url": "Please check that you are visiting %(url)s",
+            "important": "Important",
+            "news": "News"
+        },
+        "gateway": {
+            "required_confirmations": "Required confirmations",
+            "support_block": "For support, please contact XBTS at:",
+            "deposit_or_withdrawal": "Depositing or withdrawing coins",
+            "deposit_intro":
+                "If you want to deposit or withdraw funds from other blockchains, please use the form below.",
+            "deposit_to_fee_warning":
+                "WARNING: Depositing %(asset)s more than once every %(fee_time_frame)s minutes will incur a %(fee_percentage)s% deposit fee (minimum %(fee_minimum)s %(asset)s). A deposit fee of %(fee_percentage_low_amounts)s% is charged when the deposit is below 1 %(asset)s.",
+            "deposit_minimum": "Minimum deposit",
+            "deposit_login":
+                "Your wallet must be unlocked before you make a deposit",
+            "receive_funds": "Receiving funds",
+            "receive_funds_intro":
+                "In order to receive funds from another person on XBTS, simply give them your account name: "
+        },
+        "footer": {
+            "title": "XBTS decentralized exchange"
+        },
+        "account": {
+            "id": "STH Staking ID",
+            "title":
+                "Участвуйте вашими SmartHoldem Монетами (STH) в получении прибыли с DEX",
+            "intro_text_title": "Welcome to XBTS",
+            "staking_amount": "Сумма ставки",
+            "remaining": "Оставшееся время ставки",
+            "staking_text1":
+                "Холдеры STH, имеют право получать %(percent)s от прибыли <b>Децентрализованной торговой платформы XBTS</b>. Доля монет STH блокируется на указанное ниже время. В период процесса вы автоматически принимаете участие в распределении выплат. Выплаты происходят раз в две недели.",
+            "staking_text2":
+                "Более длительное участие приводит к большему коэффициенту выплат. После того как период стейкинга завершен, вы можете вернуть свой баланс STH с помощью кнопки <b>'Запросить Сейчас'</b>. Комиссия BlockChain, чтобы установить новую позицию, в настоящее время установлена на <b>%(fee)s STH</b>. Комиссия BlockChain, чтобы вернуть вашу ставку STH в настоящее время составляет <b>%(reclaimFee)s STH.</b>",
+            "staking_text3":
+                "Участвуют только ваши STH, которые вы депонировали в <b>Децентрализованную торговую платформу XBTS</b>. Вы можете найти дополнительную информацию о преимуществах децентрализованного обмена на <a target=\"_new\" href=\"https://xbts.io\">xbts.io</a>.",
+            "status": "Статус",
+            "staking": "SmartHolder",
+            "days": "%(days)s Дней",
+            "available": "Доступно для вывода",
+            "month_1": "1 Месяц (%(bonus)s бонус)",
+            "month_3": "3 Месяца (%(bonus)s бонус)",
+            "month_6": "6 Месяцев (%(bonus)s бонус)",
+            "month_12": "12 Месяцев (%(bonus)s бонус)",
+            "month_1_plural": "1 Месяц",
+            "month_3_plural": "3 Месяца",
+            "month_6_plural": "6 Месяцев",
+            "month_12_plural": "12 Месяцев",
+            "amount_bco": "Количество STH в доле",
+            "stake_bco": "Создать новую позицию доли STH",
+            "length": "Длительность стейкинга",
+            "understand":
+                "Настоящим я соглашаюсь, что путем стейкинга %(amount)s STH, Я полностью понимаю, что они будут заморожены на %(month)s и что нет возможности потребовать средства до истечения срока. Я также принимаю участие в прибыли платформы XBTS, которая приписывается моим уставным фондом.",
+            "no_balances": "У вас нет открытых позиций SmartHoldem.",
+            "bco_available": "Доступны: ",
+            "bco_not_available": "Нет доступных STH "
+        },
+        "dashboard": {
+            "all_markets": "Все Рынки"
         }
     }
 }

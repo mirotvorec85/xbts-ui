@@ -138,8 +138,8 @@ class CreateAccountPassword extends React.Component {
             this.state.registrar_account,
             referralAccount || this.state.registrar_account,
             0,
-            refcode,
-            this.state.allow_proxy
+            refcode
+            // this.state.allow_proxy
         )
             .then(() => {
                 AccountActions.setPasswordAccount(name);
@@ -319,7 +319,7 @@ class CreateAccountPassword extends React.Component {
                     </section>
 
                     <br />
-
+                    {/*
                     <div
                         className="confirm-checks"
                         onClick={this._onInput.bind(this, "allow_proxy")}
@@ -345,7 +345,7 @@ class CreateAccountPassword extends React.Component {
                         </label>
                     </div>
                     <br />
-
+					*/}
                     <div
                         className="confirm-checks"
                         onClick={this._onInput.bind(this, "understand_3")}

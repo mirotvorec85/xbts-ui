@@ -13,6 +13,7 @@ import utils from "common/utils";
 
 import {Tabs, Tab} from "../Utility/Tabs";
 import AccountOrders from "./AccountOrders";
+import AccountStaking from "./AccountStaking";
 import cnames from "classnames";
 import TranslateWithLinks from "../Utility/TranslateWithLinks";
 import {checkMarginStatus} from "common/accountHelper";
@@ -559,6 +560,21 @@ class AccountOverview extends React.Component {
                                         balanceObjects={includedBalancesList}
                                     />
                                 )}
+                            </Tab>
+
+                            <Tab title="cryptobridge.account.staking">
+                                <div className="grid-container">
+                                    <div
+                                        className="grid-content"
+                                        style={{paddingTop: "2rem"}}
+                                    >
+                                        <AccountStaking
+                                            account={this.props.account}
+                                            balances={this.props.balances}
+                                            gateFee={this.props.gateFee}
+                                        />
+                                    </div>
+                                </div>
                             </Tab>
 
                             <Tab

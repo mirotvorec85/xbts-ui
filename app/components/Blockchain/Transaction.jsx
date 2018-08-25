@@ -29,7 +29,7 @@ import {
     scrollSpy,
     scroller
 } from "react-scroll";
-
+import {AccountStakingInfo} from "../Account/AccountStakeCreateNew";
 require("./operations.scss");
 require("./json-inspector.scss");
 
@@ -1431,6 +1431,36 @@ class Transaction extends React.Component {
                             </td>
                         </tr>
                     );
+                    break;
+
+                case "vesting_balance_create":
+                    const stakingPeriod =
+                        AccountStakingInfo.getStakingPeriodByPeriodValue(
+                            op[1].policy[1].vesting_seconds
+                        ) || {};
+
+                    rows.push(
+                        <tr key={key++}>
+                            <td>
+                                <Translate content="cryptobridge.account.amount_bco" />
+                            </td>
+                            <td>
+                                <FormattedAsset
+                                    amount={op[1].amount.amount}
+                                    asset={op[1].amount.asset_id}
+                                />
+                            </td>
+                        </tr>
+                    );
+                    rows.push(
+                        <tr key={key++}>
+                            <td>
+                                <Translate content="cryptobridge.account.length" />
+                            </td>
+                            <td>{stakingPeriod.name}</td>
+                        </tr>
+                    );
+
                     break;
 
                 case "vesting_balance_withdraw":
