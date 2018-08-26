@@ -113,14 +113,15 @@ export function getMyMarketsQuotes() {
         "XBTSX.BCH",
         "XBTSX.BTG",
         "XBTSX.XSPEC",
-        // "XBTSX.NPC",
+        "XBTSX.NVC",
         "CVCOIN",
         // "HERTZ",
         "HERO",
         "OBITS",
         "YOYOW",
+        //"ICOO",
         // "SMOKE",
-        "RUDEX.EOS",
+        // "RUDEX.EOS",
         "ZEPH"
     ];
 }
@@ -134,8 +135,8 @@ export function getFeaturedMarkets() {
     return [
         ["BTS", "XBTSX.STH"],
         ["XBTSX.BTC", "XBTSX.STH"],
-        ["XBTSX.DOGE", "XBTSX.STH"],
         ["RUBLE", "XBTSX.STH"],
+        ["XBTSX.DOGE", "XBTSX.STH"],
         ["BTS", "RUBLE"],
         ["BTS", "USD"],
         ["BTS", "EUR"],

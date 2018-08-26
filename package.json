@@ -1,6 +1,6 @@
 {
     "name": "XBTS-light",
-    "version": "2.0.180632",
+    "version": "2.0.180633",
     "description": "Advanced wallet interface for the BitShares financial blockchain.",
     "homepage": "https://github.com/xbts/xbts-ui",
     "author": "XBTS <info@xbts.io>",

@@ -208,8 +208,8 @@ class AccountDepositWithdraw extends React.Component {
 
                     {xbtsxService === "fiat" ? (
                         <div>
-                            <XbtsxFiatDepositWithdrawal account={account} />
-                            {/* Coming Soon */}
+                            {/*<XbtsxFiatDepositWithdrawal account={account} />*/}
+                            Coming Soon
                         </div>
                     ) : null}
                 </div>

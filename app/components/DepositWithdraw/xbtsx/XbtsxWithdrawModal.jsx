@@ -266,12 +266,6 @@ class XbtsxWithdrawModal extends React.Component {
             withdraw_amount <
             this.props.min_amount /
                 utils.get_asset_precision(this.props.asset_precision);
-        console.log(
-            "X",
-            withdraw_amount,
-            this.props.min_amount /
-                utils.get_asset_precision(this.props.asset_precision)
-        );
         this.setState({minAmountError: lessThanMinimum});
         return lessThanMinimum;
     }
