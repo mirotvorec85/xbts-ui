@@ -272,7 +272,7 @@ export default class DropDownMenu extends React.Component {
                 <li
                     onClick={e => {
                         e.preventDefault;
-                        window.open("https://rudex.freshdesk.com", "_blank");
+                        window.open("https://t.me/xbtsio", "_blank");
                     }}
                 >
                     <div className="table-cell">
