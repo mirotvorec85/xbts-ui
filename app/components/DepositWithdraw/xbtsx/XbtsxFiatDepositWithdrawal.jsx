@@ -10,6 +10,9 @@ import AccountBalance from "../../Account/AccountBalance";
 import BalanceComponent from "components/Utility/BalanceComponent";
 import PropTypes from "prop-types";
 import AccountStore from "../../../stores/AccountStore";
+import SettingsActions from "../../../actions/SettingsActions";
+import XbtsxWithdrawModal from "./XbtsxWithdrawModal";
+import Modal from "react-foundation-apps/src/modal";
 
 var mrktCashLogo = `${__BASE_URL__}images/partner-trustcash.png`;
 let tradingAccounts = AccountStore.getMyAccounts();
@@ -21,11 +24,15 @@ class XbtsxFiatDepositWithdrawal extends React.Component {
 
     constructor(props) {
         super(props);
-
         this.state = {};
+        this.handleKeyUp = this.keyUpHandler.bind(this, "inputDeposit");
     }
 
     componentWillUnmount() {}
+
+    keyUpHandler(refName, e) {
+        // console.log(refName, e.target.value);
+    }
 
     render() {
         if (!this.props.account) return <div />;
@@ -33,13 +40,27 @@ class XbtsxFiatDepositWithdrawal extends React.Component {
         let trustCashLink =
             "https://trustcash.org/widgets/bitshares/v1/?token=ea278fd12&account=" +
             tradingAccounts[0];
-        let markCashLink = (
+
+        let trustCashLogoLink = (
             <a
                 style={{padding: "12px 0.25rem"}}
                 href="https://trustcash.org"
                 target="_blank"
             >
                 <img style={{margin: 0, height: 32}} src={mrktCashLogo} />
+            </a>
+        );
+
+        let urlDeposit = (
+            <a
+                id={"urlDeposit"}
+                target="_blank"
+                className="button success"
+                href={
+                    "https://qiwi.com/payment/form/99?extra[%27account%27]=79256582732&amountInteger=1000.00&extra[%27comment%27]=ciphery256:ruble&currency=643"
+                }
+            >
+                START EXCHANGE
             </a>
         );
 
@@ -56,12 +77,108 @@ class XbtsxFiatDepositWithdrawal extends React.Component {
         );
 
         return (
-            <div>
+            <div className={"content-block"}>
                 <h1>
-                    <Translate content="gateway.xbtsx.partners.trustcash.title" />
+                    <Translate content="gateway.xbtsx.partners.trustcash.title" />{" "}
+                    {trustCashLogoLink}
                 </h1>
-                <p>{markCashLink}</p>
                 <p>{trustcashForm}</p>
+                <p
+                    style={{
+                        width: "100%",
+                        float: "left",
+                        clear: "both",
+                        padding: "10px",
+                        fontSize: "20px"
+                    }}
+                >
+                    Recipient Account: {tradingAccounts[0]}
+                </p>
+                <div
+                    className="formDeposit"
+                    id={"depositFiat"}
+                    style={{padding: "6px"}}
+                >
+                    <label
+                        style={{
+                            width: "120px",
+                            float: "left",
+                            clear: "left",
+                            padding: "10px",
+                            fontSize: "20px"
+                        }}
+                    >
+                        Deposit
+                    </label>
+                    <input
+                        onKeyUp={this.handleKeyUp}
+                        ref="inputDeposit"
+                        style={{
+                            width: "120px",
+                            float: "left"
+                        }}
+                        id="moneySend"
+                        type="text"
+                        placeholder="1001"
+                        className="form-control"
+                    />
+                    <select
+                        className="bts-select form-group"
+                        style={{
+                            width: "200px"
+                        }}
+                    >
+                        <option key="QIWIRUR" value="QIWIRUR">
+                            QIWI RUR
+                        </option>
+                    </select>
+                </div>
+                <div
+                    className="formDeposit"
+                    id={"receiveAsset"}
+                    style={{padding: "6px"}}
+                >
+                    <label
+                        style={{
+                            width: "120px",
+                            float: "left",
+                            clear: "left",
+                            padding: "10px",
+                            fontSize: "20px"
+                        }}
+                    >
+                        Receive
+                    </label>
+                    <input
+                        onKeyUp={this.handleKeyUp}
+                        ref="inputReceive"
+                        style={{
+                            width: "120px",
+                            float: "left"
+                        }}
+                        id="moneySend"
+                        type="text"
+                        placeholder="1000"
+                        className="form-control"
+                    />
+                    <select
+                        className="bts-select form-group"
+                        style={{
+                            width: "200px"
+                        }}
+                    >
+                        <option key="RUBLE" value="RUBLE">
+                            bitRUBLE
+                        </option>
+                        <option disabled key="USD" value="USD">
+                            bitUSD
+                        </option>
+                    </select>
+                </div>
+                <p>
+                    <small>Deposit min:50 max:8500 fixed fee: 1 RUBLE</small>
+                </p>
+                <p>{urlDeposit}</p>
             </div>
         );
     }

@@ -121,7 +121,6 @@ export function getMyMarketsQuotes() {
         "YOYOW",
         //"ICOO",
         // "SMOKE",
-        // "RUDEX.EOS",
         "ZEPH"
     ];
 }
@@ -136,7 +135,8 @@ export function getFeaturedMarkets() {
         ["BTS", "XBTSX.STH"],
         ["XBTSX.BTC", "XBTSX.STH"],
         ["RUBLE", "XBTSX.STH"],
-        ["XBTSX.DOGE", "XBTSX.STH"],
+        // ["XBTSX.DOGE", "XBTSX.STH"],
+        ["RUBLE", "XBTSX.BTC"],
         ["BTS", "RUBLE"],
         ["BTS", "USD"],
         ["BTS", "EUR"],
@@ -146,11 +146,10 @@ export function getFeaturedMarkets() {
         ["XBTSX.BTC", "XBTSX.LTC"],
         ["XBTSX.BTC", "XBTSX.XSPEC"],
         ["XBTSX.BTC", "XBTSX.DOGE"],
-        ["RUBLE", "XBTSX.BTC"],
         ["BTS", "ZEPH"],
         ["BTS", "HERO"],
         ["XBTSX.BTC", "XBTSX.POST"],
-        // ["BTS", "CVCOIN"],
+        ["BTS", "CVCOIN"],
         //["BTS", "OBITS"],
         ["CNY", "YOYOW"],
         ["BTS", "OPEN.EOS"],
@@ -193,8 +192,9 @@ export function getAssetHideNamespaces() {
  */
 export function allowedGateway(gateway) {
     return (
-        ["OPEN", "RUDEX", "WIN", "BRIDGE", "GDEX", "XBTSX"].indexOf(gateway) >=
-        0
+        ["OPEN", "RUDEX", "WIN", "BRIDGE", "GDEX", "XBTSX", "QIWI"].indexOf(
+            gateway
+        ) >= 0
     );
 }
 

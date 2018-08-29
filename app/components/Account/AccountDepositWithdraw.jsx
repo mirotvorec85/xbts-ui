@@ -16,6 +16,7 @@ import SettingsStore from "stores/SettingsStore";
 import SettingsActions from "actions/SettingsActions";
 import {settingsAPIs} from "api/apiConfig";
 import BitKapital from "../DepositWithdraw/BitKapital";
+import Qiwi from "../DepositWithdraw/Qiwi";
 import RuDexGateway from "../DepositWithdraw/rudex/RuDexGateway";
 import RuDexFiatDepositWithdrawal from "../DepositWithdraw/rudex/RuDexFiatDepositWithdrawal";
 import GatewayStore from "stores/GatewayStore";
@@ -182,13 +183,14 @@ class AccountDepositWithdraw extends React.Component {
                                     <Translate content="gateway.gateway" />
                                 </a>
                             </li>
+                            {/*}
                             <li
                                 onClick={this.toggleXbtsxService.bind(
                                     this,
                                     "fiat"
                                 )}
                                 className={
-                                    rudexService === "fiat" ? "is-active" : ""
+                                    xbtsxService === "fiat" ? "is-active" : ""
                                 }
                             >
                                 <Translate
@@ -196,6 +198,7 @@ class AccountDepositWithdraw extends React.Component {
                                     content="gateway.fiat"
                                 />
                             </li>
+                            */}
                         </ul>
                     </div>
 
@@ -206,12 +209,13 @@ class AccountDepositWithdraw extends React.Component {
                         />
                     ) : null}
 
+                    {/*
                     {xbtsxService === "fiat" ? (
                         <div>
-                            {/*<XbtsxFiatDepositWithdrawal account={account} />*/}
-                            Coming Soon
+                            <XbtsxFiatDepositWithdrawal account={account}
                         </div>
                     ) : null}
+                    */}
                 </div>
             )
         });
@@ -437,6 +441,16 @@ class AccountDepositWithdraw extends React.Component {
                 </div>
             )
         });
+
+        serList.push({
+            name: "QIWI",
+            template: (
+                <Qiwi
+                    viewSettings={this.props.viewSettings}
+                    account={account}
+                />
+            )
+        });
         /*
         serList.push({
             name: "BitKapital",
@@ -447,25 +461,25 @@ class AccountDepositWithdraw extends React.Component {
                 />
             )
         });
+        /*
+                serList.push({
+                    name: "GDEX",
+                    template: (
+                        <div>
+                            <GdexGateway account={account} provider={"gdex"} />
+                        </div>
+                    )
+                });
 
-        serList.push({
-            name: "GDEX",
-            template: (
-                <div>
-                    <GdexGateway account={account} provider={"gdex"} />
-                </div>
-            )
-        });
-
-        serList.push({
-            name: "Winex",
-            template: (
-                <div>
-                    <WinexGateway account={account} provider="Winex" />
-                </div>
-            )
-        });
-*/
+                serList.push({
+                    name: "Winex",
+                    template: (
+                        <div>
+                            <WinexGateway account={account} provider="Winex" />
+                        </div>
+                    )
+                });
+        */
 
         return serList;
     }
@@ -520,6 +534,7 @@ class AccountDepositWithdraw extends React.Component {
 
         const serviceNames = [
             "XBTSX",
+            "QIWI",
             "RUDEX",
             "Winex",
             "GDEX",
