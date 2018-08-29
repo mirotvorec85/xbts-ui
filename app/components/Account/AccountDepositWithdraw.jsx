@@ -15,16 +15,15 @@ import AccountStore from "stores/AccountStore";
 import SettingsStore from "stores/SettingsStore";
 import SettingsActions from "actions/SettingsActions";
 import {settingsAPIs} from "api/apiConfig";
-import BitKapital from "../DepositWithdraw/BitKapital";
+// import BitKapital from "../DepositWithdraw/BitKapital";
 import Qiwi from "../DepositWithdraw/Qiwi";
-import RuDexGateway from "../DepositWithdraw/rudex/RuDexGateway";
-import RuDexFiatDepositWithdrawal from "../DepositWithdraw/rudex/RuDexFiatDepositWithdrawal";
+// import RuDexGateway from "../DepositWithdraw/rudex/RuDexGateway";
+// import RuDexFiatDepositWithdrawal from "../DepositWithdraw/rudex/RuDexFiatDepositWithdrawal";
 import GatewayStore from "stores/GatewayStore";
 import AccountImage from "../Account/AccountImage";
-import GdexGateway from "../DepositWithdraw/gdex/GdexGateway";
-import WinexGateway from "../DepositWithdraw/winex/WinexGateway";
+// import GdexGateway from "../DepositWithdraw/gdex/GdexGateway";
+// import WinexGateway from "../DepositWithdraw/winex/WinexGateway";
 import XbtsxGateway from "../DepositWithdraw/xbtsx/XbtsxGateway";
-import XbtsxFiatDepositWithdrawal from "../DepositWithdraw/xbtsx/XbtsxFiatDepositWithdrawal";
 import PropTypes from "prop-types";
 
 class AccountDepositWithdraw extends React.Component {
@@ -539,8 +538,8 @@ class AccountDepositWithdraw extends React.Component {
             "Winex",
             "GDEX",
             "OPEN",
-            "TRADE",
-            "BITKAPITAL"
+            "TRADE"
+            // "BITKAPITAL"
         ];
         const currentServiceName = serviceNames[activeService];
         const currentServiceDown = servicesDown.get(currentServiceName);
