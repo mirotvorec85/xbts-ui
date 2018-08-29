@@ -12,16 +12,16 @@ import SettingsStore from "stores/SettingsStore";
 
 class Qiwi extends React.Component {
     static propTypes = {
-        jianjolly: ChainTypes.ChainAccount.isRequired,
-        onay: ChainTypes.ChainAccount.isRequired,
+        // jianjolly: ChainTypes.ChainAccount.isRequired,
+        // onay: ChainTypes.ChainAccount.isRequired,
         trustWallet: ChainTypes.ChainAccount.isRequired,
         asset: ChainTypes.ChainAsset.isRequired
     };
 
     static defaultProps = {
-        jianjolly: "1.2.1068867", // "jianjolly-0",
+        // jianjolly: "1.2.1068867", // "jianjolly-0",
         trustWallet: "1.2.1068867",
-        onay: "1.2.1068867", // bitkapital dedicated whitelist management account
+        // onay: "1.2.1068867", // bitkapital dedicated whitelist management account
         asset: "RUBLE"
     };
 
@@ -29,8 +29,8 @@ class Qiwi extends React.Component {
         super();
         this.state = {
             action: props.viewSettings.get("qiwiAction", "deposit"),
-            min: 2,
-            max: 12000,
+            min: 100,
+            max: 10000,
             data: []
         };
     }
@@ -39,7 +39,6 @@ class Qiwi extends React.Component {
         fetch("https://apis.xbts.io/api/v1/qiwi")
             .then(response => response.json())
             .then(data => {
-                console.log(data);
                 this.setState({max: data});
             })
             .catch(err => console.error(this.props.url, err.toString()));
@@ -68,6 +67,14 @@ class Qiwi extends React.Component {
     }
 
     _renderWithdrawals() {
+        if (this.state.max < 200) {
+            return (
+                <div style={{width: "100%", border: 0, minHeight: 600}}>
+                    Withdrawal Under Maintenance... Please check back later!
+                </div>
+            );
+        }
+
         return (
             <form onSubmit={this._onSubmit.bind(this)}>
                 <div style={{padding: "20px 0"}}>
@@ -114,7 +121,7 @@ class Qiwi extends React.Component {
                         required
                         id="iban"
                         type="text"
-                        placeholder="79281234567"
+                        placeholder="79280000123"
                     />
                 </label>
 
@@ -133,10 +140,16 @@ class Qiwi extends React.Component {
         SettingsActions.changeViewSetting({
             qiwiAction: action
         });
+
+        this.loadData(); //???
     }
 
     _onSubmit(e) {
         e.preventDefault();
+
+        this.loadData(); //???
+        this._renderWithdrawals();
+
         let {min, max} = this.state;
         let {asset, account, trustWallet} = this.props;
 
@@ -159,7 +172,6 @@ class Qiwi extends React.Component {
             null, // propose set to false
             asset.get("id") // Pay fee with KAPITAL
         );
-        this.loadData(); //???
     }
 
     onTrxIncluded(confirm_store_state) {
