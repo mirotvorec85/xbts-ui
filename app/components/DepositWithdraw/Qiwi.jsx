@@ -31,15 +31,16 @@ class Qiwi extends React.Component {
             action: props.viewSettings.get("qiwiAction", "deposit"),
             min: 100,
             max: 10000,
+            fee: 1,
             data: []
         };
     }
 
     loadData() {
-        fetch("https://apis.xbts.io/api/v1/qiwi")
+        fetch("https://apis.xbts.io/api/v2/qiwi")
             .then(response => response.json())
             .then(data => {
-                this.setState({max: data});
+                this.setState({max: data.max, fee: data.fee});
             })
             .catch(err => console.error(this.props.url, err.toString()));
     }
@@ -93,7 +94,7 @@ class Qiwi extends React.Component {
                     <br />
                     <br />
                     <label>
-                        <Translate content="gateway.fee" /> 1%
+                        <Translate content="gateway.fee" /> {this.state.fee}%
                     </label>
                     <br />
                     <small>
