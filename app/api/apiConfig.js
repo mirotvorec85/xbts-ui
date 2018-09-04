@@ -17,7 +17,8 @@ export const openledgerAPIs = {
     TRADING_PAIRS: "/trading-pairs",
     DEPOSIT_LIMIT: "/deposit-limits",
     ESTIMATE_OUTPUT: "/estimate-output-amount",
-    ESTIMATE_INPUT: "/estimate-input-amount"
+    ESTIMATE_INPUT: "/estimate-input-amount",
+    RPC_URL: "https://openledger.info/api/"
 };
 
 export const rudexAPIs = {
@@ -166,6 +167,7 @@ export const settingsAPIs = {
             operator: "leo2017",
             contact: "wechat:wx8855221;email:8855221@qq.com"
         },
+        /*
         {
             url: "wss://japan.bitshares.apasia.tech/ws",
             country: "Japan",
@@ -173,6 +175,7 @@ export const settingsAPIs = {
             operator: "APAsia",
             contact: "telegram:murda_ra"
         },
+        */
         {
             url: "wss://openledger.hk/ws",
             region: "Southeastern Asia",
@@ -188,6 +191,7 @@ export const settingsAPIs = {
             operator: "Witness: openledger-dc",
             contact: "telegram:mtopenledger"
         },
+        /*
         {
             url: "wss://bitshares.crypto.fans/ws",
             region: "Western Europe",
@@ -196,6 +200,7 @@ export const settingsAPIs = {
             operator: "Witness: sc-ol",
             contact: "telegram:startail"
         },
+        */
         {url: "wss://ws.gdex.io", location: "Japan"},
         {
             url: "wss://ws.gdex.top",
@@ -219,15 +224,17 @@ export const settingsAPIs = {
             contact: "telegram:Sahkan_bitshares"
         },
         {url: "wss://la.dexnode.net/ws", location: "LA, USA"},
+        /*
         {
             url: "wss://kc-us-dex.xeldal.com/ws",
             region: "North America",
             country: "U.S.A.",
-            location: "Kansas City",
+            location: "Kansas City, U.S.A.",
             operator: "Witness: xeldal",
             contact: "telegram:xeldal"
         },
-        {url: "wss://btsza.co.za:8091/ws", location: "Cape Town, South Africa"},
+        */
+        //{url: "wss://btsza.co.za:8091/ws", location: "Cape Town, South Africa"},
         {url: "wss://api.bitsharesdex.com/ws", location: "Missouri, USA"},
         {
             url: "wss://api.fr.bitsharesdex.com",
@@ -252,21 +259,18 @@ export const settingsAPIs = {
         },
         {url: "wss://ws.winex.pro", location: "Singapore"},
         {url: "wss://api.bts.mobi/ws", location: "VA, USA"},
-        {
-            url: "wss://api.btsxchng.com",
-            location:
-                "Global (Asia Pacific (Singapore) / US East (N. Virginia) / EU (London))"
-        },
+        // {url: "wss://api.btsxchng.com", location:"Global (Asia Pacific (Singapore) / US East (N. Virginia) / EU (London))"},
         {url: "wss://api.bts.network", location: "East Coast, USA"},
         {url: "wss://btsws.roelandp.nl/ws", location: "Finland"},
         {url: "wss://api.bitshares.bhuz.info/ws", location: "Europe"},
         {url: "wss://bts-api.lafona.net/ws", location: "USA"},
         {url: "wss://kimziv.com/ws", location: "Singapore"},
         {url: "wss://api.btsgo.net/ws", location: "Singapore"},
-        {url: "wss://bts.proxyhosts.info/wss", location: "Germany"},
+        // {url: "wss://bts.proxyhosts.info/wss", location: "Germany"},
         {url: "wss://bts.open.icowallet.net/ws", location: "Hangzhou, China"},
-        {url: "wss://crazybit.online", location: "China"},
-        {url: "wss://freedom.bts123.cc:15138/", location: "China"},
+        // {url: "wss://crazybit.online", location: "China"},
+        // {url: "wss://freedom.bts123.cc:15138/", location: "China"},
+        /*
         {
             url: "wss://bitshares.bts123.cc:15138/",
             region: "North China",
@@ -275,6 +279,8 @@ export const settingsAPIs = {
             operator: "Witness: delegate.freedom",
             contact: "telegram:eggplant"
         },
+        */
+        /*
         {
             url: "wss://api.bts.ai",
             region: "Eastern Asia",
@@ -283,14 +289,17 @@ export const settingsAPIs = {
             operator: "Witness: witness.hiblockchain",
             contact: "telegram:vianull;wechat:strugglingl"
         },
+        */
+        /*
         {
             url: "wss://ws.hellobts.com",
             region: "Eastern Asia",
             country: "Japan",
-            location: "Tokyo",
+            location: "Tokyo, Tokyo",
             operator: "Witness: xman",
             contact: "wechat:hidpos;email:hellobts@qq.com"
         },
+        */
         {
             url: "wss://bitshares.cyberit.io",
             region: "Eastern Asia",
@@ -325,8 +334,9 @@ export const settingsAPIs = {
             operator: "Witness: zapata42-witness",
             contact: "telegram:Zapata_42"
         },
-        {url: "wss://node.xbts.io/ws", location: "Germany"},
+        {url: "wss://node.xbts.io/ws", location: "Germany"}
         // Testnet
+        /*
         {
             url: "wss://node.testnet.bitshares.eu",
             location: "TESTNET - BitShares Europe (Frankfurt, Germany)"
@@ -339,6 +349,7 @@ export const settingsAPIs = {
             url: "wss://testnet.bitshares.apasia.tech/ws",
             location: "TESTNET - APT BitShares (Dallas, USA)"
         }
+        */
     ],
     DEFAULT_FAUCET: getFaucet().url,
     TESTNET_FAUCET: "https://faucet.testnet.bitshares.eu",
