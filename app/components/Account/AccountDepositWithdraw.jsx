@@ -17,6 +17,7 @@ import SettingsActions from "actions/SettingsActions";
 import {settingsAPIs} from "api/apiConfig";
 // import BitKapital from "../DepositWithdraw/BitKapital";
 import Qiwi from "../DepositWithdraw/Qiwi";
+// import Yandex from "../DepositWithdraw/Yandex";
 // import RuDexGateway from "../DepositWithdraw/rudex/RuDexGateway";
 // import RuDexFiatDepositWithdrawal from "../DepositWithdraw/rudex/RuDexFiatDepositWithdrawal";
 import GatewayStore from "stores/GatewayStore";
@@ -218,6 +219,7 @@ class AccountDepositWithdraw extends React.Component {
                 </div>
             )
         });
+
         /*
         serList.push({
             name: "RuDEX (RUDEX.X)",
@@ -275,7 +277,8 @@ class AccountDepositWithdraw extends React.Component {
                 </div>
             )
         });
-*/
+        */
+
         serList.push({
             name: "Openledger (OPEN.X)",
             template: (
@@ -450,6 +453,17 @@ class AccountDepositWithdraw extends React.Component {
                 />
             )
         });
+        /*
+        serList.push({
+            name: "Yandex.Money",
+            template: (
+                <Yandex
+                    viewSettings={this.props.viewSettings}
+                    account={account}
+                />
+            )
+        });
+        */
         /*
         serList.push({
             name: "BitKapital",
