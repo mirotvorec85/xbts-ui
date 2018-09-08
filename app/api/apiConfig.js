@@ -120,25 +120,25 @@ export const settingsAPIs = {
         },
         {
             url: "wss://api-ru.bts.blckchnd.com",
+            location: "Moscow, Russia",
             region: "Eastern Europe",
             country: "Russia",
-            location: "Moscow",
             operator: "Witness: blckchnd",
             contact:
                 "email:admin@blckchnd.com;telegram:ruslansalikhov;github:blckchnd"
         },
         {
             url: "wss://node.market.rudex.org",
+            location: "Falkenstein, Germany",
             region: "Western Europe",
             country: "Germany",
-            location: "Falkenstein",
             operator: "Witness: blckchnd",
             contact:
                 "email:admin@blckchnd.com;telegram:ruslansalikhov;github:blckchnd"
         },
         {
             url: "wss://bitshares.openledger.info/ws",
-            location: "Nuremberg",
+            location: "Nuremberg, Germany",
             region: "Western Europe",
             country: "Germany",
             operator: "Witness: openledger-dc",
@@ -147,23 +147,23 @@ export const settingsAPIs = {
         {url: "wss://eu.openledger.info/ws", location: "Berlin, Germany"},
         {
             url: "wss://bitshares.nu/ws",
-            location: "Stockholm",
+            location: "Stockholm, Sweden",
             region: "Northern Europe",
             country: "Sweden"
         },
         {
             url: "wss://bit.btsabc.org/ws",
+            location: "Hong Kong, China",
             region: "Eastern Asia",
             country: "China",
-            location: "Hong Kong",
             operator: "Witness: abc123",
             contact: "QQ:58291;email:58291@qq.com"
         },
         {
             url: "wss://node.btscharts.com/ws",
+            location: "Beijing, China",
             region: "Eastern Asia",
             country: "China",
-            location: "Beijing",
             operator: "leo2017",
             contact: "wechat:wx8855221;email:8855221@qq.com"
         },
@@ -178,6 +178,7 @@ export const settingsAPIs = {
         */
         {
             url: "wss://openledger.hk/ws",
+            location: "Singapore",
             region: "Southeastern Asia",
             country: "Singapore",
             operator: "Witness: openledger-dc",
@@ -185,7 +186,7 @@ export const settingsAPIs = {
         },
         {
             url: "wss://na.openledger.info/ws",
-            location: "Quebec",
+            location: "Quebec, Canada",
             region: "Northern America",
             country: "Canada",
             operator: "Witness: openledger-dc",
@@ -206,20 +207,16 @@ export const settingsAPIs = {
             url: "wss://ws.gdex.top",
             region: "Eastern Asia",
             country: "China",
-            location: "Shanghai",
+            location: "Shanghai, China",
             operator: "Witness: gdex-witness",
             contact: "telegram:BrianZhang"
         },
-        {
-            url: "wss://dex.rnglab.org",
-            location: "Netherlands",
-            operator: "Witness: rnglab"
-        },
+        {url: "wss://dex.rnglab.org", location: "Netherlands"},
         {
             url: "wss://dexnode.net/ws",
             region: "Northern America",
             country: "U.S.A.",
-            location: "Dallas",
+            location: "Dallas, USA",
             operator: "Witness: Sahkan",
             contact: "telegram:Sahkan_bitshares"
         },
@@ -240,7 +237,7 @@ export const settingsAPIs = {
             url: "wss://api.fr.bitsharesdex.com",
             region: "Western Europe",
             country: "France",
-            location: "Paris",
+            location: "Paris, France",
             operator: "Witness: delegate.ihashfury",
             contact: "telegram:ihashfury"
         },
@@ -302,9 +299,9 @@ export const settingsAPIs = {
         */
         {
             url: "wss://bitshares.cyberit.io",
+            location: "Hong Kong, China",
             region: "Eastern Asia",
             country: "China",
-            location: "Hong Kong",
             operator: "Witness: witness.still",
             contact: "telegram:gordoor;wechat:overyard"
         },
@@ -312,15 +309,15 @@ export const settingsAPIs = {
             url: "wss://bts-seoul.clockwork.gr",
             region: "Southeastern Asia",
             country: "Korea",
-            location: "Seoul",
+            location: "Seoul, Korea",
             operator: "Witness: clockwork",
             contact: "telegram:clockworkgr"
         },
         {
             url: "wss://bts.liuye.tech:4443/ws",
+            location: "Shandong, China",
             region: "Eastern Asia",
             country: "China",
-            location: "Shandong",
             operator: "Witness: liuye",
             contact: "email:work@liuye.tech"
         },
@@ -328,15 +325,15 @@ export const settingsAPIs = {
         {url: "wss://btsfullnode.bangzi.info/ws", location: "Germany"},
         {
             url: "wss://api.dex.trading/",
+            location: "Paris, France",
             region: "Western Europe",
             country: "France",
-            location: "Paris",
             operator: "Witness: zapata42-witness",
             contact: "telegram:Zapata_42"
         },
-        {url: "wss://node.xbts.io/ws", location: "Germany"}
+        {url: "wss://node.xbts.io/ws", location: "Germany"},
+
         // Testnet
-        /*
         {
             url: "wss://node.testnet.bitshares.eu",
             location: "TESTNET - BitShares Europe (Frankfurt, Germany)"
@@ -349,7 +346,6 @@ export const settingsAPIs = {
             url: "wss://testnet.bitshares.apasia.tech/ws",
             location: "TESTNET - APT BitShares (Dallas, USA)"
         }
-        */
     ],
     DEFAULT_FAUCET: getFaucet().url,
     TESTNET_FAUCET: "https://faucet.testnet.bitshares.eu",
