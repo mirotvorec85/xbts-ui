@@ -331,9 +331,10 @@ export const settingsAPIs = {
             operator: "Witness: zapata42-witness",
             contact: "telegram:Zapata_42"
         },
-        {url: "wss://node.xbts.io/ws", location: "Germany"},
+        {url: "wss://node.xbts.io/ws", location: "Germany"}
 
         // Testnet
+        /*
         {
             url: "wss://node.testnet.bitshares.eu",
             location: "TESTNET - BitShares Europe (Frankfurt, Germany)"
@@ -346,6 +347,7 @@ export const settingsAPIs = {
             url: "wss://testnet.bitshares.apasia.tech/ws",
             location: "TESTNET - APT BitShares (Dallas, USA)"
         }
+        */
     ],
     DEFAULT_FAUCET: getFaucet().url,
     TESTNET_FAUCET: "https://faucet.testnet.bitshares.eu",
