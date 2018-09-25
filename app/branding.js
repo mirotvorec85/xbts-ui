@@ -94,6 +94,7 @@ export function getMyMarketsBases() {
  */
 export function getMyMarketsQuotes() {
     return [
+        "BTC",
         "BTS",
         "RUBLE",
         "USD",
@@ -103,6 +104,7 @@ export function getMyMarketsQuotes() {
         "SILVER",
         "MXN",
         "JPY",
+        "KRW",
         "XBTSX.STH",
         "XBTSX.POST",
         "XBTSX.DOGE",
@@ -123,7 +125,13 @@ export function getMyMarketsQuotes() {
         // "SMOKE",
         "ZEPH",
         "OPEN.ETH",
-        "OPEN.EOS"
+        "OPEN.EOS",
+        "OPEN.BTC",
+        "BRIDGE.BCO",
+        "CVN",
+        "BRIDGE.BTC",
+        "GDEX.BTC",
+        "IPFS"
     ];
 }
 
@@ -154,7 +162,8 @@ export function getFeaturedMarkets() {
         ["XBTSX.BTC", "XBTSX.POST"],
         ["BTS", "CVCOIN"],
         //["BTS", "OBITS"],
-        ["BTS", "ZEPH"],
+        ["RUBLE", "USD"],
+        // ["BTS", "ZEPH"],
         ["BTS", "HERO"],
         ["CNY", "YOYOW"]
     ];
