@@ -10,6 +10,7 @@ require("file-loader?name=asset-symbols/[name].png!./btc.png");
 require("file-loader?name=asset-symbols/silver.png!./silver.png");
 require("file-loader?name=asset-symbols/[name].png!./mxn.png");
 require("file-loader?name=asset-symbols/[name].png!./jpy.png");
+require("file-loader?name=asset-symbols/[name].png!./krw.png");
 
 // rudex assets
 require("file-loader?name=asset-symbols/[name].png!./ppy.png");
@@ -42,6 +43,7 @@ require("file-loader?name=asset-symbols/[name].png!./xbtsx.btg.png");
 require("file-loader?name=asset-symbols/[name].png!./xbtsx.npc.png");
 require("file-loader?name=asset-symbols/[name].png!./xbtsx.xspec.png");
 require("file-loader?name=asset-symbols/[name].png!./xbtsx.nvc.png");
+require("file-loader?name=asset-symbols/[name].png!./xbtsx.vtc.png");
 
 // 3rd party assets
 require("file-loader?name=asset-symbols/[name].png!./obits.png");
@@ -68,3 +70,7 @@ require("file-loader?name=asset-symbols/[name].png!./open.steem.png");
 require("file-loader?name=asset-symbols/[name].png!./open.dash.png");
 require("file-loader?name=asset-symbols/[name].png!./open.eos.png");
 require("file-loader?name=asset-symbols/[name].png!./cvcoin.png");
+require("file-loader?name=asset-symbols/[name].png!./bridge.bco.png");
+require("file-loader?name=asset-symbols/[name].png!./bridge.btc.png");
+require("file-loader?name=asset-symbols/[name].png!./bridge.kec.png");
+require("file-loader?name=asset-symbols/[name].png!./ipfs.png");
