@@ -45,6 +45,7 @@ require("file-loader?name=asset-symbols/[name].png!./xbtsx.xspec.png");
 require("file-loader?name=asset-symbols/[name].png!./xbtsx.nvc.png");
 require("file-loader?name=asset-symbols/[name].png!./xbtsx.vtc.png");
 require("file-loader?name=asset-symbols/[name].png!./xbtsx.42.png");
+require("file-loader?name=asset-symbols/[name].png!./xbtsx.uni.png");
 
 // 3rd party assets
 require("file-loader?name=asset-symbols/[name].png!./obits.png");
