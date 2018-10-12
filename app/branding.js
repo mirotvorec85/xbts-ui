@@ -133,7 +133,7 @@ export function getMyMarketsQuotes() {
         "OPEN.BTC",
         "BRIDGE.BCO",
         // "BRIDGE.BTC",
-        "GDEX.BTC",
+        // "GDEX.BTC",
         "IPFS"
     ];
 }
