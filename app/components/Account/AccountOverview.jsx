@@ -561,22 +561,22 @@ class AccountOverview extends React.Component {
                                     />
                                 )}
                             </Tab>
-                            {/*
-                                <Tab title="cryptobridge.account.staking">
-                                    <div className="grid-container">
-                                        <div
-                                            className="grid-content"
-                                            style={{paddingTop: "2rem"}}
-                                        >
-                                            <AccountStaking
-                                                account={this.props.account}
-                                                balances={this.props.balances}
-                                                gateFee={this.props.gateFee}
-                                            />
-                                        </div>
+                   
+                            <Tab title="cryptobridge.account.staking">
+                                <div className="grid-container">
+                                    <div
+                                        className="grid-content"
+                                        style={{paddingTop: "2rem"}}
+                                    >
+                                        <AccountStaking
+                                            account={this.props.account}
+                                            balances={this.props.balances}
+                                            gateFee={this.props.gateFee}
+                                        />
                                     </div>
-                                </Tab>
-                            */}
+                                </div>
+                            </Tab>
+                           
                             <Tab
                                 title="account.open_orders"
                                 subText={ordersValue}
